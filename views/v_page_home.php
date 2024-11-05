@@ -1,7 +1,3 @@
-<!-- Feature Section Start -->
-
-<!-- Feature Section End -->
-
 <!--Product section start-->
 <div class="product-section section pt-70 pt-lg-45 pt-md-40 pt-sm-30 pt-xs-15">
     <div class="container">
@@ -1037,9 +1033,44 @@
         </div>
     </div>
     <!--Product section end-->
-                                        
+
+    <!--Banner section start-->
+    <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
+        <div class="container">
+            <div class="row row-">
+                <div class="col-lg-4 col-md-4">
+                    <!-- Single Banner Start -->
+                    <div class="single-banner mb-30">
+                        <a href="#">
+                            <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        </a>
+                    </div>
+                    <!-- Single Banner End -->
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <!-- Single Banner Start -->
+                    <div class="single-banner mb-30">
+                        <a href="#">
+                            <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        </a>
+                    </div>
+                    <!-- Single Banner End -->
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <!-- Single Banner Start -->
+                    <div class="single-banner mb-30">
+                        <a href="#">
+                            <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        </a>
+                    </div>
+                    <!-- Single Banner End -->
+                </div>
+            </div>
+        </div>
+    </div>
     <!--Banner section end-->
-    <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
+<!-- Feature Section Start -->
+<div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -1081,45 +1112,4 @@
         </div>
     </div>
 </div>
-    <!--Brand section start-->
-    <div
-        class="brand-section section pt-90 pt-lg-70 pt-md-65 pt-sm-55 pt-xs-40 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
-        <div class="container">
-            <div class="row">
-                <!--Brand Slider start-->
-                <div class="tf-element-carousel section" data-slick-options='{
-                        "slidesToShow": 5,
-                        "slidesToScroll": 1,
-                        "infinite": true,
-                        "arrows": false,
-                        "autoplay": true
-                        }' data-slick-responsive='[
-                        {"breakpoint":1199, "settings": {
-                        "slidesToShow": 4
-                        }},
-                        {"breakpoint":992, "settings": {
-                        "slidesToShow": 4
-                        }},
-                        {"breakpoint":768, "settings": {
-                        "slidesToShow": 3
-                        }},
-                        {"breakpoint":576, "settings": {
-                        "slidesToShow": 1
-                        }}
-                        ]'>
-                    <div class="brand col"><a href="#"><img src="assets/images/brands/brand-1.png" alt=""></a>
-                    </div>
-                    <div class="brand col"><a href="#"><img src="assets/images/brands/brand-2.png" alt=""></a>
-                    </div>
-                    <div class="brand col"><a href="#"><img src="assets/images/brands/brand-3.png" alt=""></a>
-                    </div>
-                    <div class="brand col"><a href="#"><img src="assets/images/brands/brand-4.png" alt=""></a>
-                    </div>
-                    <div class="brand col"><a href="#"><img src="assets/images/brands/brand-5.png" alt=""></a>
-                    </div>
-                </div>
-                <!--Brand Slider end-->
-            </div>
-        </div>
-    </div>
-    <!--Brand section end-->
+<!-- Feature Section End -->
