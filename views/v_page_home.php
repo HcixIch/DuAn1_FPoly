@@ -1090,52 +1090,32 @@
                         </div>
                         <div class="content">
                             <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
-                            =======
-                            <!--Banner section end-->
-                            <!-- Feature Section Start -->
-                            <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <!-- Single Faeture Start -->
-                                            <div class="single-feature feature-style-2 mb-30">
-                                                <div class="icon">
-                                                    <i class="fa-solid fa-star"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
-                                                </div>
-                                                >>>>>>> Stashed changes
-                                            </div>
-                                            <!-- Single Faeture End -->
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <!-- Single Faeture Start -->
-                                            <div class="single-feature feature-style-2 mb-30">
-                                                <div class="icon">
-                                                    <i class="fa-solid fa-box"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <h2>Buy direct and support your club<br>(Arsenal team)</h2>
-                                                </div>
-                                            </div>
-                                            <!-- Single Faeture End -->
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <!-- Single Faeture Start -->
-                                            <div class="single-feature feature-style-2 mb-30 br-0">
-                                                <div class="icon">
-                                                    <i class="fa-solid fa-percent"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <h2>Members get 10% off<br>savings for you</h2>
-                                                </div>
-                                            </div>
-                                            <!-- Single Faeture End -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <!-- Feature Section End -->
-                        <!-- Feature Section End -->
+                        >>>>>>> Stashed changes
+                    </div>
+                    <!-- Single Faeture End -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <!-- Single Faeture Start -->
+                    <div class="single-feature feature-style-2 mb-30">
+                        <div class="icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+                        <div class="content">
+                            <h2>Buy direct and support your club<br>(Arsenal team)</h2>
+                        </div>
+                    </div>
+                    <!-- Single Faeture End -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <!-- Single Faeture Start -->
+                    <div class="single-feature feature-style-2 mb-30 br-0">
+                        <div class="icon">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+                        <div class="content">
+                            <h2>Members get 10% off<br>savings for you</h2>
+                        </div>
+                    </div>
+                    <!-- Single Faeture End -->
+                    <!-- Feature Section End -->
