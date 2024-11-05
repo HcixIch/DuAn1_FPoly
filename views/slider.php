@@ -23,11 +23,11 @@
                     <div class="col-12">
                         <!--Hero Content start-->
                         <div class="hero-content-2 color-2">
-                            <h2>view our</h2>
-                            <h1>EUROPEAN RANGE</h1>
-                            <h3>Products now</h3>
+                            <h2>Xem bộ sưu tập của chúng tôi</h2>
+                            <h1>DÒNG SẢN PHẨM CHÂU ÂU</h1>
+                            <h3>Sản phẩm hiện có</h3>
                             <a class="btn btn-ouline-primary btn-banner d-flex justify-content-center align-items-center"
-                                href="shop.html">shop now</a>
+                                href="shop.html">Mua ngay</a>
                         </div>
                         <!--Hero Content end-->
                     </div>
@@ -43,11 +43,11 @@
                     <div class="col-12">
                         <!--Hero Content start-->
                         <div class="hero-content-2 color-2">
-                            <h2>view our</h2>
+                            <h2>Xem bộ sưu tập của chúng tôi</h2>
                             <h1>Originals</h1>
-                            <h3>Products now</h3>
+                            <h3>Sản phẩm hiện có</h3>
                             <a class="btn btn-ouline-primary btn-banner d-flex justify-content-center align-items-center"
-                                href="shop.html">shop now</a>
+                                href="shop.html">Mua ngay</a>
                         </div>
                         <!--Hero Content end-->
                     </div>

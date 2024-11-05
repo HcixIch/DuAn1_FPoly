@@ -1138,7 +1138,9 @@ header.header.is-sticky {
 header.header.is-sticky .header-top {
   display: none;
 }
-
+.header-search-form form{
+  margin: 0;
+}
 header.header.is-sticky .header-bottom {
   padding: 15px 0 10px;
 }
@@ -4162,6 +4164,16 @@ ul.cart-items li {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.product-action ul {
+  display: flex; /* Hiển thị các biểu tượng trên cùng một dòng */
+  padding: 0; /* Gỡ bỏ padding */
+  margin: 0; /* Gỡ bỏ margin */
+  align-items: center; /* Căn giữa các biểu tượng theo chiều dọc */
+}
+
+.product-action li {
+  margin-left: 10px; /* Khoảng cách giữa các biểu tượng */
 }
 
 .single-product .product-img .product-action .product-btn {
