@@ -961,7 +961,6 @@
                         <div class="content">
                             <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
                         </div>
-                        >>>>>>> Stashed changes
                     </div>
                     <!-- Single Faeture End -->
                 </div>

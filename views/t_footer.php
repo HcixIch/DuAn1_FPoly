@@ -1,15 +1,13 @@
 <footer class="footer-section section bg-dark">
-
     <!--Footer Top start-->
     <div class="footer-top section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-45 pb-lg-25 pb-md-15 pb-sm-5 pb-xs-0">
         <div class="container">
             <div class="row row-25">
-
                 <!--Footer Widget start-->
                 <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                    <h4 class="title"><span class="text">About TheFace</span></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat</p>
+                    <h4 class="title"><span class="text">Về chúng tôi</span></h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat.</p>
                     <div class="footer-social">
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -21,48 +19,44 @@
                 </div>
                 <!--Footer Widget end-->
 
-
                 <!--Footer Widget start-->
                 <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                    <h4 class="title"><span class="text">Information</span></h4>
+                    <h4 class="title"><span class="text">Thông tin</span></h4>
                     <ul class="ft-menu">
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Gift Cards</a></li>
-                        <li><a href="#">Mobile</a></li>
-                        <li><a href="#">Gift Cards</a></li>
-                        <li><a href="#">Unsubscribe Notification</a></li>
-                    </ul>
-                </div>
-                <!--Footer Widget end-->
-
-
-                <!--Footer Widget start-->
-                <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                    <h4 class="title"><span class="text">Our Offers</span></h4>
-                    <ul class="ft-menu">
-                        <li><a href="#">New products</a></li>
-                        <li><a href="#">Top sellers</a></li>
-                        <li><a href="#">Specials</a></li>
-                        <li><a href="#">Manufacturers</a></li>
-                        <li><a href="#">Suppliers</a></li>
-                        <li><a href="#">Specials</a></li>
-                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Giao hàng</a></li>
+                        <li><a href="#">Dịch vụ</a></li>
+                        <li><a href="#">Thẻ quà tặng</a></li>
+                        <li><a href="#">Ứng dụng di động</a></li>
+                        <li><a href="#">Thẻ quà tặng</a></li>
+                        <li><a href="#">Hủy đăng ký thông báo</a></li>
                     </ul>
                 </div>
                 <!--Footer Widget end-->
 
                 <!--Footer Widget start-->
                 <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
-                    <h4 class="title"><span class="text">Contact us</span></h4>
+                    <h4 class="title"><span class="text">Ưu đãi của chúng tôi</span></h4>
+                    <ul class="ft-menu">
+                        <li><a href="#">Sản phẩm mới</a></li>
+                        <li><a href="#">Bán chạy nhất</a></li>
+                        <li><a href="#">Ưu đãi đặc biệt</a></li>
+                        <li><a href="#">Nhà sản xuất</a></li>
+                        <li><a href="#">Nhà cung cấp</a></li>
+                        <li><a href="#">Ưu đãi đặc biệt</a></li>
+                        <li><a href="#">Dịch vụ</a></li>
+                    </ul>
+                </div>
+                <!--Footer Widget end-->
+
+                <!--Footer Widget start-->
+                <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                    <h4 class="title"><span class="text">Liên hệ với chúng tôi</span></h4>
                     <ul class="address">
-                        <li><i class="fa fa-home"></i><span>HH2 BacHa building, Tohuu Street Hanoi,
-                                Vietnam</span>
+                        <li><i class="fa fa-home"></i><span>Tòa nhà HH2 Bắc Hà, đường Tố Hữu, Hà Nội, Việt Nam</span>
                         </li>
                         <li><i class="fa fa-phone"></i><span><a href="#">(08) 123 456 7890</a></span></li>
-                        <li><i class="fa fa-envelope-o"></i><span><a href="#">yourmail@domain.com</a></span>
-                        </li>
+                        <li><i class="fa fa-envelope-o"></i><span><a href="#">yourmail@domain.com</a></span></li>
                     </ul>
                     <div class="payment-box mt-15 mb-15">
                         <a href="#"><img src="./assets/images/payment.png" alt=""></a>
@@ -80,7 +74,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6 col-md-6 col-sm-8">
                     <div class="copyright text-left">
-                        <p>Copyright &copy;2019 <a href="#">Theface</a>. All rights reserved.</p>
+                        <p>Bản quyền &copy;2019 <a href="#">Theface</a>. Mọi quyền được bảo lưu.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-4">
@@ -93,13 +87,3 @@
     </div>
     <!--Footer bottom end-->
 </footer>
-</div>
-
-<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/plugins.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-
-</html>
