@@ -1136,7 +1136,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <<<<<<< Updated upstream </div>
-                                <!-- Feature Section End -->
-                                =======
-                                <!-- Feature Section End -->
+                        </div>
+                        <!-- Feature Section End -->
+                        <!-- Feature Section End -->
