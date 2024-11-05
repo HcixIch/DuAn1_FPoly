@@ -1043,148 +1043,100 @@
     </div>
     <!--Product section end-->
 
-    <<<<<<< Updated upstream <!--Banner section start-->
-        <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
-            <div class="container">
-                <div class="row row-">
-                    <div class="col-lg-4 col-md-4">
-                        <!-- Single Banner Start -->
-                        <div class="single-banner mb-30">
-                            <a href="#">
-                                <img src="assets/images/banner/h1-banner-2.png" alt="">
-                            </a>
-                        </div>
-                        <!-- Single Banner End -->
+    <!--Banner section start-->
+    <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
+        <div class="container">
+            <div class="row row-">
+                <div class="col-lg-4 col-md-4">
+                    <!-- Single Banner Start -->
+                    <div class="single-banner mb-30">
+                        <a href="#">
+                            <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-md-4">
-                        <!-- Single Banner Start -->
-                        <div class="single-banner mb-30">
-                            <a href="#">
-                                <img src="assets/images/banner/h1-banner-2.png" alt="">
-                            </a>
-                        </div>
-                        <!-- Single Banner End -->
+                    <!-- Single Banner End -->
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <!-- Single Banner Start -->
+                    <div class="single-banner mb-30">
+                        <a href="#">
+                            <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-md-4">
-                        <!-- Single Banner Start -->
-                        <div class="single-banner mb-30">
-                            <a href="#">
-                                <img src="assets/images/banner/h1-banner-2.png" alt="">
-                            </a>
-                        </div>
-                        <!-- Single Banner End -->
+                    <!-- Single Banner End -->
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <!-- Single Banner Start -->
+                    <div class="single-banner mb-30">
+                        <a href="#">
+                            <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        </a>
                     </div>
+                    <!-- Single Banner End -->
                 </div>
             </div>
         </div>
-        <!--Banner section end-->
-        <!-- Feature Section Start -->
-        <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <!-- Single Faeture Start -->
-                        <div class="single-feature feature-style-2 mb-30">
-                            <div class="icon">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="content">
-                                <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
-                                =======
-                                <!--Banner section end-->
-                                <!-- Feature Section Start -->
-                                <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                                <!-- Single Faeture Start -->
-                                                <div class="single-feature feature-style-2 mb-30">
-                                                    <div class="icon">
-                                                        <i class="fa-solid fa-star"></i>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
-                                                    </div>
-                                                    >>>>>>> Stashed changes
+    </div>
+    <!--Banner section end-->
+    <!-- Feature Section Start -->
+    <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <!-- Single Faeture Start -->
+                    <div class="single-feature feature-style-2 mb-30">
+                        <div class="icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="content">
+                            <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
+                            =======
+                            <!--Banner section end-->
+                            <!-- Feature Section Start -->
+                            <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <!-- Single Faeture Start -->
+                                            <div class="single-feature feature-style-2 mb-30">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-star"></i>
                                                 </div>
-                                                <!-- Single Faeture End -->
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                                <!-- Single Faeture Start -->
-                                                <div class="single-feature feature-style-2 mb-30">
-                                                    <div class="icon">
-                                                        <i class="fa-solid fa-box"></i>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h2>Buy direct and support your club<br>(Arsenal team)</h2>
-                                                    </div>
+                                                <div class="content">
+                                                    <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
                                                 </div>
-                                                <!-- Single Faeture End -->
+                                                >>>>>>> Stashed changes
                                             </div>
-                                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                                <!-- Single Faeture Start -->
-                                                <div class="single-feature feature-style-2 mb-30 br-0">
-                                                    <div class="icon">
-                                                        <i class="fa-solid fa-percent"></i>
-                                                    </div>
-                                                    <div class="content">
-                                                        <h2>Members get 10% off<br>savings for you</h2>
-                                                    </div>
+                                            <!-- Single Faeture End -->
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <!-- Single Faeture Start -->
+                                            <div class="single-feature feature-style-2 mb-30">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-box"></i>
                                                 </div>
-                                                <!-- Single Faeture End -->
+                                                <div class="content">
+                                                    <h2>Buy direct and support your club<br>(Arsenal team)</h2>
+                                                </div>
                                             </div>
+                                            <!-- Single Faeture End -->
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <!-- Single Faeture Start -->
+                                            <div class="single-feature feature-style-2 mb-30 br-0">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-percent"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <h2>Members get 10% off<br>savings for you</h2>
+                                                </div>
+                                            </div>
+                                            <!-- Single Faeture End -->
                                         </div>
                                     </div>
                                 </div>
-                                <<<<<<< Updated upstream </div>
-                                    <!-- Feature Section End -->
-                                    =======
-                                    <!-- Feature Section End -->
-                                    <!--Brand section start-->
-                                    <div
-                                        class="brand-section section pt-90 pt-lg-70 pt-md-65 pt-sm-55 pt-xs-40 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
-                                        <div class="container">
-                                            <div class="row">
-                                                <!--Brand Slider start-->
-                                                <div class="tf-element-carousel section" data-slick-options='{
-                        "slidesToShow": 5,
-                        "slidesToScroll": 1,
-                        "infinite": true,
-                        "arrows": false,
-                        "autoplay": true
-                        }' data-slick-responsive='[
-                        {"breakpoint":1199, "settings": {
-                        "slidesToShow": 4
-                        }},
-                        {"breakpoint":992, "settings": {
-                        "slidesToShow": 4
-                        }},
-                        {"breakpoint":768, "settings": {
-                        "slidesToShow": 3
-                        }},
-                        {"breakpoint":576, "settings": {
-                        "slidesToShow": 1
-                        }}
-                        ]'>
-                                                    <div class="brand col"><a href="#"><img
-                                                                src="assets/images/brands/brand-1.png" alt=""></a>
-                                                    </div>
-                                                    <div class="brand col"><a href="#"><img
-                                                                src="assets/images/brands/brand-2.png" alt=""></a>
-                                                    </div>
-                                                    <div class="brand col"><a href="#"><img
-                                                                src="assets/images/brands/brand-3.png" alt=""></a>
-                                                    </div>
-                                                    <div class="brand col"><a href="#"><img
-                                                                src="assets/images/brands/brand-4.png" alt=""></a>
-                                                    </div>
-                                                    <div class="brand col"><a href="#"><img
-                                                                src="assets/images/brands/brand-5.png" alt=""></a>
-                                                    </div>
-                                                </div>
-                                                <!--Brand Slider end-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Brand section end-->
-                                    >>>>>>> Stashed changes
+                            </div>
+                            <<<<<<< Updated upstream </div>
+                                <!-- Feature Section End -->
+                                =======
+                                <!-- Feature Section End -->
