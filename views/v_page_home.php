@@ -1,46 +1,5 @@
 <!-- Feature Section Start -->
-<div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <!-- Single Faeture Start -->
-                <div class="single-feature feature-style-2 mb-30">
-                    <div class="icon">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="content">
-                        <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
-                    </div>
-                </div>
-                <!-- Single Faeture End -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <!-- Single Faeture Start -->
-                <div class="single-feature feature-style-2 mb-30">
-                    <div class="icon">
-                        <i class="fa-solid fa-box"></i>
-                    </div>
-                    <div class="content">
-                        <h2>Buy direct and support your club<br>(Arsenal team)</h2>
-                    </div>
-                </div>
-                <!-- Single Faeture End -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <!-- Single Faeture Start -->
-                <div class="single-feature feature-style-2 mb-30 br-0">
-                    <div class="icon">
-                        <i class="fa-solid fa-percent"></i>
-                    </div>
-                    <div class="content">
-                        <h2>Members get 10% off<br>savings for you</h2>
-                    </div>
-                </div>
-                <!-- Single Faeture End -->
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Feature Section End -->
 
 <!--Product section start-->
@@ -1078,43 +1037,50 @@
         </div>
     </div>
     <!--Product section end-->
-
-    <!--Banner section start-->
-    <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
-        <div class="container">
-            <div class="row row-">
-                <div class="col-lg-4 col-md-4">
-                    <!-- Single Banner Start -->
-                    <div class="single-banner mb-30">
-                        <a href="#">
-                            <img src="assets/images/banner/h1-banner-2.png" alt="">
-                        </a>
+                                        
+    <!--Banner section end-->
+    <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30">
+                    <div class="icon">
+                        <i class="fa-solid fa-star"></i>
                     </div>
-                    <!-- Single Banner End -->
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <!-- Single Banner Start -->
-                    <div class="single-banner mb-30">
-                        <a href="#">
-                            <img src="assets/images/banner/h1-banner-2.png" alt="">
-                        </a>
+                    <div class="content">
+                        <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
                     </div>
-                    <!-- Single Banner End -->
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <!-- Single Banner Start -->
-                    <div class="single-banner mb-30">
-                        <a href="#">
-                            <img src="assets/images/banner/h1-banner-2.png" alt="">
-                        </a>
+                <!-- Single Faeture End -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30">
+                    <div class="icon">
+                        <i class="fa-solid fa-box"></i>
                     </div>
-                    <!-- Single Banner End -->
+                    <div class="content">
+                        <h2>Buy direct and support your club<br>(Arsenal team)</h2>
+                    </div>
                 </div>
+                <!-- Single Faeture End -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30 br-0">
+                    <div class="icon">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div class="content">
+                        <h2>Members get 10% off<br>savings for you</h2>
+                    </div>
+                </div>
+                <!-- Single Faeture End -->
             </div>
         </div>
     </div>
-    <!--Banner section end-->
-
+</div>
     <!--Brand section start-->
     <div
         class="brand-section section pt-90 pt-lg-70 pt-md-65 pt-sm-55 pt-xs-40 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
