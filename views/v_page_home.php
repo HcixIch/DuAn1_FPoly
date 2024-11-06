@@ -64,13 +64,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên bản</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">đ2.620.000</span><span
                                                 class="old">đ2,910,500</span></h4>
                                     </div>
@@ -98,13 +91,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Hoodie Arsenal adidas mùa giải 24/25 nguyên bản </a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">đ2,910,500</span></h4>
                                     </div>
                                 </div>
@@ -131,13 +117,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo khoác Arsenal adidas 24/25 nguyên bản</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫2,910,500</span></h4>
                                     </div>
                                 </div>
@@ -163,13 +142,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Giày linh d Arsenal adidas 24/25 nguyên bản</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫3,424,100</span></h4>
                                     </div>
                                 </div>
@@ -196,13 +168,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Arsenal adidas 24/25 Originals T-Shirt</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫1,369,600</span></h4>
                                     </div>
                                 </div>
@@ -231,13 +196,6 @@
                                         <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Track
                                                 Pants</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫2.311.000</span><span
                                                 class="old">₫2,568,200</span></h4>
                                     </div>
@@ -264,13 +222,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Arsenal adidas 24/25 Originals </a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫2,396,900</span></h4>
                                     </div>
                                 </div>
@@ -297,13 +248,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Shorts</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫1,712,300</span></h4>
                                     </div>
                                 </div>
@@ -329,13 +273,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo phao Arsenal(màu đỏ tía)</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫3,253,200</span></h4>
                                     </div>
                                 </div>
@@ -362,13 +299,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo phao Arsenal(Màu xám)</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫2.928.000</span><span
                                                 class="old">₫3,253,200</span></h4>
                                     </div>
@@ -395,13 +325,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo phao Arsenal(Màu xanh)</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫3,253,200</span></h4>
                                     </div>
                                 </div>
@@ -427,13 +350,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo phao Arsenal(Màu xanh đậm)</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫3,253,200</span></h4>
                                     </div>
                                 </div>
@@ -489,13 +405,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo phao Arsenal(màu đỏ tía)</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫3,253,200</span></h4>
                                     </div>
                                 </div>
@@ -522,13 +431,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo phao Arsenal(Màu xám)</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫2.298.000</span><span
                                                 class="old">₫3,253,200</span></h4>
                                     </div>
@@ -555,13 +457,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo phao Arsenal(Màu xanh)</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫3,253,200</span></h4>
                                     </div>
                                 </div>
@@ -589,13 +484,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên bản</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">đ2.620.000</span><span
                                                 class="old">đ2,910,500</span></h4>
                                     </div>
@@ -624,13 +512,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên bản</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">đ2.620.000</span><span
                                                 class="old">đ2,910,500</span></h4>
                                     </div>
@@ -658,13 +539,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Hoodie Arsenal adidas mùa giải 24/25 nguyên bản </a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">đ2,910,500</span></h4>
                                     </div>
                                 </div>
@@ -691,13 +565,6 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Áo khoác Arsenal adidas 24/25 nguyên bản</a>
                                         </h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫2,910,500</span></h4>
                                     </div>
                                 </div>
@@ -723,13 +590,6 @@
                                     </div>
                                     <div class="product-content">
                                         <h3><a href="single-product.html">Giày linh d Arsenal adidas 24/25 nguyên bản</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
                                         <h4 class="price"><span class="new">₫3,424,100</span></h4>
                                     </div>
                                 </div>
@@ -1038,7 +898,45 @@
         </div>
     </div>
     <!--Product section end-->
-
+    <!--Product category start-->
+    <div class="product-category section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-left">
+                        <h2>Sản phẩm theo danh mục</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-left">
+                        <h2>Áo Arsenal</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-1.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫3,253,200</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+            
+    <!--Product category end-->
     <!--Banner section start-->
     <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
         <div class="container">
