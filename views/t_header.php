@@ -128,7 +128,7 @@
                                     <li><a href="blog.html">Blog</a>
                                     </li>
                                     <li><a href="about.html">Về chúng tôi</a></li>
-                                    <li><a href="contact.html">Liên hệ chúng tôi</a></li>
+                                    <li><a href="?ctrl=page&&page=contact">Liên hệ chúng tôi</a></li>
                                 </ul>
                             </nav>
                         </div>
