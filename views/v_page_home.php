@@ -71,6 +71,7 @@
                                 </div>
                                 <!-- Single Product End -->
                             </div>
+
                             <div class="col-12">
                                 <!-- Single Product Start -->
                                 <div class="single-product mb-30">
