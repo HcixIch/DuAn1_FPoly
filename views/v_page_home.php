@@ -851,7 +851,7 @@
                 <!-- Single Banner Start -->
                 <div class="single-banner mb-30">
                     <a href="#">
-                        <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        <img src="assets/images/banner/men-banner.png" alt="">
                     </a>
                 </div>
                 <!-- Single Banner End -->
@@ -860,7 +860,7 @@
                 <!-- Single Banner Start -->
                 <div class="single-banner mb-30">
                     <a href="#">
-                        <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        <img src="assets/images/banner/women-banner.png" alt="">
                     </a>
                 </div>
                 <!-- Single Banner End -->
@@ -869,7 +869,7 @@
                 <!-- Single Banner Start -->
                 <div class="single-banner mb-30">
                     <a href="#">
-                        <img src="assets/images/banner/h1-banner-2.png" alt="">
+                        <img src="assets/images/banner/legend-banner.png" alt="">
                     </a>
                 </div>
                 <!-- Single Banner End -->
