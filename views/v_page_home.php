@@ -170,7 +170,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals T-Shirt</a>
+                                        <h3><a href="single-product.html">Áo thun Arsenal adidas 24/25 nguyên bản</a>
                                         </h3>
                                         <h4 class="price"><span class="new">₫1,369,600</span></h4>
                                     </div>
@@ -197,8 +197,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Track
-                                                Pants</a>
+                                        <h3><a href="single-product.html">Quần dài thể thao Arsenal adidas 24/25 nguyên bản </a>
                                         </h3>
                                         <h4 class="price"><span class="new">₫2.311.000</span><span
                                                 class="old">₫2,568,200</span></h4>
@@ -250,7 +249,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Shorts</a>
+                                        <h3><a href="single-product.html">Quần đùi Arsenal adidas 24/25 nguyên bản</a>
                                         </h3>
                                         <h4 class="price"><span class="new">₫1,712,300</span></h4>
                                     </div>
