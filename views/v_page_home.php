@@ -5,8 +5,8 @@
             <div class="col">
                 <div class="product-tab-menu mb-40 mb-xs-20">
                     <ul class="nav">
-                        <li><a class="active" data-toggle="tab" href="#products"> New Products</a></li>
-                        <li><a data-toggle="tab" href="#onsale"> OnSale</a></li>
+                        <li><a class="active" data-toggle="tab" href="#products"> Sản Phẩm mới</a></li>
+                        <li><a data-toggle="tab" href="#onsale"> Đang giảm giá</a></li>
                         <li><a data-toggle="tab" href="#featureproducts"> Feature Products</a></li>
                     </ul>
                 </div>
@@ -50,9 +50,9 @@
                                             <img src="./assets/images/product/product-1.webp" alt="">
                                         </a>
                                         <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -62,7 +62,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Shirt</a>
+                                        <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên bản</a>
                                         </h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -84,9 +84,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-2.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -117,9 +117,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-3.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -151,9 +151,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-4.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -184,9 +184,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-5.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -218,9 +218,9 @@
                                             <img src="./assets/images/product/product-6.webp" alt="">
                                         </a>
                                         <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -253,9 +253,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-7.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -285,9 +285,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-8.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -318,9 +318,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-9.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -351,9 +351,9 @@
                                             <img src="./assets/images/product/product-10.webp" alt="">
                                         </a>
                                         <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -384,9 +384,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-11.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -416,9 +416,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-12.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -478,9 +478,9 @@
                                             <img src="./assets/images/product/product-9.webp" alt="">
                                         </a>
                                         <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -511,9 +511,9 @@
                                             <img src="./assets/images/product/product-10.webp" alt="">
                                         </a>
                                         <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -544,9 +544,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-11.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -577,9 +577,9 @@
                                             <img src="./assets/images/product/product-1.webp" alt="">
                                         </a>
                                         <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -589,7 +589,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Shirt</a>
+                                        <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên bản</a>
                                         </h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -612,9 +612,9 @@
                                             <img src="./assets/images/product/product-1.webp" alt="">
                                         </a>
                                         <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -624,7 +624,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Shirt</a>
+                                        <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên bản</a>
                                         </h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -646,9 +646,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-2.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -679,9 +679,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-3.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -713,9 +713,9 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-4.webp" alt="">
                                         </a>
-                                        <span class="sticker">New</span>
+                                        <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -775,9 +775,9 @@
                                                 <img src="./assets/images/product/product-1.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -809,9 +809,9 @@
                                                 <img src="./assets/images/product/product-2.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -842,9 +842,9 @@
                                                 <img src="./assets/images/product/product-3.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -875,9 +875,9 @@
                                                 <img src="./assets/images/product/product-8.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -908,9 +908,9 @@
                                                 <img src="./assets/images/product/product-10.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -941,9 +941,9 @@
                                                 <img src="./assets/images/product/product-11.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -975,9 +975,9 @@
                                                 <img src="./assets/images/product/product-12.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -1008,9 +1008,9 @@
                                                 <img src="./assets/images/product/product-13.jpg" alt="">
                                             </a>
                                             <span class="descount-sticker">-10%</span>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Add to Cart</a>
+                                                <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
