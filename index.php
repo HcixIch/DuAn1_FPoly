@@ -15,6 +15,9 @@ if (isset($_GET['ctrl'])) {
         case 'admin':
             include_once "./controller/c_admin.php";
             break;
+        case 'cart':
+            include_once "./controllers/c_cart.php";
+            break;
         default:
             echo "Khong co trang";
             break;
