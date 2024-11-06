@@ -808,6 +808,7 @@
 <!--Product category start-->
 <div class="product-category section">
     <div class="container">
+    <div class="row">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title text-left">
@@ -834,12 +835,30 @@
                     </div>
                     <div class="product-category-content">
                         <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                        <h4 class="price"><span class="new">₫3,253,200</span></h4>
+                        <h4 class="price"><span class="new">₫2,620,000</span></h4>
                         <a class="product-category-btn" href="#">Đặt hàng</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <!-- Single Product Start -->
+                <div class="single-product-category mb-30">
+                    <div class="product-category-img">
+                        <a href="single-product.html">
+                            <img src="assets/images/product/product-5.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="product-category-content">
+                        <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                        <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                        <a class="product-category-btn" href="#">Đặt hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 
