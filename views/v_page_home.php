@@ -57,7 +57,7 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -91,12 +91,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Hoodie</a>
+                                        <h3><a href="single-product.html">Hoodie Arsenal adidas mùa giải 24/25 nguyên bản </a>
                                         </h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -124,13 +124,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Track
-                                                Top</a>
+                                        <h3><a href="single-product.html">Áo khoác Arsenal adidas 24/25 nguyên bản</a>
                                         </h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -158,13 +157,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Gazelle
-                                                Shoes</a></h3>
+                                        <h3><a href="single-product.html">Giày linh d Arsenal adidas 24/25 nguyên bản</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -191,7 +189,7 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -225,7 +223,7 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -260,7 +258,7 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -292,7 +290,7 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -325,12 +323,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal Burgundy Puffer Jacket</a></h3>
+                                        <h3><a href="single-product.html">Áo phao Arsenal(màu đỏ tía)</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -358,12 +356,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal Grey Puffer Jacket</a></h3>
+                                        <h3><a href="single-product.html">Áo phao Arsenal(Màu xám)</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -391,12 +389,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal Navy Padded Jacket</a></h3>
+                                        <h3><a href="single-product.html">Áo phao Arsenal(Màu xanh)</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -423,12 +421,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal Green Padded Jacket</a></h3>
+                                        <h3><a href="single-product.html">Áo phao Arsenal(Màu xanh đậm)</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -485,12 +483,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal Burgundy Puffer Jacket</a></h3>
+                                        <h3><a href="single-product.html">Áo phao Arsenal(màu đỏ tía)</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -518,12 +516,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal Grey Puffer Jacket</a></h3>
+                                        <h3><a href="single-product.html">Áo phao Arsenal(Màu xám)</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -551,12 +549,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal Navy Padded Jacket</a></h3>
+                                        <h3><a href="single-product.html">Áo phao Arsenal(Màu xanh)</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -584,7 +582,7 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -619,7 +617,7 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -653,12 +651,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Hoodie</a>
+                                        <h3><a href="single-product.html">Hoodie Arsenal adidas mùa giải 24/25 nguyên bản </a>
                                         </h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -686,13 +684,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Track
-                                                Top</a>
+                                        <h3><a href="single-product.html">Áo khoác Arsenal adidas 24/25 nguyên bản</a>
                                         </h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -720,13 +717,12 @@
                                                 <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals Gazelle
-                                                Shoes</a></h3>
+                                        <h3><a href="single-product.html">Giày linh d Arsenal adidas 24/25 nguyên bản</a></h3>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -782,7 +778,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -816,7 +812,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -849,7 +845,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -882,7 +878,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -915,7 +911,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -948,7 +944,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -982,7 +978,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -1015,7 +1011,7 @@
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -1089,9 +1085,8 @@
                             <i class="fa-solid fa-star"></i>
                         </div>
                         <div class="content">
-                            <h2>Rated 4.9/5 by customers<br>(6,200+ reviews)</h2>
+                            <h2>Được khách hàng đánh giá 4.9/5<br>(6,200+ người xem)</h2>
                         </div>
-                        >>>>>>> Stashed changes
                     </div>
                     <!-- Single Faeture End -->
                 </div>
@@ -1102,7 +1097,7 @@
                             <i class="fa-solid fa-box"></i>
                         </div>
                         <div class="content">
-                            <h2>Buy direct and support your club<br>(Arsenal team)</h2>
+                            <h2>Mua trực tiếp và hỗ trợ CLB của bạn<br>(Arsenal team)</h2>
                         </div>
                     </div>
                     <!-- Single Faeture End -->
@@ -1114,7 +1109,7 @@
                             <i class="fa-solid fa-percent"></i>
                         </div>
                         <div class="content">
-                            <h2>Members get 10% off<br>savings for you</h2>
+                            <h2>Thành viên được giảm 10%<br>tiết kiệm cho bạn</h2>
                         </div>
                     </div>
                     <!-- Single Faeture End -->
