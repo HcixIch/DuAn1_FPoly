@@ -3,10 +3,10 @@
         <div class="row">
             <div class="col">
                 <div class="page-banner text-center">
-                    <h1 style="margin: 0 !important;"><?=$title?></h1>
+                    <h1 style="margin: 0 !important;"><?= $title ?></h1>
                     <ul class="page-breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li><?=$title?></li>
+                        <li><a href="index.php">Trang chủ</a></li>
+                        <li><?= $title ?></li>
                     </ul>
                 </div>
 

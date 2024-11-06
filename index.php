@@ -10,7 +10,7 @@ if (isset($_GET['ctrl'])) {
             include_once "./controllers/c_product.php";
             break;
         case 'user':
-            include_once "./controller/c_user.php";
+            include_once "./controllers/c_user.php";
             break;
         case 'admin':
             include_once "./controller/c_admin.php";
