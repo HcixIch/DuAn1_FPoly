@@ -881,11 +881,11 @@
                 <div class="single-product-category mb-30">
                     <div class="product-category-img">
                         <a href="single-product.html">
-                            <img src="assets/images/product/product-5.webp" alt="">
+                            <img src="assets/images/product/product-2.webp" alt="">
                         </a>
                     </div>
                     <div class="product-category-content">
-                        <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                        <h3><a href="single-product.html">Áo Khoác Arsenal mùa giải 24/25 nguyên bản</a></h3>
                         <h4 class="price"><span class="new">₫2,910,500</span></h4>
                         <a class="product-category-btn" href="#">Đặt hàng</a>
                     </div>
