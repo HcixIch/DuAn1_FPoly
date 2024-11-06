@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['page'])) {
-    switch ($_GET['page']) {
+if (isset($_GET['view'])) {
+    switch ($_GET['view']) {
         case 'home':
             include_once './views/t_header.php';
             break;

@@ -72,63 +72,12 @@
                                 <ul>
                                     <li><a href="index.php">Trang chủ</a>
                                     </li>
-                                    <li><a href="shop.html">Cửa hàng</a>
-                                        <!-- 
-                                            <ul class="mega-menu four-column">
-                                                <li><a href="#" class="item-link">Trang</a>
-                                                    <ul>
-                                                        <li><a href="compare.html">So sánh</a></li>
-                                                        <li><a href="cart.html">Giỏ hàng</a></li>
-                                                        <li><a href="checkout.html">Thanh toán</a></li>
-                                                        <li><a href="wishlist.html">Danh sách yêu thích</a></li>
-                                                        <li><a href="my-account.html">Tài khoản của tôi</a></li>
-                                                        <li><a href="login-register.html">Đăng ký/Đăng nhập</a></li>
-                                                        <li><a href="faq.html">Câu hỏi thường gặp</a></li>
-                                                        <li><a href="404.html">Lỗi 404</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#" class="item-link">Bố cục cửa hàng</a>
-                                                    <ul>
-                                                        <li><a href="shop.html">Cửa hàng</a></li>
-                                                        <li><a href="shop-three-column.html">Cửa hàng ba cột</a></li>
-                                                        <li><a href="shop-four-column.html">Cửa hàng bốn cột</a></li>
-                                                        <li><a href="shop-right-sidebar.html">Cửa hàng thanh bên phải</a></li>
-                                                        <li><a href="shop-list-nosidebar.html">Cửa hàng danh sách không thanh bên</a></li>
-                                                        <li><a href="shop-list-left-sidebar.html">Cửa hàng danh sách thanh bên trái</a>
-                                                        </li>
-                                                        <li><a href="shop-list-right-sidebar.html">Cửa hàng danh sách thanh bên phải</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#" class="item-link">Chi tiết sản phẩm</a>
-                                                    <ul>
-                                                        <li><a href="single-product.html">Sản phẩm đơn</a></li>
-                                                        <li><a href="single-product-variable.html">Sản phẩm thay đổi</a></li>
-                                                        <li><a href="single-product-affiliate.html">Sản phẩm liên kết</a>
-                                                        </li>
-                                                        <li><a href="single-product-group.html">Sản phẩm nhóm</a></li>
-                                                        <li><a href="single-product-tabstyle-2.html">Sản phẩm thẻ trái</a>
-                                                        </li>
-                                                        <li><a href="single-product-tabstyle-3.html">Sản phẩm thẻ phải</a>
-                                                        </li>
-                                                        <li><a href="single-product-gallery-left.html">Sản phẩm thư viện trái</a></li>
-                                                        <li><a href="single-product-gallery-right.html">Sản phẩm thư viện phải</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#" class="item-link">Chi tiết sản phẩm</a>
-                                                    <ul>
-                                                        <li><a href="single-product-sticky-left.html">Sản phẩm dính trái</a></li>
-                                                        <li><a href="single-product-sticky-right.html">Sản phẩm dính phải</a></li>
-                                                        <li><a href="single-product-slider-box.html">Hộp sản phẩm</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                         -->
+                                    <li><a href="?ctrl=product&&view=shop">Cửa hàng</a>
                                     </li>
                                     <li><a href="blog.html">Blog</a>
                                     </li>
                                     <li><a href="about.html">Về chúng tôi</a></li>
-                                    <li><a href="?ctrl=page&&page=contact">Liên hệ chúng tôi</a></li>
+                                    <li><a href="?ctrl=page&&view=contact">Liên hệ chúng tôi</a></li>
                                 </ul>
                             </nav>
                         </div>
