@@ -74,9 +74,9 @@
                                     </li>
                                     <li><a href="?ctrl=product&&view=shop">Cửa hàng</a>
                                     </li>
-                                    <li><a href="blog.html">Blog</a>
+                                    <li><a href="blog.html">Bài viết</a>
                                     </li>
-                                    <li><a href="about.html">Về chúng tôi</a></li>
+                                    <li><a href="?ctrl=page&&view=contact">Câu lạc bộ</a></li>
                                     <li><a href="?ctrl=page&&view=contact">Liên hệ chúng tôi</a></li>
                                 </ul>
                             </nav>
