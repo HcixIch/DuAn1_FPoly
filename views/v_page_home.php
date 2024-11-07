@@ -293,7 +293,7 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/product-9.webp" alt="">
                                         </a>
-                                        <span class="descount-sticker">-10%</span>
+                                        <span class="descount-sticker">-20%</span>
                                         <span class="sticker">Mới</span>
                                         <div class="product-action d-flex justify-content-between">
                                             <a class="product-btn" href="#">Đặt hàng</a>
