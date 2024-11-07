@@ -1,6 +1,7 @@
 <?php
 session_start();
 ob_start();
+include 'models/m_database.php';
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
         case 'page':

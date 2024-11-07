@@ -1,4 +1,6 @@
 <?php
+include_once './models/m_product.php';
+$prod = new Product();
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'shop':

@@ -58,7 +58,7 @@
                 <!-- <div class="row">
                             <div class="col-12">
                                 <div class="shop-banner mb-35 mb-xs-20">
-                                    <img src="./assets/images/banner/category-image.jpg" alt="">
+                                    <img src="./assets/images/banner/category-image.webp" alt="">
                                 </div>
                                 <div class="shop-banner-title">
                                     <h2>Shop</h2>
@@ -122,7 +122,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-12.jpg" alt="">
+                                                            <img src="./assets/images/product/product-12.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -158,7 +158,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-13.jpg" alt="">
+                                                            <img src="./assets/images/product/product-13.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -193,7 +193,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-14.jpg" alt="">
+                                                            <img src="./assets/images/product/product-14.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -228,7 +228,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-4.jpg" alt="">
+                                                            <img src="./assets/images/product/product-4.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -263,7 +263,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-5.jpg" alt="">
+                                                            <img src="./assets/images/product/product-5.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -298,7 +298,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-6.jpg" alt="">
+                                                            <img src="./assets/images/product/product-6.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -334,7 +334,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-7.jpg" alt="">
+                                                            <img src="./assets/images/product/product-7.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -369,7 +369,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-8.jpg" alt="">
+                                                            <img src="./assets/images/product/product-8.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -404,7 +404,7 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="single-product.html">
-                                                            <img src="./assets/images/product/product-18.jpg" alt="">
+                                                            <img src="./assets/images/product/product-18.webp" alt="">
                                                         </a>
                                                         <span class="descount-sticker">-10%</span>
                                                         <span class="sticker">New</span>
@@ -446,7 +446,7 @@
                                                     <div class="single-product">
                                                         <div class="product-img mb-0 mb-xs-25">
                                                             <a href="single-product.html">
-                                                                <img src="./assets/images/product/product-18.jpg"
+                                                                <img src="./assets/images/product/product-18.webp"
                                                                     alt="">
                                                             </a>
                                                             <span class="descount-sticker">-10%</span>
@@ -499,7 +499,7 @@
                                                     <div class="single-product">
                                                         <div class="product-img mb-0 mb-xs-25">
                                                             <a href="single-product.html">
-                                                                <img src="./assets/images/product/product-17.jpg"
+                                                                <img src="./assets/images/product/product-17.webp"
                                                                     alt="">
                                                             </a>
                                                             <span class="descount-sticker">-10%</span>
@@ -552,7 +552,7 @@
                                                     <div class="single-product">
                                                         <div class="product-img mb-0 mb-xs-25">
                                                             <a href="single-product.html">
-                                                                <img src="./assets/images/product/product-15.jpg"
+                                                                <img src="./assets/images/product/product-15.webp"
                                                                     alt="">
                                                             </a>
                                                             <span class="descount-sticker">-10%</span>
@@ -605,7 +605,7 @@
                                                     <div class="single-product">
                                                         <div class="product-img mb-0 mb-xs-25">
                                                             <a href="single-product.html">
-                                                                <img src="./assets/images/product/product-12.jpg"
+                                                                <img src="./assets/images/product/product-12.webp"
                                                                     alt="">
                                                             </a>
                                                             <span class="descount-sticker">-10%</span>
@@ -658,7 +658,7 @@
                                                     <div class="single-product">
                                                         <div class="product-img mb-0 mb-xs-25">
                                                             <a href="single-product.html">
-                                                                <img src="./assets/images/product/product-13.jpg"
+                                                                <img src="./assets/images/product/product-13.webp"
                                                                     alt="">
                                                             </a>
                                                             <span class="descount-sticker">-10%</span>
