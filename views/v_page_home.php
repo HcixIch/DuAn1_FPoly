@@ -805,326 +805,326 @@
     </div>
 </div>
 <!--Product section end-->
-<<<<<<< HEAD=======<!--Product category start-->
-    <div class="product-category section">
-        <div class="container">
-            <div class="row-md-4 row-lg-4 row-sm-12">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-left">
-                            <h2>Sản phẩm theo danh mục</h2>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col col-sm-4 text-center">
-                        <h2>Áo Arsenal</h2>
-                    </div>
-                    <div class="col col-sm-4 text-center">
-                        <h2>Quần Arsenal</h2>
-                    </div>
-                    <div class="col col-sm-4 text-center">
-                        <h2>Áo Khoác Arsenal</h2>
-                    </div>
-                </div>
-                <div class="row text">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-1.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,620,000</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-6.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Quần dài Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-3.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo khoác Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-5.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-8.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Quần đùi Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-2.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo khoác Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Banner section start-->
-    <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
-        <div class="container">
-            <div class="row row-">
-                <div class="col-lg-4 col-md-4">
-                    <!-- Single Banner Start -->
-                    <div class="single-banner mb-30">
-                        <a href="#">
-                            <img src="assets/images/banner/men-banner.png" alt="">
-                        </a>
-                    </div>
-                    <!-- Single Banner End -->
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <!-- Single Banner Start -->
-                    <div class="single-banner mb-30">
-                        <a href="#">
-                            <img src="assets/images/banner/women-banner.png" alt="">
-                        </a>
-                    </div>
-                    <!-- Single Banner End -->
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <!-- Single Banner Start -->
-                    <div class="single-banner mb-30">
-                        <a href="#">
-                            <img src="assets/images/banner/legend-banner.png" alt="">
-                        </a>
-                    </div>
-                    <!-- Single Banner End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Banner section end-->
-    <!--Product category start-->
-    <div class="product-category section">
-        <div class="container">
-            <div class="row-md-4 row-lg-4 row-sm-12">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-left">
-                            <h2>Sản phẩm theo danh mục</h2>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col col-sm-4 text-center">
-                        <h2>Áo Arsenal</h2>
-                    </div>
-                    <div class="col col-sm-4 text-center">
-                        <h2>Quần Arsenal</h2>
-                    </div>
-                    <div class="col col-sm-4 text-center">
-                        <h2>Áo Khoác Arsenal</h2>
-                    </div>
-                </div>
-                <div class="row text">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-1.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,620,000</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-6.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Quần dài Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-5.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-2.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo Khoác Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-8.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Quần đùi Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <!-- Single Product Start -->
-                        <div class="single-product-category mb-30">
-                            <div class="product-category-img">
-                                <a href="single-product.html">
-                                    <img src="assets/images/product/product-5.webp" alt="">
-                                </a>
-                            </div>
-                            <div class="product-category-content">
-                                <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Product category end-->
-    <!-- Feature Section Start -->
-    <div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
-        <div class="container">
+<!--Product category start-->
+<div class="product-category section">
+    <div class="container">
+        <div class="row-md-4 row-lg-4 row-sm-12">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <!-- Single Faeture Start -->
-                    <div class="single-feature feature-style-2 mb-30">
-                        <div class="icon">
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="content">
-                            <h2>Được khách hàng đánh giá 4.9/5<br>(6,200+ người xem)</h2>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="section-title text-left">
+                        <h2>Sản phẩm theo danh mục</h2>
                     </div>
-                    <!-- Single Faeture End -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <!-- Single Faeture Start -->
-                    <div class="single-feature feature-style-2 mb-30">
-                        <div class="icon">
-                            <i class="fa-solid fa-box"></i>
-                        </div>
-                        <div class="content">
-                            <h2>Mua trực tiếp và hỗ trợ CLB của bạn<br>(Arsenal team)</h2>
-                        </div>
-                    </div>
-                    <!-- Single Faeture End -->
+            </div>
+            <br>
+            <div class="row">
+                <div class="col col-sm-4 text-center">
+                    <h2>Áo Arsenal</h2>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <!-- Single Faeture Start -->
-                    <div class="single-feature feature-style-2 mb-30 br-0">
-                        <div class="icon">
-                            <i class="fa-solid fa-percent"></i>
+                <div class="col col-sm-4 text-center">
+                    <h2>Quần Arsenal</h2>
+                </div>
+                <div class="col col-sm-4 text-center">
+                    <h2>Áo Khoác Arsenal</h2>
+                </div>
+            </div>
+            <div class="row text">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-1.webp" alt="">
+                            </a>
                         </div>
-                        <div class="content">
-                            <h2>Thành viên được giảm 10%<br>tiết kiệm cho bạn</h2>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,620,000</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
                         </div>
                     </div>
-                    <!-- Single Faeture End -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-6.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Quần dài Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-3.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo khoác Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-5.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-8.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Quần đùi Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-2.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo khoác Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!--Banner section start-->
+<div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
+    <div class="container">
+        <div class="row row-">
+            <div class="col-lg-4 col-md-4">
+                <!-- Single Banner Start -->
+                <div class="single-banner mb-30">
+                    <a href="#">
+                        <img src="assets/images/banner/men-banner.png" alt="">
+                    </a>
+                </div>
+                <!-- Single Banner End -->
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <!-- Single Banner Start -->
+                <div class="single-banner mb-30">
+                    <a href="#">
+                        <img src="assets/images/banner/women-banner.png" alt="">
+                    </a>
+                </div>
+                <!-- Single Banner End -->
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <!-- Single Banner Start -->
+                <div class="single-banner mb-30">
+                    <a href="#">
+                        <img src="assets/images/banner/legend-banner.png" alt="">
+                    </a>
+                </div>
+                <!-- Single Banner End -->
+            </div>
+        </div>
     </div>
-    <!-- Feature Section End -->
-    <!-- Feature Section End -->
+</div>
+<!--Banner section end-->
+<!--Product category start-->
+<div class="product-category section">
+    <div class="container">
+        <div class="row-md-4 row-lg-4 row-sm-12">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-left">
+                        <h2>Sản phẩm theo danh mục</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col col-sm-4 text-center">
+                    <h2>Áo Arsenal</h2>
+                </div>
+                <div class="col col-sm-4 text-center">
+                    <h2>Quần Arsenal</h2>
+                </div>
+                <div class="col col-sm-4 text-center">
+                    <h2>Áo Khoác Arsenal</h2>
+                </div>
+            </div>
+            <div class="row text">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-1.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,620,000</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-6.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Quần dài Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-5.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-2.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo Khoác Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-8.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Quần đùi Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <!-- Single Product Start -->
+                    <div class="single-product-category mb-30">
+                        <div class="product-category-img">
+                            <a href="single-product.html">
+                                <img src="assets/images/product/product-5.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="product-category-content">
+                            <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Product category end-->
+<!-- Feature Section Start -->
+<div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30">
+                    <div class="icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="content">
+                        <h2>Được khách hàng đánh giá 4.9/5<br>(6,200+ người xem)</h2>
+                    </div>
+                </div>
+                <!-- Single Faeture End -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30">
+                    <div class="icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                    <div class="content">
+                        <h2>Mua trực tiếp và hỗ trợ CLB của bạn<br>(Arsenal team)</h2>
+                    </div>
+                </div>
+                <!-- Single Faeture End -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30 br-0">
+                    <div class="icon">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div class="content">
+                        <h2>Thành viên được giảm 10%<br>tiết kiệm cho bạn</h2>
+                    </div>
+                </div>
+                <!-- Single Faeture End -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Feature Section End -->
+<!-- Feature Section End -->
