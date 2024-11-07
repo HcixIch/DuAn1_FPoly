@@ -80,14 +80,6 @@
                 <div class="product-details-content">
 
                     <h2>White Shave Brux</h2>
-                    <div class="single-product-reviews">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <a class="review-link" href="#">(1 customer review)</a>
-                    </div>
                     <div class="single-product-price">
                         <span class="price new-price">$66.00</span>
                         <span class="regular-price">$77.00</span>
@@ -196,7 +188,7 @@
                                 </ul>
                                 <div class="review-form-wrapper">
                                     <div class="review-form">
-                                        <span class="comment-reply-title">Add a review </span>
+                                        <span class="comment-reply-title">Thêm đánh giá </span>
                                         <form action="#">
                                             <p class="comment-notes">
                                                 <span id="email-notes">Your email address will not be published.</span>
@@ -204,7 +196,7 @@
                                                 <span class="required">*</span>
                                             </p>
                                             <div class="comment-form-rating">
-                                                <label>Your rating</label>
+                                                <label>Đánh giá của bạn</label>
                                                 <div class="rating">
                                                     <i class="fa fa-star-o"></i>
                                                     <i class="fa fa-star-o"></i>
@@ -215,11 +207,11 @@
                                             </div>
                                             <div class="input-element">
                                                 <div class="comment-form-comment">
-                                                    <label>Comment</label>
+                                                    <label>Bình luận</label>
                                                     <textarea name="message" cols="40" rows="8"></textarea>
                                                 </div>
                                                 <div class="review-comment-form-author">
-                                                    <label>Name </label>
+                                                    <label>Tên </label>
                                                     <input required="required" type="text">
                                                 </div>
                                                 <div class="review-comment-form-email">
@@ -253,7 +245,7 @@
             <!-- Section Title Start -->
             <div class="col">
                 <div class="section-title mb-40 mb-xs-20">
-                    <h2>Related Products</h2>
+                    <h2>Sản phẩm liên quan</h2>
                 </div>
             </div>
             <!-- Section Title End -->
@@ -291,7 +283,7 @@
                             <img src="./assets/images/product/product-5.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
@@ -323,7 +315,7 @@
                             <img src="./assets/images/product/product-6.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
@@ -355,7 +347,7 @@
                             <img src="./assets/images/product/product-7.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
@@ -387,7 +379,7 @@
                             <img src="./assets/images/product/product-8.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
@@ -419,7 +411,7 @@
                             <img src="./assets/images/product/product-1.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
@@ -451,7 +443,7 @@
                             <img src="./assets/images/product/product-2.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
@@ -483,7 +475,7 @@
                             <img src="./assets/images/product/product-3.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
@@ -515,7 +507,7 @@
                             <img src="./assets/images/product/product-4.jpg" alt="">
                         </a>
                         <span class="descount-sticker">-10%</span>
-                        <span class="sticker">New</span>
+                        <span class="sticker">Mới</span>
                         <div class="product-action d-flex justify-content-between">
                             <a class="product-btn" href="#">Đặt hàng</a>
                             <ul class="d-flex">
