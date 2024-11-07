@@ -62,7 +62,8 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="cart-summary-button">
-                                        <a style="color: #fff;" class="btn" href="checkout.html">Thanh toán</a>
+                                        <a style="color: #fff;" class="btn" href="?ctrl=cart&&view=checkout">Thanh
+                                            toán</a>
                                     </div>
                                 </td>
                             </tr>
