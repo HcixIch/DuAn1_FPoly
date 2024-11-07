@@ -494,7 +494,7 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Giày linh d Arsenal adidas 24/25 nguyên
+                                        <h3><a href="single-product.html">Giày linh dương Arsenal adidas 24/25 nguyên
                                                 bản</a></h3>
                                         <h4 class="price"><span class="new">₫3,424,100</span></h4>
                                     </div>
