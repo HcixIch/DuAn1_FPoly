@@ -1,8 +1,14 @@
 <?php
+include_once 'models/m_product.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'home':
+            $prod = new Product();
+            $products = $prod->getAllProduct();
             include_once './views/t_header.php';
+            include_once './views/slider.php';
+            include_once './views/v_page_home.php';
+            include_once './views/t_footer.php';
             break;
         case 'contact':
             $title = 'Liên hệ';
@@ -17,6 +23,8 @@ if (isset($_GET['view'])) {
             break;
     }
 } else {
+    $prod = new Product();
+    $products = $prod->getAllProduct();
     include_once './views/t_header.php';
     include_once './views/slider.php';
     include_once './views/v_page_home.php';

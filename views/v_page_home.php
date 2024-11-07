@@ -42,221 +42,35 @@
                                 "autoplay": true
                                 }}
                                 ]'>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-1.webp" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                            <?php foreach ($products as $pd) {
+                                extract($pd); ?>
+                                <div class="col-12">
+                                    <!-- Single Product Start -->
+                                    <div class="single-product mb-30">
+                                        <div class="product-img">
+                                            <a href="single-product.html">
+                                                <img src="./assets/images/product/<?= $img_product ?>" alt="">
+                                            </a>
+                                            <span class="sticker">Mới</span>
+                                            <div class="product-action d-flex justify-content-between">
+                                                <a class="product-btn" href="#">Đặt hàng</a>
+                                                <ul class="d-flex">
+                                                    <li><a href="#quick-view-modal-container" data-toggle="modal"
+                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
 
-                                            </ul>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3><a href="single-product.html"><?= $name_product ?></a>
+                                            </h3>
+                                            <h4 class="price"><span class="new"><?= $price_product ?>₫</span></h4>
                                         </div>
                                     </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên
-                                                bản</a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">đ2.620.000</span><span
-                                                class="old">đ2,910,500</span></h4>
-                                    </div>
+                                    <!-- Single Product End -->
                                 </div>
-                                <!-- Single Product End -->
-                            </div>
-
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-2.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Hoodie Arsenal adidas mùa giải 24/25 nguyên
-                                                bản </a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">đ2,910,500</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-3.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo khoác Arsenal adidas 24/25 nguyên bản</a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-4.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Giày linh d Arsenal adidas 24/25 nguyên
-                                                bản</a></h3>
-                                        <h4 class="price"><span class="new">₫3,424,100</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-5.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo thun Arsenal adidas 24/25 nguyên bản</a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">₫1,369,600</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-6.webp" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Quần dài thể thao Arsenal adidas 24/25 nguyên
-                                                bản </a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">₫2.311.000</span><span
-                                                class="old">₫2,568,200</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-7.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Arsenal adidas 24/25 Originals </a></h3>
-                                        <h4 class="price"><span class="new">₫2,396,900</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-8.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Quần đùi Arsenal adidas 24/25 nguyên bản</a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">₫1,712,300</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="onsale">
