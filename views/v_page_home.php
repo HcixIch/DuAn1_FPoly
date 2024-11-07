@@ -876,7 +876,9 @@
                                     <div class="product-category-content">
                                         <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
                                         <h4 class="price"><span class="new">₫2,620,000</span></h4>
-                                        <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        <div class="buynow">
+                                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -892,7 +894,9 @@
                                         <h3><a href="single-product.html">Quần dài Arsenal mùa giải 24/25 nguyên bản</a>
                                         </h3>
                                         <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                        <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        <div class="buynow">
+                                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -907,7 +911,9 @@
                                     <div class="product-category-content">
                                         <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
                                         <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                        <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        <div class="buynow">
+                                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -925,7 +931,9 @@
                                         <h3><a href="single-product.html">Áo Khoác Arsenal mùa giải 24/25 nguyên bản</a>
                                         </h3>
                                         <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                                        <div class="buynow">
                                         <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -941,7 +949,9 @@
                                         <h3><a href="single-product.html">Quần đùi Arsenal mùa giải 24/25 nguyên bản</a>
                                         </h3>
                                         <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                        <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        <div class="buynow">
+                                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -955,8 +965,10 @@
                                     </div>
                                     <div class="product-category-content">
                                         <h3><a href="single-product.html">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
-                                        <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                        <a class="product-category-btn" href="#">Đặt hàng</a>
+                                        <h4 class="price"><span class="new">₫2,910,500</span></h4> 
+                                        <div class="buynow">
+                                            <a class="product-category-btn" href="#">Đặt hàng</a>
+                                         </div>
                                     </div>
                                 </div>
                             </div>
