@@ -8,8 +8,7 @@
                 <!--Footer Widget start-->
                 <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                     <h4 class="title"><span class="text">Về TheFace</span></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat</p>
+                    <p>Arsenal Store – nơi cung cấp quần áo chính hãng, chất lượng cao, thể hiện niềm đam mê và phong cách của fan hâm mộ Arsenal.</p>
                     <div class="footer-social">
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>

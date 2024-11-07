@@ -4148,18 +4148,24 @@ ul.cart-items li {
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%; /* Đặt chiều rộng tối đa */
-  line-height: 1;
+  line-height: 2;
   text-transform: uppercase;
 }
 
 .single-product-category .product-category-content h4 {
   font-size: 12px;
 }
+
 .single-product-category .product-category-content .product-category-btn{
   border: solid 1px;
   padding: 3px;
   background-color: #cea679;
   color: white;
+}
+
+.single-product-category .product-category-content .buynow a{
+  position: relative;
+  bottom: -33px;
 }
 /*-- Product --*/
 .single-product .product-img {
