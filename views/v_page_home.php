@@ -51,7 +51,12 @@
                                             <a href="single-product.html">
                                                 <img src="./assets/images/product/<?= $img_product ?>" alt="">
                                             </a>
-                                            <span class="sticker">Mới</span>
+                                            <?php if ($sale == 1) { ?>
+                                                <span class="descount-sticker">-10%</span>
+                                            <?php } ?>
+                                            <?php if ($hot == 1) { ?>
+                                                <span class="sticker">Mới</span>
+                                            <?php } ?>
                                             <div class="product-action d-flex justify-content-between">
                                                 <a class="product-btn" href="#">Đặt hàng</a>
                                                 <ul class="d-flex">
@@ -65,7 +70,12 @@
                                         <div class="product-content">
                                             <h3><a href="single-product.html"><?= $name_product ?></a>
                                             </h3>
-                                            <h4 class="price"><span class="new"><?= $price_product ?>₫</span></h4>
+                                            <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
+                                                <?php if ($sale == 1) { ?>
+                                                    <del class="text-decoration-line-through"><span
+                                                            class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                                <?php } ?>
+                                            </h4>
                                         </div>
                                     </div>
                                     <!-- Single Product End -->
