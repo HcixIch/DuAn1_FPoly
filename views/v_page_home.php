@@ -44,42 +44,42 @@
                                 ]'>
                             <?php foreach ($products as $pd) {
                                 extract($pd); ?>
-                                <div class="col-12">
-                                    <!-- Single Product Start -->
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="single-product.html">
-                                                <img src="./assets/images/product/<?= $img_product ?>" alt="">
-                                            </a>
-                                            <?php if ($sale == 1) { ?>
-                                                <span class="descount-sticker">-10%</span>
-                                            <?php } ?>
-                                            <?php if ($hot == 1) { ?>
-                                                <span class="sticker">Mới</span>
-                                            <?php } ?>
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Đặt hàng</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                            <div class="col-12">
+                                <!-- Single Product Start -->
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="./assets/images/product/<?= $img_product ?>" alt="">
+                                        </a>
+                                        <?php if ($sale == 1) { ?>
+                                        <span class="descount-sticker">-10%</span>
+                                        <?php } ?>
+                                        <?php if ($hot == 1) { ?>
+                                        <span class="sticker">Mới</span>
+                                        <?php } ?>
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="#">Đặt hàng</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
 
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a href="single-product.html"><?= $name_product ?></a>
-                                            </h3>
-                                            <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
-                                                <?php if ($sale == 1) { ?>
-                                                    <del class="text-decoration-line-through"><span
-                                                            class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
-                                                <?php } ?>
-                                            </h4>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <!-- Single Product End -->
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html"><?= $name_product ?></a>
+                                        </h3>
+                                        <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
+                                            <?php if ($sale == 1) { ?>
+                                            <del class="text-decoration-line-through"><span
+                                                    class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                            <?php } ?>
+                                        </h4>
+                                    </div>
                                 </div>
+                                <!-- Single Product End -->
+                            </div>
                             <?php } ?>
                         </div>
                     </div>
