@@ -1,5 +1,4 @@
 <?php
-include_once 'models/m_product.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'home':

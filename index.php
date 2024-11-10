@@ -1,7 +1,8 @@
 <?php
 session_start();
 ob_start();
-include 'models/m_database.php';
+include_once 'models/m_database.php';
+include_once 'models/m_product.php';
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
         case 'page':
