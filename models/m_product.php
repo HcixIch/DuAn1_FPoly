@@ -25,19 +25,26 @@ class Product extends Database
         }
         return $this->db->query($sql);
     }
-    public function getNewProducts($limit)
+
+    public function getProductsByCondition($condition, $limit)
     {
-        $sql = "SELECT * FROM product ORDER BY id_product DESC LIMIT $limit";
-        return $this->db->query($sql);
-    }
-    public function getHotProducts($limit)
-    {
-        $sql = "SELECT * FROM product WHERE hot=1 LIMIT $limit";
-        return $this->db->query($sql);
-    }
-    public function getSaleProducts($limit)
-    {
-        $sql = "SELECT * FROM product WHERE sale > 0 LIMIT $limit";
+        $sql = "SELECT * FROM product";
+        switch ($condition) {
+            case 'all':
+                break;
+            case 'hot':
+                $sql .= " WHERE hot = 1";
+                break;
+            case 'sale':
+                $sql .= " WHERE sale > 0";
+                break;
+            case 'new':
+                $sql .= " ORDER BY id_product DESC";
+                break;
+        }
+        if ($limit && $limit > 0) {
+            $sql .= " LIMIT $limit";
+        }
         return $this->db->query($sql);
     }
 }

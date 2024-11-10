@@ -3,12 +3,9 @@ if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'home':
             $prod = new Product();
-            $pro_new = $prod->getNewProducts(12);
-            $pro_hot = $prod->getHotProducts(12);
-            $pro_sale = $prod->getSaleProducts(12);
-            var_dump($pro_hot);
-            var_dump($pro_new);
-            var_dump($pro_sale);
+            $pro_new = $prod->getProductsByCondition('new', "");
+            $pro_hot = $prod->getProductsByCondition('hot', "");
+            $pro_sale = $prod->getProductsByCondition('sale', "");
             include_once './views/t_header.php';
             include_once './views/slider.php';
             include_once './views/v_page_home.php';
@@ -28,12 +25,9 @@ if (isset($_GET['view'])) {
     }
 } else {
     $prod = new Product();
-    $pro_new = $prod->getNewProducts(12);
-    $pro_hot = $prod->getHotProducts(12);
-    $pro_sale = $prod->getSaleProducts(12);
-    var_dump($pro_hot);
-    var_dump($pro_new);
-    var_dump($pro_sale);
+    $pro_new = $prod->getProductsByCondition('new', "");
+    $pro_hot = $prod->getProductsByCondition('hot', "");
+    $pro_sale = $prod->getProductsByCondition('sale', "");
     include_once './views/t_header.php';
     include_once './views/slider.php';
     include_once './views/v_page_home.php';
