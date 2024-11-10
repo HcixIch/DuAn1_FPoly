@@ -42,109 +42,89 @@
                                 "autoplay": true
                                 }}
                                 ]'>
-                            <?php foreach ($products as $pd) {
+                            <?php foreach ($pro_new as $pd) {
                                 extract($pd); ?>
-                                <div class="col-12">
-                                    <!-- Single Product Start -->
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="single-product.html">
-                                                <img src="./assets/images/product/<?= $img_product ?>" alt="">
-                                            </a>
-                                            <?php if ($sale == 1) { ?>
-                                                <span class="descount-sticker">-10%</span>
-                                            <?php } ?>
-                                            <?php if ($hot == 1) { ?>
-                                                <span class="sticker">Mới</span>
-                                            <?php } ?>
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Đặt hàng</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                            <div class="col-12">
+                                <!-- Single Product Start -->
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="single-product.html">
+                                            <img src="./assets/images/product/<?= $img_product ?>" alt="">
+                                        </a>
+                                        <?php if ($sale == 1) { ?>
+                                        <span class="descount-sticker">-10%</span>
+                                        <?php } ?>
+                                        <?php if ($hot == 1) { ?>
+                                        <span class="sticker">Mới</span>
+                                        <?php } ?>
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="#">Đặt hàng</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
 
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a href="single-product.html"><?= $name_product ?></a>
-                                            </h3>
-                                            <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
-                                                <?php if ($sale == 1) { ?>
-                                                    <del class="text-decoration-line-through"><span
-                                                            class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
-                                                <?php } ?>
-                                            </h4>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <!-- Single Product End -->
+                                    <div class="product-content">
+                                        <h3><a href="single-product.html"><?= $name_product ?></a>
+                                        </h3>
+                                        <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
+                                            <?php if ($sale == 1) { ?>
+                                            <del class="text-decoration-line-through"><span
+                                                    class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                            <?php } ?>
+                                        </h4>
+                                    </div>
                                 </div>
+                                <!-- Single Product End -->
+                            </div>
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="onsale">
+                    <div class="tab-pane fade show active" id="products">
                         <div class="row tf-element-carousel" data-slick-options='{
-                                    "slidesToShow": 4,
-                                    "slidesToScroll": 1,
-                                    "infinite": true,
-                                    "rows": 2,
-                                    "arrows": true,
-                                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
-                                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
-                                    }' data-slick-responsive='[
-                                    {"breakpoint":1199, "settings": {
-                                    "slidesToShow": 3
-                                    }},
-                                    {"breakpoint":992, "settings": {
-                                    "slidesToShow": 2
-                                    }},
-                                    {"breakpoint":768, "settings": {
-                                    "slidesToShow": 2,
-                                    "arrows": false,
-                                    "autoplay": true
-                                    }},
-                                    {"breakpoint":576, "settings": {
-                                    "slidesToShow": 1,
-                                    "arrows": false,
-                                    "autoplay": true
-                                    }}
-                                    ]'>
+                                "slidesToShow": 4,
+                                "slidesToScroll": 1,
+                                "infinite": true,
+                                "rows": 2,
+                                "arrows": true,
+                                "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                }' data-slick-responsive='[
+                                {"breakpoint":1199, "settings": {
+                                "slidesToShow": 3
+                                }},
+                                {"breakpoint":992, "settings": {
+                                "slidesToShow": 2
+                                }},
+                                {"breakpoint":768, "settings": {
+                                "slidesToShow": 2,
+                                "arrows": false,
+                                "autoplay": true
+                                }},
+                                {"breakpoint":576, "settings": {
+                                "slidesToShow": 1,
+                                "arrows": false,
+                                "autoplay": true
+                                }}
+                                ]'>
+                            <?php foreach ($pro_new as $pd) {
+                                extract($pd); ?>
                             <div class="col-12">
                                 <!-- Single Product Start -->
                                 <div class="single-product mb-30">
                                     <div class="product-img">
                                         <a href="single-product.html">
-                                            <img src="./assets/images/product/product-9.webp" alt="">
+                                            <img src="./assets/images/product/<?= $img_product ?>" alt="">
                                         </a>
-                                        <span class="descount-sticker">-20%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo phao Arsenal(màu đỏ tía)</a></h3>
-                                        <h4 class="price"><span class="new">₫3,253,200</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-10.webp" alt="">
-                                        </a>
+                                        <?php if ($sale == 1) { ?>
                                         <span class="descount-sticker">-10%</span>
+                                        <?php } ?>
+                                        <?php if ($hot == 1) { ?>
                                         <span class="sticker">Mới</span>
+                                        <?php } ?>
                                         <div class="product-action d-flex justify-content-between">
                                             <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
@@ -156,213 +136,63 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">Áo phao Arsenal(Màu xám)</a></h3>
-                                        <h4 class="price"><span class="new">₫2.298.000</span><span
-                                                class="old">₫3,253,200</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-11.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo phao Arsenal(Màu xanh)</a></h3>
-                                        <h4 class="price"><span class="new">₫3,253,200</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-1.webp" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên
-                                                bản</a>
+                                        <h3><a href="single-product.html"><?= $name_product ?></a>
                                         </h3>
-                                        <h4 class="price"><span class="new">đ2.620.000</span><span
-                                                class="old">đ2,910,500</span></h4>
+                                        <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
+                                            <?php if ($sale == 1) { ?>
+                                            <del class="text-decoration-line-through"><span
+                                                    class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                            <?php } ?>
+                                        </h4>
                                     </div>
                                 </div>
                                 <!-- Single Product End -->
                             </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-1.webp" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo Arsenal adidas mùa giải 24/25 nguyên
-                                                bản</a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">đ2.620.000</span><span
-                                                class="old">đ2,910,500</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-2.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Hoodie Arsenal adidas mùa giải 24/25 nguyên
-                                                bản </a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">đ2,910,500</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-3.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Áo khoác Arsenal adidas 24/25 nguyên bản</a>
-                                        </h3>
-                                        <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-4.webp" alt="">
-                                        </a>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">Giày linh dương Arsenal adidas 24/25 nguyên
-                                                bản</a></h3>
-                                        <h4 class="price"><span class="new">₫3,424,100</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="hots">
+                    <div class="tab-pane fade show active" id="products">
                         <div class="row tf-element-carousel" data-slick-options='{
-                                    "slidesToShow": 4,
-                                    "slidesToScroll": 1,
-                                    "infinite": true,
-                                    "rows": 2,
-                                    "arrows": true,
-                                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
-                                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
-                                    }' data-slick-responsive='[
-                                    {"breakpoint":1199, "settings": {
-                                    "slidesToShow": 3
-                                    }},
-                                    {"breakpoint":992, "settings": {
-                                    "slidesToShow": 2
-                                    }},
-                                    {"breakpoint":768, "settings": {
-                                    "slidesToShow": 2,
-                                    "arrows": false,
-                                    "autoplay": true
-                                    }},
-                                    {"breakpoint":576, "settings": {
-                                    "slidesToShow": 1,
-                                    "arrows": false,
-                                    "autoplay": true
-                                    }}
-                                    ]'>
+                                "slidesToShow": 4,
+                                "slidesToScroll": 1,
+                                "infinite": true,
+                                "rows": 2,
+                                "arrows": true,
+                                "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+                                "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+                                }' data-slick-responsive='[
+                                {"breakpoint":1199, "settings": {
+                                "slidesToShow": 3
+                                }},
+                                {"breakpoint":992, "settings": {
+                                "slidesToShow": 2
+                                }},
+                                {"breakpoint":768, "settings": {
+                                "slidesToShow": 2,
+                                "arrows": false,
+                                "autoplay": true
+                                }},
+                                {"breakpoint":576, "settings": {
+                                "slidesToShow": 1,
+                                "arrows": false,
+                                "autoplay": true
+                                }}
+                                ]'>
+                            <?php foreach ($pro_new as $pd) {
+                                extract($pd); ?>
                             <div class="col-12">
                                 <!-- Single Product Start -->
                                 <div class="single-product mb-30">
                                     <div class="product-img">
                                         <a href="single-product.html">
-                                            <img src="./assets/images/product/product-1.jpg" alt="">
+                                            <img src="./assets/images/product/<?= $img_product ?>" alt="">
                                         </a>
+                                        <?php if ($sale == 1) { ?>
                                         <span class="descount-sticker">-10%</span>
+                                        <?php } ?>
+                                        <?php if ($hot == 1) { ?>
                                         <span class="sticker">Mới</span>
+                                        <?php } ?>
                                         <div class="product-action d-flex justify-content-between">
                                             <a class="product-btn" href="#">Đặt hàng</a>
                                             <ul class="d-flex">
@@ -374,258 +204,24 @@
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Brush</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€110.00</span><span
-                                                class="old">€130.00</span></h4>
+                                        <h3><a href="single-product.html"><?= $name_product ?></a>
+                                        </h3>
+                                        <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
+                                            <?php if ($sale == 1) { ?>
+                                            <del class="text-decoration-line-through"><span
+                                                    class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                            <?php } ?>
+                                        </h4>
                                     </div>
                                 </div>
                                 <!-- Single Product End -->
                             </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-2.jpg" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Brux</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€130.00</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-3.jpg" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Bruz</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€130.00</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-8.jpg" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Brusb</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€90.00</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-10.jpg" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Brush</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€130.00</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-11.jpg" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Brug</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€70.00</span><span
-                                                class="old">€100.00</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-12.jpg" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Bruc</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€70.00</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
-                            <div class="col-12">
-                                <!-- Single Product Start -->
-                                <div class="single-product mb-30">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./assets/images/product/product-13.jpg" alt="">
-                                        </a>
-                                        <span class="descount-sticker">-10%</span>
-                                        <span class="sticker">Mới</span>
-                                        <div class="product-action d-flex justify-content-between">
-                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                            <ul class="d-flex">
-                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3><a href="single-product.html">White Shave Brusb</a></h3>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <h4 class="price"><span class="new">€90.00</span></h4>
-                                    </div>
-                                </div>
-                                <!-- Single Product End -->
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 <!--Product section end-->
