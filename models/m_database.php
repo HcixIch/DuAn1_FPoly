@@ -1,56 +1,84 @@
 <?php
 class Database
 {
-    public $servername = "localhost";
-    public $username = "root";
-    public $password = "";
-    public $database = "arsenal";
-    public $conn;
-    //Khởi tạo: Kết nối với CSDL
+    private $servername = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "arsenal";
+    private $conn;
+
+    // Khởi tạo: Kết nối với CSDL
     public function __construct()
     {
         try {
-            $conn = new PDO("mysql:host=$this->servername" . ";dbname=" . $this->database, $this->username, $this->password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            // echo "Connected successfully";
-            $this->conn = $conn;
+            $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->database", $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
     }
-    //Các phương thức dùng truy xuất và CRUD dữ liệu
+
+    // Phương thức để thực thi câu truy vấn SQL
     public function query($sql, $params = [])
     {
-        $statement = $this->conn->prepare($sql);
-        $statement->execute($params);
-        return $statement;
+        try {
+            $statement = $this->conn->prepare($sql);
+            $statement->execute($params);
+            return $statement;
+        } catch (PDOException $e) {
+            echo "Query failed: " . $e->getMessage();
+            return false;
+        }
     }
-    // Hiển thị danh sách tất cả các mẫu tin
-    public function getAll($sql)
+
+    // Hiển thị tất cả mẫu tin, trả về mảng
+    public function getAll($sql, $params = [])
     {
-        $statement = $this->query($sql);
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement = $this->query($sql, $params);
+        if ($statement) {
+            // Đảm bảo trả về mảng dữ liệu
+            return $statement->fetchAll(PDO::FETCH_ASSOC); // Trả về mảng
+        }
+        return []; // Nếu có lỗi, trả về mảng rỗng
     }
-    //Hiển thị 1 mẫu tin
-    public function getOne($sql)
+
+    // Hiển thị một mẫu tin
+    public function getOne($sql, $params = [])
     {
-        $statement = $this->query($sql);
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        $statement = $this->query($sql, $params);
+        if ($statement) {
+            return $statement->fetch(PDO::FETCH_ASSOC); // Trả về một mảng hoặc null nếu không có kết quả
+        }
+        return null;
     }
-    //Thêm
-    public function insert($sql)
+
+    // Thêm dữ liệu vào CSDL
+    public function insert($sql, $params = [])
     {
-        $statement = $this->query($sql);
-        return $this->conn->lastInsertId();
+        $statement = $this->query($sql, $params);
+        if ($statement) {
+            return $this->conn->lastInsertId(); // Lấy ID của bản ghi vừa thêm
+        }
+        return false;
     }
-    //Cập nhật
-    public function update($sql)
+
+    // Cập nhật dữ liệu
+    public function update($sql, $params = [])
     {
-        $this->query($sql);
+        $statement = $this->query($sql, $params);
+        return $statement ? $statement->rowCount() : 0; // Trả về số dòng bị ảnh hưởng
     }
-    //Xóa
-    public function delete($sql)
+
+    // Xóa dữ liệu
+    public function delete($sql, $params = [])
     {
-        $this->query($sql);
+        $statement = $this->query($sql, $params);
+        return $statement ? $statement->rowCount() : 0; // Trả về số dòng bị ảnh hưởng
+    }
+
+    // Phương thức đóng kết nối
+    public function close()
+    {
+        $this->conn = null;
     }
 }

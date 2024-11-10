@@ -2,7 +2,6 @@
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'home':
-            $prod = new Product();
             $pro_new = $prod->getProductsByCondition('new', "");
             $pro_hot = $prod->getProductsByCondition('hot', "");
             $pro_sale = $prod->getProductsByCondition('sale', "");
@@ -24,7 +23,6 @@ if (isset($_GET['view'])) {
             break;
     }
 } else {
-    $prod = new Product();
     $pro_new = $prod->getProductsByCondition('new', "");
     $pro_hot = $prod->getProductsByCondition('hot', "");
     $pro_sale = $prod->getProductsByCondition('sale', "");

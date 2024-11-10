@@ -7,25 +7,22 @@ class Product extends Database
     {
         $this->db = new Database();
     }
-    public function getAllProducts()
-    {
-        $sql = "SELECT * FROM product";
-        return $this->db->query($sql);
-    }
+    //Hàm lấy sản phẩm theo danh muc
     public function getAllProductsByProductId($id)
     {
         $sql = "SELECT * FROM product WHERE id = $id";
-        return $this->db->query($sql);
+        return $this->db->getAll($sql);
     }
+    //Hàm lấy sản phẩm theo danh mục
     public function getProductsByCategory($id_cate, $limit)
     {
         $sql = "SELECT * FROM product WHERE id_category = $id_cate";
         if ($limit && $limit > 0) {
             $sql .= " LIMIT $limit";
         }
-        return $this->db->query($sql);
+        return $this->db->getAll($sql);
     }
-
+    // Hàm lấy sản phẩm theo điều kiện
     public function getProductsByCondition($condition, $limit)
     {
         $sql = "SELECT * FROM product";
@@ -45,6 +42,15 @@ class Product extends Database
         if ($limit && $limit > 0) {
             $sql .= " LIMIT $limit";
         }
-        return $this->db->query($sql);
+        return $this->db->getAll($sql);
+    }
+    // Hàm phân trang
+    public function getProductsByPage($quantitypage, $pro_one_page)
+    {
+        $sql = "SELECT * FROM product";
+        $limit1  = ($quantitypage - 1) * $pro_one_page;
+        $limit2 = $pro_one_page;
+        $sql .= " ORDER BY id_product limit " . $limit1 . "," . $limit2;
+        return $this->db->getAll($sql);
     }
 }

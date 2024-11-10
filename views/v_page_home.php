@@ -119,8 +119,8 @@
                                         <a href="single-product.html">
                                             <img src="./assets/images/product/<?= $img_product ?>" alt="">
                                         </a>
-                                        <?php if ($sale == 1) { ?>
-                                        <span class="descount-sticker">-10%</span>
+                                        <?php if ($sale > 0) { ?>
+                                        <span class="descount-sticker">-<?= $sale ?>%</span>
                                         <?php } ?>
                                         <?php if ($hot == 1) { ?>
                                         <span class="sticker">Mới</span>
@@ -138,10 +138,11 @@
                                     <div class="product-content">
                                         <h3><a href="single-product.html"><?= $name_product ?></a>
                                         </h3>
-                                        <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
-                                            <?php if ($sale == 1) { ?>
+                                        <h4 class="price"><span
+                                                class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                            <?php if ($sale > 0) { ?>
                                             <del class="text-decoration-line-through"><span
-                                                    class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                                    class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
                                             <?php } ?>
                                         </h4>
                                     </div>

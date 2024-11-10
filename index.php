@@ -3,6 +3,8 @@ session_start();
 ob_start();
 include_once 'models/m_database.php';
 include_once 'models/m_product.php';
+$prod = new Product();
+$pro_all = $prod->getProductsByCondition('all', "");
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
         case 'page':
