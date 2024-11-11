@@ -13,11 +13,11 @@ class Product extends Database
         return $this->db->getone($sql);
     }
     //Hàm lấy sản phẩm theo danh mục
-    public function getProductsByCategory($id_cate, $limit)
+    public function getProductsByCategory($id_cate, $different)
     {
         $sql = "SELECT * FROM product WHERE id_category = $id_cate";
-        if ($limit && $limit > 0) {
-            $sql .= " LIMIT $limit";
+        if ($different) {
+            $sql .= " AND id_product NOT IN (SELECT id_product FROM product WHERE id_product = $different)";
         }
         return $this->db->getAll($sql);
     }
@@ -59,6 +59,7 @@ class Product extends Database
         $sql = "SELECT COUNT(*) as total_product FROM product WHERE id_category = $id";
         return $this->db->getAll($sql);
     }
+    // Hàm tìm giá nhỏ nhất lớn nhất của sản phẩm
     public function getMinMaxPriceProduct($minmax)
     {
         $sql = "SELECT MIN(price) as min_price, MAX(price) as max_price FROM product";

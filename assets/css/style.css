@@ -4179,7 +4179,8 @@ ul.cart-items li {
 }
 
 .single-product .product-img a img {
-  width: 100%;
+  max-width: 100%;
+  min-height: 300px;
 }
 
 .single-product .product-img .sticker,

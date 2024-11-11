@@ -113,7 +113,7 @@
                                                     <!-- Single Product Start -->
                                                     <div class="single-product mb-30">
                                                         <div class="product-img">
-                                                            <a href="single-product.html">
+                                                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
                                                                 <img src="./assets/images/product/<?= $img_product ?>"
                                                                     alt="">
                                                             </a>
@@ -134,9 +134,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h3><a href="single-product.html"><?= $name_product ?></a>
+                                                            <h3><a
+                                                                    href="?ctrl=product&&view=detail&&id=<?= $id_product ?>?>"><?= $name_product ?></a>
                                                             </h3>
-                                                            <h4 class="price"><span
+                                                            <h4 class=" price"><span
                                                                     class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
                                                                 <?php if ($sale > 0) { ?>
                                                                     <del class="text-decoration-line-through"><span

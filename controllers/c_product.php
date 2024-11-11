@@ -20,8 +20,8 @@ if (isset($_GET['view'])) {
         case 'detail':
             $pro_detail = $prod->getProductsById($_GET['id']);
             $name_cate =  $cates->getNameCategoryByProduct($_GET['id']);
-            var_dump($name_cate);
             extract($pro_detail);
+            $related_products = $prod->getProductsByCategory($id_category, $_GET['id']);
             $title = 'Sản phẩm chi tiết';
             include_once './views/t_header.php';
             include_once './views/page_banner.php';
