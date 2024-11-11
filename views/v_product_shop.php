@@ -9,8 +9,9 @@
                     <ul class="sidebar-list">
                         <?php foreach ($cate_all as $cate) {
                             extract($cate); ?>
-                        <li><a href="#"><i class="fa fa-angle-right"></i><?= $name_category ?><span
-                                    class="count">(5)</span></a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i><?= $name_category ?><span
+                                        class="count">(<?= $cates->countProductsByCategory($id_category) ?>)</span></a>
+                            </li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -101,44 +102,44 @@
                                         <div class="row">
                                             <?php foreach ($list_page_product as $pd) {
                                                 extract($pd); ?>
-                                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                                <!-- Single Product Start -->
-                                                <div class="single-product mb-30">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="./assets/images/product/<?= $img_product ?>"
-                                                                alt="">
-                                                        </a>
-                                                        <?php if ($sale > 0) { ?>
-                                                        <span class="descount-sticker">-<?= $sale ?>%</span>
-                                                        <?php } ?>
-                                                        <?php if ($hot == 1) { ?>
-                                                        <span class="sticker">Mới</span>
-                                                        <?php } ?>
-                                                        <div class="product-action d-flex justify-content-between">
-                                                            <a class="product-btn" href="#">Đặt hàng</a>
-                                                            <ul class="d-flex">
-                                                                <li><a href="#quick-view-modal-container"
-                                                                        data-toggle="modal" title="Quick View"><i
-                                                                            class="fa fa-eye"></i></a></li>
-                                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                            </ul>
+                                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                                    <!-- Single Product Start -->
+                                                    <div class="single-product mb-30">
+                                                        <div class="product-img">
+                                                            <a href="single-product.html">
+                                                                <img src="./assets/images/product/<?= $img_product ?>"
+                                                                    alt="">
+                                                            </a>
+                                                            <?php if ($sale > 0) { ?>
+                                                                <span class="descount-sticker">-<?= $sale ?>%</span>
+                                                            <?php } ?>
+                                                            <?php if ($hot == 1) { ?>
+                                                                <span class="sticker">Mới</span>
+                                                            <?php } ?>
+                                                            <div class="product-action d-flex justify-content-between">
+                                                                <a class="product-btn" href="#">Đặt hàng</a>
+                                                                <ul class="d-flex">
+                                                                    <li><a href="#quick-view-modal-container"
+                                                                            data-toggle="modal" title="Quick View"><i
+                                                                                class="fa fa-eye"></i></a></li>
+                                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-content">
+                                                            <h3><a href="single-product.html"><?= $name_product ?></a>
+                                                            </h3>
+                                                            <h4 class="price"><span
+                                                                    class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                                                <?php if ($sale > 0) { ?>
+                                                                    <del class="text-decoration-line-through"><span
+                                                                            class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
+                                                                <?php } ?>
+                                                            </h4>
                                                         </div>
                                                     </div>
-                                                    <div class="product-content">
-                                                        <h3><a href="single-product.html"><?= $name_product ?></a>
-                                                        </h3>
-                                                        <h4 class="price"><span
-                                                                class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
-                                                            <?php if ($sale > 0) { ?>
-                                                            <del class="text-decoration-line-through"><span
-                                                                    class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
-                                                            <?php } ?>
-                                                        </h4>
-                                                    </div>
+                                                    <!-- Single Product End -->
                                                 </div>
-                                                <!-- Single Product End -->
-                                            </div>
                                             <?php } ?>
                                         </div>
                                     </div>
@@ -152,10 +153,10 @@
                         <ul class="page-pagination">
                             <li>
                                 <?php if ($ql_page > 1) { ?>
-                                <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page - 1 ?>"><i
-                                        class="fa fa-angle-left"></i></a>
+                                    <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page - 1 ?>"><i
+                                            class="fa fa-angle-left"></i></a>
                                 <?php } else { ?>
-                                <a href="?ctrl=product&&view=shop&&ql_page=1"><i class="fa fa-angle-left"></i></a>
+                                    <a href="?ctrl=product&&view=shop&&ql_page=1"><i class="fa fa-angle-left"></i></a>
                                 <?php } ?>
                             </li>
                             <?php $quantity_page = round(count($pro_all) / 9, 0);
@@ -163,18 +164,18 @@
                                 $quantity_page += 1;
                             } ?>
                             <?php for ($i = 1; $i < $quantity_page; $i++) { ?>
-                            <li class="<?= ($i == $ql_page) ? 'active' : '' ?>">
-                                <a class="page-link <?= ($i == $ql_page) ? 'bg-dark text-white' : '' ?>"
-                                    href="?ctrl=product&view=shop&ql_page=<?= $i ?>">
-                                    <?= $i ?>
-                                </a>
-                            </li>
+                                <li class="<?= ($i == $ql_page) ? 'active' : '' ?>">
+                                    <a class="page-link <?= ($i == $ql_page) ? 'bg-dark text-white' : '' ?>"
+                                        href="?ctrl=product&view=shop&ql_page=<?= $i ?>">
+                                        <?= $i ?>
+                                    </a>
+                                </li>
                             <?php } ?>
                             <li><?php if ($ql_page < 4) { ?>
-                                <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page + 1 ?>"><i
-                                        class="fa fa-angle-right"></i></a>
+                                    <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page + 1 ?>"><i
+                                            class="fa fa-angle-right"></i></a>
                                 <?php } else { ?>
-                                <a href="?ctrl=product&&view=shop&&ql_page=4"><i class="fa fa-angle-right"></i></a>
+                                    <a href="?ctrl=product&&view=shop&&ql_page=4"><i class="fa fa-angle-right"></i></a>
                                 <?php } ?>
                             </li>
                         </ul>
