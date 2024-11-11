@@ -5,31 +5,14 @@
             <div class="col-lg-3 order-lg-1 order-2">
                 <!-- Single Sidebar Start  -->
                 <div class="common-sidebar-widget">
-                    <h3 class="sidebar-title">Color</h3>
+                    <h3 class="sidebar-title">Danh mục</h3>
                     <ul class="sidebar-list">
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Red <span class="count">(5)</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Orange <span class="count">(4)</span></a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Blue <span class="count">(4)</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Black <span class="count">(4)</span></a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Green <span class="count">(4)</span></a></li>
-                    </ul>
-                </div>
-                <!-- Single Sidebar End  -->
-                <!-- Single Sidebar Start  -->
-                <div class="common-sidebar-widget">
-                    <h3 class="sidebar-title">Manufacturer</h3>
-                    <ul class="sidebar-list">
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Aliquam <span class="count">(5)</span></a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Duis tempus id <span
-                                    class="count">(4)</span></a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Leo quis molestie <span
-                                    class="count">(4)</span></a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Suspendisse <span class="count">(4)</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i>Nunc gravida <span class="count">(4)</span></a>
-                        </li>
+                        <?php foreach ($cate_all as $cate) {
+                            extract($cate); ?>
+                            <li><a href="#"><i class="fa fa-angle-right"></i><?= $name_category ?><span
+                                        class="count">(<?= $cates->countProductsByCategory($id_category) ?>)</span></a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <!-- Single Sidebar End  -->
@@ -187,7 +170,6 @@
                                         <?= $i ?>
                                     </a>
                                 </li>
-
                             <?php } ?>
                             <li><?php if ($ql_page < 4) { ?>
                                     <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page + 1 ?>"><i

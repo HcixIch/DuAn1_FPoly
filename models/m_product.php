@@ -7,7 +7,7 @@ class Product extends Database
         $this->db = new Database();
     }
     //Hàm lấy sản phẩm theo danh muc
-    public function getAllProductsByProductId($id)
+    public function getProductsByProductId($id)
     {
         $sql = "SELECT * FROM product WHERE id = $id";
         return $this->db->getAll($sql);
@@ -52,4 +52,12 @@ class Product extends Database
         $sql .= " ORDER BY id_product limit " . $limit1 . "," . $limit2;
         return $this->db->getAll($sql);
     }
+
+    //Hàm đếm số lượng sản phẩm theo danh mục
+    public function countProductsByCategory($id)
+    {
+        $sql = "SELECT COUNT(*) as total_product FROM product WHERE id_category = $id";
+        return $this->db->getAll($sql);
+    }
+
 }
