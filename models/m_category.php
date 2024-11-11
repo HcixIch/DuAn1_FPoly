@@ -1,2 +1,2 @@
 <?php
-class Category extends Database
+class Category extends Database {}
