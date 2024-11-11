@@ -52,12 +52,4 @@ class Product extends Database
         $sql .= " ORDER BY id_product limit " . $limit1 . "," . $limit2;
         return $this->db->getAll($sql);
     }
-    // Hàm SP liên quan
-    public function getAllidMall($iddm){
-        $sql ="SELECT * FROM product WHERE 1";
-        if($iddm > 0){
-            $sql .= " AND id_category=".$iddm;
-        }
-        return $this->db->getAll($sql); 
-    }
 }

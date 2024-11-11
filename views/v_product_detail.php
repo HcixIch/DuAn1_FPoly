@@ -79,9 +79,9 @@
                 <!--Product Details Content Start-->
                 <div class="product-details-content">
 
-                    <h2>White Shave Brux</h2>
+                    <h2><?= $pro_detail[0]['img_product']?>White Shave Brux</h2>
                     <div class="single-product-price">
-                        <span class="price new-price">$66.00</span>
+                        <span class="price new-price"><?= $pro_detail[0]['price_product']?>$66.00</span>
                         <span class="regular-price">$77.00</span>
                     </div>
                     <div class="product-description">
@@ -106,7 +106,8 @@
                     <div class="product-meta">
                         <span class="posted-in">
                             Categories:
-                            <a href="#">Accessories</a>,
+                            
+                            <a href="#"><?= ?>Accessories</a>,
                             <a href="#">Electronics</a>
                         </span>
                     </div>
