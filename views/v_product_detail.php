@@ -79,15 +79,13 @@
                 <!--Product Details Content Start-->
                 <div class="product-details-content">
 
-                    <h2><?= $pro_detail[0]['img_product']?>White Shave Brux</h2>
+                    <h2><?= $name_product?></h2>
                     <div class="single-product-price">
-                        <span class="price new-price"><?= $pro_detail[0]['price_product']?>$66.00</span>
+                        <span class="price new-price"><?= $price_product?></span>
                         <span class="regular-price">$77.00</span>
                     </div>
                     <div class="product-description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
+                        <p><?=$description_product?></p>
                     </div>
                     <div class="single-product-quantity">
                         <form class="add-quantity" action="#">
@@ -106,9 +104,8 @@
                     <div class="product-meta">
                         <span class="posted-in">
                             Categories:
-                            
-                            <a href="#"><?= ?>Accessories</a>,
-                            <a href="#">Electronics</a>
+
+                            <a href="#"><?= $name_cate['name_category']?></a>
                         </span>
                     </div>
                     <div class="single-product-sharing">
@@ -150,17 +147,7 @@
                     <div class="tab-content product-review-content-tab" id="myTabContent-4">
                         <div class="tab-pane fade active show" id="description">
                             <div class="single-product-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est
-                                    tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis
-                                    justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id
-                                    nulla.</p>
-                                <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis
-                                    fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa.
-                                    Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed
-                                    commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan
-                                    elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam
-                                    gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
+                                <p><?= $description_product?></p>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="reviews">

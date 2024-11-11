@@ -6,11 +6,11 @@ class Product extends Database
     {
         $this->db = new Database();
     }
-    //Hàm lấy sản phẩm theo danh muc
-    public function getProductsByProductId($id)
+    //Hàm lấy sản phẩm theo Id
+    public function getProductsById($id)
     {
-        $sql = "SELECT * FROM product WHERE id = $id";
-        return $this->db->getAll($sql);
+        $sql = "SELECT * FROM product WHERE id_product = $id";
+        return $this->db->getone($sql);
     }
     //Hàm lấy sản phẩm theo danh mục
     public function getProductsByCategory($id_cate, $limit)
