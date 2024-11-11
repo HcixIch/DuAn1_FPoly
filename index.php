@@ -3,8 +3,11 @@ session_start();
 ob_start();
 include_once 'models/m_database.php';
 include_once 'models/m_product.php';
+include_once 'models/m_category.php';
 $prod = new Product();
+// $cate = new Category();
 $pro_all = $prod->getProductsByCondition('all', "");
+// $cate_all = $cate->getAllCategories();
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
         case 'page':

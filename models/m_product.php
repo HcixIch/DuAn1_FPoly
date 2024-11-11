@@ -1,5 +1,4 @@
 <?php
-include_once "models/m_database.php";
 class Product extends Database
 {
     public $db;
