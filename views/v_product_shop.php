@@ -8,9 +8,16 @@
                     <h3 class="sidebar-title">Danh mục</h3>
                     <ul class="sidebar-list">
                         <?php foreach ($cate_all as $cate) {
-                            extract($cate); ?>
-                            <li><a href="#"><i class="fa fa-angle-right"></i><?= $name_category ?><span
-                                        class="count">(<?= $cates->countProductsByCategory($id_category) ?>)</span></a>
+                            extract($cate);
+                            // Call the countProductsByCategory function to get the count of products
+                            $product_count = $prod->countProductsByCategory($id_category);
+                        ?>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-angle-right"></i>
+                                    <?= $name_category ?>
+                                    <span class="count">(<?= $product_count[0]['total_product'] ?>)</span>
+                                </a>
                             </li>
                         <?php } ?>
                     </ul>

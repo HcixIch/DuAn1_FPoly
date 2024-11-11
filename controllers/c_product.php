@@ -10,6 +10,7 @@ if (isset($_GET['view'])) {
                 $ql_page = 1;
             }
             $list_page_product = $prod->getProductsByPage($ql_page, 9);
+
             // Kết thúc phân trang
             include_once './views/t_header.php';
             include_once './views/page_banner.php';
@@ -17,7 +18,7 @@ if (isset($_GET['view'])) {
             include_once './views/t_footer.php';
             break;
         case 'detail':
-            $pro_detail = $prod->getProductsById($_GET['id']);           
+            $pro_detail = $prod->getProductsById($_GET['id']);
             $name_cate =  $cates->getNameCategoryByProduct($_GET['id']);
             var_dump($name_cate);
             extract($pro_detail);
@@ -41,6 +42,7 @@ if (isset($_GET['view'])) {
         $ql_page = 1;
     }
     $list_page_product = $prod->getProductsByPage($ql_page, 9);
+
     // Kết thúc phân tra
     include_once './views/t_header.php';
     include_once './views/page_banner.php';

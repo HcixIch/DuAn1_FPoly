@@ -59,5 +59,13 @@ class Product extends Database
         $sql = "SELECT COUNT(*) as total_product FROM product WHERE id_category = $id";
         return $this->db->getAll($sql);
     }
-
+    public function getMinMaxPriceProduct($minmax)
+    {
+        $sql = "SELECT MIN(price) as min_price, MAX(price) as max_price FROM product";
+        if ($minmax == 'MIN') {
+            return $this->db->getone($sql);
+        } elseif ($minmax == 'MAX') {
+            return $this->db->getone($sql);
+        }
+    }
 }
