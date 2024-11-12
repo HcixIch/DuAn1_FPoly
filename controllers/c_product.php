@@ -23,14 +23,14 @@ if (isset($_GET['view'])) {
             extract($pro_detail);
             $related_products = $prod->getProductsByCategory($id_category, $_GET['id']);
 
-            if(isset($_POST['them'])){
+            if (isset($_POST['add_to_cart'])) {
                 $idproduct = $_POST['id'];
                 $quantity = $_POST['quantity'] ?? 1;
                 $cart->addProductToCart($idproduct, $quantity);
 
                 echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');</script>";
             }
-            
+
 
             $title = 'Sản phẩm chi tiết';
             include_once './views/t_header.php';

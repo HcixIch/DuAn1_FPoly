@@ -18,6 +18,9 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Danh sách sản phẩm ở đây -->
+                            <?php foreach ($cart_all as $ct) {
+                                extract($ct); ?>
                             <tr>
                                 <td class="pro-thumbnail"><a href="#"><img src="assets/images/product/product-1.jpg"
                                             alt="Sản phẩm"></a></td>
@@ -29,28 +32,7 @@
                                 <td class="pro-subtotal"><span>$25.00</span></td>
                                 <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
                             </tr>
-                            <tr>
-                                <td class="pro-thumbnail"><a href="#"><img src="assets/images/product/product-2.jpg"
-                                            alt="Sản phẩm"></a></td>
-                                <td class="pro-title"><a href="#">Máy mài đen</a></td>
-                                <td class="pro-price"><span>$25.00</span></td>
-                                <td class="pro-quantity">
-                                    <div class="pro-qty"><input type="number" value="1"></div>
-                                </td>
-                                <td class="pro-subtotal"><span>$25.00</span></td>
-                                <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="pro-thumbnail"><a href="#"><img src="assets/images/product/product-3.jpg"
-                                            alt="Sản phẩm"></a></td>
-                                <td class="pro-title"><a href="#">Máy khoan Decker màu cam</a></td>
-                                <td class="pro-price"><span>$25.00</span></td>
-                                <td class="pro-quantity">
-                                    <div class="pro-qty"><input type="number" value="1"></div>
-                                </td>
-                                <td class="pro-subtotal"><span>$25.00</span></td>
-                                <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                         <tfoot>
                             <tr>

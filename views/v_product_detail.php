@@ -83,12 +83,14 @@
                         <p><?= $description_product ?></p>
                     </div>
                     <div class="single-product-quantity">
-                        <form class="add-quantity" action="#">
+                        <form class="add-quantity" action="?ctrl=cart&&view=cart" method="post">
                             <div class="product-quantity">
-                                <input value="1" type="number">
+                                <input type="hidden" name="id_product" value="<?= $id_product ?>">
+                                <input value="1" name="quantity" type="number" min="1" max="<?= $quanlity_product ?>">
                             </div>
                             <div class="add-to-link">
-                                <button class="product-add-btn" data-text="add_to_cart">Đặt hàng</button>
+                                <button class="product-add-btn" name="add_to_cart" data-text="add_to_cart">Đặt
+                                    hàng</button>
                             </div>
                         </form>
                     </div>
