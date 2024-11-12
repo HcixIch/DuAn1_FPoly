@@ -7,23 +7,16 @@ class Cart extends Database
     {
         $this->db = new Database();
     }
-    // Thêm Sản phẩm
-    public function Checkproductindata($idproduct) {
-       $spl = "SELECT * FROM cart WHERE id_product = $id_product";
-       $kq = $this->db->getone($spl);
-       if($kq === null){
-        return 0;
-       } else { return $kq; }
+    // Add to cart
+    public function addToCart($product_id, $quantity)
+    {
+        $sql = "INSERT INTO cart (product_id, quantity) VALUES ($product_id, $quantity)";
+        return $this->db->insert($sql);
     }
-    public function addProductToCart( $idproduct, $quantity) {
-            if(is_array(Checkproductindata($idproduct) )){
-            // Cập nhật số lượng sản phẩm nếu đã có trong giỏ hàng
-            $sql = $this->db->update("UPDATE cart SET quantity_product = quantity_product + :quantity_product WHERE id_product = :id_product");
-        } else {
-            // Thêm sản phẩm mới vào giỏ hàng
-            $sql = $this->db->isert("INSERT INTO cart ( id_product, quantity_product) VALUES ( '".$idproduct."', '".$quantity."')");
-        }
-        return $this->db->getone($sql);
+    // Get all items in cart
+    public function getAllCartItems()
+    {
+        $sql = "SELECT * FROM cart";
+        return $this->db->getAll($sql);
     }
 }
-?>

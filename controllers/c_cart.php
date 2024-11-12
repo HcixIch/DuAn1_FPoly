@@ -9,7 +9,10 @@ if (isset($_GET['view'])) {
             include_once './views/t_footer.php';
             break;
         case 'cart':
-            
+            if (isset($_POST['add_to_cart']) && $_POST['add_to_cart']) {
+                // Add product to cart
+                $cart->addToCart($_POST['id_product'], $_POST['quantity']);
+            }
             $title = 'Giỏ hàng';
             include_once './views/t_header.php';
             include_once './views/page_banner.php';
@@ -22,6 +25,10 @@ if (isset($_GET['view'])) {
             break;
     }
 } else {
+    if (isset($_POST['add_to_cart']) && $_POST['add_to_cart']) {
+        // Add product to cart
+        $cart->addToCart($_POST['id_product'], $_POST['quantity']);
+    }
     $title = 'Giỏ hàng';
     include_once './views/t_header.php';
     include_once './views/slider.php';

@@ -10,6 +10,7 @@ $cates = new Category();
 $cart = new Cart();
 $pro_all = $prod->getProductsByCondition('all', "");
 $cate_all = $cates->getAllCategories();
+$cart_all = $cart->getAllCartItems();
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
         case 'page':

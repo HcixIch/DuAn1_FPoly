@@ -58,7 +58,7 @@
                                                 <span class="sticker">Mới</span>
                                             <?php } ?>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Đặt hàng</a>
+                                                <a class="product-btn" href="?ctrl=cart&&view">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -68,7 +68,8 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
+                                            <h3><a
+                                                    href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
                                             </h3>
                                             <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
                                                 <?php if ($sale == 1) { ?>
@@ -126,7 +127,7 @@
                                                 <span class="sticker">Mới</span>
                                             <?php } ?>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Đặt hàng</a>
+                                                <a class="product-btn" href="?ctrl=cart&&view">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -136,7 +137,8 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
+                                            <h3><a
+                                                    href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
                                             </h3>
                                             <h4 class="price"><span
                                                     class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
@@ -195,7 +197,7 @@
                                                 <span class="sticker">Mới</span>
                                             <?php } ?>
                                             <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="#">Đặt hàng</a>
+                                                <a class="product-btn" href="?ctrl=cart&&view">Đặt hàng</a>
                                                 <ul class="d-flex">
                                                     <li><a href="#quick-view-modal-container" data-toggle="modal"
                                                             title="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -205,7 +207,8 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
+                                            <h3><a
+                                                    href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
                                             </h3>
                                             <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
                                                 <?php if ($sale == 1) { ?>
@@ -296,7 +299,8 @@
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25
+                                    nguyên bản</a></h3>
                             <h4 class="price"><span class="new">₫2,620,000</span></h4>
                             <div class="buynow">
                                 <a class="product-category-btn" href="#">Đặt hàng</a>
@@ -313,7 +317,8 @@
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Quần dài Arsenal mùa giải 24/25 nguyên bản</a>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Quần dài Arsenal mùa giải
+                                    24/25 nguyên bản</a>
                             </h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
                             <div class="buynow">
@@ -331,7 +336,8 @@
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25
+                                    nguyên bản</a></h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
                             <div class="buynow">
                                 <a class="product-category-btn" href="#">Đặt hàng</a>
@@ -350,7 +356,8 @@
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Khoác Arsenal mùa giải 24/25 nguyên bản</a>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Khoác Arsenal mùa giải
+                                    24/25 nguyên bản</a>
                             </h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
                             <div class="buynow">
@@ -368,7 +375,8 @@
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Quần đùi Arsenal mùa giải 24/25 nguyên bản</a>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Quần đùi Arsenal mùa giải
+                                    24/25 nguyên bản</a>
                             </h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
                             <div class="buynow">
@@ -386,7 +394,8 @@
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25 nguyên bản</a></h3>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25
+                                    nguyên bản</a></h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
                             <div class="buynow">
                                 <a class="product-category-btn" href="#">Đặt hàng</a>
