@@ -20,19 +20,26 @@
                         <tbody>
                             <!-- Danh sách sản phẩm ở đây -->
                             <?php foreach ($cart_all as $ct) {
-                                extract($ct); ?>
-                            <tr>
-                                <td class="pro-thumbnail"><a href="#"><img src="assets/images/product/product-1.jpg"
-                                            alt="Sản phẩm"></a></td>
-                                <td class="pro-title"><a href="#">Dụng cụ phục hồi cáp màu đen</a></td>
-                                <td class="pro-price"><span>$25.00</span></td>
-                                <td class="pro-quantity">
-                                    <div class="pro-qty"><input type="number" value="1"></div>
-                                </td>
-                                <td class="pro-subtotal"><span>$25.00</span></td>
-                                <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
-                            </tr>
-                            <?php } ?>
+                                extract($ct);
+                                $subtitle = $quanlity * $price_product ?>
+                                <tr>
+                                    <td class="pro-thumbnail"><a href="#"><img
+                                                src="assets/images/product/<?= $img_product ?>" alt="Sản phẩm"></a></td>
+                                    <td class="pro-title"><a href="#"><?= $name_product ?></a></td>
+                                    <td class="pro-price"><span><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                    </td>
+                                    <td class="pro-quantity">
+                                        <div class="pro-qty"><input type="number" min="1" value="<?= $quanlity ?>">
+                                        </div>
+                                    </td>
+                                    <td class="pro-subtotal">
+                                        <span><?= number_format($subtitle, 0, ',', '.') ?>₫</span>
+                                    </td>
+                                    <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                </tr>
+                            <?php
+                            };
+                            ?>
                         </tbody>
                         <tfoot>
                             <tr>

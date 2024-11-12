@@ -28,12 +28,12 @@ class Cart extends Database
             return $this->db->insert($sql);
         }
     }
-    public function getAllCartItems($id_cart)
+    public function getAllCartDetailItems($id_cart)
     {
-        $sql = "SELECT *,img_product,name_product,price_product 
-        FROM cart
-        INNER JOIN product ON cart.id_product = product.id_product
-        WHERE cart.id_cart = $id_cart";
+        $sql = "SELECT *, product.img_product, product.name_product, product.price_product 
+            FROM cart_detail
+            INNER JOIN product ON cart_detail.id_product = product.id_product
+            WHERE cart_detail.id_cart_detail = $id_cart";
         return $this->db->getAll($sql);
     }
 }
