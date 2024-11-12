@@ -4,8 +4,10 @@ ob_start();
 include_once 'models/m_database.php';
 include_once 'models/m_product.php';
 include_once 'models/m_category.php';
+include_once 'models/m_cart.php';
 $prod = new Product();
 $cates = new Category();
+$cart = new Cart();
 $pro_all = $prod->getProductsByCondition('all', "");
 $cate_all = $cates->getAllCategories();
 if (isset($_GET['ctrl'])) {

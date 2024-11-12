@@ -76,19 +76,20 @@
 
                     <h2><?= $name_product ?></h2>
                     <div class="single-product-price">
-                        <span class="price new-price"><?= $price_product ?></span>
+                        <span class="price new-price"><?= $price_product ?> </span>
                         <span class="regular-price">$77.00</span>
                     </div>
                     <div class="product-description">
                         <p><?= $description_product ?></p>
                     </div>
                     <div class="single-product-quantity">
-                        <form class="add-quantity" action="#">
+                        <form class="add-quantity" action="ctrl?view=detail&id=<?= $id ?>" method="post">
+                            <input type="hidden" name="id" value="<?= $id_product ?>">
                             <div class="product-quantity">
-                                <input value="1" type="number">
+                                <input value="1" type="number" name="quantity" min="1">
                             </div>
                             <div class="add-to-link">
-                                <button class="product-add-btn" data-text="add_to_cart">Đặt hàng</button>
+                                <button class="product-add-btn" type="submit" name="them" data-text="add_to_cart">Đặt hàng</button>
                             </div>
                         </form>
                     </div>

@@ -9,6 +9,7 @@ if (isset($_GET['view'])) {
             include_once './views/t_footer.php';
             break;
         case 'cart':
+            
             $title = 'Giỏ hàng';
             include_once './views/t_header.php';
             include_once './views/page_banner.php';
