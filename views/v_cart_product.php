@@ -21,7 +21,7 @@
                             <!-- Danh sách sản phẩm ở đây -->
                             <?php foreach ($cart_all as $ct) {
                                 extract($ct);
-                                $subtitle = $quanlity * $price_product ?>
+                                $subtitle = $quantity * $price_product ?>
                                 <tr>
                                     <td class="pro-thumbnail"><a href="#"><img
                                                 src="assets/images/product/<?= $img_product ?>" alt="Sản phẩm"></a></td>
@@ -29,7 +29,7 @@
                                     <td class="pro-price"><span><?= number_format($price_product, 0, ',', '.') ?>₫</span>
                                     </td>
                                     <td class="pro-quantity">
-                                        <div class="pro-qty"><input type="number" min="1" value="<?= $quanlity ?>">
+                                        <div class="pro-qty"><input type="number" min="1" value="<?= $quantity ?>">
                                         </div>
                                     </td>
                                     <td class="pro-subtotal">
