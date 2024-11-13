@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2024 at 10:36 AM
+-- Generation Time: Nov 13, 2024 at 08:54 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.12
 
@@ -44,12 +44,43 @@ CREATE TABLE `blog` (
 
 CREATE TABLE `cart` (
   `id_cart` int NOT NULL,
-  `quanlity_product` int NOT NULL,
-  `subtitle_price` float NOT NULL,
+  `id_product` int NOT NULL,
+  `id_user` int NOT NULL,
+  `name` int NOT NULL,
+  `img` int NOT NULL,
+  `quantity` int NOT NULL,
+  `price` int NOT NULL,
+  `total` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id_cart`, `id_product`, `id_user`, `name`, `img`, `quantity`, `price`, `total`) VALUES
+(1, 29, 1, 1, 1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart_detail`
+--
+
+CREATE TABLE `cart_detail` (
+  `id_cart_detail` int NOT NULL,
+  `quanlity` int NOT NULL,
+  `price` float NOT NULL,
   `unit_price` float NOT NULL,
   `id_product` int NOT NULL,
   `id_checkout` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `cart_detail`
+--
+
+INSERT INTO `cart_detail` (`id_cart_detail`, `quanlity`, `price`, `unit_price`, `id_product`, `id_checkout`) VALUES
+(1, 1, 1, 1, 19, 3);
 
 -- --------------------------------------------------------
 
@@ -90,6 +121,13 @@ CREATE TABLE `checkout` (
   `id_voucher` int NOT NULL,
   `id_user` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `checkout`
+--
+
+INSERT INTO `checkout` (`id_checkout`, `full_name`, `address`, `phone`, `total_all`, `shipping_cost`, `provisional_total`, `payment_option`, `id_voucher`, `id_user`) VALUES
+(3, '1', '1', '1', 1, 1, 1, '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -165,6 +203,19 @@ INSERT INTO `product` (`id_product`, `img_product`, `name_product`, `price_produ
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_img`
+--
+
+CREATE TABLE `product_img` (
+  `id_product` int NOT NULL,
+  `hinh1` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `hinh2` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `hinh3` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -176,9 +227,15 @@ CREATE TABLE `user` (
   `email_user` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `user_name` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `password` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `role` bit(1) NOT NULL,
-  `id_checkout` int NOT NULL
+  `role` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `full_name`, `address_user`, `phone_user`, `email_user`, `user_name`, `password`, `role`) VALUES
+(1, '1', 1, '1', '1', '1', '1', b'0');
 
 -- --------------------------------------------------------
 
@@ -192,6 +249,13 @@ CREATE TABLE `voucher` (
   `condition_voucher` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `deadline` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `voucher`
+--
+
+INSERT INTO `voucher` (`id_voucher`, `discount`, `condition_voucher`, `deadline`) VALUES
+(1, 1, '1', '2024-11-12 14:55:31');
 
 --
 -- Indexes for dumped tables
@@ -209,6 +273,14 @@ ALTER TABLE `blog`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_cart`),
+  ADD KEY `user_cart` (`id_user`),
+  ADD KEY `cart_product` (`id_product`);
+
+--
+-- Indexes for table `cart_detail`
+--
+ALTER TABLE `cart_detail`
+  ADD PRIMARY KEY (`id_cart_detail`),
   ADD KEY `product_cart` (`id_product`),
   ADD KEY `cart_checkout` (`id_checkout`);
 
@@ -242,6 +314,12 @@ ALTER TABLE `product`
   ADD KEY `product_categories` (`id_category`);
 
 --
+-- Indexes for table `product_img`
+--
+ALTER TABLE `product_img`
+  ADD KEY `product_img` (`id_product`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -270,6 +348,12 @@ ALTER TABLE `cart`
   MODIFY `id_cart` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `cart_detail`
+--
+ALTER TABLE `cart_detail`
+  MODIFY `id_cart_detail` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -279,7 +363,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `id_checkout` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_checkout` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `comment`
@@ -297,13 +381,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `voucher`
 --
 ALTER TABLE `voucher`
-  MODIFY `id_voucher` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_voucher` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -319,6 +403,13 @@ ALTER TABLE `blog`
 -- Constraints for table `cart`
 --
 ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_product` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `user_cart` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `cart_detail`
+--
+ALTER TABLE `cart_detail`
   ADD CONSTRAINT `cart_checkout` FOREIGN KEY (`id_checkout`) REFERENCES `checkout` (`id_checkout`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `product_cart` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
@@ -341,6 +432,12 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_categories` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id_category`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `product_img`
+--
+ALTER TABLE `product_img`
+  ADD CONSTRAINT `product_img` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
