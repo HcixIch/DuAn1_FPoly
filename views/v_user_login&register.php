@@ -10,17 +10,17 @@
                         <h2>Đăng nhập</h2>
                     </div>
                     <div class="login-form">
-                        <form action="#">
+                        <form action="?ctrl=page&&view=home" method="post">
                             <div class="form-fild">
                                 <p><label>Email hoặc số điện thoại<span class="required">*</span></label></p>
-                                <input name="username" value="" type="text">
+                                <input name="email" value="" type="text">
                             </div>
                             <div class="form-fild">
                                 <p><label>Mật khẩu <span class="required">*</span></label></p>
                                 <input name="password" value="" type="password">
                             </div>
                             <div class="login-submit">
-                                <button type="submit" class="btn">Đăng nhập</button>
+                                <button type="submit" name="Login" class="btn">Đăng nhập</button>
                                 <label>
                                     <input class="checkbox" name="rememberme" value="" type="checkbox">
                                     <span>Ghi nhớ đăng nhập</span>
@@ -45,7 +45,7 @@
                         <form action="#">
                             <div class="form-fild">
                                 <p><label>Email hoặc số điện thoại<span class="required">*</span></label></p>
-                                <input name="username" value="" type="text">
+                                <input name="email" value="" type="text">
                             </div>
                             <div class="form-fild">
                                 <p><label>Mật khẩu<span class="required">*</span></label></p>
@@ -56,7 +56,7 @@
                                 <input name="confirm_password" value="" type="password">
                             </div>
                             <div class="register-submit">
-                                <button type="submit" class="btn">Đăng ký</button>
+                                <button type="submit" name="register" class="btn">Đăng ký</button>
                             </div>
                         </form>
                     </div>

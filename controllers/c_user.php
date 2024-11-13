@@ -9,6 +9,37 @@ if (isset($_GET['view'])) {
             include_once './views/t_footer.php';
             break;
         case 'login':
+            $kt=0;
+            if(isset($_POST['register'])) {
+                if($_POST['password']!=$_POST['confirm_password']) {
+                    echo "Mật khẩu không trùng khop.";
+                    $kt=1;
+                }
+                if(($kt==0)){
+                    $email = $user->getAllbyEmail($_POST['email']);
+                    if(count($email) != 0){
+                        echo"email đã đăng kí rồi";
+                        $kt=1;
+                    }
+                }
+                if($kt==0){
+                    $user->register($_POST['email'],$_POST['password']);
+                    echo "Đăng kí thành công.";
+                }
+            }
+            if(isset($_POST['Login'])) {
+                $acc = $user->login($_POST['email'],$_POST['psw']);
+                    if(count($acc)>0){
+                        if(isset($_SESSION['user'])){
+                            unset($_SESSION['user']);
+                        }
+                        $_SESSION['user'] = $acc;
+                        if($acc[0]['role']==0){
+                            header("location:index.php");
+                        }else{
+                            header("location:admin.php");
+                        }
+                    }}
             $title = "Đăng nhập và đăng ký";
             include_once './views/t_header.php';
             include_once './views/page_banner.php';
@@ -17,9 +48,8 @@ if (isset($_GET['view'])) {
             break;
         default:
             echo "Không tìm thấy trang này.";
-            break;
-    }
-} else {
+    
+    }}else {
     $title = "Đăng nhập và đăng ký";
     include_once './views/t_header.php';
     include_once './views/page_banner.php';
