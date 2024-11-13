@@ -12,23 +12,29 @@ if (isset($_GET['view'])) {
             $kt=0;
             if(isset($_POST['register'])) {
                 if($_POST['password']!=$_POST['confirm_password']) {
-                    echo "Mật khẩu không trùng khop.";
+                    echo "<script>alert('Mật khẩu không trùng khớp.')</script>";
                     $kt=1;
+                }
+                if(($kt==0)){
+                    if($_POST['password']==="") {
+                        echo "<script>alert('Vui lòng nhập mật khẩu')</script>";
+                        $kt=1;
+                    }
                 }
                 if(($kt==0)){
                     $email = $user->getAllbyEmail($_POST['email']);
                     if(count($email) != 0){
-                        echo"email đã đăng kí rồi";
+                        echo"<script>alert('email đã đăng kí rồi')</script>";
                         $kt=1;
                     }
                 }
                 if($kt==0){
-                    $user->register($_POST['email'],$_POST['password']);
+                    $user->CreateUser($_POST['email'],$_POST['password']);
                     echo "Đăng kí thành công.";
                 }
             }
             if(isset($_POST['Login'])) {
-                $acc = $user->login($_POST['email'],$_POST['psw']);
+                $acc = $user->login($_POST['email'],$_POST['password']);
                     if(count($acc)>0){
                         if(isset($_SESSION['user'])){
                             unset($_SESSION['user']);
