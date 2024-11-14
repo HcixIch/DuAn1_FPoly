@@ -22,7 +22,8 @@ if (isset($_GET['view'])) {
             $name_cate =  $cates->getNameCategoryByProduct($_GET['id']);
             extract($pro_detail);
             $related_products = $prod->getProductsByCategory($id_category, $_GET['id']);
-
+            $img_pro = $prod->getProductImages($_GET['id']);
+            $list_img = [$img_pro['hinh1'], $img_pro['hinh2'], $img_pro['hinh3'], $img_pro['hinh4']];
             if (isset($_POST['add_to_cart'])) {
                 $idproduct = $_POST['id'];
                 $quantity = $_POST['quantity'] ?? 1;

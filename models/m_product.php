@@ -69,4 +69,10 @@ class Product extends Database
             return $this->db->getone($sql);
         }
     }
+    // Hàm lấy ảnh sản phẩm từ bảng ảnh
+    public function getProductImages($id_product)
+    {
+        $sql = "SELECT * FROM product_img WHERE id_product = $id_product";
+        return $this->db->getOne($sql);
+    }
 }
