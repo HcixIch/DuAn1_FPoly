@@ -60,8 +60,11 @@
 
                     <h2><?= $name_product ?></h2>
                     <div class="single-product-price">
-                        <span class="price new-price"><?= $price_product ?></span>
-                        <span class="regular-price">$77.00</span>
+                        <span class="price new-price"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                        <?php if ($sale > 0) { ?>
+                            <span
+                                class="regular-price">-<?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span>
+                        <?php } ?>
                     </div>
                     <div class="product-description">
                         <p><?= $description_summary ?></p>
