@@ -64,8 +64,6 @@
                                 alt="product image thumb"></div>
                         <div class="sm-image"><img src="./assets/images/product/small-product/s-product-4.jpg"
                                 alt="product image thumb"></div>
-                        <div class="sm-image"><img src="./assets/images/product/small-product/s-product-5.jpg"
-                                alt="product image thumb"></div>
                     </div>
                 </div>
                 <!--Product Details Left -->
