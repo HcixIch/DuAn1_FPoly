@@ -19,9 +19,10 @@ class Category extends Database
         $sql = "SELECT * FROM categories WHERE id_category =?";
         return $this->db->getOne($sql, [$id]);
     }
-    public function getNameCategoryByProduct($id){
+    public function getNameCategoryByProduct($id)
+    {
         $sql =
-        "SELECT name_category
+            "SELECT name_category
         FROM product
         INNER JOIN categories ON product.id_category = categories.id_category
         WHERE product.id_product =$id";
