@@ -14,13 +14,14 @@ class Cart extends Database
         return $this->db->getone($sql);
     }
     // Add to cart
-    public function addToCart($product_id, $quantity)
+    public function addToCart($data)
     {
+        extract($data);
         // Check trùng
-        $duplicate = $this->checkDuplicate($product_id);
+        $duplicate = $this->checkDuplicate($id_product);
         if ($duplicate) {
-            $new_quantity = $duplicate['quantity_produc'] + $quantity;
-            $sql = "UPDATE cart_detail SET quantity_product = $new_quantity WHERE id_product = $product_id";
+            $new_quantity = $duplicate['quantity_product'] + $quantity;
+            $sql = "UPDATE cart_detail SET quantity_product = $new_quantity WHERE id_product = $id_product";
             return $this->db->update($sql);
         } else {
             // Thêm mới
