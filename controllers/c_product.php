@@ -1,4 +1,5 @@
 <?php
+include_once './views/t_header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'shop':
@@ -9,13 +10,16 @@ if (isset($_GET['view'])) {
             } else {
                 $ql_page = 1;
             }
-            $list_page_product = $prod->getProductsByPage($ql_page, 9);
-
+            if (isset($_GET['id_cate'])) {
+                $list_page_product = $prod->getProductsByPage($ql_page, $_GET['id_cate'], 9);
+                $count_product = count($prod->getProductsByCategory($_GET['id_cate'], ""));
+            } else {
+                $list_page_product = $prod->getProductsByPage($ql_page, "", 9);
+                $count_product = count($pro_all);
+            }
             // Kết thúc phân trang
-            include_once './views/t_header.php';
             include_once './views/page_banner.php';
             include_once './views/v_product_shop.php';
-            include_once './views/t_footer.php';
             break;
         case 'detail':
             $pro_detail = $prod->getProductsById($_GET['id']);
@@ -34,10 +38,8 @@ if (isset($_GET['view'])) {
 
 
             $title = 'Sản phẩm chi tiết';
-            include_once './views/t_header.php';
             include_once './views/page_banner.php';
             include_once './views/v_product_detail.php';
-            include_once './views/t_footer.php';
             break;
         case 'about':
         default:
@@ -52,11 +54,16 @@ if (isset($_GET['view'])) {
     } else {
         $ql_page = 1;
     }
-    $list_page_product = $prod->getProductsByPage($ql_page, 9);
+    if (isset($_GET['id_cate'])) {
+        $list_page_product = $prod->getProductsByPage($ql_page, $_GET['id_cate'], 9);
+        $count_product = count($prod->getProductsByCategory($_GET['id_cate'], ""));
+    } else {
+        $list_page_product = $prod->getProductsByPage($ql_page, "", 9);
+        $count_product = count($pro_all);
+    }
 
-    // Kết thúc phân tra
-    include_once './views/t_header.php';
+    // Kết thúc phân t
     include_once './views/page_banner.php';
     include_once './views/v_product_shop.php';
-    include_once './views/t_footer.php';
 }
+include_once './views/t_footer.php';

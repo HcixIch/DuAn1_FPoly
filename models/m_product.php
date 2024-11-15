@@ -44,9 +44,12 @@ class Product extends Database
         return $this->db->getAll($sql);
     }
     // Hàm phân trang
-    public function getProductsByPage($quantitypage, $pro_one_page)
+    public function getProductsByPage($quantitypage, $category, $pro_one_page)
     {
         $sql = "SELECT * FROM product";
+        if (isset($_GET['id_cate'])) {
+            $sql .= " WHERE id_category = $category";
+        }
         $limit1  = ($quantitypage - 1) * $pro_one_page;
         $limit2 = $pro_one_page;
         $sql .= " ORDER BY id_product limit " . $limit1 . "," . $limit2;

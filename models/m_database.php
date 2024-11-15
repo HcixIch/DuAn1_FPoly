@@ -77,7 +77,7 @@ class Database
     }
 
     // Phương thức đóng kết nối
-    public function close()
+    public function __destruct()
     {
         $this->conn = null;
     }
