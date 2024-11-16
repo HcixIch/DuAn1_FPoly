@@ -21,6 +21,11 @@ if (isset($_GET['view'])) {
         $price = $_POST['price'];
         $data = ['product_id' => $id_pro, 'quantity' => $quantity, 'price' => $price];
         $cart->addToCart($data, 1);
+        header('location:index.php?ctrl=cart');
+    }
+    if (isset($_GET['id_dl'])) {
+        $cart->deleteCartItem($_GET['id_dl']);
+        header('location:index.php?ctrl=cart');
     }
     $title = 'Giỏ hàng';
 

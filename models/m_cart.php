@@ -26,7 +26,7 @@ class Cart extends Database
             return $this->db->update($sql);
         } else {
             // Thêm mới
-            $total = $quantity * $price;
+            $subtotal = $quantity * $price;
             $sql = "INSERT INTO cart (id_product,id_user,quantity,subtotal) VALUES ($product_id,$id_user,$quantity,$subtotal)";
             return $this->db->insert($sql);
         }
@@ -38,5 +38,17 @@ class Cart extends Database
             INNER JOIN product ON cart.id_product = product.id_product
             WHERE cart.id_user = $id_user";
         return $this->db->getAll($sql);
+    }
+    // Delete Cart
+    public function deleteCartItem($id_cart)
+    {
+        $sql = "DELETE FROM cart WHERE id_cart = $id_cart";
+        return $this->db->delete($sql);
+    }
+    // Count product in cart
+    public function countProductInCart($id_user)
+    {
+        $sql = "SELECT COUNT(*) as total_cart FROM cart WHERE id_user = $id_user";
+        return $this->db->getone($sql);
     }
 }

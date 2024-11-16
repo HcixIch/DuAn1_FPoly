@@ -36,7 +36,8 @@
                                     <td class="pro-subtotal">
                                         <span><?= number_format($subtotal, 0, ',', '.') ?>₫</span>
                                     </td>
-                                    <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                    <td class="pro-remove"><a href="?ctrl=cart&&id_dl=<?= $id_cart ?>"><i
+                                                class="fa fa-trash-o"></i></a></td>
                                 </tr>
                             <?php
                             };
