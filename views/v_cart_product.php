@@ -20,8 +20,9 @@
                         <tbody>
                             <!-- Danh sách sản phẩm ở đây -->
                             <?php foreach ($cart_all as $ct) {
+                                $total = 0;
                                 extract($ct);
-                                $subtitle = $quantity * $price_product ?>
+                                $total += $subtotal; ?>
                                 <tr>
                                     <td class="pro-thumbnail"><a href="#"><img
                                                 src="assets/images/product/<?= $img_product ?>" alt="Sản phẩm"></a></td>
@@ -33,7 +34,7 @@
                                         </div>
                                     </td>
                                     <td class="pro-subtotal">
-                                        <span><?= number_format($subtitle, 0, ',', '.') ?>₫</span>
+                                        <span><?= number_format($subtotal, 0, ',', '.') ?>₫</span>
                                     </td>
                                     <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
                                 </tr>
@@ -47,7 +48,7 @@
                                     <h4 style="line-height: 45px;">Tổng cộng:</h4>
                                 </td>
                                 <td class="text-center">
-                                    <h4 style="line-height: 45px;">$200.000</h4>
+                                    <h4 style="line-height: 45px;"><?= number_format($total, 0, ',', '.') ?>₫</h4>
                                 </td>
                                 <td class="text-center">
                                     <div class="cart-summary-button">

@@ -72,7 +72,7 @@
                                 <ul>
                                     <li><a href="index.php">Trang chủ</a>
                                     </li>
-                                    <li><a href="?ctrl=product&&view=shop">Cửa hàng</a>
+                                    <li><a href="?ctrl=product">Cửa hàng</a>
                                     </li>
                                     <li><a href="blog.html">Bài viết</a>
                                     </li>
@@ -96,7 +96,7 @@
                                 </div>
                             </div>
                             <div class="header-cart">
-                                <a href="?ctrl=cart&&view=cart"><i class="fa fa-shopping-cart"></i><span>3</span></a>
+                                <a href="?ctrl=cart"><i class="fa fa-shopping-cart"></i><span>3</span></a>
                             </div>
                         </div>
                         <!--Search Cart End-->

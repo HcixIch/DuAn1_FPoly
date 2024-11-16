@@ -15,9 +15,6 @@ $cate_all = $cates->getAllCategories();
 $cart_all = $cart->getAllCartItems(1);
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
-        case 'page':
-            include_once "./controllers/c_page.php";
-            break;
         case 'product':
             include_once "./controllers/c_product.php";
             break;

@@ -2,25 +2,6 @@
 include_once './views/t_header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
-        case 'shop':
-            //Phân trang
-            $title = 'Sản phẩm';
-            if (isset($_GET['ql_page'])) {
-                $ql_page = $_GET['ql_page']; //ql là viết tắt của quantity
-            } else {
-                $ql_page = 1;
-            }
-            if (isset($_GET['id_cate'])) {
-                $list_page_product = $prod->getProductsByPage($ql_page, $_GET['id_cate'], 9);
-                $count_product = count($prod->getProductsByCategory($_GET['id_cate'], ""));
-            } else {
-                $list_page_product = $prod->getProductsByPage($ql_page, "", 9);
-                $count_product = count($pro_all);
-            }
-            // Kết thúc phân trang
-            include_once './views/page_banner.php';
-            include_once './views/v_product_shop.php';
-            break;
         case 'detail':
             $pro_detail = $prod->getProductsById($_GET['id']);
             $name_cate =  $cates->getNameCategoryByProduct($_GET['id']);
@@ -50,7 +31,7 @@ if (isset($_GET['view'])) {
     //Phân trang
     $title = 'Sản phẩm';
     if (isset($_GET['ql_page'])) {
-        $ql_page = $_GET['ql_page'];
+        $ql_page = $_GET['ql_page']; //ql là viết tắt của quantity
     } else {
         $ql_page = 1;
     }
@@ -61,8 +42,7 @@ if (isset($_GET['view'])) {
         $list_page_product = $prod->getProductsByPage($ql_page, "", 9);
         $count_product = count($pro_all);
     }
-
-    // Kết thúc phân t
+    // Kết thúc phân trang
     include_once './views/page_banner.php';
     include_once './views/v_product_shop.php';
 }

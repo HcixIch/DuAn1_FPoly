@@ -2,15 +2,6 @@
 include_once './views/t_header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
-        case 'home':
-            $pro_new = $prod->getProductsByCondition('new', "");
-            $pro_hot = $prod->getProductsByCondition('hot', "");
-            $pro_sale = $prod->getProductsByCondition('sale', "");
-
-            include_once './views/slider.php';
-            include_once './views/v_page_home.php';
-
-            break;
         case 'contact':
             $title = 'Liên hệ';
 
