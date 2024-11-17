@@ -96,9 +96,8 @@
                                 </div>
                             </div>
                             <div class="header-cart">
-                                <a href="?ctrl=cart"><i
-                                        class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart(1);
-                                                                                echo $cn['total_cart'] ?></span></a>
+                                <a href="?ctrl=cart"><i class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart(1);
+                                                                                                echo $cn['total_cart'] ?></span></a>
                             </div>
                         </div>
                         <!--Search Cart End-->
