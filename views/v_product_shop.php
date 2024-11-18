@@ -27,8 +27,10 @@
                 <div class="common-sidebar-widget">
                     <h3 class="sidebar-title">Price</h3>
                     <ul class="sidebar-list">
-                        <li><a href="#"><i class="fa fa-angle-right"></i><span class="price">€0.00</span> -
-                                <span class="price">€99.99</span> <span class="count">(7)</span></a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i><span class="price"><?php $minmax = $prod->getMinMaxPriceProduct("MIN");
+                                                                                                echo number_format($minmax['min_price'], 0, ',', '.') ?>₫</span> -
+                                <span class="price"><?= number_format($minmax['max_price'], 0, ',', '.') ?>₫</span></a>
+                        </li>
                         <li><a href="#"><i class="fa fa-angle-right"></i><span class="price">€100.00</span> and
                                 above <span class="count">(14)</span></a></li>
                     </ul>

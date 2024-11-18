@@ -65,7 +65,7 @@ class Product extends Database
     // Hàm tìm giá nhỏ nhất lớn nhất của sản phẩm
     public function getMinMaxPriceProduct($minmax)
     {
-        $sql = "SELECT MIN(price) as min_price, MAX(price) as max_price FROM product";
+        $sql = "SELECT MIN(price_product) as min_price, MAX(price_product) as max_price FROM product";
         if ($minmax == 'MIN') {
             return $this->db->getone($sql);
         } elseif ($minmax == 'MAX') {

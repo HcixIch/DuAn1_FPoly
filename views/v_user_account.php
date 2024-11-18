@@ -1,5 +1,6 @@
 <!--Phần Tài khoản của tôi bắt đầu-->
-<div class="my-account-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+<div
+    class="my-account-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
     <div class="container">
         <div class="row">
 
@@ -8,13 +9,15 @@
                     <!-- Bắt đầu menu Tài khoản của tôi -->
                     <div class="col-lg-3 col-12">
                         <div class="myaccount-tab-menu nav" role="tablist">
-                            <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i> Bảng điều khiển</a>
+                            <a href="#dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i> Bảng
+                                điều khiển</a>
 
                             <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Đơn hàng</a>
 
                             <a href="#download" data-toggle="tab"><i class="fa fa-cloud-download"></i> Tải xuống</a>
 
-                            <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i> Phương thức thanh toán</a>
+                            <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i> Phương thức
+                                thanh toán</a>
 
                             <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i> Địa chỉ</a>
 
@@ -181,7 +184,8 @@
                                         <p>Điện thoại: (123) 456-7890</p>
                                     </address>
 
-                                    <a href="#" class="btn d-inline-block edit-address-btn"><i class="fa fa-edit"></i>Chỉnh sửa địa chỉ</a>
+                                    <a href="#" class="btn d-inline-block edit-address-btn"><i
+                                            class="fa fa-edit"></i>Chỉnh sửa địa chỉ</a>
                                 </div>
                             </div>
                             <!-- Nội dung thẻ đơn lẻ Địa chỉ kết thúc -->
@@ -215,7 +219,8 @@
                                                 </div>
 
                                                 <div class="col-12 mb-30">
-                                                    <input id="current-pwd" placeholder="Mật khẩu hiện tại" type="password">
+                                                    <input id="current-pwd" placeholder="Mật khẩu hiện tại"
+                                                        type="password">
                                                 </div>
 
                                                 <div class="col-lg-6 col-12 mb-30">
@@ -223,7 +228,8 @@
                                                 </div>
 
                                                 <div class="col-lg-6 col-12 mb-30">
-                                                    <input id="confirm-pwd" placeholder="Xác nhận mật khẩu" type="password">
+                                                    <input id="confirm-pwd" placeholder="Xác nhận mật khẩu"
+                                                        type="password">
                                                 </div>
 
                                                 <div class="col-12">
