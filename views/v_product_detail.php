@@ -1,6 +1,6 @@
 <!-- Single Product Section Start -->
 <div
-    class="single-product-section section pt-30 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-30 pb-xs-20">
+    class="single-product-section section pt-30 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-lg-80 pb-md-70 pb-sm-30 pb-xs-20">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -15,58 +15,42 @@
                                 "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
                                 "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
                                 }'>
-                        <div class="lg-image">
-                            <img src="./assets/images/product/<?= $img_product ?>" alt="">
-                            <a href="./assets/images/product/large-product/l-product-1.jpg" class="popup-img venobox"
-                                data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                        </div>
-                        <div class="lg-image">
-                            <img src="./assets/images/product/large-product/l-product-2.jpg" alt="">
-                            <a href="./assets/images/product/large-product/l-product-2.jpg" class="popup-img venobox"
-                                data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                        </div>
-                        <div class="lg-image">
-                            <img src="./assets/images/product/large-product/l-product-3.jpg" alt="">
-                            <a href="./assets/images/product/large-product/l-product-3.jpg" class="popup-img venobox"
-                                data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                        </div>
-                        <div class="lg-image">
-                            <img src="./assets/images/product/large-product/l-product-4.jpg" alt="">
-                            <a href="./assets/images/product/large-product/l-product-4.jpg" class="popup-img venobox"
-                                data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                        </div>
+                        <?php foreach ($list_img as $ig) { ?>
+                            <div class="lg-image">
+                                <img src="./assets/images/product/detail-product/<?= $ig ?>" alt="">
+                                <a href="./assets/images/product/detail-product/<?= $ig ?>" class="popup-img venobox"
+                                    data-gall="myGallery"><i class="fa fa-expand"></i></a>
+                            </div>
+                        <?php } ?>
                     </div>
                     <div class="product-details-thumbs slider-thumbs-1 tf-element-carousel" data-slick-options='{
-                                "slidesToShow": 4,
-                                "slidesToScroll": 1,
-                                "infinite": true,
-                                "focusOnSelect": true,
-                                "asNavFor": ".slider-lg-image-1",
-                                "arrows": false,
-                                "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
-                                "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
-                                }' data-slick-responsive='[
-                                {"breakpoint":991, "settings": {
-                                    "slidesToShow": 3
-                                }},
-                                {"breakpoint":767, "settings": {
-                                    "slidesToShow": 4
-                                }},
-                                {"breakpoint":479, "settings": {
-                                    "slidesToShow": 2
-                                }}
-                            ]'>
-                        <div class="sm-image"><img src="./assets/images/product/small-product/s-product-1.jpg"
-                                alt="product image thumb"></div>
-                        <div class="sm-image"><img src="./assets/images/product/small-product/s-product-2.jpg"
-                                alt="product image thumb"></div>
-                        <div class="sm-image"><img src="./assets/images/product/small-product/s-product-3.jpg"
-                                alt="product image thumb"></div>
-                        <div class="sm-image"><img src="./assets/images/product/small-product/s-product-4.jpg"
-                                alt="product image thumb"></div>
-                        <div class="sm-image"><img src="./assets/images/product/small-product/s-product-5.jpg"
-                                alt="product image thumb"></div>
+    "slidesToShow": 4, 
+    "slidesToScroll": 2,
+    "infinite": true,
+    "focusOnSelect": true,
+    "asNavFor": ".slider-lg-image-1",
+    "arrows": false,
+    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-left" },
+    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-right" }
+}' data-slick-responsive='[
+    {"breakpoint": 991, "settings": {
+        "slidesToShow": 2
+    }},
+    {"breakpoint": 767, "settings": {
+        "slidesToShow": 2
+    }},
+    {"breakpoint": 479, "settings": {
+        "slidesToShow": 1
+    }}
+]'>
+                        <?php foreach ($list_img as $ig) { ?>
+                            <div class="sm-image">
+                                <img src="./assets/images/product/detail-product/<?= $ig ?>" alt="product image thumb"><br>
+                            </div>
+                        <?php } ?>
                     </div>
+
+
                 </div>
                 <!--Product Details Left -->
             </div>
@@ -76,20 +60,25 @@
 
                     <h2><?= $name_product ?></h2>
                     <div class="single-product-price">
-                        <span class="price new-price"><?= $price_product ?></span>
-                        <span class="regular-price">$77.00</span>
+                        <span class="price new-price"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                        <?php if ($sale > 0) { ?>
+                            <span
+                                class="regular-price">-<?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span>
+                        <?php } ?>
                     </div>
                     <div class="product-description">
-                        <p><?= $description_product ?></p>
+                        <p><?= $description_summary ?></p>
                     </div>
                     <div class="single-product-quantity">
-                        <form class="add-quantity" action="?ctrl=cart&&view=cart" method="post">
+                        <form class="add-quantity" action="?ctrl=cart" method="post">
                             <div class="product-quantity">
                                 <input type="hidden" name="id_product" value="<?= $id_product ?>">
+                                <input type="hidden" name="id_user" value="1">
+                                <input type="hidden" name="price" value="<?= $price_product ?>">
                                 <input value="1" name="quantity" type="number" min="1" max="<?= $quanlity_product ?>">
                             </div>
                             <div class="add-to-link">
-                                <button class="product-add-btn" name="add_to_cart" data-text="add_to_cart">Đặt
+                                <button class="product-add-btn" type="submit" name="add" data-text="add_to_cart">Đặt
                                     hàng</button>
                             </div>
                         </form>

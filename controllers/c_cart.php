@@ -1,37 +1,36 @@
 <?php
+include_once './views/t_header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'checkout':
             $title = 'Thanh toán';
-            include_once './views/t_header.php';
+
             include_once './views/page_banner.php';
             include_once './views/v_cart_checkout.php';
-            include_once './views/t_footer.php';
+
             break;
-        case 'cart':
-            if (isset($_POST['add_to_cart']) && $_POST['add_to_cart']) {
-                // Add product to cart
-                $cart->addToCart($_POST['id_product'], $_POST['quantity']);
-            }
-            $title = 'Giỏ hàng';
-            include_once './views/t_header.php';
-            include_once './views/page_banner.php';
-            include_once './views/v_cart_product.php';
-            include_once './views/t_footer.php';
-            break;
-        case 'about':
         default:
             echo "Không tìm thấy trang này.";
             break;
     }
 } else {
-    if (isset($_POST['add_to_cart']) && $_POST['add_to_cart']) {
+    if (isset($_POST['add'])) {
         // Add product to cart
-        $cart->addToCart($_POST['id_product'], $_POST['quantity']);
+        $id_pro = $_POST['id_product'];
+        $quantity = $_POST['quantity'] ?? 1;
+        $price = $_POST['price'];
+        $data = ['product_id' => $id_pro, 'quantity' => $quantity, 'price' => $price];
+        $cart->addToCart($data, 1);
+        header('location:index.php?ctrl=cart');
+    }
+    if (isset($_GET['id_dl'])) {
+        $cart->deleteCartItem($_GET['id_dl']);
+        header('location:index.php?ctrl=cart');
     }
     $title = 'Giỏ hàng';
-    include_once './views/t_header.php';
-    include_once './views/slider.php';
+
+    include_once './views/page_banner.php';
     include_once './views/v_cart_product.php';
-    include_once './views/t_footer.php';
 }
+
+include_once './views/t_footer.php';

@@ -20,8 +20,9 @@
                         <tbody>
                             <!-- Danh sách sản phẩm ở đây -->
                             <?php foreach ($cart_all as $ct) {
+                                $total = 0;
                                 extract($ct);
-                                $subtitle = $quanlity * $price_product ?>
+                                $total += $subtotal; ?>
                                 <tr>
                                     <td class="pro-thumbnail"><a href="#"><img
                                                 src="assets/images/product/<?= $img_product ?>" alt="Sản phẩm"></a></td>
@@ -29,13 +30,14 @@
                                     <td class="pro-price"><span><?= number_format($price_product, 0, ',', '.') ?>₫</span>
                                     </td>
                                     <td class="pro-quantity">
-                                        <div class="pro-qty"><input type="number" min="1" value="<?= $quanlity ?>">
+                                        <div class="pro-qty"><input type="number" min="1" value="<?= $quantity ?>">
                                         </div>
                                     </td>
                                     <td class="pro-subtotal">
-                                        <span><?= number_format($subtitle, 0, ',', '.') ?>₫</span>
+                                        <span><?= number_format($subtotal, 0, ',', '.') ?>₫</span>
                                     </td>
-                                    <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                    <td class="pro-remove"><a href="?ctrl=cart&&id_dl=<?= $id_cart ?>"><i
+                                                class="fa fa-trash-o"></i></a></td>
                                 </tr>
                             <?php
                             };
@@ -47,7 +49,7 @@
                                     <h4 style="line-height: 45px;">Tổng cộng:</h4>
                                 </td>
                                 <td class="text-center">
-                                    <h4 style="line-height: 45px;">$200.000</h4>
+                                    <h4 style="line-height: 45px;"><?= number_format($total, 0, ',', '.') ?>₫</h4>
                                 </td>
                                 <td class="text-center">
                                     <div class="cart-summary-button">

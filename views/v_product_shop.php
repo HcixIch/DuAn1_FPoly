@@ -13,7 +13,7 @@
                             $product_count = $prod->countProductsByCategory($id_category);
                         ?>
                             <li>
-                                <a href="#">
+                                <a href="?ctrl=product&&view=shop&&id_cate=<?= $id_category ?>">
                                     <i class="fa fa-angle-right"></i>
                                     <?= $name_category ?>
                                     <span class="count">(<?= $product_count[0]['total_product'] ?>)</span>
@@ -27,8 +27,10 @@
                 <div class="common-sidebar-widget">
                     <h3 class="sidebar-title">Price</h3>
                     <ul class="sidebar-list">
-                        <li><a href="#"><i class="fa fa-angle-right"></i><span class="price">€0.00</span> -
-                                <span class="price">€99.99</span> <span class="count">(7)</span></a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i><span class="price"><?php $minmax = $prod->getMinMaxPriceProduct("MIN");
+                                                                                                echo number_format($minmax['min_price'], 0, ',', '.') ?>₫</span> -
+                                <span class="price"><?= number_format($minmax['max_price'], 0, ',', '.') ?>₫</span></a>
+                        </li>
                         <li><a href="#"><i class="fa fa-angle-right"></i><span class="price">€100.00</span> and
                                 above <span class="count">(14)</span></a></li>
                     </ul>
@@ -159,34 +161,50 @@
                 <div class="row mb-30 mb-sm-40 mb-xs-30">
                     <div class="col">
                         <ul class="page-pagination">
+                            <!-- Previous Button -->
                             <li>
                                 <?php if ($ql_page > 1) { ?>
                                     <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page - 1 ?>"><i
                                             class="fa fa-angle-left"></i></a>
                                 <?php } else { ?>
-                                    <a href="?ctrl=product&&view=shop&&ql_page=1"><i class="fa fa-angle-left"></i></a>
+                                    <a href="javascript:void(0);" class="disabled"><i class="fa fa-angle-left"></i></a>
                                 <?php } ?>
                             </li>
-                            <?php $quantity_page = round(count($pro_all) / 9, 0);
-                            if (count($pro_all) % 9 < 8 && count($pro_all) % 9 > 0) {
-                                $quantity_page += 1;
-                            } ?>
-                            <?php for ($i = 1; $i < $quantity_page; $i++) { ?>
+
+                            <!-- Calculate Total Pages -->
+                            <?php
+                            $quantity_page = ceil($count_product / 9); // Round up to ensure all products are covered
+                            ?>
+
+                            <!-- Page Numbers -->
+                            <?php for ($i = 1; $i <= $quantity_page; $i++) {
+                                $link = "?";
+                                foreach ($_GET as $key => $val) {
+                                    if ($key != 'ql_page') {
+                                        $link .= $key . "=" . $val . "&";
+                                    }
+                                }
+                                $link .= "ql_page=" . $i;
+                            ?>
                                 <li class="<?= ($i == $ql_page) ? 'active' : '' ?>">
                                     <a class="page-link <?= ($i == $ql_page) ? 'bg-dark text-white' : '' ?>"
-                                        href="?ctrl=product&view=shop&ql_page=<?= $i ?>">
+                                        href="<?= $link ?>">
                                         <?= $i ?>
                                     </a>
                                 </li>
                             <?php } ?>
-                            <li><?php if ($ql_page < 4) { ?>
+
+                            <!-- Next Button -->
+                            <li>
+                                <?php if ($ql_page < $quantity_page) { ?>
                                     <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page + 1 ?>"><i
                                             class="fa fa-angle-right"></i></a>
                                 <?php } else { ?>
-                                    <a href="?ctrl=product&&view=shop&&ql_page=4"><i class="fa fa-angle-right"></i></a>
+                                    <a href="javascript:void(0);" class="disabled"><i class="fa fa-angle-right"></i></a>
                                 <?php } ?>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
