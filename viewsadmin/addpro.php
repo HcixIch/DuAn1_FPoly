@@ -11,7 +11,9 @@
                                 <form>
                                     <label for="">Danh mục sản phẩm</label>
                                     <select name="cate" id="cate" class="form-control"></select>
-                                        
+                                    <?= for()
+                                        <option value="$id">$name</option>
+                                    ?>
                                     <label for="">Tên sản phẩm</label>
                                     <input type="text" name="name" id="name" class="form-control"> 
                                     <label for="">Giá sản phẩm</label>

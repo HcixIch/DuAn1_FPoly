@@ -6,59 +6,35 @@
                             <div class="header">
                                 <h4 class="title">Danh mục các sản phẩm</h4>
                                 <div>
-                                    <a href="index.php?page=addpro"><button type="button" class="btn btn-primary">
-                                       Thêm sản phẩm
+                                    <a href=""><button type="button" class="btn btn-primary">
+                                       Thêm danh mục
                                     </button></a>
                                 </div>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
-                                        <th>STT</th>
+                                        <th>Id danh mục</th>
                                     	<th>Tên</th>
-                                        <th>Giá</th>
-                                    	<th>Hình ảnh</th>
+                                        <th>Tổng sản phẩm</th>
                                     	<th>Chức năng</th>
                                     </thead>
                                     <tbody>
+                                        <?php foreach($Allcates as $cate){
+                                            $i=0;
+                                            extract($cate);
+                                            $countpro = $prod->countProductsByCategory($id_category);?>
                                         <tr>
-                                        	<td>1</td>
-                                        	<td></td>
-                                        	<td></td>
-                                        	<td><img src="" alt="" height = "80px" width = "100px"></td>
+                                        	<td><?= $id_category?></td>
+                                        	<td><?= $name_category?></td>
+                                            <td><?=$countpro[$i]["total_product"]?></td>
                                         	<td><a href="">Sửa</a> | <a href="">Xóa</a></td>
                                         </tr>
-                                        
+                                        <?php $i++; } ?>
                                     </tbody>
                                 </table>
 
                             </div>
-                            <ul class="pagination-list">
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">1</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">2</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">3</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">...</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">10</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">
-                                        <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
                     </div>

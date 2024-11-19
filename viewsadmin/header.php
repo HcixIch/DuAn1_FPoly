@@ -47,13 +47,13 @@
 
             <ul class="nav">
                 <li>
-                    <a href="">
+                    <a href="?ctrl=admin&view=home">
                         <i class="pe-7s-graph"></i>
                         <p>Danh mục</p>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="?ctrl=admin&view=addpro">
                         <i class="pe-7s-note2"></i>
                         <p>Sản phẩm</p>
                     </a>
