@@ -4,12 +4,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Danh mục các sản phẩm</h4>
-                                <div>
-                                    <a href="index.php?page=addpro"><button type="button" class="btn btn-primary">
-                                       Thêm sản phẩm
-                                    </button></a>
-                                </div>
+                                <h4 class="title">Chi tiết sản phẩm</h4>
+                                <p class="category"></p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
@@ -22,11 +18,11 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        	<td>1</td>
-                                        	<td></td>
-                                        	<td></td>
-                                        	<td><img src="" alt="" height = "80px" width = "100px"></td>
-                                        	<td><a href="">Sửa</a> | <a href="">Xóa</a></td>
+                                            <td></td>
+                                            <td id="name"></td>
+                                            <td id="price"></td>
+                                            <td><img src="" alt="" id="image" height="80px"></td>
+                                            <td></td>
                                         </tr>
                                         
                                     </tbody>

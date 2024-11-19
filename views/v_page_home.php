@@ -272,9 +272,7 @@
         <div class="row-md-4 row-lg-4 row-sm-12">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title text-left">
-                        <h2>Sản phẩm theo danh mục</h2>
-                    </div>
+                    
                 </div>
             </div>
             <br>
@@ -294,12 +292,12 @@
                     <!-- Single Product Start -->
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
+                            <a href="?ctrl=product&&view=detail&&id=">
                                 <img src="assets/images/product/product-1.webp" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25
+                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Arsenal mùa giải 24/25
                                     nguyên bản</a></h3>
                             <h4 class="price"><span class="new">₫2,620,000</span></h4>
                             <div class="buynow">
@@ -312,12 +310,12 @@
                     <!-- Single Product Start -->
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
+                            <a href="?ctrl=product&&view=detail&&id=">
                                 <img src="assets/images/product/product-6.webp" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Quần dài Arsenal mùa giải
+                            <h3><a href="?ctrl=product&&view=detail&&id=">Quần dài Arsenal mùa giải
                                     24/25 nguyên bản</a>
                             </h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
@@ -331,12 +329,12 @@
                     <!-- Single Product Start -->
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
+                            <a href="?ctrl=product&&view=detail&&id=">
                                 <img src="assets/images/product/product-5.webp" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25
+                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Arsenal mùa giải 24/25
                                     nguyên bản</a></h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
                             <div class="buynow">
@@ -351,12 +349,12 @@
                     <!-- Single Product Start -->
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
+                            <a href="?ctrl=product&&view=detail&&id=">
                                 <img src="assets/images/product/product-2.webp" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Khoác Arsenal mùa giải
+                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Khoác Arsenal mùa giải
                                     24/25 nguyên bản</a>
                             </h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
@@ -370,12 +368,12 @@
                     <!-- Single Product Start -->
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
+                            <a href="?ctrl=product&&view=detail&&id=">
                                 <img src="assets/images/product/product-8.webp" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Quần đùi Arsenal mùa giải
+                            <h3><a href="?ctrl=product&&view=detail&&id=">Quần đùi Arsenal mùa giải
                                     24/25 nguyên bản</a>
                             </h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
@@ -389,12 +387,12 @@
                     <!-- Single Product Start -->
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
+                            <a href="?ctrl=product&&view=detail&&id=">
                                 <img src="assets/images/product/product-5.webp" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">Áo Arsenal mùa giải 24/25
+                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Arsenal mùa giải 24/25
                                     nguyên bản</a></h3>
                             <h4 class="price"><span class="new">₫2,910,500</span></h4>
                             <div class="buynow">

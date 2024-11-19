@@ -35,5 +35,6 @@ if (isset($_GET['ctrl'])) {
             break;
     }
 } else {
+    
     include_once "./controllers/c_page.php";
 }
