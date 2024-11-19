@@ -1,17 +1,17 @@
 <?php
-include_once '.views_admin/header.php';
+include_once './viewsadmin/header.php';
     if (isset($_GET['view'])){
         switch ($_GET['view']) {
             case 'home':
-                include_once './model/m_Database.php';
-                include_once './model/m_sanpham.php';
-                include_once '.views_admin/home.php';
+                include_once './models/m_database.php';
+                include_once './models/m_product.php';
+                include_once './viewsadmin/home.php';
                 break;
             default:
-                include_once './model/m_Database.php';
-                include_once './model/m_sanpham.php';
-                include_once '.views_admin/home.php';
+                include_once './models/m_database.php';
+                include_once './models/m_product.php';
+                include_once './viewsadmin/home.php';
         }
     }
-include_once '.views_admin/footer.php';
+include_once './viewsadmin/footer.php';
 ?>
