@@ -22,7 +22,7 @@ if (isset($_GET['ctrl'])) {
             include_once "./controllers/c_user.php";
             break;
         case 'admin':
-            include_once "./controller/c_admin.php";
+            include_once "./controllers/c_admin.php";
             break;
         case 'cart':
             include_once "./controllers/c_cart.php";
@@ -32,5 +32,6 @@ if (isset($_GET['ctrl'])) {
             break;
     }
 } else {
+    
     include_once "./controllers/c_page.php";
 }

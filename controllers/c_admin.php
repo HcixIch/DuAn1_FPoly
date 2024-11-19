@@ -1,19 +1,15 @@
 <?php
+include_once './viewsadmin/header.php';
     if (isset($_GET['view'])){
         switch ($_GET['view']) {
-            case 'home':
-                include_once './model/m_Database.php';
-                include_once './model/m_sanpham.php';
-                include_once '.views_admin/header.php';
-                include_once '.views_admin/home.php';
-                include_once '.views_admin/footer.php';
+            case 'addpro':
+                include_once './viewsadmin/addpro.php';
                 break;
-            default:
-                include_once './model/m_Database.php';
-                include_once './model/m_sanpham.php';
-                include_once '.views_admin/header.php';
-                include_once '.views_admin/home.php';
-                include_once '.views_admin/footer.php';
         }
     }
+    else{
+            $Allcates = $cates->getAllCategories();
+            include_once './viewsadmin/home.php';
+    }
+include_once './viewsadmin/footer.php';
 ?>
