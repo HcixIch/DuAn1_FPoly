@@ -70,12 +70,6 @@
                         <p>Đơn hàng</p>
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <i class="pe-7s-bell"></i>
-                        <p>Thông báo</p>
-                    </a>
-                </li>
 				
             </ul>
     	</div>
