@@ -36,11 +36,15 @@ if (isset($_GET['view'])) {
         $ql_page = 1;
     }
     if (isset($_GET['id_cate'])) {
-        $list_page_product = $prod->getProductsByPage($ql_page, $_GET['id_cate'], 9);
+        $list_page_product = $prod->getProductsByPage($ql_page, "cate", 9);
         $count_product = count($prod->getProductsByCategory($_GET['id_cate'], ""));
     } else {
-        $list_page_product = $prod->getProductsByPage($ql_page, "", 9);
+        $list_page_product = $prod->getProductsByPage($ql_page, "all", 9);
         $count_product = count($pro_all);
+    }
+    if (isset($_POST['search_price'])) {
+        $list_page_product = $prod->getProductsByPage($ql_page, "min_max", 9);
+        $count_product = count($prod->searchProductByPrice($_POST['number_min'], $_POST['number_max']));
     }
     // Kết thúc phân trang
     include_once './views/page_banner.php';

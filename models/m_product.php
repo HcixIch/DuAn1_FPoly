@@ -43,12 +43,33 @@ class Product extends Database
         }
         return $this->db->getAll($sql);
     }
+    // Hàm tìm giá nhỏ nhất lớn nhất của sản phẩm
+    public function getMinMaxPriceProduct($minmax)
+    {
+        $sql = "SELECT MIN(price_product) as min_price, MAX(price_product) as max_price FROM product";
+        if ($minmax == 'MIN') {
+            return $this->db->getone($sql);
+        } elseif ($minmax == 'MAX') {
+            return $this->db->getone($sql);
+        }
+    }
     // Hàm phân trang
-    public function getProductsByPage($quantitypage, $category, $pro_one_page)
+    public function getProductsByPage($quantitypage, $listproduct, $pro_one_page)
     {
         $sql = "SELECT * FROM product";
-        if (isset($_GET['id_cate'])) {
-            $sql .= " WHERE id_category = $category";
+        switch ($listproduct) {
+            case 'all':
+                break;
+            case 'cate':
+                if (isset($_GET['id_cate'])) {
+                    $sql .= " WHERE id_category = $_GET[id_cate]";
+                }
+                break;
+            case 'min_max':
+                if (isset($_POST['number_min']) && isset($_POST['number_max'])) {
+                    $sql .= " WHERE price_product BETWEEN $_POST[number_min] AND $_POST[number_max]";
+                }
+                break;
         }
         $limit1  = ($quantitypage - 1) * $pro_one_page;
         $limit2 = $pro_one_page;
@@ -62,20 +83,15 @@ class Product extends Database
         $sql = "SELECT COUNT(*) as total_product FROM product WHERE id_category = $id";
         return $this->db->getAll($sql);
     }
-    // Hàm tìm giá nhỏ nhất lớn nhất của sản phẩm
-    public function getMinMaxPriceProduct($minmax)
-    {
-        $sql = "SELECT MIN(price_product) as min_price, MAX(price_product) as max_price FROM product";
-        if ($minmax == 'MIN') {
-            return $this->db->getone($sql);
-        } elseif ($minmax == 'MAX') {
-            return $this->db->getone($sql);
-        }
-    }
     // Hàm lấy ảnh sản phẩm từ bảng ảnh
     public function getProductImages($id_product)
     {
         $sql = "SELECT * FROM product_img WHERE id_product = $id_product";
         return $this->db->getOne($sql);
+    }
+    public function searchProductByPrice($minp, $maxp)
+    {
+        $sql = "SELECT * FROM product WHERE price_product BETWEEN $minp AND $maxp";
+        return $this->db->getAll($sql);
     }
 }

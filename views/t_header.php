@@ -12,7 +12,13 @@
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/helper.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Modernizr -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!-- Bootstrap Bundle JS (bao gồm Popper.js và các tính năng JS của Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>Trang chủ</title>
 </head>
 
@@ -96,8 +102,9 @@
                                 </div>
                             </div>
                             <div class="header-cart">
-                                <a href="?ctrl=cart"><i class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart(1);
-                                                                                                echo $cn['total_cart'] ?></span></a>
+                                <a href="?ctrl=cart"><i
+                                        class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart(1);
+                                                                                echo $cn['total_cart'] ?></span></a>
                             </div>
                         </div>
                         <!--Search Cart End-->

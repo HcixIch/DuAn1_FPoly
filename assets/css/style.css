@@ -6182,6 +6182,9 @@ a.popup-img {
 /*  09. Categorie CSS
 /*----------------------------------------*/
 /* Categorie Product CSS */
+.collapse {
+  box-shadow: none !important;
+}
 .single-categorie {
   text-align: center;
   overflow: hidden;

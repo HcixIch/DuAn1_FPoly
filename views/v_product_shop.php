@@ -9,17 +9,19 @@
                     <ul class="sidebar-list">
                         <?php foreach ($cate_all as $cate) {
                             extract($cate);
+                            $i = 0;
                             // Call the countProductsByCategory function to get the count of products
                             $product_count = $prod->countProductsByCategory($id_category);
                         ?>
                             <li>
-                                <a href="?ctrl=product&&view=shop&&id_cate=<?= $id_category ?>">
+                                <a href="?ctrl=product&&id_cate=<?= $id_category ?>">
                                     <i class="fa fa-angle-right"></i>
                                     <?= $name_category ?>
                                     <span class="count">(<?= $product_count[0]['total_product'] ?>)</span>
                                 </a>
                             </li>
-                        <?php } ?>
+                        <?php $i++;
+                        } ?>
                     </ul>
                 </div>
                 <!-- Single Sidebar End  -->
@@ -27,10 +29,35 @@
                 <div class="common-sidebar-widget">
                     <h3 class="sidebar-title">Price</h3>
                     <ul class="sidebar-list">
-                        <li><a href="#"><i class="fa fa-angle-right"></i><span class="price"><?php $minmax = $prod->getMinMaxPriceProduct("MIN");
-                                                                                                echo number_format($minmax['min_price'], 0, ',', '.') ?>₫</span> -
-                                <span class="price"><?= number_format($minmax['max_price'], 0, ',', '.') ?>₫</span></a>
+                        <li>
+                            <!-- Liên kết kích hoạt collapse -->
+                            <a href="#" class="d-block" data-bs-toggle="collapse" data-bs-target="#priceInput"
+                                aria-expanded="false" aria-controls="priceInput">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="price">
+                                    <?php
+                                    $minmax = $prod->getMinMaxPriceProduct("MIN");
+                                    echo number_format($minmax['min_price'], 0, ',', '.'); ?>₫
+                                </span> -
+                                <span class="price"><?= number_format($minmax['max_price'], 0, ',', '.') ?>₫</span>
+                            </a>
+
+                            <!-- Nội dung collapse -->
+                            <div class="collapse mt-2" id="priceInput">
+                                <form action="?ctrl=product&&minmax=search" method="post">
+                                    <label for="min-price" class="form-label">Giá tối thiểu:</label>
+                                    <input type="number" name="number_min" id="min-price" class="form-control mb-2"
+                                        placeholder="Nhập giá tối thiểu">
+                                    <label for="max-price" class="form-label">Giá tối đa:</label>
+                                    <input type="number" name="number_max" id="max-price" class="form-control mb-3"
+                                        placeholder="Nhập giá tối đa">
+                                    <button type="submit" name="search_price" class="btn btn-primary w-100">Áp
+                                        dụng</button>
+                                </form>
+                            </div>
                         </li>
+
+
                         <li><a href="#"><i class="fa fa-angle-right"></i><span class="price">€100.00</span> and
                                 above <span class="count">(14)</span></a></li>
                     </ul>
@@ -164,7 +191,7 @@
                             <!-- Previous Button -->
                             <li>
                                 <?php if ($ql_page > 1) { ?>
-                                    <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page - 1 ?>"><i
+                                    <a href="?ctrl=product&&ql_page=<?= $ql_page - 1 ?>"><i
                                             class="fa fa-angle-left"></i></a>
                                 <?php } else { ?>
                                     <a href="javascript:void(0);" class="disabled"><i class="fa fa-angle-left"></i></a>
@@ -197,7 +224,7 @@
                             <!-- Next Button -->
                             <li>
                                 <?php if ($ql_page < $quantity_page) { ?>
-                                    <a href="?ctrl=product&&view=shop&&ql_page=<?= $ql_page + 1 ?>"><i
+                                    <a href="?ctrl=product&&ql_page=<?= $ql_page + 1 ?>"><i
                                             class="fa fa-angle-right"></i></a>
                                 <?php } else { ?>
                                     <a href="javascript:void(0);" class="disabled"><i class="fa fa-angle-right"></i></a>
