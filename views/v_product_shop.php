@@ -44,17 +44,18 @@
 
                             <!-- Nội dung collapse -->
                             <div class="collapse mt-2" id="priceInput">
-                                <form action="?ctrl=product&&minmax=search" method="post">
+                                <form action="?ctrl=product" method="post">
                                     <label for="min-price" class="form-label">Giá tối thiểu:</label>
                                     <input type="number" name="number_min" id="min-price" class="form-control mb-2"
-                                        placeholder="Nhập giá tối thiểu">
+                                        placeholder="Nhập giá tối thiểu" value="<?= htmlspecialchars($min_price) ?>">
                                     <label for="max-price" class="form-label">Giá tối đa:</label>
                                     <input type="number" name="number_max" id="max-price" class="form-control mb-3"
-                                        placeholder="Nhập giá tối đa">
+                                        placeholder="Nhập giá tối đa" value="<?= htmlspecialchars($max_price) ?>">
                                     <button type="submit" name="search_price" class="btn btn-primary w-100">Áp
                                         dụng</button>
                                 </form>
                             </div>
+
                         </li>
 
 

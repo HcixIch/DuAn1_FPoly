@@ -43,8 +43,10 @@ if (isset($_GET['view'])) {
         $count_product = count($pro_all);
     }
     if (isset($_POST['search_price'])) {
+        $min_price = $_POST['number_min'];
+        $max_price = $_POST['number_max'];
         $list_page_product = $prod->getProductsByPage($ql_page, "min_max", 9);
-        $count_product = count($prod->searchProductByPrice($_POST['number_min'], $_POST['number_max']));
+        $count_product = count($prod->searchProductByPrice($min_price, $max_price));
     }
     // Kết thúc phân trang
     include_once './views/page_banner.php';
