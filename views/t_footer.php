@@ -8,7 +8,8 @@
                 <!--Footer Widget start-->
                 <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                     <h4 class="title"><span class="text">Về TheFace</span></h4>
-                    <p>Arsenal Store – nơi cung cấp quần áo chính hãng, chất lượng cao, thể hiện niềm đam mê và phong cách của fan hâm mộ Arsenal.</p>
+                    <p>Arsenal Store – nơi cung cấp quần áo chính hãng, chất lượng cao, thể hiện niềm đam mê và phong
+                        cách của fan hâm mộ Arsenal.</p>
                     <div class="footer-social">
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -96,6 +97,52 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    $(document).ready(function() {
+        // Lắng nghe sự kiện thay đổi của dropdown "Sort By"
+        $('#sort-by').change(function() {
+            var sortBy = $(this).val(); // Lấy giá trị của lựa chọn
+            var showCount = $('#show-count').val();
+            var page = getUrlParameter('ql_page') || 1;
+            var minPrice = getUrlParameter('min_price') || <?= $min_price ?>;
+            var maxPrice = getUrlParameter('max_price') || <?= $max_price ?>;
+            var category = getUrlParameter('id_cate') || '';
+
+            // Gửi yêu cầu AJAX để lấy dữ liệu theo thứ tự sắp xếp
+            $.ajax({
+                url: './controllers/c_product.php', // URL hiện tại hoặc nơi bạn muốn gửi yêu cầu
+                method: 'POST',
+                data: {
+                    ctrl: 'product',
+                    ql_page: page,
+                    min_price: minPrice,
+                    max_price: maxPrice,
+                    id_cate: category,
+                    sort_by: sortBy, // Truyền giá trị sắp xếp vào
+                    show_count: showCount
+                },
+                success: function(response) {
+                    // Cập nhật lại các sản phẩm và phân trang
+                    var productsHtml = $(response).find('.product-grid-view').html();
+                    $('.product-grid-view').html(productsHtml);
+                    var paginationHtml = $(response).find('.page-pagination').html();
+                    $('.page-pagination').html(paginationHtml);
+                }
+            });
+        });
+
+        // Hàm lấy tham số từ URL (để duy trì phân trang và bộ lọc)
+        function getUrlParameter(name) {
+            var url = window.location.href;
+            var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(url);
+            if (results == null) {
+                return '';
+            } else {
+                return decodeURIComponent(results[1]) || '';
+            }
+        }
+    });
+</script>
 </body>
 
 </html>

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/plugins.css">
     <link rel="stylesheet" href="assets/css/helper.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Modernizr -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>

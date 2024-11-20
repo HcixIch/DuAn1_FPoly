@@ -91,4 +91,9 @@ class Product extends Database
         $sql = "SELECT * FROM product WHERE price_product BETWEEN $minp AND $maxp";
         return $this->db->getAll($sql);
     }
+    public function getProductbySort($sort)
+    {
+        $sql = "SELECT * FROM product ORDER BY $sort";
+        return $this->db->getAll($sql);
+    }
 }

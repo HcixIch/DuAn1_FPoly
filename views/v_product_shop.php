@@ -20,13 +20,13 @@
                             // Call the countProductsByCategory function to get the count of products
                             $product_count = $prod->countProductsByCategory($id_category);
                         ?>
-                        <li>
-                            <a href="?ctrl=product&&id_cate=<?= $id_category ?>">
-                                <i class="fa fa-angle-right"></i>
-                                <?= $name_category ?>
-                                <span class="count">(<?= $product_count[0]['total_product'] ?>)</span>
-                            </a>
-                        </li>
+                            <li>
+                                <a href="?ctrl=product&&id_cate=<?= $id_category ?>">
+                                    <i class="fa fa-angle-right"></i>
+                                    <?= $name_category ?>
+                                    <span class="count">(<?= $product_count[0]['total_product'] ?>)</span>
+                                </a>
+                            </li>
                         <?php $i++;
                         } ?>
                     </ul>
@@ -65,6 +65,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <!-- Single Sidebar End -->
             </div>
 
@@ -75,52 +76,87 @@
                         <div id="grid" class="tab-pane fade active show">
                             <div class="product-grid-view">
                                 <div class="row">
-                                    <?php if ($list_page_product != []) { ?>
-                                    <?php foreach ($list_page_product as $pd) {
-                                            extract($pd); ?>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <!-- Single Product Start -->
-                                        <div class="single-product mb-30">
-                                            <div class="product-img">
-                                                <a href="single-product.html">
-                                                    <img src="./assets/images/product/<?= $img_product ?>" alt="">
-                                                </a>
-                                                <?php if ($sale > 0) { ?>
-                                                <span class="descount-sticker">-<?= $sale ?>%</span>
-                                                <?php } ?>
-                                                <?php if ($hot == 1) { ?>
-                                                <span class="sticker">Mới</span>
-                                                <?php } ?>
-                                                <div class="product-action d-flex justify-content-between">
-                                                    <a class="product-btn" href="#">Đặt hàng</a>
-                                                    <ul class="d-flex">
-                                                        <li><a href="#quick-view-modal-container" data-toggle="modal"
-                                                                title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                                    </ul>
+                                    <div class="col-12">
+                                        <!-- Grid & List View Start -->
+                                        <div
+                                            class="shop-topbar-wrapper d-md-flex justify-content-md-between align-items-center">
+                                            <div class="grid-list-option">
+                                            </div>
+                                            <!--Toolbar Short Area Start-->
+                                            <div class="toolbar-short-area d-md-flex align-items-center">
+                                                <div class="toolbar-shorter ">
+                                                    <label>Sort By:</label>
+                                                    <select id="sort-by" class="form-select">
+                                                        <option value="default" selected>Không có</option>
+                                                        <option value="name-asc">Tên: A đến Z</option>
+                                                        <option value="name-desc">Tên: Z đến A</option>
+                                                        <option value="price-asc">Giá: Thấp đến Cao</option>
+                                                        <option value="price-desc">Giá: Cao đến Thấp</option>
+                                                    </select>
+
                                                 </div>
+                                                <div class="toolbar-shorter ">
+                                                    <label>Show</label>
+                                                    <select id="show-count" class="form-select">
+                                                        <option value="9" selected>9</option>
+                                                        <option value="15">15</option>
+                                                        <option value="30">30</option>
+                                                    </select>
+                                                </div>
+
                                             </div>
-                                            <div class="product-content">
-                                                <h3><a href="single-product.html"><?= $name_product ?></a>
-                                                </h3>
-                                                <h4 class="price"><span
-                                                        class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
-                                                    <?php if ($sale > 0) { ?>
-                                                    <del
-                                                        class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</del>
-                                                    <?php } ?>
-                                                </h4>
-                                            </div>
+                                            <!--Toolbar Short Area End-->
                                         </div>
-                                        <!-- Single Product End -->
+                                        <!-- Grid & List View End -->
                                     </div>
-                                    <?php } ?>
+                                </div>
+                                <div class="row">
+                                    <?php if ($list_page_product != []) { ?>
+                                        <?php foreach ($list_page_product as $pd) {
+                                            extract($pd); ?>
+                                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                                <!-- Single Product Start -->
+                                                <div class="single-product mb-30">
+                                                    <div class="product-img">
+                                                        <a href="single-product.html">
+                                                            <img src="./assets/images/product/<?= $img_product ?>" alt="">
+                                                        </a>
+                                                        <?php if ($sale > 0) { ?>
+                                                            <span class="descount-sticker">-<?= $sale ?>%</span>
+                                                        <?php } ?>
+                                                        <?php if ($hot == 1) { ?>
+                                                            <span class="sticker">Mới</span>
+                                                        <?php } ?>
+                                                        <div class="product-action d-flex justify-content-between">
+                                                            <a class="product-btn" href="#">Đặt hàng</a>
+                                                            <ul class="d-flex">
+                                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
+                                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <h3><a href="single-product.html"><?= $name_product ?></a>
+                                                        </h3>
+                                                        <h4 class="price"><span
+                                                                class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                                            <?php if ($sale > 0) { ?>
+                                                                <del
+                                                                    class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</del>
+                                                            <?php } ?>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Product End -->
+                                            </div>
+                                        <?php } ?>
 
                                     <?php } else { ?>
-                                    <div class="prod-null">
-                                        <i class="fa-solid fa-face-frown"></i>
-                                        <p>Không có sản phẩm phù hợp với tiêu chí bạn tìm</p>
-                                    </div>
+                                        <div class="prod-null">
+                                            <i class="fa-solid fa-face-frown"></i>
+                                            <p>Không có sản phẩm phù hợp với tiêu chí bạn tìm</p>
+                                        </div>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -143,12 +179,12 @@
 
                             <!-- Page Numbers -->
                             <?php for ($i = 1; $i <= $quantity_page; $i++) { ?>
-                            <li class="<?= ($i == $ql_page) ? 'active' : '' ?>">
-                                <a
-                                    href="?ctrl=product&ql_page=<?= $i ?>&min_price=<?= $min_price ?>&max_price=<?= $max_price ?><?= isset($_GET['id_cate']) ? '&id_cate=' . $_GET['id_cate'] : '' ?>">
-                                    <?= $i ?>
-                                </a>
-                            </li>
+                                <li class="<?= ($i == $ql_page) ? 'active' : '' ?>">
+                                    <a
+                                        href="?ctrl=product&ql_page=<?= $i ?>&min_price=<?= $min_price ?>&max_price=<?= $max_price ?><?= isset($_GET['id_cate']) ? '&id_cate=' . $_GET['id_cate'] : '' ?>">
+                                        <?= $i ?>
+                                    </a>
+                                </li>
                             <?php } ?>
 
                             <!-- Next Page Button -->
