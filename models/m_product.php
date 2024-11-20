@@ -54,29 +54,26 @@ class Product extends Database
         }
     }
     // Hàm phân trang
-    public function getProductsByPage($quantitypage, $listproduct, $pro_one_page)
+    public function getProductsByPage($page, $type, $limit, $min_price = 0, $max_price = PHP_INT_MAX)
     {
-        $sql = "SELECT * FROM product";
-        switch ($listproduct) {
-            case 'all':
-                break;
-            case 'cate':
-                if (isset($_GET['id_cate'])) {
-                    $sql .= " WHERE id_category = $_GET[id_cate]";
-                }
-                break;
-            case 'min_max':
-                if (isset($_POST['number_min']) && isset($_POST['number_max'])) {
-                    $sql .= " WHERE price_product BETWEEN $_POST[number_min] AND $_POST[number_max]";
-                }
-                break;
+        // Tính toán offset cho phân trang
+        $offset = ($page - 1) * $limit;
+
+        // Khởi tạo câu SQL
+        $sql = "SELECT * FROM product WHERE price_product BETWEEN $min_price AND $max_price ";
+
+        // Kiểm tra nếu lọc theo danh mục
+        if ($type == 'cate') {
+            $id = isset($_GET['id_cate']) ? (int)$_GET['id_cate'] : 0;  // Lấy id_category từ $_GET và đảm bảo là số nguyên
+            $sql .= "AND id_category = $id ";  // Thêm điều kiện lọc theo id_category
         }
-        $limit1  = ($quantitypage - 1) * $pro_one_page;
-        $limit2 = $pro_one_page;
-        $sql .= " ORDER BY id_product limit " . $limit1 . "," . $limit2;
+
+        // Thêm phần giới hạn (LIMIT) và bỏ qua (OFFSET)
+        $sql .= "LIMIT $limit OFFSET $offset";
+
+        // Thực hiện truy vấn và trả về kết quả
         return $this->db->getAll($sql);
     }
-
     //Hàm đếm số lượng sản phẩm theo danh mục
     public function countProductsByCategory($id)
     {

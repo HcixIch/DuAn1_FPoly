@@ -71,10 +71,11 @@
                                             <h3><a
                                                     href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
                                             </h3>
-                                            <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
+                                            <h4 class="price"><span
+                                                    class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
                                                 <?php if ($sale == 1) { ?>
                                                     <del class="text-decoration-line-through"><span
-                                                            class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                                            class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
                                                 <?php } ?>
                                             </h4>
                                         </div>
@@ -190,7 +191,7 @@
                                             <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
                                                 <img src="./assets/images/product/<?= $img_product ?>" alt="">
                                             </a>
-                                            <?php if ($sale == 1) { ?>
+                                            <?php if ($sale > 0) { ?>
                                                 <span class="descount-sticker">-10%</span>
                                             <?php } ?>
                                             <?php if ($hot == 1) { ?>
@@ -210,10 +211,11 @@
                                             <h3><a
                                                     href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
                                             </h3>
-                                            <h4 class="price"><span class="new"><?= $price_product ?>₫</span>
-                                                <?php if ($sale == 1) { ?>
+                                            <h4 class="price"><span
+                                                    class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                                <?php if ($sale > 0) { ?>
                                                     <del class="text-decoration-line-through"><span
-                                                            class="old"><?= $price_product * 110 / 100 ?>₫</span></del>
+                                                            class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
                                                 <?php } ?>
                                             </h4>
                                         </div>
@@ -272,7 +274,7 @@
         <div class="row-md-4 row-lg-4 row-sm-12">
             <div class="row">
                 <div class="col-lg-12">
-                    
+
                 </div>
             </div>
             <br>

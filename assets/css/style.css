@@ -6190,10 +6190,30 @@ a.popup-img {
   overflow: hidden;
   position: relative;
 }
-
+.disabled-link {
+    pointer-events: none;  /* Ngừng nhận sự kiện click */
+}
 .single-categorie .categorie-image {
   position: relative;
   overflow: hidden;
+}
+.prod-null {
+  text-align: center;
+  margin: 200px auto;
+  font-family: Arial, sans-serif;
+  color: #555; /* Màu chữ */
+}
+
+.prod-null i {
+  font-size: 50px;
+  color: #888; /* Màu icon */
+  display: block;
+  margin-bottom: 20px;
+}
+
+.prod-null p {
+  font-size: 18px;
+  color: #666; /* Màu của đoạn văn */
 }
 
 .single-categorie .categorie-image::after {
