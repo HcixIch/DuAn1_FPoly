@@ -2,23 +2,34 @@
 <html lang="vi">
 
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <!-- <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon"> -->
-    <script src="https://kit.fontawesome.com/8c204d0fdf.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/iconfont.min.css">
-    <link rel="stylesheet" href="assets/css/plugins.css">
-    <link rel="stylesheet" href="assets/css/helper.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Modernizr -->
-    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Favicon -->
+    <!-- Uncomment if favicon is needed -->
+    <!-- <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon"> -->
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"> <!-- Bootstrap CSS (cơ bản) -->
+    <link rel="stylesheet" href="assets/css/iconfont.min.css"> <!-- Font icon -->
+    <link rel="stylesheet" href="assets/css/plugins.css"> <!-- Các plugin CSS -->
+    <link rel="stylesheet" href="assets/css/helper.css"> <!-- CSS hỗ trợ -->
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- CSS chính -->
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8c204d0fdf.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script> <!-- Modernizr -->
 
     <!-- Bootstrap Bundle JS (bao gồm Popper.js và các tính năng JS của Bootstrap) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+
 
     <title>Trang chủ</title>
 </head>
