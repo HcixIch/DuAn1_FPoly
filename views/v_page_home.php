@@ -292,116 +292,69 @@
             <div class="row text">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <!-- Single Product Start -->
+                     <?php 
+                        $pro_cates = $prod->getProductsByCategory(1 ,2);
+                        foreach ($pro_cates as $prod) {
+                        extract($prod); ?>
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=">
-                                <img src="assets/images/product/product-1.webp" alt="">
+                            <a href="?ctrl=product&&view=detail&&id=<?=$id_product?>">
+                                <img src="assets/images/product/<?=$img_product?>" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Arsenal mùa giải 24/25
-                                    nguyên bản</a></h3>
-                            <h4 class="price"><span class="new">₫2,620,000</span></h4>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?=$id_product?>"><?=$name_product?></a></h3>
+                            <h4 class="price"><span class="new"><?=$price_product?></span></h4>
                             <div class="buynow">
                                 <a class="product-category-btn" href="#">Đặt hàng</a>
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <!-- Single Product Start -->
+                     <?php 
+                        $pro_cates = $prod->getProductsByCategory(2,2);
+                        foreach ($pro_cates as $prod) {
+                        extract($prod); ?>
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=">
-                                <img src="assets/images/product/product-6.webp" alt="">
+                            <a href="?ctrl=product&&view=detail&&id=<?=$id_product?>">
+                                <img src="assets/images/product/<?=$img_product?>" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=">Quần dài Arsenal mùa giải
-                                    24/25 nguyên bản</a>
-                            </h3>
-                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?=$id_product?>"><?=$name_product?></a></h3>
+                            <h4 class="price"><span class="new"><?=$price_product?></span></h4>
                             <div class="buynow">
                                 <a class="product-category-btn" href="#">Đặt hàng</a>
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <!-- Single Product Start -->
+                     <?php 
+                        $pro_cates = $prod->getProductsByCategory(3,2);
+                        foreach ($pro_cates as $prod) {
+                        extract($prod); ?>
                     <div class="single-product-category mb-30">
                         <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=">
-                                <img src="assets/images/product/product-5.webp" alt="">
+                            <a href="?ctrl=product&&view=detail&&id=<?=$id_product?>">
+                                <img src="assets/images/product/<?=$img_product?>" alt="">
                             </a>
                         </div>
                         <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Arsenal mùa giải 24/25
-                                    nguyên bản</a></h3>
-                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
+                            <h3><a href="?ctrl=product&&view=detail&&id=<?=$id_product?>"><?=$name_product?></a></h3>
+                            <h4 class="price"><span class="new"><?=$price_product?></span></h4>
                             <div class="buynow">
                                 <a class="product-category-btn" href="#">Đặt hàng</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <!-- Single Product Start -->
-                    <div class="single-product-category mb-30">
-                        <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=">
-                                <img src="assets/images/product/product-2.webp" alt="">
-                            </a>
-                        </div>
-                        <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Khoác Arsenal mùa giải
-                                    24/25 nguyên bản</a>
-                            </h3>
-                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                            <div class="buynow">
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <!-- Single Product Start -->
-                    <div class="single-product-category mb-30">
-                        <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=">
-                                <img src="assets/images/product/product-8.webp" alt="">
-                            </a>
-                        </div>
-                        <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=">Quần đùi Arsenal mùa giải
-                                    24/25 nguyên bản</a>
-                            </h3>
-                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                            <div class="buynow">
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <!-- Single Product Start -->
-                    <div class="single-product-category mb-30">
-                        <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=">
-                                <img src="assets/images/product/product-5.webp" alt="">
-                            </a>
-                        </div>
-                        <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=">Áo Arsenal mùa giải 24/25
-                                    nguyên bản</a></h3>
-                            <h4 class="price"><span class="new">₫2,910,500</span></h4>
-                            <div class="buynow">
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php }?>
                 </div>
             </div>
         </div>
