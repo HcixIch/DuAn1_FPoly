@@ -13,9 +13,9 @@ class Product extends Database
         return $this->db->getone($sql);
     }
     //Hàm lấy sản phẩm theo danh mục
-    public function getProductsByCategory($id_cate, $different, $limit)
+    public function getProductsByCategory($id_cate, $different)
     {
-        $sql = "SELECT * FROM product WHERE id_category = $id_cate AND LIMIT $limit";
+        $sql = "SELECT * FROM product WHERE id_category = $id_cate";
         if ($different) {
             $sql .= " AND id_product NOT IN (SELECT id_product FROM product WHERE id_product = $different)";
         }
