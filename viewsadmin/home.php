@@ -20,19 +20,21 @@
                                     	<th>Chức năng</th>
                                     </thead>
                                     <tbody>
+                                    <form action="?ctrl=admin&view=home" method="post">
                                         <?php foreach($Allcates as $cate){
                                             $i=0;
                                             extract($cate);
                                             $countpro = $prod->countProductsByCategory($id_category);?>
-                                        <form action="?ctrl=admin&view=home" method="post">
+                                       
                                         <tr>
                                         	<td><?= $id_category?></td>
                                         	<td><?= $name_category?></td>
                                             <td><?=$countpro[$i]["total_product"]?></td>
                                         	<td><input type="submit" name="change" value="Sửa"></td>
                                         </tr>
-                                        </form>
+                                        
                                         <?php $i++; } ?>
+                                        </form>
                                     </tbody>
                                 </table>
                             </div>
