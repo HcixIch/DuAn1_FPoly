@@ -24,17 +24,17 @@
                                             $i=0;
                                             extract($cate);
                                             $countpro = $prod->countProductsByCategory($id_category);?>
+                                        <form action="?ctrl=admin&view=home" method="post">
                                         <tr>
                                         	<td><?= $id_category?></td>
                                         	<td><?= $name_category?></td>
                                             <td><?=$countpro[$i]["total_product"]?></td>
-                                        	<td><a href="">Sửa</a> | <a href="">Xóa</a></td>
+                                        	<td><input type="submit" name="change" value="Sửa"></td>
                                         </tr>
+                                        </form>
                                         <?php $i++; } ?>
                                     </tbody>
                                 </table>
-
                             </div>
-
                         </div>
                     </div>
