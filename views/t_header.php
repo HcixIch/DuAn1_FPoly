@@ -10,6 +10,8 @@
     <!-- Favicon -->
     <!-- Uncomment if favicon is needed -->
     <!-- <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.js" crossorigin="anonymous"></script>
+
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"> <!-- Bootstrap CSS (cơ bản) -->
@@ -19,7 +21,6 @@
     <link rel="stylesheet" href="assets/css/style.css"> <!-- CSS chính -->
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/8c204d0fdf.js" crossorigin="anonymous"></script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
@@ -27,7 +28,6 @@
 
     <!-- Bootstrap Bundle JS (bao gồm Popper.js và các tính năng JS của Bootstrap) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 
 

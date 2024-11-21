@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2024 at 07:02 AM
+-- Generation Time: Nov 21, 2024 at 04:57 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.12
 
@@ -46,19 +46,17 @@ CREATE TABLE `cart` (
   `id_cart` int NOT NULL,
   `id_product` int NOT NULL,
   `id_user` int NOT NULL,
-  `name` int NOT NULL,
-  `img` int NOT NULL,
   `quantity` int NOT NULL,
-  `price` int NOT NULL,
-  `total` int NOT NULL
+  `subtotal` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id_cart`, `id_product`, `id_user`, `name`, `img`, `quantity`, `price`, `total`) VALUES
-(1, 29, 1, 1, 1, 1, 1, 1);
+INSERT INTO `cart` (`id_cart`, `id_product`, `id_user`, `quantity`, `subtotal`) VALUES
+(7, 1, 1, 1, 2888800),
+(8, 32, 1, 1, 855400);
 
 -- --------------------------------------------------------
 
@@ -168,7 +166,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_product`, `img_product`, `name_product`, `price_product`, `description_product`, `sale`, `hot`, `id_category`, `quanlity_product`, `description_summary`) VALUES
-(1, 'product-1.webp', 'Áo Arsenal adidas 24/25 Originals', 2888800, 'Áo sơ mi Arsenal adidas 24/25 Originals mang phong cách thể thao tinh tế, kết hợp thiết kế cổ điển với vẻ đẹp hiện đại. Kiểu dáng ôm sát giúp tăng cường chuyển động, cùng với chi tiết ba sọc biểu tượng ở vai và khẩu pháo gia nhiệt ở ngực, chiếc áo này sẽ giữ bạn ấm áp và phong cách trong nhiều mùa tới. <br><br>\n\nChiếc áo này được làm từ 100% polyester tái chế, là một phần trong nỗ lực chung tay giảm thiểu rác thải nhựa. <br><br>\n\nPháo gia nhiệt ở ngực <br> Khẩu hiệu AFC thêu ở cổ áo <br> Cổ tròn có gân <br> Vừa vặn <br> Màu sắc: Xanh lam <br>\n\nChất liệu: 100% polyester tái chế', 1, 1, 1, 1000, 'Áo sơ mi Arsenal adidas 24/25 Originals có thiết kế ôm sát, chi tiết ba sọc ở vai và khẩu pháo gia nhiệt ở ngực. Được làm từ 100% polyester tái chế, áo mang phong cách thể thao cổ điển, màu xanh lam nổi bật.'),
+(1, 'product-1.webp', 'Áo Arsenal adidas 24/25 Originals', 2888800, 'Áo sơ mi Arsenal adidas 24/25 Originals mang phong cách thể thao tinh tế, kết hợp thiết kế cổ điển với vẻ đẹp hiện đại. Kiểu dáng ôm sát giúp tăng cường chuyển động, cùng với chi tiết ba sọc biểu tượng ở vai và khẩu pháo gia nhiệt ở ngực, chiếc áo này sẽ giữ bạn ấm áp và phong cách trong nhiều mùa tới. <br><br>\n\nChiếc áo này được làm từ 100% polyester tái chế, là một phần trong nỗ lực chung tay giảm thiểu rác thải nhựa. <br><br>\n\nPháo gia nhiệt ở ngực <br> Khẩu hiệu AFC thêu ở cổ áo <br> Cổ tròn có gân <br> Vừa vặn <br> Màu sắc: Xanh lam <br>\n\nChất liệu: 100% polyester tái chế', 10, 1, 1, 1000, 'Áo sơ mi Arsenal adidas 24/25 Originals có thiết kế ôm sát, chi tiết ba sọc ở vai và khẩu pháo gia nhiệt ở ngực. Được làm từ 100% polyester tái chế, áo mang phong cách thể thao cổ điển, màu xanh lam nổi bật.'),
 (2, 'product-2.webp', 'Áo hoodie Arsenal adidas 24/25 Originals', 2888800, 'Kết hợp vẻ ngoài cổ điển với sự thoải mái cao cấp và chất liệu thân thiện với môi trường, Áo hoodie Arsenal 24/25 Originals là sản phẩm gần nhất mà bạn có thể có được với sự hoàn hảo trong tủ đồ.<br>\nĐược chế tác từ hỗn hợp cotton và polyester ấm áp, áo có kiểu dáng hộp thoải mái, bo gấu tay và gấu áo có gân và họa tiết đại bác thêu ở giữa ngực để tạo nên phong cách mới mẻ cho trang phục thể thao cổ điển, theo phong cách của Arsenal.<br>\nChiếc áo hoodie adidas này được làm một phần từ vật liệu tái chế như một phần trong tham vọng chung tay chấm dứt rác thải nhựa của chúng tôi.<br>\nPháo thêu<br>\nVừa vặn rộng rãi<br>\nMũ trùm đầu có thể điều chỉnh bằng dây rút<br>\nCổ tay và gấu áo có gân<br>\nTúi trước<br>\nMàu sắc: Xanh lam<br>\nMã sản phẩm: MIS6501<br>\nChất liệu: 78% cotton, 22% polyester tái chế', 0, 0, 1, 1000, ''),
 (3, 'product-3.webp', 'Áo thun Arsenal adidas 24/25 Originals Track', 2888800, 'Thiết kế vượt thời gian kết hợp với sự thoải mái vượt trội. Với vẻ ngoài lấy cảm hứng từ phong cách cổ điển và cấu trúc bằng nylon nhẹ, Áo thun Arsenal adidas 24/25 Originals Track Top sẽ mang đến cho bạn sự ấm áp bất cứ khi nào bạn cần. Với khóa kéo toàn bộ có cổ đứng, hình khẩu pháo thêu ở ngực và khẩu hiệu Gothic Arsenal ở mặt sau, áo sẽ giúp bạn ấm áp và tự hào về phong cách trong suốt mùa giải. \r\n\r\nChiếc áo thể thao adidas này được làm từ vật liệu tái chế như một phần trong tham vọng giúp chấm dứt rác thải nhựa của chúng tôi.\r\n\r\nPháo thêu\r\nKhẩu hiệu Gothic Arsenal thêu ở mặt sau\r\nVừa vặn thông thường\r\nKhóa kéo toàn phần có cổ đứng\r\nCổ tay và gấu áo có chun co giãn\r\nTúi trước và sau\r\nMàu sắc: Xanh lam\r\n\r\nMã sản phẩm: MIS6503\r\n\r\n\r\nChất liệu: 100% polyamide tái chế', 0, 0, 1, 1000, ''),
 (4, 'product-4.webp', 'Quần nỉ Arsenal adidas 24/25 Originals', 2379000, 'Giữ sự mát mẻ và cổ điển trong Quần nỉ Arsenal adidas 24/25 Originals. Ấm cúng, thời trang và không thể nhầm lẫn với Arsenal, chúng sẽ nâng tầm bất kỳ tủ đồ nào một cách dễ dàng. Với kiểu dáng thon gọn, gấu quần chun co giãn và lớp hoàn thiện bằng vải pha cotton mềm mại để tăng thêm sự thoải mái, bạn sẽ thấy mình với tới chúng mỗi ngày.\r\n\r\nChiếc quần adidas này được làm một phần từ vật liệu tái chế như một phần trong tham vọng giúp chấm dứt rác thải nhựa của chúng tôi.\r\n\r\nPháo thêu \r\nVừa vặn\r\nEo chun có dây rút\r\nTúi trước và sau\r\nCổ chân co giãn\r\nMàu sắc: Xanh lam\r\n\r\nMã sản phẩm: MIS6504\r\n\r\n\r\nChất liệu: 78% cotton, 22% polyester tái chế', 0, 0, 1, 1000, ''),
@@ -285,6 +283,7 @@ INSERT INTO `user` (`id_user`, `full_name`, `address_user`, `phone_user`, `email
 
 CREATE TABLE `voucher` (
   `id_voucher` int NOT NULL,
+  `coupon_code` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `discount` float NOT NULL,
   `condition_voucher` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `deadline` datetime NOT NULL
@@ -294,8 +293,8 @@ CREATE TABLE `voucher` (
 -- Dumping data for table `voucher`
 --
 
-INSERT INTO `voucher` (`id_voucher`, `discount`, `condition_voucher`, `deadline`) VALUES
-(1, 1, '1', '2024-11-12 14:55:31');
+INSERT INTO `voucher` (`id_voucher`, `coupon_code`, `discount`, `condition_voucher`, `deadline`) VALUES
+(1, '', 1, '', '2024-11-12 14:55:31');
 
 --
 -- Indexes for dumped tables
@@ -385,7 +384,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cart` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `categories`

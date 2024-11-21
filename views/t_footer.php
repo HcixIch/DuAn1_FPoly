@@ -11,12 +11,13 @@
                     <p>Arsenal Store – nơi cung cấp quần áo chính hãng, chất lượng cao, thể hiện niềm đam mê và phong
                         cách của fan hâm mộ Arsenal.</p>
                     <div class="footer-social">
-                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" class="linkedin"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="pinterest"><i class="fa fa-pinterest-p"></i></a>
-                        <a href="#" class="pinterest"><i class="fa fa-vimeo"></i></a>
+                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+
                     </div>
                 </div>
                 <!--Footer Widget end-->
