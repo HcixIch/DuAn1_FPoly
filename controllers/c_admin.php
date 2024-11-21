@@ -9,7 +9,6 @@ include_once './viewsadmin/header.php';
     }
     else{
             $Allcates = $cates->getAllCategories();
-            
             include_once './viewsadmin/home.php';
     }
 include_once './viewsadmin/footer.php';

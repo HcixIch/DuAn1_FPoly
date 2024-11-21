@@ -47,7 +47,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="?ctrl=admin&view=home">
+                    <a href="?ctrl=admin">
                         <i class="pe-7s-graph"></i>
                         <p>Danh mục</p>
                     </a>
