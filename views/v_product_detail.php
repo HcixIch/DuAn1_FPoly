@@ -84,8 +84,7 @@
                         </form>
                     </div>
                     <div class="wishlist-compare-btn">
-                        <a href="#" class="wishlist-btn">Add to Wishlist</a>
-                        <a href="#" class="add-compare">Compare</a>
+                        <a href="#" class="wishlist-btn">Thêm vào yêu thích</a>
                     </div>
                     <div class="product-meta">
                         <span class="posted-in">

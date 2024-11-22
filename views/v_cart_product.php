@@ -23,22 +23,22 @@
                                 $total = 0;
                                 extract($ct);
                                 $total += $subtotal; ?>
-                                <tr>
-                                    <td class="pro-thumbnail"><a href="#"><img
-                                                src="assets/images/product/<?= $img_product ?>" alt="Sản phẩm"></a></td>
-                                    <td class="pro-title"><a href="#"><?= $name_product ?></a></td>
-                                    <td class="pro-price"><span><?= number_format($price_product, 0, ',', '.') ?>₫</span>
-                                    </td>
-                                    <td class="pro-quantity">
-                                        <div class="pro-qty"><input type="number" min="1" value="<?= $quantity ?>">
-                                        </div>
-                                    </td>
-                                    <td class="pro-subtotal">
-                                        <span><?= number_format($subtotal, 0, ',', '.') ?>₫</span>
-                                    </td>
-                                    <td class="pro-remove"><a href="?ctrl=cart&&id_dl=<?= $id_cart ?>"><i
-                                                class="fa fa-trash-o"></i></a></td>
-                                </tr>
+                            <tr>
+                                <td class="pro-thumbnail"><a href="#"><img
+                                            src="assets/images/product/<?= $img_product ?>" alt="Sản phẩm"></a></td>
+                                <td class="pro-title"><a href="#"><?= $name_product ?></a></td>
+                                <td class="pro-price"><span><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                </td>
+                                <td class="pro-quantity">
+                                    <div class="pro-qty"><input type="number" min="1" value="<?= $quantity ?>">
+                                    </div>
+                                </td>
+                                <td class="pro-subtotal">
+                                    <span><?= number_format($subtotal, 0, ',', '.') ?>₫</span>
+                                </td>
+                                <td class="pro-remove"><a href="?ctrl=cart&&id_dl=<?= $id_cart ?>"><i
+                                            class="fa fa-trash-o"></i></a></td>
+                            </tr>
                             <?php
                             };
                             ?>
