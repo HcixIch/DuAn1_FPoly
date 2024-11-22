@@ -118,7 +118,7 @@
                                                 <!-- Single Product Start -->
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
-                                                        <a href="single-product.html">
+                                                        <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
                                                             <img src="./assets/images/product/<?= $img_product ?>" alt="">
                                                         </a>
                                                         <?php if ($sale > 0) { ?>

@@ -25,6 +25,10 @@ if (isset($_GET['view'])) {
 
                 echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');</script>";
             }
+            if (isset($_GET['id_dl'])) {
+                $cart->deleteProductInCart($_GET['id_dl'], 1);
+                header('location:index.php?view=detail&id=' . $_GET['id']);
+            }
 
             $title = 'Sản phẩm chi tiết';
             include_once './views/page_banner.php';

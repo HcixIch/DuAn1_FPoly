@@ -24,7 +24,7 @@ if (isset($_GET['view'])) {
         header('location:index.php?ctrl=cart');
     }
     if (isset($_GET['id_dl'])) {
-        $cart->deleteCartItem($_GET['id_dl']);
+        $cart->deleteProductInCart($_GET['id_dl']);
         header('location:index.php?ctrl=cart');
     }
     $title = 'Giỏ hàng';

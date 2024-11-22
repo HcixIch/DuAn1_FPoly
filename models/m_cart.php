@@ -40,9 +40,9 @@ class Cart extends Database
         return $this->db->getAll($sql);
     }
     // Delete Cart
-    public function deleteCartItem($id_cart)
+    public function deleteAllCart($id_user)
     {
-        $sql = "DELETE FROM cart WHERE id_cart = $id_cart";
+        $sql = "DELETE FROM cart WHERE id_user = $id_user";
         return $this->db->delete($sql);
     }
     // Count product in cart
@@ -50,5 +50,19 @@ class Cart extends Database
     {
         $sql = "SELECT COUNT(*) as total_cart FROM cart WHERE id_user = $id_user";
         return $this->db->getone($sql);
+    }
+    public function get_total_cart($id_user)
+    {
+        $cart_items = $this->getAllCartItems($id_user);
+        $total = 0;
+        foreach ($cart_items as $item) {
+            $total += $item['subtotal'];
+        }
+        return $total;
+    }
+    public function deleteProductInCart($id_cart)
+    {
+        $sql = "DELETE FROM cart WHERE id_cart = $id_cart";
+        return $this->db->delete($sql);
     }
 }
