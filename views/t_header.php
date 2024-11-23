@@ -1,3 +1,7 @@
+<script>
+    session_start();
+    $_SESSION['user'];
+</script>
 <!DOCTYPE html>
 <html lang="vi">
 
