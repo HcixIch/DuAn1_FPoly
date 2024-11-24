@@ -1694,6 +1694,7 @@ header.header.is-sticky .header-bottom {
   line-height: 1;
   width: 35px;
   height: 35px;
+  padding-top: 7px;
   line-height: 30px;
   border: 2px solid #9a9a9a;
   border-radius: 50%;
@@ -1702,7 +1703,7 @@ header.header.is-sticky .header-bottom {
 }
 
 .header-cart>a i {
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .header-cart>a span {
@@ -6398,6 +6399,32 @@ a.popup-img {
   border-bottom: 2px solid #cea679;
   margin: 0;
 }
+.pro-qty {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.qty-btn {
+  padding: 5px 10px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.qty-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ddd;
+  height: 30px;
+  margin: 0 5px;
+}
+
 
 @media only screen and (max-width: 767px) {
   .cart-table .table {

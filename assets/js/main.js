@@ -222,23 +222,57 @@ $('#sticky-sidebar').theiaStickySidebar({
 /*----- 
 	Quantity
 --------------------------------*/
+// Thêm nút tăng và giảm vào ô input
 $('.pro-qty').prepend('<button class="dec qtybtn">-</button>');
 $('.pro-qty').append('<button class="inc qtybtn">+</button>');
+
+// Sự kiện click vào nút tăng hoặc giảm
 $('.qtybtn').on('click', function() {
-	var $button = $(this);
-	var oldValue = $button.parent().find('input').val();
-	if ($button.hasClass('inc')) {
-	  var newVal = parseFloat(oldValue) + 1;
-	} else {
-	   // Don't allow decrementing below zero
-	  if (oldValue > 0) {
-		var newVal = parseFloat(oldValue) - 1;
-		} else {
-		newVal = 0;
-	  }
-	  }
-	$button.parent().find('input').val(newVal);
-}); 
+    var $button = $(this);
+    var $input = $button.parent().find('input'); // Lấy input trong div .pro-qty
+    var oldValue = parseInt($input.val()); // Lấy giá trị số lượng cũ
+    var newVal;
+
+    // Kiểm tra xem là nút tăng hay giảm
+    if ($button.hasClass('inc')) {
+        newVal = oldValue + 1; // Tăng số lượng lên 1
+    } else {
+        if (oldValue > 1) { // Đảm bảo không giảm xuống dưới 1
+            newVal = oldValue - 1;
+        } else {
+            newVal = 1; // Nếu số lượng là 1 thì không cho giảm nữa
+        }
+    }
+
+    // Cập nhật lại giá trị của input
+    $input.val(newVal);
+
+    // Cập nhật subtotal của sản phẩm sau khi thay đổi số lượng
+    var row = $button.closest("tr")[0]; // Lấy dòng sản phẩm (thêm [0] để lấy phần tử DOM thay vì jQuery object)
+    updateRowSubtotal(row, newVal); // Gọi hàm cập nhật subtotal
+
+    // Cập nhật tổng giỏ hàng (nếu cần)
+    updateTotal();
+});
+
+// $('.pro-qty').prepend('<button class="dec qtybtn">-</button>');
+// $('.pro-qty').append('<button class="inc qtybtn">+</button>');
+// $('.qtybtn').on('click', function() {
+// 	var $button = $(this);
+// 	var oldValue = $button.parent().find('input').val();
+// 	if ($button.hasClass('inc')) {
+// 	  var newVal = parseFloat(oldValue) + 1;
+// 	} else {
+// 	   // Don't allow decrementing below zero
+// 	  if (oldValue > 0) {
+// 		var newVal = parseFloat(oldValue) - 1;
+// 		} else {
+// 		newVal = 0;
+// 	  }
+// 	  }
+// 	$button.parent().find('input').val(newVal);
+//     // updateRowSubtotal(.closest('tr'), newVal)
+// }); 
 
 /*----- 
 	Shipping Form Toggle
@@ -321,4 +355,28 @@ if($('.contact-map').length){
 }
     
 })(jQuery);	
-    
+    // Hàm cập nhật subtotal của dòng sản phẩm
+function updateRowSubtotal(row, quantity) {
+    const price = parseInt(row.querySelector(".pro-price span").textContent.replace(/\D/g, "")); // Giá sản phẩm
+    const newSubtotal = price * quantity; // Tính lại subtotal
+
+    // Cập nhật lại subtotal trong DOM
+    row.querySelector(".pro-subtotal span").textContent = newSubtotal.toLocaleString("vi-VN") + "₫"; 
+
+    // Cập nhật lại tổng giỏ hàng
+    updateTotal();
+}
+
+// Hàm cập nhật tổng tiền giỏ hàng
+function updateTotal() {
+    let total = 0;
+
+    // Duyệt qua tất cả các dòng trong giỏ hàng và tính tổng
+    document.querySelectorAll("tr[data-id]").forEach((row) => {
+        const subtotal = parseInt(row.querySelector(".pro-subtotal span").textContent.replace(/\D/g, ""));
+        total += subtotal;
+    });
+
+    // Cập nhật lại tổng tiền trên giao diện
+    document.getElementById("total-amount").textContent = total.toLocaleString("vi-VN") + "₫";
+}
