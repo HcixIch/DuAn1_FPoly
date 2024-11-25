@@ -52,6 +52,10 @@ if (isset($_GET['view'])) {
             include_once './views/page_banner.php';
             include_once './views/v_user_login&register.php';
             break;
+            case 'logout':
+                unset($_SESSION['user']);
+                header("location:index.php");
+                break;
         default:
             echo "Không tìm thấy trang này.";
     }
