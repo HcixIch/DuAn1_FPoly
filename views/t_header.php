@@ -55,6 +55,7 @@
                         <div class="col-xl-6 col-lg-4">
                             <div class="ht-right d-flex justify-content-lg-end justify-content-center">
                                 <ul class="ht-us-menu d-flex">
+                                    
                                     <?php
                                     if(isset($_SESSION['user']) && count($_SESSION['user'])>0){
                                         echo '<li><a href="#"><i class="fa fa-user-circle-o"></i>'.$_SESSION['user'][0]['email_user'].'</a>
@@ -68,6 +69,17 @@
                                             </li>';
                                     }
                                     ?>
+
+                                    <li><a href="#"><i class="fa fa-user-circle-o"></i>Đăng nhập</a>
+                                        <ul class="ht-dropdown right">
+                                            <!-- <li><a href="compare.html">So sánh sản phẩm</a></li> -->
+                                            <li><a href="?ctrl=user&&view=account">Tài khoản của tôi</a></li>
+                                            <!-- <li><a href="wishlist.html">Danh sách yêu thích</a></li> -->
+                                            <li><a href="?ctrl=user">Đăng ký/Đăng nhập</a></li>
+                                            <!-- <li><a href="login-register.html">Đăng ký/Đăng nhập</a></li> -->
+                                        </ul>
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -119,8 +131,8 @@
                             </div>
                             <div class="header-cart">
                                 <a href="?ctrl=cart"><i
-                                        class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart(1);
-                                                                                echo $cn['total_cart'] ?></span></a>
+                                        class="fa fa-shopping-cart"></i><span><?php if(isset($_SESSION['user'])){ $cn = $cart->countProductInCart($_SESSION['user'][0]['id_user']);
+                                                                                                echo $cn['total_cart'];} else echo 0 ?></span></a>
                             </div>
                         </div>
                         <!--Search Cart End-->

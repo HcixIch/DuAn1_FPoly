@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 21, 2024 at 04:57 AM
--- Server version: 8.0.30
--- PHP Version: 8.2.12
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 25, 2024 lúc 03:25 AM
+-- Phiên bản máy phục vụ: 8.0.30
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `arsenal`
+-- Cơ sở dữ liệu: `arsenal`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blog`
+-- Cấu trúc bảng cho bảng `blog`
 --
 
 CREATE TABLE `blog` (
@@ -39,7 +39,7 @@ CREATE TABLE `blog` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -51,17 +51,16 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `cart`
+-- Đang đổ dữ liệu cho bảng `cart`
 --
 
 INSERT INTO `cart` (`id_cart`, `id_product`, `id_user`, `quantity`, `subtotal`) VALUES
-(7, 1, 1, 1, 2888800),
-(8, 32, 1, 1, 855400);
+(12, 2, 1, 1, 2888800);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -70,7 +69,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`id_category`, `name_category`) VALUES
@@ -82,7 +81,7 @@ INSERT INTO `categories` (`id_category`, `name_category`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `checkout`
+-- Cấu trúc bảng cho bảng `checkout`
 --
 
 CREATE TABLE `checkout` (
@@ -99,7 +98,7 @@ CREATE TABLE `checkout` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `checkout`
+-- Đang đổ dữ liệu cho bảng `checkout`
 --
 
 INSERT INTO `checkout` (`id_checkout`, `full_name`, `address`, `phone`, `total_all`, `shipping_cost`, `provisional_total`, `payment_option`, `id_voucher`, `id_user`) VALUES
@@ -108,7 +107,7 @@ INSERT INTO `checkout` (`id_checkout`, `full_name`, `address`, `phone`, `total_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Cấu trúc bảng cho bảng `comment`
 --
 
 CREATE TABLE `comment` (
@@ -123,7 +122,7 @@ CREATE TABLE `comment` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_detail`
+-- Cấu trúc bảng cho bảng `order_detail`
 --
 
 CREATE TABLE `order_detail` (
@@ -136,7 +135,7 @@ CREATE TABLE `order_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `order_detail`
+-- Đang đổ dữ liệu cho bảng `order_detail`
 --
 
 INSERT INTO `order_detail` (`id_cart_detail`, `quanlity`, `price`, `unit_price`, `id_product`, `id_checkout`) VALUES
@@ -145,7 +144,7 @@ INSERT INTO `order_detail` (`id_cart_detail`, `quanlity`, `price`, `unit_price`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
@@ -162,7 +161,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`id_product`, `img_product`, `name_product`, `price_product`, `description_product`, `sale`, `hot`, `id_category`, `quanlity_product`, `description_summary`) VALUES
@@ -202,7 +201,7 @@ INSERT INTO `product` (`id_product`, `img_product`, `name_product`, `price_produ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_img`
+-- Cấu trúc bảng cho bảng `product_img`
 --
 
 CREATE TABLE `product_img` (
@@ -214,7 +213,7 @@ CREATE TABLE `product_img` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `product_img`
+-- Đang đổ dữ liệu cho bảng `product_img`
 --
 
 INSERT INTO `product_img` (`id_product`, `hinh1`, `hinh2`, `hinh3`, `hinh4`) VALUES
@@ -254,31 +253,31 @@ INSERT INTO `product_img` (`id_product`, `hinh1`, `hinh2`, `hinh3`, `hinh4`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
   `id_user` int NOT NULL,
-  `full_name` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `address_user` int NOT NULL,
-  `phone_user` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `email_user` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `user_name` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `full_name` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `address_user` int DEFAULT NULL,
+  `phone_user` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `email_user` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `password` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `role` bit(1) NOT NULL
+  `role` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`id_user`, `full_name`, `address_user`, `phone_user`, `email_user`, `user_name`, `password`, `role`) VALUES
-(1, '1', 1, '1', '1', '1', '1', b'0');
+INSERT INTO `user` (`id_user`, `full_name`, `address_user`, `phone_user`, `email_user`, `password`, `role`) VALUES
+(1, '1', 1, '1', 'ichndps41009@gmail.com', '11', b'0'),
+(3, NULL, NULL, NULL, 'ichndps409@gmail.com', '999', b'0');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `voucher`
+-- Cấu trúc bảng cho bảng `voucher`
 --
 
 CREATE TABLE `voucher` (
@@ -290,25 +289,25 @@ CREATE TABLE `voucher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `voucher`
+-- Đang đổ dữ liệu cho bảng `voucher`
 --
 
 INSERT INTO `voucher` (`id_voucher`, `coupon_code`, `discount`, `condition_voucher`, `deadline`) VALUES
 (1, '', 1, '', '2024-11-12 14:55:31');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `blog`
+-- Chỉ mục cho bảng `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`blog_id`),
   ADD KEY `blog_user` (`id_user`);
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_cart`),
@@ -316,13 +315,13 @@ ALTER TABLE `cart`
   ADD KEY `cart_product` (`id_product`);
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id_category`);
 
 --
--- Indexes for table `checkout`
+-- Chỉ mục cho bảng `checkout`
 --
 ALTER TABLE `checkout`
   ADD PRIMARY KEY (`id_checkout`),
@@ -330,7 +329,7 @@ ALTER TABLE `checkout`
   ADD KEY `checkout_user` (`id_user`);
 
 --
--- Indexes for table `comment`
+-- Chỉ mục cho bảng `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id_cmt`),
@@ -338,7 +337,7 @@ ALTER TABLE `comment`
   ADD KEY `comment_product` (`id_product`);
 
 --
--- Indexes for table `order_detail`
+-- Chỉ mục cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id_cart_detail`),
@@ -346,134 +345,134 @@ ALTER TABLE `order_detail`
   ADD KEY `cart_checkout` (`id_checkout`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id_product`),
   ADD KEY `product_categories` (`id_category`);
 
 --
--- Indexes for table `product_img`
+-- Chỉ mục cho bảng `product_img`
 --
 ALTER TABLE `product_img`
   ADD KEY `product_img` (`id_product`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `voucher`
+-- Chỉ mục cho bảng `voucher`
 --
 ALTER TABLE `voucher`
   ADD PRIMARY KEY (`id_voucher`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `blog`
+-- AUTO_INCREMENT cho bảng `blog`
 --
 ALTER TABLE `blog`
   MODIFY `blog_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_cart` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id_category` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `checkout`
+-- AUTO_INCREMENT cho bảng `checkout`
 --
 ALTER TABLE `checkout`
   MODIFY `id_checkout` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `comment`
+-- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
   MODIFY `id_cmt` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `order_detail`
+-- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   MODIFY `id_cart_detail` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
   MODIFY `id_product` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `voucher`
+-- AUTO_INCREMENT cho bảng `voucher`
 --
 ALTER TABLE `voucher`
   MODIFY `id_voucher` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `blog`
+-- Các ràng buộc cho bảng `blog`
 --
 ALTER TABLE `blog`
   ADD CONSTRAINT `blog_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `cart`
+-- Các ràng buộc cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_product` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `user_cart` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `checkout`
+-- Các ràng buộc cho bảng `checkout`
 --
 ALTER TABLE `checkout`
   ADD CONSTRAINT `checkout_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `checkout_voucher` FOREIGN KEY (`id_voucher`) REFERENCES `voucher` (`id_voucher`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `comment`
+-- Các ràng buộc cho bảng `comment`
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_product` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `comment_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `order_detail`
+-- Các ràng buộc cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
   ADD CONSTRAINT `cart_checkout` FOREIGN KEY (`id_checkout`) REFERENCES `checkout` (`id_checkout`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `product_cart` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `product`
+-- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_categories` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id_category`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `product_img`
+-- Các ràng buộc cho bảng `product_img`
 --
 ALTER TABLE `product_img`
   ADD CONSTRAINT `product_img` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT;
