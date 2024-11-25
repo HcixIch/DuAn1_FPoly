@@ -37,7 +37,7 @@
                                             <span><?= number_format($ct['subtotal'], 0, ',', '.') ?>₫</span>
                                         </td>
                                         <td class="pro-remove">
-                                            <a href="remove_item.php?id_cart=<?= $ct['id_cart'] ?>" class="remove-item"><i
+                                            <a href="?ctrl=cart&id_dl=<?= $ct['id_cart'] ?>" class="remove-item"><i
                                                     class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
@@ -63,7 +63,6 @@
                         <a href="checkout.php" class="btn btn-success cart-summary-button">Thanh toán</a>
                     </div>
                 </form>
-                <span class="mt-2 text-end">*Vui lòng kiểm tra cập nhật lại giỏ hàng trước khi thanh toán</span>
             </div>
         </div>
     </div>

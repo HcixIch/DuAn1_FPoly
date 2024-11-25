@@ -64,7 +64,7 @@
                                             <!-- <li><a href="compare.html">So sánh sản phẩm</a></li> -->
                                             <li><a href="?ctrl=user&&view=account">Tài khoản của tôi</a></li>
                                             <!-- <li><a href="wishlist.html">Danh sách yêu thích</a></li> -->
-                                            <li><a href="?ctrl=user&&view=login">Đăng ký/Đăng nhập</a></li>
+                                            <li><a href="?ctrl=user">Đăng ký/Đăng nhập</a></li>
                                             <!-- <li><a href="login-register.html">Đăng ký/Đăng nhập</a></li> -->
                                         </ul>
                                     </li>
@@ -118,9 +118,8 @@
                                 </div>
                             </div>
                             <div class="header-cart">
-                                <a href="?ctrl=cart"><i
-                                        class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart(1);
-                                                                                echo $cn['total_cart'] ?></span></a>
+                                <a href="?ctrl=cart"><i class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart($_SESSION['user'][0]['id_user']);
+                                                                                                echo $cn['total_cart'] ?></span></a>
                             </div>
                         </div>
                         <!--Search Cart End-->

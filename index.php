@@ -12,7 +12,7 @@ $cart = new Cart();
 $user =  new User();
 $pro_all = $prod->getProductsByCondition('all', "");
 $cate_all = $cates->getAllCategories();
-$cart_all = $cart->getAllCartItems(1);
+$cart_all = $cart->getAllCartItems($_SESSION['user'][0]['id_user']);
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
         case 'page':

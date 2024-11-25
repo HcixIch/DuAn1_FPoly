@@ -13,7 +13,7 @@
                         <form action="" method="post">
                             <div class="form-fild">
                                 <p><label>Email hoặc số điện thoại<span class="required">*</span></label></p>
-                                <input name="email" type="email" value=""  type="text">
+                                <input name="email" type="email" value="" type="text">
                             </div>
                             <div class="form-fild">
                                 <p><label>Mật khẩu <span class="required">*</span></label></p>
@@ -42,10 +42,10 @@
                         <h2>Đăng ký</h2>
                     </div>
                     <div class="register-form">
-                        <form action="?ctrl=user&&view=login" method="post">
+                        <form action="?ctrl=user" method="post">
                             <div class="form-fild">
                                 <p><label>Email hoặc số điện thoại<span class="required">*</span></label></p>
-                                <input  type="email" name="email" value="" type="text">
+                                <input type="email" name="email" value="" type="text">
                             </div>
                             <div class="form-fild">
                                 <p><label>Mật khẩu<span class="required">*</span></label></p>

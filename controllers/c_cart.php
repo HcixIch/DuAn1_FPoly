@@ -20,7 +20,7 @@ if (isset($_GET['view'])) {
         $quantity = $_POST['quantity'] ?? 1;
         $price = $_POST['price'];
         $data = ['product_id' => $id_pro, 'quantity' => $quantity, 'price' => $price];
-        $cart->addToCart($data, 1);
+        $cart->addToCart($data, $_SESSION['user'][0]['id_user']);
         header('location:index.php?ctrl=cart');
     }
     if (isset($_GET['id_dl'])) {
