@@ -1,6 +1,6 @@
 <script>
-    session_start();
-    $_SESSION['user'];
+session_start();
+$_SESSION['user'];
 </script>
 <!DOCTYPE html>
 <html lang="vi">
@@ -118,8 +118,9 @@
                                 </div>
                             </div>
                             <div class="header-cart">
-                                <a href="?ctrl=cart"><i class="fa fa-shopping-cart"></i><span><?php $cn = $cart->countProductInCart($_SESSION['user'][0]['id_user']);
-                                                                                                echo $cn['total_cart'] ?></span></a>
+                                <a href="?ctrl=cart"><i
+                                        class="fa fa-shopping-cart"></i><span><?php if(isset($_SESSION['user'])){ $cn = $cart->countProductInCart($_SESSION['user'][0]['id_user']);
+                                                                                                echo $cn['total_cart'];} else echo 0 ?></span></a>
                             </div>
                         </div>
                         <!--Search Cart End-->

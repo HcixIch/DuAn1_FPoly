@@ -18,29 +18,29 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($cart_all as $ct): ?>
-                                    <tr data-id="<?= $ct['id_cart'] ?>">
-                                        <td class="pro-thumbnail">
-                                            <a href="#"><img src="assets/images/product/<?= $ct['img_product'] ?>"
-                                                    alt="Sản phẩm"></a>
-                                        </td>
-                                        <td class="pro-title"><a href="#"><?= $ct['name_product'] ?></a></td>
-                                        <td class="pro-price">
-                                            <span><?= number_format($ct['price_product'], 0, ',', '.') ?>₫</span>
-                                        </td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty">
-                                                <input type="number" name="quantity[<?= $ct['id_cart'] ?>]"
-                                                    class="quantity-input" min="1" value="<?= $ct['quantity'] ?>">
-                                            </div>
-                                        </td>
-                                        <td class="pro-subtotal">
-                                            <span><?= number_format($ct['subtotal'], 0, ',', '.') ?>₫</span>
-                                        </td>
-                                        <td class="pro-remove">
-                                            <a href="?ctrl=cart&id_dl=<?= $ct['id_cart'] ?>" class="remove-item"><i
-                                                    class="fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
+                                <tr data-id="<?= $ct['id_cart'] ?>">
+                                    <td class="pro-thumbnail">
+                                        <a href="#"><img src="assets/images/product/<?= $ct['img_product'] ?>"
+                                                alt="Sản phẩm"></a>
+                                    </td>
+                                    <td class="pro-title"><a href="#"><?= $ct['name_product'] ?></a></td>
+                                    <td class="pro-price">
+                                        <span><?= number_format($ct['price_product'], 0, ',', '.') ?>₫</span>
+                                    </td>
+                                    <td class="pro-quantity">
+                                        <div class="pro-qty">
+                                            <input type="number" name="quantity[<?= $ct['id_cart'] ?>]"
+                                                class="quantity-input" min="1" value="<?= $ct['quantity'] ?>">
+                                        </div>
+                                    </td>
+                                    <td class="pro-subtotal">
+                                        <span><?= number_format($ct['subtotal'], 0, ',', '.') ?>₫</span>
+                                    </td>
+                                    <td class="pro-remove">
+                                        <a href="?ctrl=cart&id_dl=<?= $ct['id_cart'] ?>" class="remove-item"><i
+                                                class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
                                 <?php endforeach; ?>
                             </tbody>
                             <tfoot>
@@ -60,7 +60,8 @@
 
                     <!-- Cập nhật và Thanh toán -->
                     <div class="d-flex justify-content-end mt-3">
-                        <a href="checkout.php" class="btn btn-success cart-summary-button">Thanh toán</a>
+                        <a href="index.php?ctrl=cart&&view=checkout" class="btn btn-success cart-summary-button">Tiếp
+                            tục</a>
                     </div>
                 </form>
             </div>
