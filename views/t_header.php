@@ -70,16 +70,6 @@
                                     }
                                     ?>
 
-                                    <li><a href="#"><i class="fa fa-user-circle-o"></i>Đăng nhập</a>
-                                        <ul class="ht-dropdown right">
-                                            <!-- <li><a href="compare.html">So sánh sản phẩm</a></li> -->
-                                            <li><a href="?ctrl=user&&view=account">Tài khoản của tôi</a></li>
-                                            <!-- <li><a href="wishlist.html">Danh sách yêu thích</a></li> -->
-                                            <li><a href="?ctrl=user">Đăng ký/Đăng nhập</a></li>
-                                            <!-- <li><a href="login-register.html">Đăng ký/Đăng nhập</a></li> -->
-                                        </ul>
-                                    </li>
-
                                 </ul>
                             </div>
                         </div>
