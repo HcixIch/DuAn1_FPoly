@@ -16,14 +16,9 @@
 
                             <a href="#download" data-toggle="tab"><i class="fa fa-cloud-download"></i> Tải xuống</a>
 
-                            <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i> Phương thức
-                                thanh toán</a>
-
-                            <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i> Địa chỉ</a>
-
                             <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Chi tiết tài khoản</a>
 
-                            <a href="login-register.html"><i class="fa fa-sign-out"></i> Đăng xuất</a>
+                            <a href="login-register.html"><i class="fa fa-sign-out"></i>Xóa tài khoản</a>
                         </div>
                     </div>
                     <!-- Kết thúc menu Tài khoản của tôi -->
