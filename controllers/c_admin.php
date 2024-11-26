@@ -5,6 +5,10 @@ include_once './viewsadmin/header.php';
             case 'addpro':
                 include_once './viewsadmin/addpro.php';
                 break;
+            case 'order':
+                $order = $
+                include './viewsadmin/order.php';
+                break;
         }
     }
     else{
