@@ -7,7 +7,7 @@ class Order extends Database
         $this->db = new Database();
     }
     public function getAllOrder(){
-        $sql = "SELECT * FROM order ";
+        $sql = "SELECT * FROM order_detail ";
         return $this->db->getAll($sql);
     }
 }

@@ -6,7 +6,7 @@ include_once './viewsadmin/header.php';
                 include_once './viewsadmin/addpro.php';
                 break;
             case 'order':
-                $order = $
+                $order_list = $order->getAllOrder();
                 include './viewsadmin/order.php';
                 break;
         }

@@ -19,14 +19,16 @@
                                     	<th></th>
                                     </thead>
                                     <tbody>
+                                    <?php foreach($order_list as $od){
+                                        extract($od);?>
                                         <tr>
                                             <td></td>
-                                            <td id="name"></td>
-                                            <td id="price"></td>
+                                            <td id="name"><?= $id_cart_detail?></td>
+                                            <td id="price"><?=$price?></td>
                                             <td><img src="" alt="" id="image" height="80px"></td>
                                             <td></td>
                                         </tr>
-                                        
+                                    <?php }?>
                                     </tbody>
                                 </table>
 
