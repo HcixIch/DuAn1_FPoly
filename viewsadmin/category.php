@@ -24,13 +24,7 @@
                                             <td><img src="" alt="" id="image" height="80px"></td>
                                             <td></td>
                                         </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td id="name"></td>
-                                            <td id="price"></td>
-                                            <td><img src="" alt="" id="image" height="80px"></td>
-                                            <td></td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
 
