@@ -6,10 +6,12 @@ include_once 'models/m_product.php';
 include_once 'models/m_category.php';
 include_once 'models/m_cart.php';
 include_once 'models/m_user.php';
+include_once 'models/m_order.php';
 $prod = new Product();
 $cates = new Category();
 $cart = new Cart();
 $user =  new User();
+$order = new Order;
 $pro_all = $prod->getProductsByCondition('all', "");
 $cate_all = $cates->getAllCategories();
 if (isset($_SESSION['user'])) {

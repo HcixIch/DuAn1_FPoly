@@ -269,7 +269,7 @@
 </div>
 <!--Banner section end-->
 <!--Product category start-->
-<div class="product-category section">
+<!-- <div class="product-category section">
     <div class="container">
         <div class="row-md-4 row-lg-4 row-sm-12">
             <div class="row">
@@ -292,31 +292,30 @@
             <div class="row text">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <!-- Single Product Start -->
-                     <?php 
-                        $pro_cates = $prod->getProductsByCategory(1 ,2);
-                        foreach ($pro_cates as $prod) {
-                        extract($prod); ?>
-                    <div class="single-product-category mb-30">
-                        <div class="product-category-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?=$id_product?>">
-                                <img src="assets/images/product/<?=$img_product?>" alt="">
-                            </a>
-                        </div>
-                        <div class="product-category-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?=$id_product?>"><?=$name_product?></a></h3>
-                            <h4 class="price"><span class="new"><?=$price_product?></span></h4>
-                            <div class="buynow">
-                                <a class="product-category-btn" href="#">Đặt hàng</a>
+<!-- <?php
+        $pro_cates = $prod->getProductsByCategory(1, 2);
+        foreach ($pro_cates as $prod) {
+            extract($prod); ?>
+                        <div class="single-product-category mb-30">
+                            <div class="product-category-img">
+                                <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
+                                    <img src="assets/images/product/<?= $img_product ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="product-category-content">
+                                <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a></h3>
+                                <h4 class="price"><span class="new"><?= $price_product ?></span></h4>
+                                <div class="buynow">
+                                    <a class="product-category-btn" href="#">Đặt hàng</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php }?>
-                </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> --> -->
 
 
 
