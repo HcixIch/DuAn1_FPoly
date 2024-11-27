@@ -232,6 +232,7 @@ $(document).ready(function() {
             quantity++; // Tăng số lượng
         } 
         // Nếu là nút giảm và số lượng lớn hơn 1
+        else if ($(this).hasClass('dec') && quantity > 1) {
             quantity--; // Giảm số lượng
         }
 
