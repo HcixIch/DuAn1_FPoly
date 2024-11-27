@@ -15,7 +15,7 @@
                                         <th>Đơn hàng</th>
                                         <th>Giá</th>
                                         <th>Số lượng</th>
-                                    	<th></th>
+                                    	<th>Ngày đặt</th>
                                     	<th></th>
                                     </thead>
                                     <tbody>
