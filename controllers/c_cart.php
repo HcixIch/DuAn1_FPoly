@@ -107,6 +107,44 @@ if (isset($_GET['view'])) {
         header('location:index.php?ctrl=cart');
         exit();
     }
+    if (isset($_GET['delall'])) {
+        unset($_SESSION['cart']);
+        header('location:index.php?ctrl=cart');
+        exit();
+    }
+    // Kiểm tra nếu có dữ liệu POST từ form
+
+
+
+    // Kiểm tra nếu có yêu cầu AJAX để cập nhật giỏ hàng
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id_product']) && isset($_POST['quantity'])) {
+        $productId = $_POST['id_product']; // Lấy ID sản phẩm
+        $quantity = $_POST['quantity']; // Lấy số lượng sản phẩm mới
+
+        // Kiểm tra nếu giỏ hàng đã tồn tại trong session
+        if (isset($_SESSION['cart']) && isset($_SESSION['cart'][$productId])) {
+            // Cập nhật số lượng và tính toán lại subtotal
+            $_SESSION['cart'][$productId]['quantity_product'] = $quantity;
+            $_SESSION['cart'][$productId]['subtotal'] = $_SESSION['cart'][$productId]['price'] * $quantity; // Cập nhật subtotal mới
+        }
+
+        // Tính toán lại tổng giỏ hàng
+        $total = 0;
+        foreach ($_SESSION['cart'] as $item) {
+            $total += $item['subtotal']; // Tính tổng giỏ hàng
+        }
+
+        // Trả về kết quả dưới dạng JSON (subtotal của sản phẩm và tổng giỏ hàng)
+        echo json_encode([
+            'subtotal' => number_format($_SESSION['cart'][$productId]['subtotal'], 0, ',', '.') . '₫',
+            'total' => number_format($total, 0, ',', '.') . '₫'
+        ]);
+        exit();
+    }
+
+
+
+
 
     // Debug giỏ hàng (xóa khi hoàn thiện)
     var_dump($_SESSION['cart']);

@@ -221,57 +221,89 @@ $('#sticky-sidebar').theiaStickySidebar({
 
 // Sự kiện click cho nút tăng/giảm
 // Sự kiện click cho nút tăng/giảm
-$('.pro-qty .qtybtn').on('click', function(event) {
-    event.preventDefault(); // Ngăn hành vi mặc định
+$(document).ready(function() {
+    // Gắn sự kiện click vào nút tăng và giảm số lượng
+    $(document).on('click', '.qtybtn', function() {
+        var $input = $(this).siblings('.qty-input'); // Lấy ô input
+        var quantity = parseInt($input.val()); // Lấy giá trị hiện tại
 
-    var $button = $(this); // Nút được nhấn
-    var $input = $button.siblings('.qty-input'); // Tìm ô input bên cạnh
-    var oldValue = parseInt($input.val()) || 1; // Lấy giá trị cũ, mặc định là 1 nếu không hợp lệ
-    var newVal;
+        // Nếu là nút tăng
+        if ($(this).hasClass('inc')) {
+            quantity++; // Tăng số lượng
+        } 
+        // Nếu là nút giảm và số lượng lớn hơn 1
+            quantity--; // Giảm số lượng
+        }
 
-    // Tăng hoặc giảm giá trị
-    if ($button.hasClass('inc')) {
-        newVal = oldValue + 1;
-    } else {
-        newVal = oldValue > 1 ? oldValue - 1 : 1;
+        $input.val(quantity); // Cập nhật lại ô input
+
+        // Gửi yêu cầu AJAX để cập nhật giỏ hàng trên server
+        var productId = $input.closest('tr').data('product-id'); // Lấy ID sản phẩm từ data-product-id của <tr>
+
+        $.ajax({
+            url: 'index.php?ctrl=cart', // Đường dẫn cập nhật giỏ hàng
+            method: 'POST',
+            data: {
+                id_product: productId,
+                quantity: quantity // Gửi số lượng mới
+            },
+            success: function(response) {
+                // Cập nhật lại subtotal cho sản phẩm
+                updateRowSubtotal($input.closest('tr'), quantity);
+                // Cập nhật tổng giỏ hàng
+                updateTotal();
+            },
+            error: function(xhr, status, error) {
+                console.error('Lỗi khi cập nhật giỏ hàng:', error);
+            }
+        });
+    });
+
+    // Cập nhật subtotal khi thay đổi số lượng
+    $(document).on('change', '.qty-input', function() {
+        var $row = $(this).closest('tr');
+        var quantity = parseInt($(this).val()); // Lấy số lượng mới
+        var productId = $row.data('product-id'); // Lấy product ID từ data-product-id
+
+        $.ajax({
+            url: 'index.php?ctrl=cart', 
+            method: 'POST',
+            data: {
+                id_product: productId,
+                quantity: quantity // Gửi số lượng mới lên server
+            },
+            success: function(response) {
+                updateRowSubtotal($row, quantity); // Cập nhật subtotal
+                updateTotal(); // Cập nhật tổng giỏ hàng
+            },
+            error: function(xhr, status, error) {
+                console.error('Có lỗi xảy ra khi cập nhật giỏ hàng: ', error);
+            }
+        });
+    });
+
+    // Cập nhật subtotal cho một sản phẩm
+    function updateRowSubtotal($row, quantity) {
+        var price = parseInt($row.find('.pro-price span').text().replace(/[^\d]/g, ''));
+        var subtotal = price * quantity; // Tính subtotal
+        $row.find('.pro-subtotal span').text(formatCurrency(subtotal)); // Cập nhật subtotal
     }
 
-    // Cập nhật giá trị mới vào input
-    $input.val(newVal);
+    // Cập nhật tổng giỏ hàng
+    function updateTotal() {
+        var total = 0;
+        $('.pro-subtotal span').each(function() {
+            var subtotal = parseInt($(this).text().replace(/[^\d]/g, '')) || 0; // Lấy giá trị subtotal
+            total += subtotal; // Tính tổng
+        });
+        $('#total-amount').text(formatCurrency(total)); // Cập nhật tổng giỏ hàng
+    }
 
-    // Gọi các hàm cập nhật subtotal và tổng giỏ hàng
-    var $row = $button.closest('tr'); // Dòng hiện tại
-    updateRowSubtotal($row, newVal); // Cập nhật subtotal
-    updateTotal(); // Cập nhật tổng giỏ hàng
+    // Hàm định dạng tiền tệ VNĐ
+    function formatCurrency(amount) {
+        return amount.toLocaleString('vi-VN') + '₫';
+    }
 });
-
-// Hàm cập nhật subtotal
-function updateRowSubtotal($row, quantity) {
-    // Lấy giá sản phẩm (bỏ ký hiệu VNĐ, dấu phân tách)
-    var price = parseInt($row.find('.pro-price span').text().replace(/[^\d]/g, ''));
-    var subtotal = price * quantity; // Tính subtotal
-    // Định dạng lại subtotal thành dạng VNĐ
-    $row.find('.pro-subtotal span').text(formatCurrency(subtotal)); // Cập nhật subtotal
-}
-
-// Hàm cập nhật tổng giỏ hàng
-function updateTotal() {
-    var total = 0;
-    // Lặp qua các subtotal để tính tổng
-    $('.pro-subtotal span').each(function() {
-        var subtotal = parseInt($(this).text().replace(/[^\d]/g, '')) || 0; // Lấy giá trị subtotal
-        total += subtotal; // Tính tổng
-    });
-    // Cập nhật tổng giỏ hàng với định dạng VNĐ
-    $('#total-amount').text(formatCurrency(total));
-}
-
-// Hàm định dạng tiền tệ VNĐ
-function formatCurrency(amount) {
-    return amount.toLocaleString('vi-VN') + '₫';
-}
-
-
 
 // $('.pro-qty').prepend('<button class="dec qtybtn">-</button>');
 // $('.pro-qty').append('<button class="inc qtybtn">+</button>');
