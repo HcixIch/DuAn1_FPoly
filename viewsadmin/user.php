@@ -17,22 +17,20 @@
                                         <th>Email</th>
                                         <th>Password</th>
                                     	<th>Vai trò</th>
-                                    	<th></th>
                                     </thead>
                                     <tbody>
-                                    <?php foreach($user_list as $id_userl){
-                                        extract($us);?>
+                                    
                                         <tr>
                                             <td></td>
-                                            <td id="id"><?= $id_userl?></td>
-                                            <td id="name"><?=$full_name?></td>
-                                            <td id="address"><?=$address_user?></td>
-                                            <td id="phone"><?$phone_user?></td>
-                                            <td id="email"><?$email_user?></td>
-                                            <td id="pass"><?$password_user?></td>
-                                            <td id="role"><?$role?></td>
+                                            <td id="id"><? ?></td>
+                                            <td id="name"><??></td>
+                                            <td id="address"><??></td>
+                                            <td id="phone"><??></td>
+                                            <td id="email"><??></td>
+                                            <td id="pass"><??></td>
+                                            <td id="role"><??></td>
                                         </tr>
-                                    <?php }?>
+                                    
                                     </tbody>
                                 </table>
 
