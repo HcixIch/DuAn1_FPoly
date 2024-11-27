@@ -4,7 +4,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Chi tiết đơn hàng</h4>
+                                <h4 class="title">Quản lý người dùng</h4>
                                 <p class="category"></p>
                             </div>
                             <div class="content table-responsive table-full-width">
@@ -12,21 +12,25 @@
                                     <thead>
                                         <th>STT</th>
                                     	<th>Tên</th>
-                                        <th>Đơn hàng</th>
-                                        <th>Giá</th>
-                                        <th>Số lượng</th>
-                                    	<th>Ngày đặt</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                    	<th>Vai trò</th>
                                     	<th></th>
                                     </thead>
                                     <tbody>
-                                    <?php foreach($order_list as $od){
-                                        extract($od);?>
+                                    <?php foreach($user_list as $id_userl){
+                                        extract($us);?>
                                         <tr>
                                             <td></td>
-                                            <td id="name"><?= $id_cart_detail?></td>
-                                            <td id="price"><?=$price?></td>
-                                            <td><img src="" alt="" id="image" height="80px"></td>
-                                            <td></td>
+                                            <td id="id"><?= $id_userl?></td>
+                                            <td id="name"><?=$full_name?></td>
+                                            <td id="address"><?=$address_user?></td>
+                                            <td id="phone"><?$phone_user?></td>
+                                            <td id="email"><?$email_user?></td>
+                                            <td id="pass"><?$password_user?></td>
+                                            <td id="role"><?$role?></td>
                                         </tr>
                                     <?php }?>
                                     </tbody>

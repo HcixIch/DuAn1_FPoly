@@ -9,6 +9,10 @@ include_once './viewsadmin/header.php';
                 $order_list = $order->getAllOrder();
                 include './viewsadmin/order.php';
                 break;
+            case 'user':
+                $user_list = $user->getAllUser();
+                include './viewsadmin/user.php';
+                break;
         }
     }
     else{
