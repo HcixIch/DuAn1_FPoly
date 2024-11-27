@@ -75,6 +75,8 @@
                                 <input type="hidden" name="id_product" value="<?= $id_product ?>">
                                 <input type="hidden" name="id_user" value="1">
                                 <input type="hidden" name="price" value="<?= $price_product ?>">
+                                <input type="hidden" name="img_product" value="<?= $img_product ?>">
+                                <input type="hidden" name="name_product" value="<?= $name_product ?>" />
                                 <input value="1" name="quantity" type="number" min="1" max="<?= $quanlity_product ?>">
                             </div>
                             <div class="add-to-link">

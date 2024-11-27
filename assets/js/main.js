@@ -219,41 +219,59 @@ $('#sticky-sidebar').theiaStickySidebar({
     additionalMarginTop: 120
   })
 
-/*----- 
-	Quantity
---------------------------------*/
-// Thêm nút tăng và giảm vào ô input
-$('.pro-qty').prepend('<button class="dec qtybtn">-</button>');
-$('.pro-qty').append('<button class="inc qtybtn">+</button>');
+// Sự kiện click cho nút tăng/giảm
+// Sự kiện click cho nút tăng/giảm
+$('.pro-qty .qtybtn').on('click', function(event) {
+    event.preventDefault(); // Ngăn hành vi mặc định
 
-// Sự kiện click vào nút tăng hoặc giảm
-$('.qtybtn').on('click', function() {
-    var $button = $(this);
-    var $input = $button.parent().find('input'); // Lấy input trong div .pro-qty
-    var oldValue = parseInt($input.val()); // Lấy giá trị số lượng cũ
+    var $button = $(this); // Nút được nhấn
+    var $input = $button.siblings('.qty-input'); // Tìm ô input bên cạnh
+    var oldValue = parseInt($input.val()) || 1; // Lấy giá trị cũ, mặc định là 1 nếu không hợp lệ
     var newVal;
 
-    // Kiểm tra xem là nút tăng hay giảm
+    // Tăng hoặc giảm giá trị
     if ($button.hasClass('inc')) {
-        newVal = oldValue + 1; // Tăng số lượng lên 1
+        newVal = oldValue + 1;
     } else {
-        if (oldValue > 1) { // Đảm bảo không giảm xuống dưới 1
-            newVal = oldValue - 1;
-        } else {
-            newVal = 1; // Nếu số lượng là 1 thì không cho giảm nữa
-        }
+        newVal = oldValue > 1 ? oldValue - 1 : 1;
     }
 
-    // Cập nhật lại giá trị của input
+    // Cập nhật giá trị mới vào input
     $input.val(newVal);
 
-    // Cập nhật subtotal của sản phẩm sau khi thay đổi số lượng
-    var row = $button.closest("tr")[0]; // Lấy dòng sản phẩm (thêm [0] để lấy phần tử DOM thay vì jQuery object)
-    updateRowSubtotal(row, newVal); // Gọi hàm cập nhật subtotal
-
-    // Cập nhật tổng giỏ hàng (nếu cần)
-    updateTotal();
+    // Gọi các hàm cập nhật subtotal và tổng giỏ hàng
+    var $row = $button.closest('tr'); // Dòng hiện tại
+    updateRowSubtotal($row, newVal); // Cập nhật subtotal
+    updateTotal(); // Cập nhật tổng giỏ hàng
 });
+
+// Hàm cập nhật subtotal
+function updateRowSubtotal($row, quantity) {
+    // Lấy giá sản phẩm (bỏ ký hiệu VNĐ, dấu phân tách)
+    var price = parseInt($row.find('.pro-price span').text().replace(/[^\d]/g, ''));
+    var subtotal = price * quantity; // Tính subtotal
+    // Định dạng lại subtotal thành dạng VNĐ
+    $row.find('.pro-subtotal span').text(formatCurrency(subtotal)); // Cập nhật subtotal
+}
+
+// Hàm cập nhật tổng giỏ hàng
+function updateTotal() {
+    var total = 0;
+    // Lặp qua các subtotal để tính tổng
+    $('.pro-subtotal span').each(function() {
+        var subtotal = parseInt($(this).text().replace(/[^\d]/g, '')) || 0; // Lấy giá trị subtotal
+        total += subtotal; // Tính tổng
+    });
+    // Cập nhật tổng giỏ hàng với định dạng VNĐ
+    $('#total-amount').text(formatCurrency(total));
+}
+
+// Hàm định dạng tiền tệ VNĐ
+function formatCurrency(amount) {
+    return amount.toLocaleString('vi-VN') + '₫';
+}
+
+
 
 // $('.pro-qty').prepend('<button class="dec qtybtn">-</button>');
 // $('.pro-qty').append('<button class="inc qtybtn">+</button>');
@@ -355,28 +373,4 @@ if($('.contact-map').length){
 }
     
 })(jQuery);	
-    // Hàm cập nhật subtotal của dòng sản phẩm
-function updateRowSubtotal(row, quantity) {
-    const price = parseInt(row.querySelector(".pro-price span").textContent.replace(/\D/g, "")); // Giá sản phẩm
-    const newSubtotal = price * quantity; // Tính lại subtotal
-
-    // Cập nhật lại subtotal trong DOM
-    row.querySelector(".pro-subtotal span").textContent = newSubtotal.toLocaleString("vi-VN") + "₫"; 
-
-    // Cập nhật lại tổng giỏ hàng
-    updateTotal();
-}
-
-// Hàm cập nhật tổng tiền giỏ hàng
-function updateTotal() {
-    let total = 0;
-
-    // Duyệt qua tất cả các dòng trong giỏ hàng và tính tổng
-    document.querySelectorAll("tr[data-id]").forEach((row) => {
-        const subtotal = parseInt(row.querySelector(".pro-subtotal span").textContent.replace(/\D/g, ""));
-        total += subtotal;
-    });
-
-    // Cập nhật lại tổng tiền trên giao diện
-    document.getElementById("total-amount").textContent = total.toLocaleString("vi-VN") + "₫";
-}
+    

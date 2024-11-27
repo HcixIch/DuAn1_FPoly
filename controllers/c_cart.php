@@ -58,22 +58,62 @@ if (isset($_GET['view'])) {
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = [];
     }
+
     if (isset($_POST['add'])) {
         $id_pro = $_POST['id_product'];
+        $name_product = $_POST['name_product'];
         $quantity = $_POST['quantity'] ?? 1;
         $price = $_POST['price'];
-        $data = ['product_id' => $id_pro, 'quantity' => $quantity, 'price' => $price];
-        $_SESSION['cart'][] = $data;
-    }
-    if (isset($_GET['id_dl'])) {
-        foreach ($_SESSION['cart'] as $key => $item) {
-            if ($item['product_id'] == $_GET['id_dl']) {
-                unset($_SESSION['cart'][$key]);
+        $img_product = $_POST['img_product'];
+        $subtotal = $quantity * $price;
+
+        // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+        $isFound = false;
+        foreach ($_SESSION['cart'] as &$item) { // Dùng tham chiếu để cập nhật trực tiếp
+            if ($item['id_product'] == $id_pro) {
+                $item['quantity_product'] += $quantity; // Tăng số lượng
+                $item['subtotal'] = $item['quantity_product'] * $price; // Cập nhật tổng tiền
+                $isFound = true;
+                break;
             }
         }
-        $_SESSION['cart'] = array_values($_SESSION['cart']);
+
+        // Nếu sản phẩm chưa tồn tại, thêm mới
+        if (!$isFound) {
+            $data = [
+                'id_product' => $id_pro,
+                'quantity_product' => $quantity,
+                'name_product' => $name_product,
+                'price' => $price,
+                'img_product' => $img_product,
+                'subtotal' => $subtotal
+            ];
+            $_SESSION['cart'][] = $data;
+        }
+
+        // Điều hướng về trang giỏ hàng
+        header('location:index.php?ctrl=cart');
+        exit(); // Ngăn chặn xử lý thêm sau header
     }
+
+    // Xóa sản phẩm khỏi giỏ hàng
+    if (isset($_GET['id_dl'])) {
+        foreach ($_SESSION['cart'] as $key => $item) {
+            if ($item['id_product'] == $_GET['id_dl']) {
+                unset($_SESSION['cart'][$key]); // Xóa sản phẩm
+            }
+        }
+        $_SESSION['cart'] = array_values($_SESSION['cart']); // Đặt lại chỉ số mảng
+        header('location:index.php?ctrl=cart');
+        exit();
+    }
+
+    // Debug giỏ hàng (xóa khi hoàn thiện)
+    var_dump($_SESSION['cart']);
+
+    // Tiêu đề trang
     $title = 'Giỏ hàng';
+
 
     include_once './views/page_banner.php';
     include_once './views/v_cart_product.php';

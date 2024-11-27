@@ -17,31 +17,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($cart_all as $ct): ?>
-                                    <tr data-id="<?= $ct['id_cart'] ?>">
-                                        <td class="pro-thumbnail">
-                                            <a href="#"><img src="assets/images/product/<?= $ct['img_product'] ?>"
-                                                    alt="Sản phẩm"></a>
-                                        </td>
-                                        <td class="pro-title"><a href="#"><?= $ct['name_product'] ?></a></td>
-                                        <td class="pro-price">
-                                            <span><?= number_format($ct['price_product'], 0, ',', '.') ?>₫</span>
-                                        </td>
-                                        <td class="pro-quantity">
-                                            <div class="pro-qty">
-                                                <input type="number" name="quantity[<?= $ct['id_cart'] ?>]"
-                                                    class="quantity-input" min="1" value="<?= $ct['quantity'] ?>">
-                                            </div>
-                                        </td>
-                                        <td class="pro-subtotal">
-                                            <span><?= number_format($ct['subtotal'], 0, ',', '.') ?>₫</span>
-                                        </td>
-                                        <td class="pro-remove">
-                                            <a href="?ctrl=cart&id_dl=<?= $ct['id_cart'] ?>" class="remove-item"><i
-                                                    class="fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
+                                <?php foreach ($_SESSION['cart'] as $ct): ?>
+                                <tr>
+                                    <td class="pro-thumbnail">
+                                        <a href="#"><img src="assets/images/product/<?= $ct['img_product'] ?>"
+                                                alt="Sản phẩm"></a>
+                                    </td>
+                                    <td class="pro-title"><a href="#"><?= $ct['name_product'] ?></a></td>
+                                    <td class="pro-price">
+                                        <span><?= number_format($ct['price'], 0, ',', '.') ?>₫</span>
+                                    </td>
+                                    <td class="pro-quantity">
+                                        <div class="pro-qty">
+                                            <button class="qtybtn dec" type="button">-</button>
+                                            <input class="qty-input" type="number" name="quantity" min="1"
+                                                value="<?= $ct['quantity_product'] ?>" />
+                                            <button class="qtybtn inc" type="button">+</button>
+                                        </div>
+                                    </td>
+
+
+                                    <td class="pro-subtotal">
+                                        <span><?= number_format($ct['subtotal'], 0, ',', '.') ?>₫</span>
+                                    </td>
+                                    <td class="pro-remove">
+                                        <a href="?ctrl=cart&id_dl=<?= $ct['id_product'] ?>" class="remove-item"><i
+                                                class="fa fa-trash-o"></i></a>
+                                    </td>
+                                    <?php endforeach; ?>
                             </tbody>
                             <tfoot>
                                 <tr>
@@ -50,7 +53,7 @@
                                     </td>
                                     <td class="text-center">
                                         <h4 id="total-amount" style="line-height: 45px;">
-                                            <?= number_format(array_sum(array_column($cart_all, 'subtotal')), 0, ',', '.') ?>₫
+                                            <?= number_format(array_sum(array_column($_SESSION['cart'], 'subtotal')), 0, ',', '.') ?>₫
                                         </h4>
                                     </td>
                                 </tr>
