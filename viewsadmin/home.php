@@ -31,6 +31,7 @@
                                         	<td><?= $name_category?></td>
                                             <td><?=$countpro[$i]["total_product"]?></td>
                                         	<td><input type="submit" name="change" value="Sửa"></td>
+                                            
                                         </tr>
                                         
                                         <?php $i++; } ?>

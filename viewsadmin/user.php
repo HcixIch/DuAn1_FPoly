@@ -27,7 +27,6 @@
                                         <td><?= $user['full_name'] ?></td>
                                         <td><?= $user['phone_user'] ?></td>
                                         <td><?= $user['email_user'] ?></td>
-
                                         <td>
                                             <a href="?ctrl=admin&view=edituser&id=<?= $user['id_user'] ?>">Sửa</a> |
                                             <a href="?ctrl=user&action=deleteuser&id=<?= $user['id_user'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
@@ -38,6 +37,33 @@
                             </tbody>
                         </table>
                     </div>
+                    <ul class="pagination-list">
+                                <li class="pagination-item">
+                                    <a href="" class="pagination-link">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="" class="pagination-link">1</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="" class="pagination-link">2</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="" class="pagination-link">3</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="" class="pagination-link">...</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="" class="pagination-link">10</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="" class="pagination-link">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
                 </div>
             </div>
         </div>
