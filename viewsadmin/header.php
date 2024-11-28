@@ -65,7 +65,7 @@
                     </a>
                     </li>
                 <li>
-                    <a href="">
+                    <a href="?ctrl=admin&view=order">
                         <i class="pe-7s-news-paper"></i>
                         <p>Đơn hàng</p>
                     </a>

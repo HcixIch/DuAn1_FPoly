@@ -26,10 +26,9 @@ class User extends Database
         $sql = "INSERT INTO user(email_user, password) VALUES ('".$email."','".$password."');";
         return $sql = $this->db->insert($sql);
     }
-    public function UpdateUser($id,$data){
-        $sql = "UPDATE user SET user_name = ?, email_user = ? WHERE id_user = ";
-        $params = [$data['name'],$data['email'],$id];
-        return $sql = $this->db->update($sql,$params);
+    public function UpdateUser( $id, $fullname, $address_user, $email, $phone ){
+        $sql = "UPDATE user SET full_name = '".$fullname."', address_user = '".$address_user."', email_user = '".$email."', phone_user = '".$phone."'  WHERE id_user = $id;";
+        return $sql = $this->db->update($sql);
     }
     public function DeleteUser($id){
         $sql = "DELETE FROM user WHERE id_user = ?";

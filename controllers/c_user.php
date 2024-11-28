@@ -27,7 +27,13 @@ if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'account':
             $title = "Tài khoản";
-
+            if(isset($_POST['changeuser'])){
+                $fullname = $_POST['fullname'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                $changeuser = $user->UpdateUser(($_SESSION['user'][0]['id_user']),$fullname, $address, $email, $phone);
+            }
             include_once './views/page_banner.php';
             include_once './views/v_user_account.php';
             break;

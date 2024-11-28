@@ -29,7 +29,7 @@
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển bắt đầu -->
                             <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
 
-                                <form action="#" class="checkout-form">
+                                <form action="#" class="checkout-form" method="post">
                                     <div class="row row-40">
 
                                         <div class="col-lg-7">
@@ -39,22 +39,25 @@
                                                 <div class="row">
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Họ và tên*</label>
-                                                        <input type="text" placeholder="Họ và tên">
+                                                        <input type="text" name="fullname" value="<?=$_SESSION['user'][0]['full_name'] ?>" >
                                                     </div>
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Địa chỉ Email*</label>
-                                                        <input type="email" placeholder="Email">
+                                                        <input type="email" name="email" value="
+                                                        <?=$_SESSION['user'][0]['email_user']?>" >
                                                     </div>
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Số điện thoại*</label>
-                                                        <input type="text" placeholder="Số điện thoại">
+                                                        <input type="text" name="phone" value="
+                                                        <?=$_SESSION['user'][0]['phone_user']?>" >
                                                     </div>
                                                     <div class="col-12 mb-5">
                                                         <label>Địa chỉ*</label>
-                                                        <input type="text" placeholder="Nhập địa chỉ">
+                                                        <input type="text" name="address" value="
+                                                        <?=$_SESSION['user'][0]['address_user']?>" >
                                                     </div>
                                                     <div class="col-12 mb-5">
-                                                        <button class="btn btn-lg btn-round">Lưu</button>
+                                                        <button class="btn btn-lg btn-round" name="changeuser">Lưu</button>
                                                     </div>
 
                                                 </div>
@@ -157,41 +160,13 @@
                             </div>
                             <!-- Nội dung thẻ đơn lẻ Tải xuống kết thúc -->
 
-                            <!-- Nội dung thẻ đơn lẻ Phương thức thanh toán bắt đầu -->
-                            <div class="tab-pane fade" id="payment-method" role="tabpanel">
-                                <div class="myaccount-content">
-                                    <h3>Phương thức thanh toán</h3>
-
-                                    <p class="saved-message">Bạn chưa thể lưu Phương thức thanh toán của mình.</p>
-                                </div>
-                            </div>
-                            <!-- Nội dung thẻ đơn lẻ Phương thức thanh toán kết thúc -->
-
-                            <!-- Nội dung thẻ đơn lẻ Địa chỉ bắt đầu -->
-                            <div class="tab-pane fade" id="address-edit" role="tabpanel">
-                                <div class="myaccount-content">
-                                    <h3>Địa chỉ thanh toán</h3>
-
-                                    <address>
-                                        <p><strong>Alex Tuntuni</strong></p>
-                                        <p>1355 Market St, Suite 900 <br>
-                                            San Francisco, CA 94103</p>
-                                        <p>Điện thoại: (123) 456-7890</p>
-                                    </address>
-
-                                    <a href="#" class="btn d-inline-block edit-address-btn"><i
-                                            class="fa fa-edit"></i>Chỉnh sửa địa chỉ</a>
-                                </div>
-                            </div>
-                            <!-- Nội dung thẻ đơn lẻ Địa chỉ kết thúc -->
-
                             <!-- Nội dung thẻ đơn lẻ Chi tiết tài khoản bắt đầu -->
                             <div class="tab-pane fade" id="account-info" role="tabpanel">
                                 <div class="myaccount-content">
                                     <h3>Chi tiết tài khoản</h3>
 
                                     <div class="account-details-form">
-                                        <form action="#">
+                                        <form action="#"  method="post">
                                             <div class="row">
                                                 <div class="col-lg-6 col-12 mb-30">
                                                     <input id="first-name" placeholder="Tên" type="text">

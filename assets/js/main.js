@@ -219,40 +219,91 @@ $('#sticky-sidebar').theiaStickySidebar({
     additionalMarginTop: 120
   })
 
-/*----- 
-	Quantity
---------------------------------*/
-// Thêm nút tăng và giảm vào ô input
-$('.pro-qty').prepend('<button class="dec qtybtn">-</button>');
-$('.pro-qty').append('<button class="inc qtybtn">+</button>');
+// Sự kiện click cho nút tăng/giảm
+// Sự kiện click cho nút tăng/giảm
+$(document).ready(function() {
+    // Gắn sự kiện click vào nút tăng và giảm số lượng
+    $(document).on('click', '.qtybtn', function() {
+        var $input = $(this).siblings('.qty-input'); // Lấy ô input
+        var quantity = parseInt($input.val()); // Lấy giá trị hiện tại
 
-// Sự kiện click vào nút tăng hoặc giảm
-$('.qtybtn').on('click', function() {
-    var $button = $(this);
-    var $input = $button.parent().find('input'); // Lấy input trong div .pro-qty
-    var oldValue = parseInt($input.val()); // Lấy giá trị số lượng cũ
-    var newVal;
-
-    // Kiểm tra xem là nút tăng hay giảm
-    if ($button.hasClass('inc')) {
-        newVal = oldValue + 1; // Tăng số lượng lên 1
-    } else {
-        if (oldValue > 1) { // Đảm bảo không giảm xuống dưới 1
-            newVal = oldValue - 1;
-        } else {
-            newVal = 1; // Nếu số lượng là 1 thì không cho giảm nữa
+        // Nếu là nút tăng
+        if ($(this).hasClass('inc')) {
+            quantity++; // Tăng số lượng
+        } 
+        // Nếu là nút giảm và số lượng lớn hơn 1
+        else if ($(this).hasClass('dec') && quantity > 1) {
+            quantity--; // Giảm số lượng
         }
+
+        $input.val(quantity); // Cập nhật lại ô input
+
+        // Gửi yêu cầu AJAX để cập nhật giỏ hàng trên server
+        var productId = $input.closest('tr').data('product-id'); // Lấy ID sản phẩm từ data-product-id của <tr>
+
+        $.ajax({
+            url: 'index.php?ctrl=cart', // Đường dẫn cập nhật giỏ hàng
+            method: 'POST',
+            data: {
+                id_product: productId,
+                quantity: quantity // Gửi số lượng mới
+            },
+            success: function(response) {
+                // Cập nhật lại subtotal cho sản phẩm
+                updateRowSubtotal($input.closest('tr'), quantity);
+                // Cập nhật tổng giỏ hàng
+                updateTotal();
+            },
+            error: function(xhr, status, error) {
+                console.error('Lỗi khi cập nhật giỏ hàng:', error);
+            }
+        });
+    });
+
+    // Cập nhật subtotal khi thay đổi số lượng
+    $(document).on('change', '.qty-input', function() {
+        var $row = $(this).closest('tr');
+        var quantity = parseInt($(this).val()); // Lấy số lượng mới
+        var productId = $row.data('product-id'); // Lấy product ID từ data-product-id
+
+        $.ajax({
+            url: 'index.php?ctrl=cart', 
+            method: 'POST',
+            data: {
+                id_product: productId,
+                quantity: quantity // Gửi số lượng mới lên server
+            },
+            success: function(response) {
+                updateRowSubtotal($row, quantity); // Cập nhật subtotal
+                updateTotal(); // Cập nhật tổng giỏ hàng
+            },
+            error: function(xhr, status, error) {
+                console.error('Có lỗi xảy ra khi cập nhật giỏ hàng: ', error);
+            }
+        });
+    });
+
+    // Cập nhật subtotal cho một sản phẩm
+    function updateRowSubtotal($row, quantity) {
+        var price = parseInt($row.find('.pro-price span').text().replace(/[^\d]/g, ''));
+        var subtotal = price * quantity; // Tính subtotal
+        $row.find('.pro-subtotal span').text(formatCurrency(subtotal)); // Cập nhật subtotal
     }
 
-    // Cập nhật lại giá trị của input
-    $input.val(newVal);
+    // Cập nhật tổng giỏ hàng
+    function updateTotal() {
+        var total = 0;
+        $('.pro-subtotal span').each(function() {
+            var subtotal = parseInt($(this).text().replace(/[^\d]/g, '')) || 0; // Lấy giá trị subtotal
+            total += subtotal; // Tính tổng
+        });
+        $('#total-amount').text(formatCurrency(total)); // Cập nhật tổng giỏ hàng
+    }
 
-    // Cập nhật subtotal của sản phẩm sau khi thay đổi số lượng
-    var row = $button.closest("tr")[0]; // Lấy dòng sản phẩm (thêm [0] để lấy phần tử DOM thay vì jQuery object)
-    updateRowSubtotal(row, newVal); // Gọi hàm cập nhật subtotal
-
-    // Cập nhật tổng giỏ hàng (nếu cần)
-    updateTotal();
+    // Hàm định dạng tiền tệ VNĐ
+    function formatCurrency(amount) {
+        return amount.toLocaleString('vi-VN') + '₫';
+    }
 });
 
 // $('.pro-qty').prepend('<button class="dec qtybtn">-</button>');
@@ -355,28 +406,4 @@ if($('.contact-map').length){
 }
     
 })(jQuery);	
-    // Hàm cập nhật subtotal của dòng sản phẩm
-function updateRowSubtotal(row, quantity) {
-    const price = parseInt(row.querySelector(".pro-price span").textContent.replace(/\D/g, "")); // Giá sản phẩm
-    const newSubtotal = price * quantity; // Tính lại subtotal
-
-    // Cập nhật lại subtotal trong DOM
-    row.querySelector(".pro-subtotal span").textContent = newSubtotal.toLocaleString("vi-VN") + "₫"; 
-
-    // Cập nhật lại tổng giỏ hàng
-    updateTotal();
-}
-
-// Hàm cập nhật tổng tiền giỏ hàng
-function updateTotal() {
-    let total = 0;
-
-    // Duyệt qua tất cả các dòng trong giỏ hàng và tính tổng
-    document.querySelectorAll("tr[data-id]").forEach((row) => {
-        const subtotal = parseInt(row.querySelector(".pro-subtotal span").textContent.replace(/\D/g, ""));
-        total += subtotal;
-    });
-
-    // Cập nhật lại tổng tiền trên giao diện
-    document.getElementById("total-amount").textContent = total.toLocaleString("vi-VN") + "₫";
-}
+    
