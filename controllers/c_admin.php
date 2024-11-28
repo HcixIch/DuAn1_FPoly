@@ -13,18 +13,6 @@ include_once './viewsadmin/header.php';
                 $user_list = $user->getAllUser();
                 include './viewsadmin/user.php';
                 break;
-<<<<<<< HEAD
-            case 'product':
-                $product_list = $product->getAllproduct();
-                include './viewsadmin/product.php';
-=======
-            case 'chart':
-                include './viewsadmin/chart.php';
-                break;
-            default:
-                echo "Không tìm thấy trang này.";
->>>>>>> d0a4d211daa1923fe88b9f2d4e53b600b174a63a
-                break;
         }
     }
     else{
