@@ -13,6 +13,10 @@ include_once './viewsadmin/header.php';
                 $user_list = $user->getAllUser();
                 include './viewsadmin/user.php';
                 break;
+            case 'product':
+                $product_list = $product->getAllproduct();
+                include './viewsadmin/product.php';
+                break;
         }
     }
     else{
