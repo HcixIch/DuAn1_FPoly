@@ -13,6 +13,12 @@ include_once './viewsadmin/header.php';
                 $user_list = $user->getAllUser();
                 include './viewsadmin/user.php';
                 break;
+            case 'chart':
+                include './viewsadmin/chart.php';
+                break;
+            default:
+                echo "Không tìm thấy trang này.";
+                break;
         }
     }
     else{
