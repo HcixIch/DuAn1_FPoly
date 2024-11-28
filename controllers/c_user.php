@@ -2,6 +2,7 @@
 include_once './views/t_header.php';
 include_once './models/m_user.php';
 $user = new User();
+
 if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
     if (isset($_GET['id'])) {
         $id = intval($_GET['id']); 
