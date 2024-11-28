@@ -13,6 +13,7 @@ include_once './viewsadmin/header.php';
                 $user_list = $user->getAllUser();
                 include './viewsadmin/user.php';
                 break;
+            
         }
     }
     else{
