@@ -18,44 +18,35 @@
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Họ và tên*</label>
-                                        <input type="text" value="<?= $_SESSION['user'][0]['full_name'] ?>" disabled>
-                                    </div>
-                                    <div class="col-md-12 col-12 mb-5">
-                                        <label>Địa chỉ Email*</label>
-                                        <input type="email" value="<?= $_SESSION['user'][0]['email_user'] ?>" disabled>
+                                        <input type="text" value="<?= $_SESSION['user'][0]['full_name'] ?>">
                                     </div>
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Số điện thoại*</label>
-                                        <input type="text" value="<?= $_SESSION['user'][0]['phone_user'] ?>" disabled>
+                                        <input type="text" value="<?= $_SESSION['user'][0]['phone_user'] ?>">
                                     </div>
                                     <div class="col-12 mb-5">
                                         <label>Địa chỉ*</label>
-                                        <input type="text" value="<?= $_SESSION['user'][0]['address_user'] ?>" disabled>
+                                        <input type="text" value="<?= $_SESSION['user'][0]['address_user'] ?>">
                                     </div>
+                                    <span class="mb-5 col-12 col-md-12">* Có thể thay đổi địa chỉ nhận hàng</span>
                                     <div class="col-12 mb-5">
                                         <div class="check-box">
                                             <input type="checkbox" id="shiping_address" data-shipping>
-                                            <label for="shiping_address">Giao đến địa chỉ khác</label>
+                                            <label for="shiping_address">Áp dụng mã giảm giá</label>
                                         </div>
+                                        <p>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Shipping Address -->
                             <div id="shipping-form">
-                                <h4 class="checkout-title">Địa chỉ giao hàng</h4>
+                                <h4 class="checkout-title">Mã giảm giá</h4>
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-5">
-                                        <label>Họ và tên*</label>
-                                        <input type="text" placeholder="Nhập họ và tên">
-                                    </div>
-                                    <div class="col-md-12 col-12 mb-5">
-                                        <label>Số điện thoại*</label>
-                                        <input type="text" placeholder="Nhập số điện thoại">
-                                    </div>
-                                    <div class="col-12 mb-5">
-                                        <label>Địa chỉ*</label>
-                                        <input type="text" placeholder="Nhập địa chỉ">
+                                        <label>Mã giảm giá</label>
+                                        <input type="text" placeholder="Nhập mã">
                                     </div>
                                 </div>
                             </div>
@@ -93,48 +84,19 @@
                                     <h4 class="checkout-title">Phương thức thanh toán</h4>
                                     <div class="checkout-payment-method">
                                         <div class="single-method">
-                                            <input type="radio" id="payment_check" name="payment-method" value="check">
-                                            <label for="payment_check">Thanh toán bằng séc</label>
-                                            <p data-method="check">Vui lòng gửi séc đến Tên cửa hàng, Địa chỉ cửa hàng,
-                                                Thành phố cửa hàng, Bang cửa hàng, Mã bưu điện cửa hàng, Quốc gia cửa
-                                                hàng.</p>
+                                            <input type="radio" id="payment_momo" name="payment-method" value="momo">
+                                            <label for="payment_momo">Thanh toán qua Momo</label>
                                         </div>
                                         <div class="single-method">
                                             <input type="radio" id="payment_bank" name="payment-method" value="bank">
-                                            <label for="payment_bank">Chuyển khoản ngân hàng trực tiếp</label>
-                                            <p data-method="bank">Vui lòng gửi séc đến Tên cửa hàng, Địa chỉ cửa hàng,
-                                                Thành phố cửa hàng, Bang cửa hàng, Mã bưu điện cửa hàng, Quốc gia cửa
-                                                hàng.</p>
+                                            <label for="payment_bank">Thanh toán qua ngân hàng</label>
                                         </div>
                                         <div class="single-method">
-                                            <input type="radio" id="payment_cash" name="payment-method" value="cash">
-                                            <label for="payment_cash">Thanh toán khi giao hàng</label>
-                                            <p data-method="cash">Vui lòng gửi séc đến Tên cửa hàng, Địa chỉ cửa hàng,
-                                                Thành phố cửa hàng, Bang cửa hàng, Mã bưu điện cửa hàng, Quốc gia cửa
-                                                hàng.</p>
-                                        </div>
-                                        <div class="single-method">
-                                            <input type="radio" id="payment_paypal" name="payment-method"
-                                                value="paypal">
-                                            <label for="payment_paypal">Thanh toán qua Paypal</label>
-                                            <p data-method="paypal">Vui lòng gửi séc đến Tên cửa hàng, Địa chỉ cửa hàng,
-                                                Thành phố cửa hàng, Bang cửa hàng, Mã bưu điện cửa hàng, Quốc gia cửa
-                                                hàng.</p>
-                                        </div>
-                                        <div class="single-method">
-                                            <input type="radio" id="payment_payoneer" name="payment-method"
-                                                value="payoneer">
-                                            <label for="payment_payoneer">Thanh toán qua Payoneer</label>
-                                            <p data-method="payoneer">Vui lòng gửi séc đến Tên cửa hàng, Địa chỉ cửa
-                                                hàng, Thành phố cửa hàng, Bang cửa hàng, Mã bưu điện cửa hàng, Quốc gia
-                                                cửa hàng.</p>
-                                        </div>
-                                        <div class="single-method">
-                                            <input type="checkbox" id="accept_terms">
-                                            <label for="accept_terms">Tôi đã đọc và chấp nhận các điều khoản & điều
-                                                kiện</label>
+                                            <input type="radio" id="payment_cod" name="payment-method" value="cod">
+                                            <label for="payment_cod">Thanh toán khi nhận hàng</label>
                                         </div>
                                     </div>
+
                                     <button class="place-order btn btn-lg btn-round">Đặt hàng</button>
                                 </div>
 
