@@ -40,6 +40,11 @@ class User extends Database
         $sql = "SELECT * FROM user WHERE email_user ='".$email."' AND password = '".$password."' ";
         return $this->db->getAll($sql);
     }
+<<<<<<< Updated upstream
     
     
 }
+=======
+}
+?>
+>>>>>>> Stashed changes
