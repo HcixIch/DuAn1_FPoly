@@ -1,8 +1,6 @@
 <?php
 include_once './views/t_header.php';
 include_once './models/m_user.php';
-$user = new User();
-
 if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
     if (isset($_GET['id'])) {
         $id = intval($_GET['id']); 
@@ -39,8 +37,9 @@ if (isset($_GET['view'])) {
             break;
         case 'login':
             $kt = 0;
+            
             if (isset($_POST['register'])) {
-                if ($_POST['password'] != $_POST['confirm_password']) {
+                /*if ($_POST['password'] != $_POST['confirm_password']) {
                     echo "<script>alert('Mật khẩu không trùng khớp.')</script>";
                     $kt = 1;
                 }
@@ -49,7 +48,7 @@ if (isset($_GET['view'])) {
                         echo "<script>alert('Vui lòng nhập mật khẩu')</script>";
                         $kt = 1;
                     }
-                }
+                }*/
                 if (($kt == 0)) {
                     $email = $user->getAllbyEmail($_POST['email']);
                     if (count($email) != 0) {
@@ -81,16 +80,18 @@ if (isset($_GET['view'])) {
             include_once './views/page_banner.php';
             include_once './views/v_user_login&register.php';
             break;
-            case 'logout':
-                unset($_SESSION['user']);
-                header("location:index.php");
-                break;
+        case 'logout':
+            unset($_SESSION['user']);
+            header("location:index.php");
+            break;
         default:
             echo "Không tìm thấy trang này.";
+            break;
     }
-} else {
+ } else {
     $kt = 0;
     if (isset($_POST['register'])) {
+        /*
         if ($_POST['password'] != $_POST['confirm_password']) {
             echo "<script>alert('Mật khẩu không trùng khớp.')</script>";
             $kt = 1;
@@ -100,14 +101,14 @@ if (isset($_GET['view'])) {
                 echo "<script>alert('Vui lòng nhập mật khẩu')</script>";
                 $kt = 1;
             }
-        }
+        }}*/
         if (($kt == 0)) {
             $email = $user->getAllbyEmail($_POST['email']);
             if (count($email) != 0) {
                 echo "<script>alert('email đã đăng kí rồi')</script>";
                 $kt = 1;
             }
-        }
+        
         if ($kt == 0) {
             $user->CreateUser($_POST['email'], $_POST['password']);
             echo "Đăng kí thành công.";
@@ -132,5 +133,5 @@ if (isset($_GET['view'])) {
     include_once './views/page_banner.php';
     include_once './views/v_user_login&register.php';
 }
-
+}
 include_once './views/t_footer.php';
