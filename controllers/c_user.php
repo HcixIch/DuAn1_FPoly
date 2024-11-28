@@ -1,5 +1,28 @@
 <?php
 include_once './views/t_header.php';
+include_once './models/m_user.php';
+$user = new User();
+
+if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
+    if (isset($_GET['id'])) {
+        $id = intval($_GET['id']); // Lấy ID từ URL và ép kiểu thành số nguyên
+
+        // Gọi hàm DeleteUser từ model User
+        $result = $user->DeleteUser($id);
+
+        // Kiểm tra kết quả và hiển thị thông báo
+        if ($result) {
+            echo "<script>alert('Xóa người dùng thành công!');</script>";
+        } else {
+            echo "<script>alert('Không thể xóa người dùng!');</script>";
+        }
+
+        // Điều hướng về lại trang danh sách người dùng
+        header("Location: ?ctrl=admin&view=user");
+        exit;
+    }
+}
+
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'account':
@@ -103,4 +126,5 @@ if (isset($_GET['view'])) {
     include_once './views/page_banner.php';
     include_once './views/v_user_login&register.php';
 }
+
 include_once './views/t_footer.php';

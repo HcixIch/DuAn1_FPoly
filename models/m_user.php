@@ -1,6 +1,7 @@
 <?php
 class User extends Database
 {
+    private $conn;
     public $db;
     public function __construct()
     {
@@ -31,11 +32,15 @@ class User extends Database
         return $sql = $this->db->update($sql,$params);
     }
     public function DeleteUser($id){
-        $sql = "DELETE FROM user WHERE id_user = '".$id."'";
-        return $this->db->update($sql,[$id]);
+        $sql = "DELETE FROM user WHERE id_user = ?";
+        $params = [$id];
+        return $this->db->delete($sql, $params);
     }
+    
     public function login($email, $password){
         $sql = "SELECT * FROM user WHERE email_user ='".$email."' AND password = '".$password."' ";
         return $this->db->getAll($sql);
     }
+    
+    
 }

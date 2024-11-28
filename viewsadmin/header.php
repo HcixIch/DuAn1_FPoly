@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="?ctrl=admin&view=user">
                         <i class="pe-7s-user"></i>
                         <p>Người dùng</p>
                     </a>

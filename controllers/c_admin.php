@@ -5,6 +5,11 @@ include_once './viewsadmin/header.php';
             case 'addpro':
                 include_once './viewsadmin/addpro.php';
                 break;
+            
+            case 'user':
+                $user_list = $user->getAllUser();
+                include_once './viewsadmin/user.php';
+                break;
         }
     }
     else{
