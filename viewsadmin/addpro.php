@@ -11,8 +11,9 @@
                                 <form>
                                     <label for="">Sản phẩm</label>
                                     <select name="cate" id="cate" class="form-control"></select>
-                                    <?php foreach(){?>
-                                        <option value="$id">$name</option>
+                                    <?php foreach($addpro_list as $ad) {
+                                        extract($ad); ?>
+                                    <option value="$id">$name</option>
                                     <label for="">Tên sản phẩm</label>
                                     <input type="text" name="name" id="name" class="form-control"> 
                                     <label for="">Giá sản phẩm</label>
@@ -24,10 +25,12 @@
                                     <label for="">Hình ảnh</label>
                                     <input type="file" name="image" id="image" class="form-control">
                                     <input type="button" value="Thêm sản phẩm" onclick="">
-                                    <?php}?>
+                                    <?php } ?>
                                 </form>
-
+                                
                             </div>
                             
                         </div>
                     </div>
+                </div>
+            </div>
