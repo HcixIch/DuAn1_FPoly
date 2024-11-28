@@ -123,7 +123,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="?ctrl=user&view=logout">
                                 <p>Đăng xuất</p>
                             </a>
                         </li>

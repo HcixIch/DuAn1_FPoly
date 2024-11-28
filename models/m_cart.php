@@ -27,6 +27,7 @@ class Cart extends Database
         } else {
             // Thêm mới
             $subtotal = $quantity * $price;
+
             $sql = "INSERT INTO cart (id_product,id_user,quantity,subtotal) VALUES ($product_id,$id_user,$quantity,$subtotal)";
             return $this->db->insert($sql);
         }

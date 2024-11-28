@@ -3,6 +3,7 @@ include_once './viewsadmin/header.php';
     if (isset($_GET['view'])){
         switch ($_GET['view']) {
             case 'addpro':
+                $addpro_list = $prod->getAllProducts();
                 include_once './viewsadmin/addpro.php';
                 break;
             case 'order':
@@ -13,6 +14,7 @@ include_once './viewsadmin/header.php';
                 $user_list = $user->getAllUser();
                 include './viewsadmin/user.php';
                 break;
+            
         }
     }
     else{
