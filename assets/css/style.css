@@ -6412,7 +6412,37 @@ a.popup-img {
   cursor: pointer;
   font-size: 16px;
 }
+#nico {
+  white-space: nowrap; /* Ngăn ngắt dòng */
+  overflow: hidden; /* Ẩn phần văn bản tràn ra ngoài */
+  text-overflow: ellipsis; /* Thêm dấu "..." khi văn bản bị cắt */
+  display: block; /* Đảm bảo thẻ `<p>` là khối */
+  line-height: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 10px 0;
+  border: none;
+  margin: 0;
+}
+.checkout-cart-total li {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: space-between; /* Khoảng cách giữa các phần tử */
+  list-style: none; /* Bỏ dấu chấm đầu dòng */
+}
 
+#nico {
+  white-space: nowrap; /* Không cho xuống dòng */
+  overflow: hidden; /* Ẩn phần vượt quá */
+  text-overflow: ellipsis; /* Thêm dấu "..." nếu vượt quá chiều rộng */
+  max-width: 200px; /* Chiều rộng tối đa cho tên sản phẩm */
+}
+
+.checkout-cart-total span {
+  display: inline-block; /* Đảm bảo span xử lý tốt trong flex */
+  vertical-align: middle; /* Căn giữa biểu tượng tiền với chữ */
+  line-height: 1; /* Điều chỉnh chiều cao dòng phù hợp */
+}
 .qty-btn:hover {
   background-color: #e0e0e0;
 }
@@ -7006,13 +7036,15 @@ a.popup-img {
   font-size: 14px;
   line-height: 23px;
   font-weight: 600;
-  display: block;
-  margin-bottom: 16px;
+  display: flex;
+  list-style: none;
+  flex-wrap: nowrap;
 }
 
 .checkout-cart-total ul li span {
   color: #ffffff;
   float: right;
+  display: block;
 }
 
 .checkout-cart-total p {

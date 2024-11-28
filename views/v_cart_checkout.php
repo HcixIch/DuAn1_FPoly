@@ -1,4 +1,5 @@
 <!--Checkout section start-->
+<?php var_dump($_SESSION['user']); ?>
 <div
     class="checkout-section section pt-30 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50  pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
     <div class="container">
@@ -17,19 +18,19 @@
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Họ và tên*</label>
-                                        <input type="text" placeholder="Nhập họ và tên">
+                                        <input type="text" value="<?= $_SESSION['user'][0]['full_name'] ?>" disabled>
                                     </div>
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Địa chỉ Email*</label>
-                                        <input type="email" placeholder="Nhập email">
+                                        <input type="email" value="<?= $_SESSION['user'][0]['email_user'] ?>" disabled>
                                     </div>
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Số điện thoại*</label>
-                                        <input type="text" placeholder="Nhập số điện thoại">
+                                        <input type="text" value="<?= $_SESSION['user'][0]['phone_user'] ?>" disabled>
                                     </div>
                                     <div class="col-12 mb-5">
                                         <label>Địa chỉ*</label>
-                                        <input type="text" placeholder="Nhập địa chỉ">
+                                        <input type="text" value="<?= $_SESSION['user'][0]['address_user'] ?>" disabled>
                                     </div>
                                     <div class="col-12 mb-5">
                                         <div class="check-box">
@@ -47,10 +48,6 @@
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Họ và tên*</label>
                                         <input type="text" placeholder="Nhập họ và tên">
-                                    </div>
-                                    <div class="col-md-12 col-12 mb-5">
-                                        <label>Địa chỉ Email*</label>
-                                        <input type="email" placeholder="Nhập email">
                                     </div>
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Số điện thoại*</label>
@@ -73,14 +70,21 @@
                                     <div class="checkout-cart-total">
                                         <h4>Sản phẩm <span>Tổng</span></h4>
                                         <ul>
-                                            <li>Teritory Quentily X 01 <span>$35.00</span></li>
-                                            <li>Adurite Silocone X 02 <span>$59.00</span></li>
-                                            <li>Baizidale Momone X 01 <span>$78.00</span></li>
-                                            <li>Makorone Cicile X 01 <span>$65.00</span></li>
+                                            <?php foreach ($_SESSION['cart'] as $ct) { ?>
+                                                <li>
+                                                    <p id="nico"><?= $ct['name_product'] ?></p> X
+                                                    <?= $ct['quantity_product'] ?>
+                                                    <span><?= number_format($ct['subtotal'], 0, ',', '.') ?> ₫</span>
+                                                </li>
+                                            <?php } ?>
                                         </ul>
-                                        <p>Tổng phụ <span>$296.00</span></p>
-                                        <p>Phí vận chuyển <span>$00.00</span></p>
-                                        <h4>Tổng cộng <span>$296.00</span></h4>
+                                        <p>Tổng phụ
+                                            <span><?= number_format(array_sum(array_column($_SESSION['cart'], 'subtotal')), 0, ',', '.') ?>₫</span>
+                                        </p>
+                                        <p>Phí vận chuyển <span><?= number_format(30000, 0, ',', '.') ?> ₫</span></p>
+                                        <h4>Tổng cộng
+                                            <span><?= number_format(array_sum(array_column($_SESSION['cart'], 'subtotal')) + 30000, 0, ',', '.') ?>₫</span>
+                                        </h4>
                                     </div>
                                 </div>
 
