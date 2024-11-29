@@ -1,5 +1,5 @@
 <!--Checkout section start-->
-<?php var_dump($_SESSION['user']); ?>
+<?php var_dump($_POST['voucher']); ?>
 <div
     class="checkout-section section pt-30 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50  pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
     <div class="container">
@@ -7,7 +7,7 @@
             <div class="col-12">
 
                 <!-- Checkout Form Start-->
-                <form action="#" class="checkout-form">
+                <form action="?ctrl=cart&view=checkout" method="post" class="checkout-form">
                     <div class="row row-40">
 
                         <div class="col-lg-7">
@@ -18,15 +18,18 @@
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Họ và tên*</label>
-                                        <input type="text" value="<?= $_SESSION['user'][0]['full_name'] ?>">
+                                        <input type="text" name="fullname"
+                                            value="<?= $_SESSION['user'][0]['full_name'] ?>">
                                     </div>
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Số điện thoại*</label>
-                                        <input type="text" value="<?= $_SESSION['user'][0]['phone_user'] ?>">
+                                        <input type="text" name="phone"
+                                            value="<?= $_SESSION['user'][0]['phone_user'] ?>">
                                     </div>
                                     <div class="col-12 mb-5">
                                         <label>Địa chỉ*</label>
-                                        <input type="text" value="<?= $_SESSION['user'][0]['address_user'] ?>">
+                                        <input type="text" name="address"
+                                            value="<?= $_SESSION['user'][0]['address_user'] ?>">
                                     </div>
                                     <span class="mb-5 col-12 col-md-12">* Có thể thay đổi địa chỉ nhận hàng</span>
                                     <div class="col-12 mb-5">
@@ -46,7 +49,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Mã giảm giá</label>
-                                        <input type="text" placeholder="Nhập mã">
+                                        <input type="text" name="voucher" placeholder="Nhập mã">
                                     </div>
                                 </div>
                             </div>
@@ -84,20 +87,23 @@
                                     <h4 class="checkout-title">Phương thức thanh toán</h4>
                                     <div class="checkout-payment-method">
                                         <div class="single-method">
-                                            <input type="radio" id="payment_momo" name="payment-method" value="momo">
+                                            <input type="radio" id="payment_momo" name="payment_method" value="momo">
                                             <label for="payment_momo">Thanh toán qua Momo</label>
                                         </div>
                                         <div class="single-method">
-                                            <input type="radio" id="payment_bank" name="payment-method" value="bank">
+                                            <input type="radio" id="payment_bank" name="payment_method" value="bank">
                                             <label for="payment_bank">Thanh toán qua ngân hàng</label>
                                         </div>
                                         <div class="single-method">
-                                            <input type="radio" id="payment_cod" name="payment-method" value="cod">
+                                            <input type="radio" id="payment_cod" name="payment_method" value="cod">
                                             <label for="payment_cod">Thanh toán khi nhận hàng</label>
                                         </div>
                                     </div>
-
-                                    <button class="place-order btn btn-lg btn-round">Đặt hàng</button>
+                                    <input type="hidden" name="provisional"
+                                        value="<?= array_sum(array_column($_SESSION['cart'], 'subtotal')) ?>">
+                                    <input type="hidden" name="id_user" value="<?= $_SESSION['user'][0]['id_user'] ?>">
+                                    <button type="submit" name="buynow" class="place-order btn btn-lg btn-round">Đặt
+                                        hàng</button>
                                 </div>
 
                             </div>

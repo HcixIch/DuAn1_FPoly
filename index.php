@@ -4,13 +4,14 @@ ob_start();
 include_once 'models/m_database.php';
 include_once 'models/m_product.php';
 include_once 'models/m_category.php';
-include_once 'models/m_cart.php';
 include_once 'models/m_user.php';
 include_once 'models/m_order.php';
+include_once 'models/m_checkout.php';
 $prod = new Product();
 $cates = new Category();
 $user =  new User();
-$order = new Order;
+$order = new Order();
+$checkout = new Checkout();
 $pro_all = $prod->getProductsByCondition('all', "");
 $cate_all = $cates->getAllCategories();
 if (isset($_GET['ctrl'])) {

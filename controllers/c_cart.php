@@ -3,6 +3,32 @@ include_once './views/t_header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'checkout':
+            // Kiểm tra nếu đã đăng nhập
+            if (isset($_POST['buynow'])) {
+                $user = $_POST['id_user'];
+                $fullname = $_POST['fullname'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                $voucher = isset($_POST['voucher']) && $_POST['voucher'] !== '' ? (int)$_POST['voucher'] : NULL;
+
+                $payment_method = $_POST['payment_method'];
+                $shipping_cost = 30000;
+                $provisional_price = $_POST['provisional'];
+                $total_price = $provisional_price + $shipping_cost;
+                $data = [
+                    'id_user' => $user,
+                    'provisional_price' => $provisional_price,
+                    'total_price' => $total_price,
+                    'shipping_cost' => $shipping_cost,
+                    'fullname' => $fullname,
+                    'phone' => $phone,
+                    'address' => $address,
+                    'voucher' => $voucher,
+                    'payment_method' => $payment_method
+                ];
+                $checkout->insertCheckout($data);
+            }
+
             $title = 'Thanh toán';
 
             include_once './views/page_banner.php';

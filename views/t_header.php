@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                             <div class="header-cart">
-                                <a href="?ctrl=cart"><i class="fa fa-shopping-cart"></i><span><?php if (isset($_SESSION['user'])) {
+                                <a href="?ctrl=cart"><i class="fa fa-shopping-cart"></i><span><?php if (isset($_SESSION['user']) && isset($_SESSION['cart'])) {
                                                                                                     echo
                                                                                                     count($_SESSION['cart']);
                                                                                                 } else {
