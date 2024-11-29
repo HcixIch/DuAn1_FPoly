@@ -19,4 +19,9 @@ class Checkout extends Database
             VALUES ($id_user, $total_price, $shipping_cost, '$address', '$phone', '$fullname', $provisional_price, '$payment_method', " . ($voucher === NULL ? "NULL" : "'$voucher'") . ")";
         return $this->db->insert($sql);
     }
+    public function getCheckoutNewMost()
+    {
+        $sql = "SELECT * FROM checkout ORDER BY id_checkout DESC LIMIT 1";
+        return $this->db->getAll($sql);
+    }
 }

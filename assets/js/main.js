@@ -219,6 +219,7 @@ $('#sticky-sidebar').theiaStickySidebar({
     additionalMarginTop: 120
   })
 
+
 // Sự kiện click cho nút tăng/giảm
 // Sự kiện click cho nút tăng/giảm
 $(document).ready(function() {
@@ -407,3 +408,51 @@ if($('.contact-map').length){
     
 })(jQuery);	
     
+document.addEventListener('DOMContentLoaded', function () {
+    const formElement = document.getElementById('checkout-form');
+
+    if (formElement) {
+        // Hàm kiểm tra form
+        function validateForm(event) {
+            const fullname = formElement.querySelector('[name="fullname"]').value.trim();
+            const phone = formElement.querySelector('[name="phone"]').value.trim();
+            const address = formElement.querySelector('[name="address"]').value.trim();
+            const voucher = formElement.querySelector('[name="voucher"]').value.trim();
+            const paymentMethod = formElement.querySelector('[name="payment_method"]:checked');
+
+            // Kiểm tra các trường
+            if (fullname === '') {
+                alert('Họ và tên không được để trống!');
+                event.preventDefault();
+                return;
+            }
+
+            if (phone === '' || !/^\d{10,11}$/.test(phone)) {
+                alert('Số điện thoại không hợp lệ! (Cần có 10-11 chữ số)');
+                event.preventDefault();
+                return;
+            }
+
+            if (address === '') {
+                alert('Địa chỉ không được để trống!');
+                event.preventDefault();
+                return;
+            }
+
+            if (voucher !== '' && voucher.length < 5) {
+                alert('Mã giảm giá phải có ít nhất 5 ký tự!');
+                event.preventDefault();
+                return;
+            }
+
+            if (!paymentMethod) {
+                alert('Vui lòng chọn phương thức thanh toán!');
+                event.preventDefault();
+                return;
+            }
+        }
+
+        // Thêm sự kiện 'submit' cho form
+        formElement.addEventListener('submit', validateForm);
+    }
+});

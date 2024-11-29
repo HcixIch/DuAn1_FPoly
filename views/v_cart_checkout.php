@@ -1,5 +1,4 @@
 <!--Checkout section start-->
-<?php var_dump($_POST['voucher']); ?>
 <div
     class="checkout-section section pt-30 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50  pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
     <div class="container">
@@ -7,7 +6,7 @@
             <div class="col-12">
 
                 <!-- Checkout Form Start-->
-                <form action="?ctrl=cart&view=checkout" method="post" class="checkout-form">
+                <form action="?ctrl=cart&view=checkout" method="post" id="checkout-form" class="checkout-form">
                     <div class="row row-40">
 
                         <div class="col-lg-7">
@@ -65,11 +64,11 @@
                                         <h4>Sản phẩm <span>Tổng</span></h4>
                                         <ul>
                                             <?php foreach ($_SESSION['cart'] as $ct) { ?>
-                                                <li>
-                                                    <p id="nico"><?= $ct['name_product'] ?></p> X
-                                                    <?= $ct['quantity_product'] ?>
-                                                    <span><?= number_format($ct['subtotal'], 0, ',', '.') ?> ₫</span>
-                                                </li>
+                                            <li>
+                                                <p id="nico"><?= $ct['name_product'] ?></p> X
+                                                <?= $ct['quantity_product'] ?>
+                                                <span><?= number_format($ct['subtotal'], 0, ',', '.') ?> ₫</span>
+                                            </li>
                                             <?php } ?>
                                         </ul>
                                         <p>Tổng phụ
@@ -102,6 +101,8 @@
                                     <input type="hidden" name="provisional"
                                         value="<?= array_sum(array_column($_SESSION['cart'], 'subtotal')) ?>">
                                     <input type="hidden" name="id_user" value="<?= $_SESSION['user'][0]['id_user'] ?>">
+                                    <input type="hidden" name="emailsend"
+                                        value="<?= $_SESSION['user'][0]['email_user'] ?>">
                                     <button type="submit" name="buynow" class="place-order btn btn-lg btn-round">Đặt
                                         hàng</button>
                                 </div>
