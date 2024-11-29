@@ -23,7 +23,8 @@ function sendMail($tomail, $subject, $content)
         $mail->Username   = 'ichndps41009@gmail.com';                     //SMTP username
         $mail->Password   = 'wyethhjujucfliko';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       = 465;
+        $mail->SMTPDebug = SMTP::DEBUG_OFF;                           //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('ichndps41009@gmail.com', 'DinhIch');
@@ -31,7 +32,7 @@ function sendMail($tomail, $subject, $content)
 
         //Content
 
-        $mail->isHTML(true);              //Set email format to HTML
+        $mail->isHTML(true);           //Set email format to HTML
         $mail->Subject = $subject;
         $mail->Body    = $content;
 

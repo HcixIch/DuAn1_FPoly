@@ -42,10 +42,10 @@ if (isset($_GET['view'])) {
                     $checkout->insertCheckout($data);
                     if ($data['payment_method'] == 'momo') {
                         $pay = 'Thanh toán qua Momo';
-                        $img = '<img src="assets/images/pay/bank.png" alt="Momo" />';
+                        $img = '<img style="display: block;width:50%; margin: 0 auto;"  src="<img src="https://i.imgur.com/saqO23m.png" alt="Uploaded Image">" alt="Momo" />';
                     } else if ($data['payment_method'] == 'bank') {
                         $pay = 'Thanh toán qua Ngân hàng';
-                        $img = '<img src="assets/images/pay/bank.png" alt="Bank" />';
+                        $img = '<img style="display: block;width:50%; margin: 0 auto;" src="<img src="https://i.imgur.com/saqO23m.png" alt="Uploaded Image">" alt="Bank" />';
                     } else {
                         $pay = 'Thanh toán khi nhận hàng';
                     }
@@ -61,13 +61,12 @@ if (isset($_GET['view'])) {
         <strong>Mã đơn hàng:</strong> DA00' . $checkout_new[0]['id_checkout'] . '<br>
         <strong>Ngày đặt hàng:</strong> ' . date("Y-m-d H:i:s") . '<br>
         <strong>Tổng tiền:</strong> ' . number_format($total_price, 0, ',', '.') . ' VNĐ<br>
-        <strong>Phương thức thanh toán:</strong> ' . $pay . '<br>';
+        <strong>Địa chỉ giao hàng:</strong> ' . $address . '<br>
+        <strong>Phương thức thanh toán:</strong>' . $pay . '<br>';
                     if ($data['payment_method'] == 'momo' || $data['payment_method'] == 'bank') {
-                        $content .= ' <strong>Quý khách vui long thanh toán</strong><br>' . $img . '<br>';
+                        $content .= '<p>Quý khách vui lòng thanh toán tại đây:</p><br>' . $img . '';
                     }
-                    $content .= '
-        <strong>Địa chỉ giao hàng:</strong> ' . $address . '
-      </p>
+                    $content .= '</p>
       <p style="margin: 0 0 10px;">Chúng tôi sẽ tiếp tục xử lý đơn hàng và thông báo khi sản phẩm được vận chuyển. Thông tin vận chuyển sẽ được cập nhật trong email tiếp theo của bạn.</p>
       <p style="margin: 0 0 10px;">Nếu bạn có bất kỳ câu hỏi hoặc yêu cầu thay đổi nào về đơn hàng, đừng ngần ngại liên hệ với chúng tôi qua email <a href="mailto:support@company.com" style="color: #007BFF; text-decoration: none;">support@company.com</a> hoặc gọi vào số điện thoại 0373196508.</p>
       <p style="margin: 0 0 10px;">Chúng tôi rất mong muốn mang đến cho bạn trải nghiệm mua sắm tuyệt vời và sẽ luôn hỗ trợ bạn trong suốt quá trình đặt hàng.</p>
