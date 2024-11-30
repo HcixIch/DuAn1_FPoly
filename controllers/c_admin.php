@@ -49,7 +49,7 @@ if (isset($_GET['view'])) {
                 $name_category = $_POST['name_category'];
                 if (!empty($name_category)) {
                     $cates->addCategory($name_category);
-                    header("Location: ?ctrl=admin"); // Chuyển hướng về trang quản lý danh mục
+                    header("Location: ?ctrl=admin"); 
                     exit();
                 } else {
                     echo "<script>alert('Tên danh mục không được để trống');</script>";
