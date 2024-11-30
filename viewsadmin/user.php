@@ -16,7 +16,7 @@
                                     <th>Tên đầy đủ</th>
                                     <th>Số điện thoại</th>
                                     <th>Email</th>
-                                    <th>Sửa/Xóa</th>
+                                    <th>Xóa</th>
 
                                 </tr>
                             </thead>
@@ -28,7 +28,7 @@
                                         <td><?= $user['phone_user'] ?></td>
                                         <td><?= $user['email_user'] ?></td>
                                         <td>
-                                            <a href="?ctrl=admin&view=edituser&id=<?= $user['id_user'] ?>">Sửa</a> |
+                                            <!-- <a href="?ctrl=admin&view=edituser&id=<?= $user['id_user'] ?>">Sửa</a> | -->
                                             <a href="?ctrl=user&action=deleteuser&id=<?= $user['id_user'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
                                         </td>
 
