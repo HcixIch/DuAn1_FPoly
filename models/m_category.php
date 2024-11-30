@@ -28,4 +28,9 @@ class Category extends Database
         WHERE product.id_product =$id";
         return $this->db->getone($sql);
     }
+    public function updateCategory($id, $name_category)
+    {
+        $sql = "UPDATE categories SET name_category = ? WHERE id_category = ?";
+        return $this->db->update($sql, [$name_category, $id]);
+    }
 }
