@@ -60,13 +60,25 @@
                         </table>
                     </div>
 
-                    <!-- Cập nhật và Thanh toán -->
+                    <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { ?>
                     <div class="d-flex justify-content-end mt-3">
                         <a href="index.php?ctrl=cart&&delall" class="btn btn-success cart-summary-button mr-3">Xóa giỏ
                             hàng</a>
+                        <?php if (isset($_SESSION['user'])) { ?>
                         <a href="index.php?ctrl=cart&&view=checkout" class="btn btn-success cart-summary-button">Tiếp
                             tục</a>
+                        <?php } else { ?>
+                        <a href="index.php?ctrl=user" class="btn btn-success cart-summary-button">Đăng nhập
+                            để tiếp tục</a>
+                        <?php } ?>
                     </div>
+                    <?php } else { ?>
+                    <!-- Cập nhật và Thanh toán -->
+                    <div class="d-flex justify-content-end mt-3">
+                        <a href="index.php?ctrl=product" class="btn btn-success cart-summary-button mr-3">Tiếp tục
+                            mua hàng</a>
+                    </div>
+                    <?php } ?>
                 </form>
             </div>
         </div>

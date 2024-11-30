@@ -3,6 +3,7 @@ include_once './views/t_header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'checkout':
+
             // Kiểm tra nếu đã đăng nhập
             if (isset($_POST['buynow'])) {
                 $user = $_POST['id_user'];
@@ -79,6 +80,10 @@ if (isset($_GET['view'])) {
   </div>';
                     $subject = 'Chúng Tôi Đã Nhận Được Đơn Hàng Của Bạn – Cập Nhật Thông Tin Đơn Hàng DA00' . $checkout_new[0]['id_checkout'] . '';
                     sendMail($_POST['emailsend'], $subject, $content);
+                    $data_order = [];
+                    foreach ($_SESSION['cart'] as $cart) {
+                        $data_order[] = ['quantity' => $cart['quantity']];
+                    }
                 }
             }
 
