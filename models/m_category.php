@@ -33,4 +33,9 @@ class Category extends Database
         $sql = "UPDATE categories SET name_category = ? WHERE id_category = ?";
         return $this->db->update($sql, [$name_category, $id]);
     }
+    public function addCategory($name_category)
+    {
+        $sql = "INSERT INTO categories (name_category) VALUES (?)";
+        return $this->db->insert($sql, [$name_category]);
+    }
 }

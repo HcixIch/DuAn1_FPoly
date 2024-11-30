@@ -9,10 +9,10 @@ if (isset($_GET['view'])) {
             $order_list = $order->getAllOrder();
             include './viewsadmin/order.php';
             break;
-            case 'user':
-                $user_list = $user->getAllUser();
-                include './viewsadmin/user.php';
-                break;
+        case 'user':
+            $user_list = $user->getAllUser();
+            include './viewsadmin/user.php';
+            break;
         case 'editcate':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
@@ -27,6 +27,16 @@ if (isset($_GET['view'])) {
             include './viewsadmin/editcate.php';
             break;
         case 'addcate':
+            if (isset($_POST['add_category'])) {
+                $name_category = $_POST['name_category'];
+                if (!empty($name_category)) {
+                    $cates->addCategory($name_category);
+                    header("Location: ?ctrl=admin"); // Chuyển hướng về trang quản lý danh mục
+                    exit();
+                } else {
+                    echo "<script>alert('Tên danh mục không được để trống');</script>";
+                }
+            }
             include_once 'viewsadmin/addcate.php';
             break;
     }

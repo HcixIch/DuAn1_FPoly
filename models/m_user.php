@@ -7,7 +7,7 @@ class User extends Database
     {
         $this->db = new Database();
     }
-    //Hàm Lấy tất cả User
+    //Lấy tất cả User
     public function getAllUser(){
         $sql = "SELECT * FROM user";
         return $this->db->getAll($sql);
