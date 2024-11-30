@@ -103,4 +103,20 @@ class Product extends Database
         $sql = "SELECT * FROM product ORDER BY $sort";
         return $this->db->getAll($sql);
     }
+    //Thêm sản phẩm
+    public function addProduct($image, $name, $price, $description, $id_category, $quantity )
+    {
+        $sql = "INSERT INTO product(img_product, name_product, price_product, description_product, id_category, quantity_product ) VALUES('".$image."', '".$name."', '".$price."', '".$description."', '".$id_category."', '".$quantity."')";
+        return $this->db->insert($sql);
+    }
+    //Xóa sản phẩm
+    public function deleteProduct($id){
+        $sql = "DELETE FROM product WHERE id_product = '".$id."' ";
+        return $this->db->delete($sql);
+    }
+    //Sửa sản phẩm
+    public function updateProduct($id, $image, $name, $price, $description, $id_category, $quantity){
+        $sql = "UPDATE product SET img_product = '".$image."', name_product = '".$name."', price_product = '".$price."', description_product = '".$description."', id_category = '".$id_category."', quantity_product = '".$quantity."' WHERE id_product = ".$id;
+        return $this->db->update($sql);
+    }
 }

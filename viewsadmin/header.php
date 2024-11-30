@@ -71,6 +71,12 @@
                     </a>
                 </li>
 				
+                <li>
+                    <a href="?ctrl=admin&view=order">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Biểu đồ</p>
+                    </a>
+                </li>
             </ul>
     	</div>
     </div>
