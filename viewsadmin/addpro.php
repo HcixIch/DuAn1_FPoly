@@ -54,7 +54,7 @@
                         </table>
                         </div>
                     
-                    <div class="header">
+                    <!-- <div class="header">
                         <h4 class="title">Thêm sản phẩm</h4>
                         <p class="category"></p>
                     </div>
@@ -77,7 +77,7 @@
                         </form>
                         
                     </div>
-                    
+                     -->
                 </div>
             </div>
                     </div>
