@@ -6,7 +6,7 @@
                     <div class="header">
                         <h4 class="title">Danh mục các sản phẩm</h4>
                         <div>
-                            <a href="?ctrl=admin&view=addpro"><button type="button" class="btn btn-primary">
+                            <a href="?ctrl=admin&view=addcate"><button type="button" class="btn btn-primary">
                                     Thêm danh mục
                                 </button></a>
                         </div>
