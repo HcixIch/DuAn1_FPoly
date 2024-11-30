@@ -43,41 +43,79 @@ if (isset($_GET['view'])) {
                     $checkout->insertCheckout($data);
                     if ($data['payment_method'] == 'momo') {
                         $pay = 'Thanh toán qua Momo';
-                        $img = '<img style="display: block;width:50%; margin: 0 auto;"  src="<img src="https://i.imgur.com/saqO23m.png" alt="Uploaded Image">" alt="Momo" />';
+                        $img = '<img style="display: block;width:50%; margin: 0 auto;"  src="https://i.imgur.com/saqO23m.png" alt="Momo" />';
                     } else if ($data['payment_method'] == 'bank') {
                         $pay = 'Thanh toán qua Ngân hàng';
-                        $img = '<img style="display: block;width:50%; margin: 0 auto;" src="<img src="https://i.imgur.com/saqO23m.png" alt="Uploaded Image">" alt="Bank" />';
+                        $img = '<img style="display: block;width:50%; margin: 0 auto;" src="https://i.imgur.com/saqO23m.png" alt="Bank" />';
                     } else {
                         $pay = 'Thanh toán khi nhận hàng';
                     }
                     $checkout_new = $checkout->getCheckoutNewMost();
-                    $content = '<div style="max-width: 600px; margin: 20px auto; background: #ffffff; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
-    <div style="text-align: center; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
-      <h1 style="color: #333; font-size: 24px; margin: 0;">Thông Báo Đơn Hàng</h1>
-    </div>
-    <div style="margin: 20px 0;">
-      <p style="margin: 0 0 10px;">Xin chào ' . $fullname . ',</p>
-      <p style="margin: 0 0 10px;">Chúng tôi xin thông báo rằng đơn hàng của bạn tại PhaoThuShop.VN đã được ghi nhận và đang trong quá trình xử lý. Cảm ơn bạn đã tin tưởng chọn mua sản phẩm của chúng tôi. Dưới đây là thông tin chi tiết về đơn hàng của bạn:</p>
-      <p style="margin: 0 0 10px;">
-        <strong>Mã đơn hàng:</strong> DA00' . $checkout_new[0]['id_checkout'] . '<br>
-        <strong>Ngày đặt hàng:</strong> ' . date("Y-m-d H:i:s") . '<br>
-        <strong>Tổng tiền:</strong> ' . number_format($total_price, 0, ',', '.') . ' VNĐ<br>
-        <strong>Địa chỉ giao hàng:</strong> ' . $address . '<br>
-        <strong>Phương thức thanh toán:</strong>' . $pay . '<br>';
-                    if ($data['payment_method'] == 'momo' || $data['payment_method'] == 'bank') {
-                        $content .= '<p>Quý khách vui lòng thanh toán tại đây:</p><br>' . $img . '';
-                    }
-                    $content .= '</p>
-      <p style="margin: 0 0 10px;">Chúng tôi sẽ tiếp tục xử lý đơn hàng và thông báo khi sản phẩm được vận chuyển. Thông tin vận chuyển sẽ được cập nhật trong email tiếp theo của bạn.</p>
-      <p style="margin: 0 0 10px;">Nếu bạn có bất kỳ câu hỏi hoặc yêu cầu thay đổi nào về đơn hàng, đừng ngần ngại liên hệ với chúng tôi qua email <a href="mailto:support@company.com" style="color: #007BFF; text-decoration: none;">support@company.com</a> hoặc gọi vào số điện thoại 0373196508.</p>
-      <p style="margin: 0 0 10px;">Chúng tôi rất mong muốn mang đến cho bạn trải nghiệm mua sắm tuyệt vời và sẽ luôn hỗ trợ bạn trong suốt quá trình đặt hàng.</p>
-      <p style="margin: 0 0 10px;">Trân trọng,</p>
-      <p style="margin: 0;">Đội ngũ hỗ trợ khách hàng của PhaoThuShop</p>
-    </div>
-    <div style="text-align: center; font-size: 14px; color: #777; border-top: 1px solid #ddd; padding-top: 10px;">
-      <p style="margin: 0;">&copy; 2024 PhaoThuCompany. Tất cả quyền lợi được bảo vệ.</p>
-    </div>
-  </div>';
+                    $content = '<table style="max-width: 600px; margin: 20px auto; background-color: #fff; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                    <thead style="background-color: #673ab7; color: #fff; text-align: center;">
+                      <tr>
+                        <th style="padding: 15px; font-size: 18px;">Cảm ơn đã mua hàng của chúng tôi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="padding: 20px;">
+                          <p>Xin chào,</p>
+                          <p>Chúng tôi đã xử lý xong đơn hàng của bạn.</p>
+                          <p><strong>[Đơn hàng #' . $checkout_new[0]['id_checkout'] . '] ' . date("Y-m-d H:i:s") . '</strong></p>
+                          <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                            <thead>
+                              <tr>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Sản phẩm</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">Số lượng</th>
+                                <th style="border: 1px solid #ddd; padding: 10px; text-align: right;">Giá</th>
+                              </tr>
+                            </thead>
+                            <tbody>';
+                    $content .= '
+                              <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px;">Cáp Nhà Mạng AU Nhật</td>
+                                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">155.000đ</td>
+                              </tr>
+                              <tr>
+                                <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Tổng số phụ:</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">155.000đ</td>
+                              </tr>
+                              <tr>
+                                <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Giảm giá:</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">-50.000đ</td>
+                              </tr>
+                              <tr>
+                                <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Phương thức thanh toán:</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">Chuyển khoản ngân hàng</td>
+                              </tr>
+                              <tr>
+                                <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Tổng cộng:</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">105.000đ</td>
+                              </tr>
+                              <tr>
+                                <td colspan="3" style="border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 14px;">
+                                  <strong>Lưu ý:</strong> Nêu được hãy giao vào buổi sáng.
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <p style="margin-top: 20px;"><strong>Địa chỉ thanh toán</strong></p>
+                          <p>Nguyễn Đình Lên<br>
+                          21/3 phường Tân Chánh Hiệp, quận 12, TP.HCM<br>
+                          0373795958<br>
+                          nguyendich567@gmail.com</p>
+                          <p style="margin-top: 20px;">Cảm ơn đã mua hàng của chúng tôi.</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot style="background-color: #f1f1f1; text-align: center;">
+                      <tr>
+                        <td style="padding: 15px; font-size: 12px; color: #888;">Hùng Trắng Gaming</td>
+                      </tr>
+                    </tfoot>
+                  </table>';
                     $subject = 'Chúng Tôi Đã Nhận Được Đơn Hàng Của Bạn – Cập Nhật Thông Tin Đơn Hàng DA00' . $checkout_new[0]['id_checkout'] . '';
                     sendMail($_POST['emailsend'], $subject, $content);
                     $data_order = [];
