@@ -1,14 +1,4 @@
 <div class="content">
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Danh sách sản phẩm</h4>
-                        <p class="category">Quản lý tất cả sản phẩm</p>
-                    </div>
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -16,20 +6,6 @@
                         <div class="header">
                         <h4 class="title">Danh sách sản phẩm</h4>
                         <p class="category">Quản lý tất cả sản phẩm</p>
-                        <div class="content table-responsive table-full-width">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Số lượng</th>
-                                    <th>Mô tả</th>
-                                    <th>Sửa/Xóa</th>
-                            <div class="header">
-                                <h4 class="title">Thêm sản phẩm</h4>
-                                <p class="category"></p>
-                            </div>
-
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                 <thead>
@@ -50,8 +26,8 @@
                                             <td><?= $quantity_product?></td>
                                             <td><?= $description_product?></td>
                                             <td>
-                                                <form action="?ctrl=admin&view=addpro" method="post">
-                                                    <button type="submit" name="Change" class="btn btn-danger">Sửa</button> |
+                                                <a href="?ctrl=admin&view=editprod&id=<?=$id_product?>"> <button type="submit" name="Change" class="btn btn-danger">Sửa</button></a> 
+                                                <form action="?ctrl=admin&view=addpro" method="post">      
                                                     <input type="hidden" name="idprod" value="<?= $id_product ?>">
                                                     <button type="submit" name="Del" class="btn btn-danger">Xóa</button>
                                                 </form>
@@ -62,93 +38,47 @@
                                 </tbody>
                                 </table>
                             </div>
-                        <div class="header">
-                            <h4 class="title">Thêm sản phẩm</h4>
-                            <p class="category"></p>
-                        </div>
-                            <div class="content table-responsive table-full-width">
-                                <form action="?ctrl=admin&view=addpro" method="post">
-                                    <label for="">Danh mục sản phẩm</label>
+                                    <div class="header">
+                                        <h4 class="title">Thêm sản phẩm</h4>
+                                        <p class="category"></p>
+                                    </div>
+                                        <div class="content table-responsive table-full-width">
+                                            <form action="?ctrl=admin&view=addpro" method="post">
+                                                <label for="">Danh mục sản phẩm</label>
 
 
-                                    <select name="cate" id="cate" class="form-control">
-                                        <?php foreach($getcate as $cate){
-                                            extract($cate);?>
-                                        <option value="<?= $id_category?>"><?= $name_category?></option>
-                                        <?php } ?>
-                                    </select>
+                                                <select name="cate" id="cate" class="form-control">
+                                                    <?php foreach($getcate as $cate){
+                                                        extract($cate);?>
+                                                    <option value="<?= $id_category?>"><?= $name_category?></option>
+                                                    <?php } ?>
+                                                </select>
+ 
+                                                <label for="">Tên sản phẩm</label>
+                                                <input type="text" name="name" id="name" class="form-control" > 
+
+                                                <label for="">Giá sản phẩm</label>
+                                                <input type="number" name="price" id="price" required min="1" class="form-control">
+
+                                                <label for="">So luong sản phẩm</label>
+                                                <input type="number" name="quantity" id="quantity" class="form-control" >
+
+                                                <label for="">Mo ta sản phẩm</label>
+                                                <textarea name="description" id="description" rows="8" class="form-control"> </textarea>
+
+                                                <label for="">Hình ảnh</label>
+                                                <input type="file" name="image" id="image" class="form-control">
 
 
-                                    <select name="cate" id="cate" class="form-control"></select>    
-
-                                    <label for="">Tên sản phẩm</label>
-                                    <input type="text" name="name" id="name" class="form-control" > 
-
-                                    <label for="">Giá sản phẩm</label>
-                                    <input type="number" name="price" id="price" required min="1" class="form-control">
-
-                                    <label for="">So luong sản phẩm</label>
-                                    <input type="number" name="quantity" id="quantity" class="form-control" >
-
-                                    <label for="">Mo ta sản phẩm</label>
-                                    <input type="text" name="description" id="description" class="form-control">
-
-                                    <label for="">Hình ảnh</label>
-                                    <input type="file" name="image" id="image" class="form-control">
-
-
-                                    <input type="submit" name="addprod" value="Thêm sản phẩm">
-                                    
-                                </form> 
-                            </div>
-                        </div>
+                                                <input type="submit" name="addprod" value="Thêm sản phẩm">
+                                                
+                                            </form> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </table>  
+                        </tbody>
                     </div>
-
-                                    <input type="button" value="Thêm sản phẩm" onclick="">
-                                </form>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach($addpro_list as $ad) {
-                                        extract($ad); ?>
-                                        <td><?= $name_product?>"</td>
-                                        <td> <?= $price_product?></td>
-                                        <td><?= $quanlity_product?></td>
-                                        <td><?= $description_product?></td>
-                                        <td>
-                                            <a href="?ctrl=admin&view=edituser&id=<?= $user['id_user'] ?>">Sửa</a> |
-                                            <a href="?ctrl=user&action=deleteuser&id=<?= $user['id_user'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                        </div>
-                    
-                    <!-- <div class="header">
-                        <h4 class="title">Thêm sản phẩm</h4>
-                        <p class="category"></p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                        <form>
-                            <label for="">Sản phẩm</label>
-                            <select name="cate" id="cate" class="form-control"></select>
-                            <option value="$id">$name</option>
-                            <label for="">Tên sản phẩm</label>
-                            <input type="text" name="name" id="name" class="form-control" > 
-                            <label for="">Giá sản phẩm</label>
-                            <input type="number" name="price" id="price" class="form-control">
-                            <label for="">So luong sản phẩm</label>
-                            <input type="number" name="quantity" id="quantity" class="form-control" >
-                            <label for="">Mo ta sản phẩm</label>
-                            <input type="text" name="description" id="description" class="form-control">
-                            <label for="">Hình ảnh</label>
-                            <input type="file" name="image" id="image" class="form-control">
-                            <input type="button" value="Thêm sản phẩm" onclick="">
-                        </form>
-                        
-                    </div>
-                     -->
                 </div>
             </div>
         </div>

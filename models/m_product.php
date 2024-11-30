@@ -114,4 +114,9 @@ class Product extends Database
         $sql = "DELETE FROM product WHERE id_product = '".$id."' ";
         return $this->db->delete($sql);
     }
+    //Sửa sản phẩm
+    public function updateProduct($id, $image, $name, $price, $description, $id_category, $quantity){
+        $sql = "UPDATE product SET img_product = '".$image."', name_product = '".$name."', price_product = '".$price."', description_product = '".$description."', id_category = '".$id_category."', quantity_product = '".$quantity."' WHERE id_product = ".$id;
+        return $this->db->update($sql);
+    }
 }
