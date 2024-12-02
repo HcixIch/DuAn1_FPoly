@@ -3,10 +3,12 @@ include_once './viewsadmin/header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'chart':
-            $products = $prod->getAllProducts();
+            $productmen = $prod->getProductsByCategory(1,0);
+            $productwomen = $prod->getProductsByCategory(2,0);
+            $productaccessory = $prod->getProductsByCategory(3,0);
+            $productsouvenirs = $prod->getProductsByCategory(4,0);
             include './viewsadmin/chart.php';
             break;
-        case 'editcate':
         case 'editprod':
             if (isset($_GET['id'])) {
                 $product = $prod->getProductsById($_GET['id']);
