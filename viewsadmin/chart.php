@@ -45,7 +45,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: "Biểu đồ bán hàng sản phẩm"
+                    text: "Biểu đồ bán hàng sản phẩm đồ nam"
                 }
             }
         }
@@ -57,7 +57,7 @@
             labels: labels2,
             datasets: [{
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
                 ],
             data: data2
             }]
@@ -66,7 +66,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: "Biểu đồ bán hàng sản phẩm"
+                    text: "Biểu đồ bán hàng sản phẩm đồ nữ"
                 }
             }
         }
@@ -78,7 +78,7 @@
             labels: labels3,
             datasets: [{
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
                 ],
             data: data3
             }]
@@ -87,7 +87,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: "Biểu đồ bán hàng sản phẩm"
+                    text: "Biểu đồ bán hàng sản phẩm phụ kiện"
                 }
             }
         }
@@ -99,7 +99,7 @@
             labels: labels4,
             datasets: [{
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
                 ],
             data: data4
             }]
@@ -108,7 +108,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: "Biểu đồ bán hàng sản phẩm"
+                    text: "Biểu đồ bán hàng sản phẩm đồ lưu niệm"
                 }
             }
         }
