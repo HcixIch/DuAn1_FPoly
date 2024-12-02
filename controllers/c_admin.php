@@ -31,7 +31,6 @@ if (isset($_GET['view'])) {
             include_once './viewsadmin/addpro.php';
             break;
         case 'order':
-            $order_list = $order->getAllOrder();
             include './viewsadmin/order.php';
             break;
         case 'user':
