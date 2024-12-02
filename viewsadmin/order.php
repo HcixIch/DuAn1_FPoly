@@ -13,52 +13,31 @@
                                         <th>STT</th>
                                     	<th>Tên</th>
                                         <th>Đơn hàng</th>
+                                        <th>hình ảnh</th>
                                         <th>Giá</th>
                                         <th>Số lượng</th>
                                     	<th>Ngày đặt</th>
-                                    	<th></th>
+                                    	
                                     </thead>
                                     <tbody>
-                                    <?php foreach($order_list as $od){
-                                        extract($od);?>
+                                    <?php 
+                                        $order_list = $order->getProductNameByIdProductOrder();
+                                        foreach($order_list as $od){
+                                        $i =0;?>
                                         <tr>
-                                            <td></td>
-                                            <td id="name"><?= $id_cart_detail?></td>
-                                            <td id="price"><?=$price?></td>
-                                            <td><img src="" alt="" id="image" height="80px"></td>
-                                            <td></td>
+                                            <td><?= $i + 1?></td>
+                                            <td id="name"><?= $od['id_cart_detail']?></td>
+                                            <td><?= $od['name_product'] ?></td>
+                                            <td id="price"><img src="./assets/images/product/<?= $od['img_product']?>" alt="" id="image" height="80px"></td>
+                                            <td><?=number_format( $od['price'], 0,',', '.')?>đ</td>
+                                            <td><?=$od['quantity']?></td>   
+                                            <td><?=$od['date_order']?></td> 
                                         </tr>
                                     <?php }?>
                                     </tbody>
                                 </table>
 
                             </div>
-                            <ul class="pagination-list">
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">1</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">2</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">3</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">...</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">10</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">
-                                        <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+
                         </div>
                     </div>
