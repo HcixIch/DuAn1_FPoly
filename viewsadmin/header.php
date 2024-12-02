@@ -29,6 +29,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="./assets/public/stylesheets/pe-icon-7-stroke.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -72,8 +73,8 @@
                 </li>
 				
                 <li>
-                    <a href="?ctrl=admin&view=order">
-                        <i class="pe-7s-news-paper"></i>
+                    <a href="?ctrl=admin&view=chart">
+                    <i class="fa-solid fa-chart-simple"></i>
                         <p>Biểu đồ</p>
                     </a>
                 </li>

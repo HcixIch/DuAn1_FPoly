@@ -2,6 +2,11 @@
 include_once './viewsadmin/header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
+        case 'chart':
+            $products = $prod->getAllProducts();
+            include './viewsadmin/chart.php';
+            break;
+        case 'editcate':
         case 'editprod':
             if (isset($_GET['id'])) {
                 $product = $prod->getProductsById($_GET['id']);
