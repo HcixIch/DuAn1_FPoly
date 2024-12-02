@@ -121,7 +121,7 @@ if (isset($_GET['view'])) {
                         </td>
                       </tr>
                     </tbody>
-                    <tfoot style="background-color: #f1f1f1; text-align: center;">
+                    <tfoot style="  background-color: #f1f1f1; text-align: center;">
                       <tr>
                         <td style="padding: 15px; font-size: 12px; color: #888;">Pháo Thủ Shop</td>
                       </tr>
