@@ -93,7 +93,7 @@
                                             </thead>
 
                                             <tbody>
-                                                <<<<<<< HEAD <?php foreach (?> <tr>
+                                                <?php foreach (?> <tr>
                                                     <td>3</td>
                                                     <td>Murikhete Paris</td>
                                                     <td>12 Tháng 6, 2017</td>

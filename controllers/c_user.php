@@ -12,7 +12,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
         header("Location: ?ctrl=admin&view=user");
         exit;
     }
-}*/
+}
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'account':
@@ -35,7 +35,7 @@ if (isset($_GET['view'])) {
                     $kt = 1;
                 }
                 if($kt ==0){
-                    $changepass = $user->UpdatePassword(($_SESSION['user'][0]['id_user']),$_POST['password'])
+                    $changepass = $user->UpdatePassword(($_SESSION['user'][0]['id_user']),$_POST['password']);
                 }
             }
             include_once './views/page_banner.php';
