@@ -27,7 +27,7 @@
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển bắt đầu -->
                             <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
 
-                                <form action="#" class="checkout-form" method="post">
+                                <form action="?ctrl=user&view=account" class="checkout-form" method="post">
                                     <div class="row row-40">
 
                                         <div class="col-lg-7">
@@ -37,25 +37,27 @@
                                                 <div class="row">
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Họ và tên*</label>
-                                                        <input type="text" name="fullname" value="<?=$_SESSION['user'][0]['full_name'] ?>" >
+                                                        <input type="text" name="fullname"
+                                                            value="<?= $_SESSION['user'][0]['full_name'] ?>">
                                                     </div>
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Địa chỉ Email*</label>
                                                         <input type="email" name="email" value="
-                                                        <?=$_SESSION['user'][0]['email_user']?>" >
+                                                        <?= $_SESSION['user'][0]['email_user'] ?>">
                                                     </div>
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Số điện thoại*</label>
                                                         <input type="text" name="phone" value="
-                                                        <?=$_SESSION['user'][0]['phone_user']?>" >
+                                                        <?= $_SESSION['user'][0]['phone_user'] ?>">
                                                     </div>
                                                     <div class="col-12 mb-5">
                                                         <label>Địa chỉ*</label>
                                                         <input type="text" name="address" value="
-                                                        <?=$_SESSION['user'][0]['address_user']?>" >
+                                                        <?= $_SESSION['user'][0]['address_user'] ?>">
                                                     </div>
                                                     <div class="col-12 mb-5">
-                                                        <button class="btn btn-lg btn-round" name="changeuser">Lưu</button>
+                                                        <button class="btn btn-lg btn-round" type="submit"
+                                                            name="changeuser">Lưu</button>
                                                     </div>
 
                                                 </div>
@@ -91,14 +93,14 @@
                                             </thead>
 
                                             <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                <<<<<<< HEAD <?php foreach (?> <tr>
+                                                    <td>3</td>
+                                                    <td>Murikhete Paris</td>
+                                                    <td>12 Tháng 6, 2017</td>
+                                                    <td>Tạm giữ</td>
+                                                    <td>$99</td>
                                                     <td><a href="cart.html" class="btn">Xem</a></td>
-                                                </tr>
+                                                    </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -113,9 +115,10 @@
                                     <h3>Chi tiết tài khoản</h3>
 
                                     <div class="account-details-form">
-                                        <form action="#"  method="post">
+                                        <form action="#" method="post">
                                             <div class="row">
                                                 <div class="col-12 mb-30">
+
                                                     <label for="">Họ và Tên</label>
                                                     <input id="first-name" name="fullname"  type="text" value="<?= $_SESSION['user'][0]['full_name']?>">
                                                 </div>
@@ -128,6 +131,7 @@
                                                 <div class="col-12 mb-30">
                                                 <label for="">Địa chỉ Email</label>
                                                     <input id="email" name="email"  type="email" value="<?= $_SESSION['user'][0]['email_user']?>">
+
                                                 </div>
 
                                                 <div class="col-12 mb-30">
@@ -135,17 +139,18 @@
                                                 </div>
 
                                                 <div class="col-12 mb-30">
-                                                    <input id="current-pwd" name="password" placeholder="Mật khẩu hiện tại"
+                                                    <input id="current-pwd" name="password"
+                                                        placeholder="Mật khẩu hiện tại" type="password">
+                                                </div>
+
+                                                <div class="col-lg-6 col-12 mb-30">
+                                                    <input id="new-pwd" name="newpassword" placeholder="Mật khẩu mới"
                                                         type="password">
                                                 </div>
 
                                                 <div class="col-lg-6 col-12 mb-30">
-                                                    <input id="new-pwd" name="newpassword" placeholder="Mật khẩu mới" type="password">
-                                                </div>
-
-                                                <div class="col-lg-6 col-12 mb-30">
-                                                    <input id="confirm-pwd" name="password-comfirm" placeholder="Xác nhận mật khẩu"
-                                                        type="password">
+                                                    <input id="confirm-pwd" name="password-comfirm"
+                                                        placeholder="Xác nhận mật khẩu" type="password">
                                                 </div>
 
                                                 <div class="col-12">

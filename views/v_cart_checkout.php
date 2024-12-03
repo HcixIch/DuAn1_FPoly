@@ -48,8 +48,11 @@
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-5">
                                         <label>Mã giảm giá</label>
-                                        <input type="text" name="voucher" placeholder="Nhập mã">
+                                        <input type="text" id="voucher" name="voucher" placeholder="Nhập mã">
+                                        <button type="button" id="apply-voucher" class="btn btn-primary">Áp
+                                            dụng</button>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -64,11 +67,11 @@
                                         <h4>Sản phẩm <span>Tổng</span></h4>
                                         <ul>
                                             <?php foreach ($_SESSION['cart'] as $ct) { ?>
-                                            <li>
-                                                <p id="nico"><?= $ct['name_product'] ?></p> X
-                                                <?= $ct['quantity_product'] ?>
-                                                <span><?= number_format($ct['subtotal'], 0, ',', '.') ?> ₫</span>
-                                            </li>
+                                                <li>
+                                                    <p id="nico"><?= $ct['name_product'] ?></p> X
+                                                    <?= $ct['quantity_product'] ?>
+                                                    <span><?= number_format($ct['subtotal'], 0, ',', '.') ?> ₫</span>
+                                                </li>
                                             <?php } ?>
                                         </ul>
                                         <p>Tổng phụ
