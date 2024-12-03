@@ -13,18 +13,10 @@ class Order extends Database
         return $this->db->getAll($sql);
     }
     //Hàm lấy tên product đơn hàng theo id_product
-    public function getProductNameByIdProductOrder()
+    public function GetDetailOrder()
     {
         $sql = "SELECT 
-        order_detail.id_product, 
-        order_detail.quantity,  
-        product.name_product, 
-        checkout.phone, 
-        checkout.address, 
-        checkout.total_all, 
-        checkout.full_name,
-        checkout.shipping_cost, 
-        checkout.date_order 
+       checkout.*, order_detail.*, product.*
         FROM checkout 
         INNER JOIN order_detail ON checkout.id_checkout = order_detail.id_checkout
         INNER JOIN product ON order_detail.id_product = product.id_product";
