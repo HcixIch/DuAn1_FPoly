@@ -16,16 +16,18 @@ class Order extends Database
     public function getProductNameByIdProductOrder()
     {
         $sql = "SELECT 
-        order_detail.id_product,  
+        order_detail.id_product, 
+        order_detail.quantity,  
         product.name_product, 
         checkout.phone, 
+        checkout.address, 
         checkout.total_all, 
-        checkout.email, 
         checkout.full_name,
         checkout.shipping_cost, 
         checkout.date_order 
         FROM checkout 
-        INNER JOIN product on checkout.id_product = product.id_product";
+        INNER JOIN order_detail ON checkout.id_checkout = order_detail.id_checkout
+        INNER JOIN product ON order_detail.id_product = product.id_product";
         return $this->db->getAll($sql);
     }
 }

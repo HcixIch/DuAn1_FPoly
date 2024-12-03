@@ -20,12 +20,26 @@ if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'account':
             $title = "Tài khoản";
+            $kt=0;
             if (isset($_POST['changeuser'])) {
                 $fullname = $_POST['fullname'];
                 $email = $_POST['email'];
                 $phone = $_POST['phone'];
                 $address = $_POST['address'];
                 $changeuser = $user->UpdateUser(($_SESSION['user'][0]['id_user']), $fullname, $address, $email, $phone);
+            }
+            if(isset($_POST['change'])){
+                if($_POST['newpassword'] != $_POST['password-comfirm']){
+                    echo "Mật khẩu mới không trùng khớp.";
+                    $kt = 1;
+                }
+                if($_POST['password'] != ($_SESSION['user'][0]['password'])){
+                    echo "Mật khẩu hiện tại không đúng.";
+                    $kt = 1;
+                }
+                if($kt ==0){
+                    $changepass = $user->UpdatePassword(($_SESSION['user'][0]['id_user']),$_POST['password'])
+                }
             }
             include_once './views/page_banner.php';
             include_once './views/v_user_account.php';
