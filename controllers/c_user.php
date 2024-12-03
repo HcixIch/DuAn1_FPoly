@@ -25,7 +25,7 @@ if (isset($_GET['view'])) {
                 $address = $_POST['address'];
                 $user->UpdateUser(($_SESSION['user'][0]['id_user']), $fullname, $address, $email, $phone);
             }
-            if (isset($_POST['change'])) {
+            if (isset($_POST['changepass'])) {
                 if ($_POST['newpassword'] != $_POST['password-comfirm']) {
                     echo "Mật khẩu mới không trùng khớp.";
                     $kt = 1;
@@ -34,9 +34,8 @@ if (isset($_GET['view'])) {
                     echo "Mật khẩu hiện tại không đúng.";
                     $kt = 1;
                 }
-                if($kt ==0){
-                    $changepass = $user->UpdatePassword(($_SESSION['user'][0]['id_user']),$_POST['password']);
-
+                if($kt = 0){
+                    $user->UpdatePassword(($_SESSION['user'][0]['id_user']),$_POST['newpassword']);
                 }
             }
             include_once './views/page_banner.php';

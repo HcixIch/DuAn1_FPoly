@@ -132,9 +132,8 @@
                             <div class="tab-pane fade" id="account-info" role="tabpanel">
                                 <div class="myaccount-content">
                                     <h3>Chi tiết tài khoản</h3>
-
                                     <div class="account-details-form">
-                                        <form action="#" method="post">
+                                        <form action="?ctrl=user&view=account" method="post">
                                             <div class="row">
                                                 <div class="col-12 mb-30">
                                                     <input id="first-name" name="fullname" placeholder="Họ vàTên"
@@ -142,19 +141,31 @@
                                                 </div>
 
                                                 <div class="col-12 mb-30">
-                                                    <input id="display-name" name="username" placeholder="Tên hiển thị"
-                                                        type="text" value="<?= $_SESSION['user'][0]['user_name'] ?>">
-                                                </div>
-
-                                                <div class="col-12 mb-30">
                                                     <input id="email" name="email" placeholder="Địa chỉ Email"
                                                         type="email" value="<?= $_SESSION['user'][0]['email_user'] ?>">
                                                 </div>
-
                                                 <div class="col-12 mb-30">
-                                                    <h4>Thay đổi mật khẩu</h4>
+                                                    <input id="address" name="address" placeholder="Địa chỉ"
+                                                        type="text" value="<?= $_SESSION['user'][0]['address_user'] ?>">
+                                                </div>
+                                                <div class="col-12 mb-30">
+                                                    <input id="phone" name="phone" placeholder="phone"
+                                                        type="number" value="<?= $_SESSION['user'][0]['phone_user'] ?>">
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" name="changeuser" class="save-change-btn">Lưu thay đổi</button>
                                                 </div>
 
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                                <div class="myaccount-content">
+                                    <h3>Thay đổi mật khẩu</h3>
+                                    <div class="account-details-form">
+                                        <form action="?ctrl=user&view=account" method="post">
+                                            <div class="row">
                                                 <div class="col-12 mb-30">
                                                     <input id="current-pwd" name="password"
                                                         placeholder="Mật khẩu hiện tại" type="password">
@@ -171,12 +182,13 @@
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <button name="change" class="save-change-btn">Lưu thay đổi</button>
+                                                    <button type="submit" name="changepass" class="save-change-btn">Lưu thay đổi</button>
                                                 </div>
 
                                             </div>
                                         </form>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <!-- Nội dung thẻ đơn lẻ Chi tiết tài khoản kết thúc -->
@@ -191,3 +203,5 @@
     </div>
 </div>
 <!--Phần Tài khoản của tôi kết thúc-->
+<!--
+                                                -->
