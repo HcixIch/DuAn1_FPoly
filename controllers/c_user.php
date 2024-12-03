@@ -5,14 +5,14 @@ if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
         $id = intval($_GET['id']);
         $result = $user->DeleteUser($id);
         if ($result) {
-            echo "<script>alert('Xóa người dùng thành công!');</script>";
+            echo "alert('Xóa người dùng thành công!');</script>";
         } else {
-            echo "<script>alert('Không thể xóa người dùng!');</script>";
+            echo "alert('Không thể xóa người dùng!');</script>";
         }
         header("Location: ?ctrl=admin&view=user");
         exit;
     }
-}
+}*/
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'account':
@@ -31,25 +31,26 @@ if (isset($_GET['view'])) {
             $kt = 0;
             if (isset($_POST['register'])) {
                 if ($_POST['password'] != $_POST['confirm_password']) {
-                    echo "<script>alert('Mật khẩu không trùng khớp.')</script>";
+                    echo "Mật khẩu không trùng khớp.";
                     $kt = 1;
                 }
                 if (($kt == 0)) {
                     if ($_POST['password'] === "") {
-                        echo "<script>alert('Vui lòng nhập mật khẩu')</script>";
+                        echo "Vui lòng nhập mật khẩu";
                         $kt = 1;
                     }
                 }
                 if (($kt == 0)) {
                     $email = $user->getAllbyEmail($_POST['email']);
                     if (count($email) != 0) {
-                        echo "<script>alert('email đã đăng kí rồi')</script>";
+                        echo "email đã đăng kí rồi";
                         $kt = 1;
                     }
                 }
                 if ($kt == 0) {
                     $user->CreateUser($_POST['email'], $_POST['password']);
-                    echo "Đăng kí thành công.";
+                    echo "<script>alert('Đăng kí thành công.')</script>";
+                    header("location:?ctrl=user&view=account");
                 }
             }
             if (isset($_POST['Login'])) {
@@ -82,25 +83,26 @@ if (isset($_GET['view'])) {
     $kt = 0;
     if (isset($_POST['register'])) {
         if ($_POST['password'] != $_POST['confirm_password']) {
-            echo "<script>alert('Mật khẩu không trùng khớp.')</script>";
+            echo "Mật khẩu không trùng khớp.";
             $kt = 1;
         }
         if (($kt == 0)) {
             if ($_POST['password'] === "") {
-                echo "<script>alert('Vui lòng nhập mật khẩu')</script>";
+                echo "Vui lòng nhập mật khẩu";
                 $kt = 1;
             }
         }
         if (($kt == 0)) {
             $email = $user->getAllbyEmail($_POST['email']);
             if (count($email) != 0) {
-                echo "<script>alert('email đã đăng kí rồi')</script>";
+                echo "email đã đăng kí rồi";
                 $kt = 1;
             }
         }
         if ($kt == 0) {
             $user->CreateUser($_POST['email'], $_POST['password']);
-            echo "Đăng kí thành công.";
+            echo "<script>alert('Đăng kí thành công.')</script>";
+            header("location:?ctrl=user&view=account");
         }
     }
     if (isset($_POST['Login'])) {
