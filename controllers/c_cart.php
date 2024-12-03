@@ -13,6 +13,7 @@ if (isset($_GET['view'])) {
         $voucher = isset($_POST['voucher']) && $_POST['voucher'] !== '' ? (int)$_POST['voucher'] : NULL;
         $payment_method = $_POST['payment_method'];
         $shipping_cost = 30000;
+        $date = date('Y-m-d H:i:s');
         $provisional_price = $_POST['provisional'];
         $total_price = $provisional_price + $shipping_cost;
         $errors = [];

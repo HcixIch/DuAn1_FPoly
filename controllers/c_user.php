@@ -12,7 +12,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
         header("Location: ?ctrl=admin&view=user");
         exit;
     }
-}*/
+}
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'account':

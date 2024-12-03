@@ -14,11 +14,13 @@ class Checkout extends Database
 
     public function insertCheckout($data)
     {
+        $time = date('Y-m-d H:i:s');
         extract($data);
-        $sql = "INSERT INTO checkout (id_user, total_all, shipping_cost, address, phone, full_name, provisional_total, payment_option, id_voucher) 
-            VALUES ($id_user, $total_price, $shipping_cost, '$address', '$phone', '$fullname', $provisional_price, '$payment_method', " . ($voucher === NULL ? "NULL" : "'$voucher'") . ")";
+        $sql = "INSERT INTO checkout (id_user, total_all, shipping_cost, address, phone, full_name, provisional_total, payment_option, id_voucher, date_order) 
+                VALUES ($id_user, $total_price, $shipping_cost, '$address', '$phone', '$fullname', $provisional_price, '$payment_method', " . ($voucher === NULL ? "NULL" : "'$voucher'") . ",'$time')";
         return $this->db->insert($sql);
     }
+
     public function getCheckoutNewMost()
     {
         $sql = "SELECT * FROM checkout ORDER BY id_checkout DESC LIMIT 1";

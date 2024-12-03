@@ -84,7 +84,7 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>STT</th>
-                                                    <th>Tên sản phẩm</th>
+                                                    <th>Sản phẩm</th>
                                                     <th>Ngày</th>
                                                     <th>Trạng thái</th>
                                                     <th>Tổng cộng</th>
@@ -93,14 +93,32 @@
                                             </thead>
 
                                             <tbody>
-                                                <<<<<<< HEAD <?php foreach (?> <tr>
-                                                    <td>3</td>
-                                                    <td>Murikhete Paris</td>
-                                                    <td>12 Tháng 6, 2017</td>
-                                                    <td>Tạm giữ</td>
-                                                    <td>$99</td>
-                                                    <td><a href="cart.html" class="btn">Xem</a></td>
+                                                <?php foreach ($checkoutall as $co) {
+                                                    extract($co);
+                                                ?>
+                                                    <tr>
+                                                        <td><?= $id_checkout ?></td>
+                                                        <td>
+
+                                                        </td>
+                                                        <td><?= $date_order ?></td>
+                                                        <td>
+                                                            <?php if ($status == 1) {
+                                                                echo "Chờ xử lý";
+                                                            } elseif ($status == 2) {
+                                                                echo "Đã xử lý";
+                                                            } elseif ($status == 3) {
+                                                                echo "Đã giao hàng";
+                                                            } elseif ($status == 4) {
+                                                                echo "Đã nhận hàng";
+                                                            } elseif ($status == 5) {
+                                                                echo "Đã hủy";
+                                                            } ?>
+                                                        </td>
+                                                        <td><?= $provisional_total ?></td>
+                                                        <td><a href="cart.html" class="btn">Xem</a></td>
                                                     </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -119,17 +137,17 @@
                                             <div class="row">
                                                 <div class="col-12 mb-30">
                                                     <input id="first-name" name="fullname" placeholder="Họ vàTên"
-                                                        type="text" value="<?= $_SESSION['user'][0]['full_name']?>">
+                                                        type="text" value="<?= $_SESSION['user'][0]['full_name'] ?>">
                                                 </div>
 
                                                 <div class="col-12 mb-30">
                                                     <input id="display-name" name="username" placeholder="Tên hiển thị"
-                                                        type="text" value="<?= $_SESSION['user'][0]['user_name']?>">
+                                                        type="text" value="<?= $_SESSION['user'][0]['user_name'] ?>">
                                                 </div>
 
                                                 <div class="col-12 mb-30">
                                                     <input id="email" name="email" placeholder="Địa chỉ Email"
-                                                        type="email" value="<?= $_SESSION['user'][0]['email_user']?>">
+                                                        type="email" value="<?= $_SESSION['user'][0]['email_user'] ?>">
                                                 </div>
 
                                                 <div class="col-12 mb-30">
