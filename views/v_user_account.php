@@ -95,22 +95,7 @@
                                             </thead>
 
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Dầu dưỡng ẩm</td>
-                                                    <td>22 Tháng 8, 2018</td>
-                                                    <td>Đang chờ</td>
-                                                    <td>$45</td>
-                                                    <td><a href="cart.html" class="btn">Xem</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Katopeno Altuni</td>
-                                                    <td>22 Tháng 7, 2018</td>
-                                                    <td>Đã duyệt</td>
-                                                    <td>$100</td>
-                                                    <td><a href="cart.html" class="btn">Xem</a></td>
-                                                </tr>
+                                                <?php foreach (?>
                                                 <tr>
                                                     <td>3</td>
                                                     <td>Murikhete Paris</td>
