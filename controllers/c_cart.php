@@ -179,7 +179,7 @@ if (isset($_GET['view'])) {
 
   //                 // Cập nhật lại số lượng và subtotal vào giỏ hàng
   //                 $update_sql = "UPDATE cart SET quantity = ?, subtotal = ? WHERE id_cart = ?";
-  //                 $db->update($update_sql, [$quantity, $subtotal, $id_cart]);
+  //                 $db->update($update_sql, [$quantity, $subtotal, $id_cart]);  
   //             }
   //         }
   //     }

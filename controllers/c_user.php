@@ -1,11 +1,8 @@
 <?php
 include_once './views/t_header.php';
-include_once './models/m_user.php';
-$user = new User();
-
 if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
     if (isset($_GET['id'])) {
-        $id = intval($_GET['id']); 
+        $id = intval($_GET['id']);
         $result = $user->DeleteUser($id);
         if ($result) {
             echo "<script>alert('Xóa người dùng thành công!');</script>";
@@ -25,7 +22,7 @@ if (isset($_GET['view'])) {
                 $email = $_POST['email'];
                 $phone = $_POST['phone'];
                 $address = $_POST['address'];
-                $changeuser = $user->UpdateUser(($_SESSION['user'][0]['id_user']), $fullname, $address, $email, $phone);
+                $user->UpdateUser(($_SESSION['user'][0]['id_user']), $fullname, $address, $email, $phone);
             }
             include_once './views/page_banner.php';
             include_once './views/v_user_account.php';

@@ -29,7 +29,7 @@
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển bắt đầu -->
                             <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
 
-                                <form action="#" class="checkout-form" method="post">
+                                <form action="?ctrl=user&view=account" class="checkout-form" method="post">
                                     <div class="row row-40">
 
                                         <div class="col-lg-7">
@@ -39,25 +39,27 @@
                                                 <div class="row">
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Họ và tên*</label>
-                                                        <input type="text" name="fullname" value="<?=$_SESSION['user'][0]['full_name'] ?>" >
+                                                        <input type="text" name="fullname"
+                                                            value="<?= $_SESSION['user'][0]['full_name'] ?>">
                                                     </div>
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Địa chỉ Email*</label>
                                                         <input type="email" name="email" value="
-                                                        <?=$_SESSION['user'][0]['email_user']?>" >
+                                                        <?= $_SESSION['user'][0]['email_user'] ?>">
                                                     </div>
                                                     <div class="col-md-12 col-12 mb-5">
                                                         <label>Số điện thoại*</label>
                                                         <input type="text" name="phone" value="
-                                                        <?=$_SESSION['user'][0]['phone_user']?>" >
+                                                        <?= $_SESSION['user'][0]['phone_user'] ?>">
                                                     </div>
                                                     <div class="col-12 mb-5">
                                                         <label>Địa chỉ*</label>
                                                         <input type="text" name="address" value="
-                                                        <?=$_SESSION['user'][0]['address_user']?>" >
+                                                        <?= $_SESSION['user'][0]['address_user'] ?>">
                                                     </div>
                                                     <div class="col-12 mb-5">
-                                                        <button class="btn btn-lg btn-round" name="changeuser">Lưu</button>
+                                                        <button class="btn btn-lg btn-round" type="submit"
+                                                            name="changeuser">Lưu</button>
                                                     </div>
 
                                                 </div>
@@ -166,7 +168,7 @@
                                     <h3>Chi tiết tài khoản</h3>
 
                                     <div class="account-details-form">
-                                        <form action="#"  method="post">
+                                        <form action="#" method="post">
                                             <div class="row">
                                                 <div class="col-lg-6 col-12 mb-30">
                                                     <input id="first-name" placeholder="Tên" type="text">
