@@ -130,6 +130,11 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                        <a href="index.php">
+                                <p>Trang chủ</p>
+                            </a>
+                        </li>
+                        <li>
                             <a href="?ctrl=user&view=logout">
                                 <p>Đăng xuất</p>
                             </a>

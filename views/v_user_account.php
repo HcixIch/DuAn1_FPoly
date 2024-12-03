@@ -116,15 +116,18 @@
                                         <form action="#"  method="post">
                                             <div class="row">
                                                 <div class="col-12 mb-30">
-                                                    <input id="first-name" name="fullname" placeholder="Họ vàTên" type="text" value="<?= $_SESSION['user'][0]['full_name']?>">
+                                                    <label for="">Họ và Tên</label>
+                                                    <input id="first-name" name="fullname"  type="text" value="<?= $_SESSION['user'][0]['full_name']?>">
                                                 </div>
 
                                                 <div class="col-12 mb-30">
-                                                    <input id="display-name" name="username" placeholder="Tên hiển thị" type="text" value="<?= $_SESSION['user'][0]['user_name']?>">
+                                                <label for="">Tên hiển thị</label>
+                                                    <input id="display-name" name="username" type="text" value="<?= $_SESSION['user'][0]['user_name']?>">
                                                 </div>
 
                                                 <div class="col-12 mb-30">
-                                                    <input id="email" name="email" placeholder="Địa chỉ Email" type="email" value="<?= $_SESSION['user'][0]['email_user']?>">
+                                                <label for="">Địa chỉ Email</label>
+                                                    <input id="email" name="email"  type="email" value="<?= $_SESSION['user'][0]['email_user']?>">
                                                 </div>
 
                                                 <div class="col-12 mb-30">
@@ -146,7 +149,7 @@
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <button class="save-change-btn">Lưu thay đổi</button>
+                                                    <button name="change" class="save-change-btn">Lưu thay đổi</button>
                                                 </div>
 
                                             </div>
