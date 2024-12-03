@@ -17,14 +17,17 @@ class Order extends Database
     {
         $sql = "SELECT 
         order_detail.id_product, 
-        product.img_product, 
+        order_detail.quantity,  
         product.name_product, 
-        order_detail.quantity, 
-        order_detail.price, 
-        order_detail.id_cart_detail, 
-        order_detail.date_order 
-        FROM order_detail 
-        INNER JOIN product on order_detail.id_product = product.id_product";
+        checkout.phone, 
+        checkout.address, 
+        checkout.total_all, 
+        checkout.full_name,
+        checkout.shipping_cost, 
+        checkout.date_order 
+        FROM checkout 
+        INNER JOIN order_detail ON checkout.id_checkout = order_detail.id_checkout
+        INNER JOIN product ON order_detail.id_product = product.id_product";
         return $this->db->getAll($sql);
     }
 }

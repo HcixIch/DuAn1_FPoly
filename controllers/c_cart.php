@@ -131,9 +131,6 @@ if (isset($_GET['view'])) {
           $subject = 'Chúng Tôi Đã Nhận Được Đơn Hàng Của Bạn – Cập Nhật Thông Tin Đơn Hàng DA00' . $checkout_new[0]['id_checkout'] . '';
           sendMail($_POST['emailsend'], $subject, $content);
           $data_order = [];
-          foreach ($_SESSION['cart'] as $cart) {
-            $data_order[] = ['quantity' => $cart['quantity']];
-          }
         }
       }
 

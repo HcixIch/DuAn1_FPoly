@@ -96,14 +96,14 @@
                                                 <?php foreach ($checkoutall as $co) {
                                                     extract($co);
                                                 ?>
-                                                    <tr>
-                                                        <td><?= $id_checkout ?></td>
-                                                        <td>
+                                                <tr>
+                                                    <td><?= $id_checkout ?></td>
+                                                    <td>
 
-                                                        </td>
-                                                        <td><?= $date_order ?></td>
-                                                        <td>
-                                                            <?php if ($status == 1) {
+                                                    </td>
+                                                    <td><?= $date_order ?></td>
+                                                    <td>
+                                                        <?php if ($status == 1) {
                                                                 echo "Chờ xử lý";
                                                             } elseif ($status == 2) {
                                                                 echo "Đã xử lý";
@@ -114,10 +114,10 @@
                                                             } elseif ($status == 5) {
                                                                 echo "Đã hủy";
                                                             } ?>
-                                                        </td>
-                                                        <td><?= $provisional_total ?></td>
-                                                        <td><a href="cart.html" class="btn">Xem</a></td>
-                                                    </tr>
+                                                    </td>
+                                                    <td><?= $provisional_total ?></td>
+                                                    <td><a href="cart.html" class="btn">Xem</a></td>
+                                                </tr>
                                                 <?php } ?>
                                             </tbody>
                                         </table>
@@ -170,7 +170,7 @@
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <button class="save-change-btn">Lưu thay đổi</button>
+                                                    <button name="change" class="save-change-btn">Lưu thay đổi</button>
                                                 </div>
 
                                             </div>

@@ -11,10 +11,11 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <th>STT</th>
-                                    	<th>Tên</th>
+                                    	<th>Tên người nhận hàng</th>
+                                        <th>Số điện thoại người nhận hàng</th>
+                                        <th>Địa chỉ nhận hàng</th>
                                         <th>Đơn hàng</th>
-                                        <th>hình ảnh</th>
-                                        <th>Giá</th>
+                                        <th>Tổng tiền</th>
                                         <th>Số lượng</th>
                                     	<th>Ngày đặt</th>
                                     	
@@ -26,12 +27,13 @@
                                         $i =0;?>
                                         <tr>
                                             <td><?= $i + 1?></td>
-                                            <td id="name"><?= $od['id_cart_detail']?></td>
-                                            <td><?= $od['name_product'] ?></td>
-                                            <td id="price"><img src="./assets/images/product/<?= $od['img_product']?>" alt="" id="image" height="80px"></td>
-                                            <td><?=number_format( $od['price'], 0,',', '.')?>đ</td>
-                                            <td><?=$od['quantity']?></td>   
-                                            <td><?=$od['date_order']?></td> 
+                                            <td><?= $od['full_name']?></td>
+                                            <td><?= $od['phone']?></td>
+                                            <td><?= $od['address']?></td>
+                                            <td><?= $od['name_product']?></td>
+                                            <td><?= $od['total_all']?>đ</td>
+                                            <td><?= $od['quantity']?></td>   
+                                            <td><?= $od['date_order']?></td> 
                                         </tr>
                                     <?php }?>
                                     </tbody>
