@@ -1,44 +1,56 @@
 <?php
 include_once './views/t_header.php';
-if (isset($_GET['action']) && $_GET['action'] === 'deleteuser') {
-    if (isset($_GET['id'])) {
-        $id = intval($_GET['id']);
-        $result = $user->DeleteUser($id);
-        if ($result) {
-            echo "alert('Xóa người dùng thành công!');</script>";
-        } else {
-            echo "alert('Không thể xóa người dùng!');</script>";
-        }
-        header("Location: ?ctrl=admin&view=user");
-        exit;
-    }
-}
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'account':
             $title = "Tài khoản";
             $kt = 0;
             if (isset($_POST['changeuser'])) {
-                $fullname = $_POST['fullname'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $address = $_POST['address'];
-                $user->UpdateUser(($_SESSION['user'][0]['id_user']), $fullname, $address, $email, $phone);
+                $fullname = trim($_POST['fullname']);
+                $email = trim($_POST['email']);
+                $phone = trim($_POST['phone']);
+                $address = trim($_POST['address']);
+    
+                // Kiểm tra các trường không được để trống
+                if (empty($fullname) || empty($email) || empty($phone) || empty($address)) {
+                    $_SESSION['message'] = "Vui lòng điền đầy đủ thông tin.";
+                } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { // Kiểm tra định dạng email
+                    $_SESSION['message'] = "Địa chỉ email không hợp lệ.";
+                } elseif (!is_numeric($phone)) { // Kiểm tra số điện thoại
+                    $_SESSION['message'] = "Số điện thoại không hợp lệ.";
+                } else {
+                    // Nếu hợp lệ, gọi model để cập nhật thông tin
+                    $user->UpdateUser($_SESSION['user'][0]['id_user'], $fullname, $address, $email, $phone);
+                    $_SESSION['message'] = "Cập nhật thông tin thành công!";
+                }
             }
+            // Xử lý thay đổi mật khẩu
             if (isset($_POST['changepass'])) {
-                if ($_POST['newpassword'] != $_POST['password-comfirm']) {
-                    echo "Mật khẩu mới không trùng khớp.";
+                $currentPassword = $_POST['password'];
+                $newPassword = $_POST['newpassword'];
+                $confirmPassword = $_POST['password_comfirm'];
+    
+                // Kiểm tra mật khẩu mới và xác nhận
+                if ($newPassword != $confirmPassword) {
                     $kt = 1;
+                    $_SESSION['message'] = "Mật khẩu mới và xác nhận mật khẩu không khớp.";
                 }
-                if ($_POST['password'] != ($_SESSION['user'][0]['password'])) {
-                    echo "Mật khẩu hiện tại không đúng.";
+    
+                // Kiểm tra mật khẩu hiện tại
+                if ($currentPassword != $_SESSION['user'][0]['password']) {
                     $kt = 1;
+                    $_SESSION['message'] = "Mật khẩu hiện tại không đúng.";
                 }
-                if($kt = 0){
-                    $user->UpdatePassword(($_SESSION['user'][0]['id_user']),$_POST['newpassword']);
+    
+                // Nếu không có lỗi, cập nhật mật khẩu
+                if ($kt == 0) {
+                    $user->UpdatePassword($_SESSION['user'][0]['id_user'], $newPassword);
+                    $_SESSION['message'] = "Thay đổi mật khẩu thành công!";
                 }
             }
-            include_once './views/page_banner.php';
+            // Render lại view với thông báo
+            header("Location:?ctrl=user&view=account");
+            exit();
             include_once './views/v_user_account.php';
             break;
         case 'login':

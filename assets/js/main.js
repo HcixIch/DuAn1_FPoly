@@ -456,3 +456,101 @@ document.addEventListener('DOMContentLoaded', function () {
         formElement.addEventListener('submit', validateForm);
     }
 });
+
+// Tài khoản của tôi 
+$(document).ready(function () {
+    // Chuyển đổi tab
+    $('.myaccount-tab-menu a').on('click', function (e) {
+        e.preventDefault();
+        $('.myaccount-tab-menu a').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-pane').removeClass('show active');
+        $($(this).attr('href')).addClass('show active');
+    });
+
+    // Xác thực form thông tin tài khoản
+    $('form[action="?ctrl=user&view=account"]').on('submit', function (e) {
+        let isValid = true;
+        let errorMessage = "";
+
+        // Kiểm tra Họ và Tên
+        const fullName = $('input[name="fullname"]').val().trim();
+        if (fullName === "") {
+            errorMessage += "Họ và tên không được để trống.\n";
+            isValid = false;
+        }
+
+        // Kiểm tra Email
+        const email = $('input[name="email"]').val().trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errorMessage += "Địa chỉ email không hợp lệ.\n";
+            isValid = false;
+        }
+
+        // Kiểm tra Số điện thoại
+        const phone = $('input[name="phone"]').val().trim();
+        if (phone === "" || isNaN(phone)) {
+            errorMessage += "Số điện thoại phải là số và không được để trống.\n";
+            isValid = false;
+        }
+
+        // Kiểm tra Địa chỉ
+        const address = $('input[name="address"]').val().trim();
+        if (address === "") {
+            errorMessage += "Địa chỉ không được để trống.\n";
+            isValid = false;
+        }
+
+        // Nếu có lỗi, ngăn submit và hiển thị thông báo
+        if (!isValid) {
+            alert(errorMessage);
+            e.preventDefault();
+        }
+    });
+
+    // Xác thực form thay đổi mật khẩu
+    $('form[action="?ctrl=user&view=account"]').on('submit', function (e) {
+        if ($('button[name="changepass"]').length) {
+            let isValid = true;
+            let errorMessage = "";
+
+            const currentPwd = $('#current-pwd').val().trim();
+            const newPwd = $('#new-pwd').val().trim();
+            const confirmPwd = $('#confirm-pwd').val().trim();
+
+            // Kiểm tra mật khẩu hiện tại
+            if (currentPwd === "") {
+                errorMessage += "Vui lòng nhập mật khẩu hiện tại.\n";
+                isValid = false;
+            }
+
+            // Kiểm tra mật khẩu mới
+            if (newPwd.length < 6) {
+                errorMessage += "Mật khẩu mới phải có ít nhất 6 ký tự.\n";
+                isValid = false;
+            }
+
+            // Kiểm tra xác nhận mật khẩu
+            if (newPwd !== confirmPwd) {
+                errorMessage += "Mật khẩu mới và xác nhận mật khẩu không khớp.\n";
+                isValid = false;
+            }
+
+            // Nếu có lỗi, ngăn submit và hiển thị thông báo
+            if (!isValid) {
+                alert(errorMessage);
+                e.preventDefault();
+            }
+        }
+    });
+
+    // Hiển thị thông báo từ server (nếu có)
+    const message = $('.alert-info').text().trim();
+    if (message !== "") {
+        alert(message);
+    }
+});
+
+
+

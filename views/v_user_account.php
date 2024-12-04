@@ -27,50 +27,6 @@
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển bắt đầu -->
                             <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
 
-                                <form action="?ctrl=user&view=account" class="checkout-form" method="post">
-                                    <div class="row row-40">
-
-                                        <div class="col-lg-7">
-
-                                            <!-- Địa chỉ thanh toán -->
-                                            <div id="billing-form" class="mb-10">
-                                                <div class="row">
-                                                    <div class="col-md-12 col-12 mb-5">
-                                                        <label>Họ và tên*</label>
-                                                        <input type="text" name="fullname"
-                                                            value="<?= $_SESSION['user'][0]['full_name'] ?>">
-                                                    </div>
-                                                    <div class="col-md-12 col-12 mb-5">
-                                                        <label>Địa chỉ Email*</label>
-                                                        <input type="email" name="email" value="
-                                                        <?= $_SESSION['user'][0]['email_user'] ?>">
-                                                    </div>
-                                                    <div class="col-md-12 col-12 mb-5">
-                                                        <label>Số điện thoại*</label>
-                                                        <input type="text" name="phone" value="
-                                                        <?= $_SESSION['user'][0]['phone_user'] ?>">
-                                                    </div>
-                                                    <div class="col-12 mb-5">
-                                                        <label>Địa chỉ*</label>
-                                                        <input type="text" name="address" value="
-                                                        <?= $_SESSION['user'][0]['address_user'] ?>">
-                                                    </div>
-                                                    <div class="col-12 mb-5">
-                                                        <button class="btn btn-lg btn-round" type="submit"
-                                                            name="changeuser">Lưu</button>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                            <!-- Địa chỉ giao hàng -->
-
-                                        </div>
-
-
-                                    </div>
-                                </form>
                             </div>
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển kết thúc -->
 
@@ -177,7 +133,7 @@
                                                 </div>
 
                                                 <div class="col-lg-6 col-12 mb-30">
-                                                    <input id="confirm-pwd" name="password-comfirm"
+                                                    <input id="confirm-pwd" name="password_comfirm"
                                                         placeholder="Xác nhận mật khẩu" type="password">
                                                 </div>
 
@@ -203,5 +159,3 @@
     </div>
 </div>
 <!--Phần Tài khoản của tôi kết thúc-->
-<!--
-                                                -->
