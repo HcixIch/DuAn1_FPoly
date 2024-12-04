@@ -10,7 +10,7 @@ if (isset($_GET['view'])) {
                 $email = trim($_POST['email']);
                 $phone = trim($_POST['phone']);
                 $address = trim($_POST['address']);
-    
+
                 // Kiểm tra các trường không được để trống
                 if (empty($fullname) || empty($email) || empty($phone) || empty($address)) {
                     $_SESSION['message'] = "Vui lòng điền đầy đủ thông tin.";
@@ -29,28 +29,28 @@ if (isset($_GET['view'])) {
                 $currentPassword = $_POST['password'];
                 $newPassword = $_POST['newpassword'];
                 $confirmPassword = $_POST['password_comfirm'];
-    
+
                 // Kiểm tra mật khẩu mới và xác nhận
                 if ($newPassword != $confirmPassword) {
                     $kt = 1;
                     $_SESSION['message'] = "Mật khẩu mới và xác nhận mật khẩu không khớp.";
                 }
-    
+
                 // Kiểm tra mật khẩu hiện tại
                 if ($currentPassword != $_SESSION['user'][0]['password']) {
                     $kt = 1;
                     $_SESSION['message'] = "Mật khẩu hiện tại không đúng.";
                 }
-    
+
                 // Nếu không có lỗi, cập nhật mật khẩu
                 if ($kt == 0) {
                     $user->UpdatePassword($_SESSION['user'][0]['id_user'], $newPassword);
                     $_SESSION['message'] = "Thay đổi mật khẩu thành công!";
+                    header("Location: index.php?ctrl=user&view=account");
+                    exit();
                 }
             }
             // Render lại view với thông báo
-            header("Location:?ctrl=user&view=account");
-            exit();
             include_once './views/v_user_account.php';
             break;
         case 'login':

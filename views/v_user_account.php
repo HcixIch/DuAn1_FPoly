@@ -40,7 +40,7 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>STT</th>
-                                                    <th>Sản phẩm</th>
+                                                    <th>Mã đơn hàng</th>
                                                     <th>Ngày</th>
                                                     <th>Trạng thái</th>
                                                     <th>Tổng cộng</th>
@@ -54,9 +54,7 @@
                                                 ?>
                                                 <tr>
                                                     <td><?= $id_checkout ?></td>
-                                                    <td>
-
-                                                    </td>
+                                                    <td>DA00<?= $id_checkout ?></td>
                                                     <td><?= $date_order ?></td>
                                                     <td>
                                                         <?php if ($status == 1) {
@@ -101,21 +99,22 @@
                                                         type="email" value="<?= $_SESSION['user'][0]['email_user'] ?>">
                                                 </div>
                                                 <div class="col-12 mb-30">
-                                                    <input id="address" name="address" placeholder="Địa chỉ"
-                                                        type="text" value="<?= $_SESSION['user'][0]['address_user'] ?>">
+                                                    <input id="address" name="address" placeholder="Địa chỉ" type="text"
+                                                        value="<?= $_SESSION['user'][0]['address_user'] ?>">
                                                 </div>
                                                 <div class="col-12 mb-30">
-                                                    <input id="phone" name="phone" placeholder="phone"
-                                                        type="number" value="<?= $_SESSION['user'][0]['phone_user'] ?>">
+                                                    <input id="phone" name="phone" placeholder="phone" type="number"
+                                                        value="<?= $_SESSION['user'][0]['phone_user'] ?>">
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="submit" name="changeuser" class="save-change-btn">Lưu thay đổi</button>
+                                                    <button type="submit" name="changeuser" class="save-change-btn">Lưu
+                                                        thay đổi</button>
                                                 </div>
 
                                             </div>
                                         </form>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="myaccount-content">
                                     <h3>Thay đổi mật khẩu</h3>
@@ -138,13 +137,14 @@
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <button type="submit" name="changepass" class="save-change-btn">Lưu thay đổi</button>
+                                                    <button type="submit" name="changepass" class="save-change-btn">Lưu
+                                                        thay đổi</button>
                                                 </div>
 
                                             </div>
                                         </form>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <!-- Nội dung thẻ đơn lẻ Chi tiết tài khoản kết thúc -->
