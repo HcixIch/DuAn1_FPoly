@@ -56,18 +56,19 @@
                             <div class="ht-right d-flex justify-content-lg-end justify-content-center">
                                 <ul class="ht-us-menu d-flex">
                                     <?php
-                                    if (isset($_SESSION['user']) && count($_SESSION['user']) > 0) {
-                                        echo '<li><a href="#"><i class="fa fa-user-circle-o"></i>' . $_SESSION['user'][0]['email_user'] . '</a>
+                                    if (isset($_SESSION['user']) && count($_SESSION['user']) > 0) {?>
+                                       <li><a href="#"><i class="fa fa-user-circle-o"></i><?=$_SESSION['user'][0]['email_user']?></a>
                                                 <ul class="ht-dropdown right">
                                                     <li><a href="?ctrl=user&view=account">Tài khoản của tôi</a></li>
+                                                    <?php if( $_SESSION['user'][0]  ['role'] == 1){?>
+                                                            <li><a href="?ctrl=admin">Quản lí trang</a></li><?php }?>
                                                     <li><a href="?ctrl=user&view=logout">Đăng xuất</a></li>
                                                 </ul>
-                                            </li>';
-                                    } else {
-                                        echo '<li><a href="?ctrl=user&view=login"><i class="fa fa-user-circle-o"></i>Login</a>
-                                            </li>';
-                                    }
-                                    ?>
+                                            </li>
+                                    <?php } else{ ?>
+                                        <li><a href="?ctrl=user&view=login"><i class="fa fa-user-circle-o"></i>Login</a>
+                                            </li>;
+                                    <?php } ?>
                                 </ul>
                             </div>
                         </div>

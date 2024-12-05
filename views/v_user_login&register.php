@@ -1,3 +1,19 @@
+<!-- Error message Start -->
+<?php if (isset($_SESSION['errors'])): ?>
+                <div class="alert alert-danger">
+                    <?php foreach ($_SESSION['errors'] as $error): ?>
+                        <p><?= $error ?></p>
+                    <?php endforeach; ?>
+                </div>
+                <?php unset($_SESSION['errors']); ?>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['message'])): ?>
+                <div class="alert alert-success">
+                    <p><?= $_SESSION['message'] ?></p>
+                    <?php unset($_SESSION['message']); ?>
+                </div>
+            <?php endif; ?>
+<!-- Error message End -->
 <!-- Login Register section start -->
 <div
     class="login-register-section section pt-30 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
@@ -34,7 +50,6 @@
                 </div>
             </div>
             <!-- Login Form End -->
-
             <!-- Register Form Start -->
             <div class="col-md-6 col-sm-6">
                 <div class="customer-login-register register-pt-0">

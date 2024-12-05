@@ -1,3 +1,11 @@
+<!-- Error message starts-->
+<?php if (isset($_SESSION['message'])): ?>
+    <div class="alert alert-info">
+        <?= $_SESSION['message']; ?>
+    </div>
+    <?php unset($_SESSION['message']); // Xóa thông báo sau khi hiển thị ?>
+<?php endif; ?>
+<!-- Error message end-->
 <!--Phần Tài khoản của tôi bắt đầu-->
 <div
     class="my-account-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
@@ -26,6 +34,16 @@
                         <div class="tab-content" id="myaccountContent">
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển bắt đầu -->
                             <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                <table>
+                                    <tr>
+                                        <th> STT</th>
+                                        <th></th>
+                                        <th></th>
+                                        
+                                    </tr>
+                                
+                                </table>
+
 
                             </div>
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển kết thúc -->

@@ -551,6 +551,66 @@ $(document).ready(function () {
         alert(message);
     }
 });
+$(document).ready(function () {
+    // Xác thực form đăng nhập
+    $('form[action=""][method="post"]').on('submit', function (e) {
+        let isValid = true;
+        let errorMessage = "";
+
+        const email = $('input[name="email"]').val().trim();
+        const password = $('input[name="password"]').val().trim();
+
+        if (email === "") {
+            errorMessage += "Email hoặc số điện thoại không được để trống.\n";
+            isValid = false;
+        }
+
+        if (password === "") {
+            errorMessage += "Mật khẩu không được để trống.\n";
+            isValid = false;
+        }
+
+        if (!isValid) {
+            alert(errorMessage);
+            e.preventDefault();
+        }
+    });
+
+    // Xác thực form đăng ký
+    $('form[action="?ctrl=user"][method="post"]').on('submit', function (e) {
+        let isValid = true;
+        let errorMessage = "";
+
+        const email = $('input[name="email"]').val().trim();
+        const password = $('input[name="password"]').val().trim();
+        const confirmPassword = $('input[name="confirm_password"]').val().trim();
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Kiểm tra Email
+        if (email === "" || !emailRegex.test(email)) {
+            errorMessage += "Email không hợp lệ hoặc để trống.\n";
+            isValid = false;
+        }
+
+        // Kiểm tra Mật khẩu
+        if (password.length < 6) {
+            errorMessage += "Mật khẩu phải có ít nhất 6 ký tự.\n";
+            isValid = false;
+        }
+
+        // Kiểm tra Xác nhận Mật khẩu
+        if (password !== confirmPassword) {
+            errorMessage += "Mật khẩu và xác nhận mật khẩu không khớp.\n";
+            isValid = false;
+        }
+
+        if (!isValid) {
+            alert(errorMessage);
+            e.preventDefault();
+        }
+    });
+});
 
 
 
