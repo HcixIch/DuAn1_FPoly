@@ -67,11 +67,11 @@
                                         <h4>Sản phẩm <span>Tổng</span></h4>
                                         <ul>
                                             <?php foreach ($_SESSION['cart'] as $ct) { ?>
-                                            <li>
-                                                <p id="nico"><?= $ct['name_product'] ?></p> X
-                                                <?= $ct['quantity_product'] ?>
-                                                <span><?= number_format($ct['subtotal'], 0, ',', '.') ?> ₫</span>
-                                            </li>
+                                                <li>
+                                                    <p id="nico"><?= $ct['name_product'] ?></p> X
+                                                    <?= $ct['quantity_product'] ?>
+                                                    <span><?= number_format($ct['subtotal'], 0, ',', '.') ?> ₫</span>
+                                                </li>
                                             <?php } ?>
                                         </ul>
                                         <p>Tổng phụ

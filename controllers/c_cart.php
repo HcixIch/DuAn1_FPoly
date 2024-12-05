@@ -130,7 +130,22 @@ if (isset($_GET['view'])) {
                   </table>';
           $subject = 'Chúng Tôi Đã Nhận Được Đơn Hàng Của Bạn – Cập Nhật Thông Tin Đơn Hàng DA00' . $checkout_new[0]['id_checkout'] . '';
           sendMail($_POST['emailsend'], $subject, $content);
-          $data_order = [];
+          $data_orders = [];
+          foreach ($_SESSION['cart'] as $item) {
+            $unit_price = $item['quantity_product'] * $item['price'];
+            $data_orders[] = [
+              'quantity' => $item['quantity_product'],
+              'price' => $item['price'],
+              'unit_price' => $unit_price,
+              'id_product' => $item['id_product'],
+              'id_checkout' => $checkout_new[0]['id_checkout'],
+            ];
+          }
+          foreach ($data_orders as $order_item) {
+            $order->SaveOrder($order_item);
+          }
+          unset($_SESSION['cart']);
+          header('location:index.php');
         }
       }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2024 lúc 03:25 AM
+-- Thời gian đã tạo: Th12 05, 2024 lúc 05:14 AM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 8.2.12
 
@@ -35,27 +35,6 @@ CREATE TABLE `blog` (
   `id_user` int NOT NULL,
   `content_blog` text COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `cart`
---
-
-CREATE TABLE `cart` (
-  `id_cart` int NOT NULL,
-  `id_product` int NOT NULL,
-  `id_user` int NOT NULL,
-  `quantity` int NOT NULL,
-  `subtotal` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- Đang đổ dữ liệu cho bảng `cart`
---
-
-INSERT INTO `cart` (`id_cart`, `id_product`, `id_user`, `quantity`, `subtotal`) VALUES
-(12, 2, 1, 1, 2888800);
 
 -- --------------------------------------------------------
 
@@ -93,16 +72,30 @@ CREATE TABLE `checkout` (
   `shipping_cost` float NOT NULL,
   `provisional_total` float NOT NULL,
   `payment_option` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `id_voucher` int NOT NULL,
-  `id_user` int NOT NULL
+  `id_voucher` varchar(10) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `id_user` int NOT NULL,
+  `date_order` datetime DEFAULT NULL,
+  `status` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `checkout`
 --
 
-INSERT INTO `checkout` (`id_checkout`, `full_name`, `address`, `phone`, `total_all`, `shipping_cost`, `provisional_total`, `payment_option`, `id_voucher`, `id_user`) VALUES
-(3, '1', '1', '1', 1, 1, 1, '1', 1, 1);
+INSERT INTO `checkout` (`id_checkout`, `full_name`, `address`, `phone`, `total_all`, `shipping_cost`, `provisional_total`, `payment_option`, `id_voucher`, `id_user`, `date_order`, `status`) VALUES
+(3, '1', '1', '1', 1, 30000, 1, '1', '1', 1, NULL, 0),
+(8, 'Huỳnh Anh Quốc', 'Thành phố HCM', '03712837488', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:01:13', 1),
+(9, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '03712837488', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:02:47', 1),
+(10, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0437128374', 303900, 30000, 273900, 'cod', NULL, 3, '2024-12-05 05:04:54', 1),
+(11, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '03738173881', 372100, 30000, 342100, 'cod', NULL, 3, '2024-12-05 05:05:37', 1),
+(12, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '03738173881', 372100, 30000, 342100, 'cod', NULL, 3, '2024-12-05 05:06:06', 1),
+(13, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373187383', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:06:50', 1),
+(14, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373187383', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:08:09', 1),
+(15, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373186382', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:08:42', 1),
+(16, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373186382', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:09:27', 1),
+(17, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373186382', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:12:23', 1),
+(18, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0363627361', 2918800, 30000, 2888800, 'cod', NULL, 3, '2024-12-05 05:12:38', 1),
+(19, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0371873193', 5807600, 30000, 5777600, 'cod', NULL, 3, '2024-12-05 05:13:36', 1);
 
 -- --------------------------------------------------------
 
@@ -126,8 +119,8 @@ CREATE TABLE `comment` (
 --
 
 CREATE TABLE `order_detail` (
-  `id_cart_detail` int NOT NULL,
-  `quanlity` int NOT NULL,
+  `id_order` int NOT NULL,
+  `quantity` int NOT NULL,
   `price` float NOT NULL,
   `unit_price` float NOT NULL,
   `id_product` int NOT NULL,
@@ -138,8 +131,10 @@ CREATE TABLE `order_detail` (
 -- Đang đổ dữ liệu cho bảng `order_detail`
 --
 
-INSERT INTO `order_detail` (`id_cart_detail`, `quanlity`, `price`, `unit_price`, `id_product`, `id_checkout`) VALUES
-(1, 1, 1, 1, 19, 3);
+INSERT INTO `order_detail` (`id_order`, `quantity`, `price`, `unit_price`, `id_product`, `id_checkout`) VALUES
+(1, 1, 1, 1, 19, 3),
+(3, 1, 2888800, 2888800, 1, 18),
+(4, 2, 2888800, 5777600, 1, 19);
 
 -- --------------------------------------------------------
 
@@ -156,7 +151,7 @@ CREATE TABLE `product` (
   `sale` int NOT NULL,
   `hot` int NOT NULL,
   `id_category` int NOT NULL,
-  `quanlity_product` int NOT NULL,
+  `quantity_product` int NOT NULL,
   `description_summary` text CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -164,7 +159,7 @@ CREATE TABLE `product` (
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`id_product`, `img_product`, `name_product`, `price_product`, `description_product`, `sale`, `hot`, `id_category`, `quanlity_product`, `description_summary`) VALUES
+INSERT INTO `product` (`id_product`, `img_product`, `name_product`, `price_product`, `description_product`, `sale`, `hot`, `id_category`, `quantity_product`, `description_summary`) VALUES
 (1, 'product-1.webp', 'Áo Arsenal adidas 24/25 Originals', 2888800, 'Áo sơ mi Arsenal adidas 24/25 Originals mang phong cách thể thao tinh tế, kết hợp thiết kế cổ điển với vẻ đẹp hiện đại. Kiểu dáng ôm sát giúp tăng cường chuyển động, cùng với chi tiết ba sọc biểu tượng ở vai và khẩu pháo gia nhiệt ở ngực, chiếc áo này sẽ giữ bạn ấm áp và phong cách trong nhiều mùa tới. <br><br>\n\nChiếc áo này được làm từ 100% polyester tái chế, là một phần trong nỗ lực chung tay giảm thiểu rác thải nhựa. <br><br>\n\nPháo gia nhiệt ở ngực <br> Khẩu hiệu AFC thêu ở cổ áo <br> Cổ tròn có gân <br> Vừa vặn <br> Màu sắc: Xanh lam <br>\n\nChất liệu: 100% polyester tái chế', 10, 1, 1, 1000, 'Áo sơ mi Arsenal adidas 24/25 Originals có thiết kế ôm sát, chi tiết ba sọc ở vai và khẩu pháo gia nhiệt ở ngực. Được làm từ 100% polyester tái chế, áo mang phong cách thể thao cổ điển, màu xanh lam nổi bật.'),
 (2, 'product-2.webp', 'Áo hoodie Arsenal adidas 24/25 Originals', 2888800, 'Kết hợp vẻ ngoài cổ điển với sự thoải mái cao cấp và chất liệu thân thiện với môi trường, Áo hoodie Arsenal 24/25 Originals là sản phẩm gần nhất mà bạn có thể có được với sự hoàn hảo trong tủ đồ.<br>\nĐược chế tác từ hỗn hợp cotton và polyester ấm áp, áo có kiểu dáng hộp thoải mái, bo gấu tay và gấu áo có gân và họa tiết đại bác thêu ở giữa ngực để tạo nên phong cách mới mẻ cho trang phục thể thao cổ điển, theo phong cách của Arsenal.<br>\nChiếc áo hoodie adidas này được làm một phần từ vật liệu tái chế như một phần trong tham vọng chung tay chấm dứt rác thải nhựa của chúng tôi.<br>\nPháo thêu<br>\nVừa vặn rộng rãi<br>\nMũ trùm đầu có thể điều chỉnh bằng dây rút<br>\nCổ tay và gấu áo có gân<br>\nTúi trước<br>\nMàu sắc: Xanh lam<br>\nMã sản phẩm: MIS6501<br>\nChất liệu: 78% cotton, 22% polyester tái chế', 0, 0, 1, 1000, ''),
 (3, 'product-3.webp', 'Áo thun Arsenal adidas 24/25 Originals Track', 2888800, 'Thiết kế vượt thời gian kết hợp với sự thoải mái vượt trội. Với vẻ ngoài lấy cảm hứng từ phong cách cổ điển và cấu trúc bằng nylon nhẹ, Áo thun Arsenal adidas 24/25 Originals Track Top sẽ mang đến cho bạn sự ấm áp bất cứ khi nào bạn cần. Với khóa kéo toàn bộ có cổ đứng, hình khẩu pháo thêu ở ngực và khẩu hiệu Gothic Arsenal ở mặt sau, áo sẽ giúp bạn ấm áp và tự hào về phong cách trong suốt mùa giải. \r\n\r\nChiếc áo thể thao adidas này được làm từ vật liệu tái chế như một phần trong tham vọng giúp chấm dứt rác thải nhựa của chúng tôi.\r\n\r\nPháo thêu\r\nKhẩu hiệu Gothic Arsenal thêu ở mặt sau\r\nVừa vặn thông thường\r\nKhóa kéo toàn phần có cổ đứng\r\nCổ tay và gấu áo có chun co giãn\r\nTúi trước và sau\r\nMàu sắc: Xanh lam\r\n\r\nMã sản phẩm: MIS6503\r\n\r\n\r\nChất liệu: 100% polyamide tái chế', 0, 0, 1, 1000, ''),
@@ -248,6 +243,134 @@ INSERT INTO `product_img` (`id_product`, `hinh1`, `hinh2`, `hinh3`, `hinh4`) VAL
 (29, 'product-29-1.webp', 'product-29-2.webp', 'product-29-3.webp', 'product-29-4.webp'),
 (30, 'product-30-1.webp', 'product-30-2.webp', 'product-30-3.webp', 'product-30-4.webp'),
 (31, 'product-31-1.webp', 'product-31-2.webp', 'product-31-3.webp', 'product-31-4.webp'),
+(32, 'product-32-1.webp', 'product-32-2.webp', 'product-32-3.webp', 'product-32-4.webp'),
+(1, 'product-1-1.webp', 'product-1-2.webp', 'product-1-3.webp', 'product-1-4.webp'),
+(2, 'product-2-1.webp', 'product-2-2.webp', 'product-2-3.webp', 'product-2-4.webp'),
+(3, 'product-3-1.webp', 'product-3-2.webp', 'product-3-3.webp', 'product-3-4.webp'),
+(4, 'product-4-1.webp', 'product-4-2.webp', 'product-4-3.webp', 'product-4-4.webp'),
+(5, 'product-5-1.webp', 'product-5-2.webp', 'product-5-3.webp', 'product-5-4.webp'),
+(6, 'product-6-1.webp', 'product-6-2.webp', 'product-6-3.webp', 'product-6-4.webp'),
+(7, 'product-7-1.webp', 'product-7-2.webp', 'product-7-3.webp', 'product-7-4.webp'),
+(8, 'product-8-1.webp', 'product-8-2.webp', 'product-8-3.webp', 'product-8-4.webp'),
+(9, 'product-9-1.webp', 'product-9-2.webp', 'product-9-3.webp', 'product-9-4.webp'),
+(10, 'product-10-1.webp', 'product-10-2.webp', 'product-10-3.webp', 'product-10-4.webp'),
+(11, 'product-11-1.webp', 'product-11-2.webp', 'product-11-3.webp', 'product-11-4.webp'),
+(12, 'product-12-1.webp', 'product-12-2.webp', 'product-12-3.webp', 'product-12-4.webp'),
+(13, 'product-13-1.webp', 'product-13-2.webp', 'product-13-3.webp', 'product-13-4.webp'),
+(14, 'product-14-1.webp', 'product-14-2.webp', 'product-14-3.webp', 'product-14-4.webp'),
+(15, 'product-15-1.webp', 'product-15-2.webp', 'product-15-3.webp', 'product-15-4.webp'),
+(16, 'product-16-1.webp', 'product-16-2.webp', 'product-16-3.webp', 'product-16-4.webp'),
+(17, 'product-17-1.webp', 'product-17-2.webp', 'product-17-3.webp', 'product-17-4.webp'),
+(18, 'product-18-1.webp', 'product-18-2.webp', 'product-18-3.webp', 'product-18-4.webp'),
+(19, 'product-19-1.webp', 'product-19-2.webp', 'product-19-3.webp', 'product-19-4.webp'),
+(20, 'product-20-1.webp', 'product-20-2.webp', 'product-20-3.webp', 'product-20-4.webp'),
+(21, 'product-21-1.webp', 'product-21-2.webp', 'product-21-3.webp', 'product-21-4.webp'),
+(22, 'product-22-1.webp', 'product-22-2.webp', 'product-22-3.webp', 'product-22-4.webp'),
+(23, 'product-23-1.webp', 'product-23-2.webp', 'product-23-3.webp', 'product-23-4.webp'),
+(24, 'product-24-1.webp', 'product-24-2.webp', 'product-24-3.webp', 'product-24-4.webp'),
+(25, 'product-25-1.webp', 'product-25-2.webp', 'product-25-3.webp', 'product-25-4.webp'),
+(26, 'product-26-1.webp', 'product-26-2.webp', 'product-26-3.webp', 'product-26-4.webp'),
+(27, 'product-27-1.webp', 'product-27-2.webp', 'product-27-3.webp', 'product-27-4.webp'),
+(28, 'product-28-1.webp', 'product-28-2.webp', 'product-28-3.webp', 'product-28-4.webp'),
+(29, 'product-29-1.webp', 'product-29-2.webp', 'product-29-3.webp', 'product-29-4.webp'),
+(30, 'product-30-1.webp', 'product-30-2.webp', 'product-30-3.webp', 'product-30-4.webp'),
+(31, 'product-31-1.webp', 'product-31-2.webp', 'product-31-3.webp', 'product-31-4.webp'),
+(32, 'product-32-1.webp', 'product-32-2.webp', 'product-32-3.webp', 'product-32-4.webp'),
+(1, 'product-1-1.webp', 'product-1-2.webp', 'product-1-3.webp', 'product-1-4.webp'),
+(2, 'product-2-1.webp', 'product-2-2.webp', 'product-2-3.webp', 'product-2-4.webp'),
+(3, 'product-3-1.webp', 'product-3-2.webp', 'product-3-3.webp', 'product-3-4.webp'),
+(4, 'product-4-1.webp', 'product-4-2.webp', 'product-4-3.webp', 'product-4-4.webp'),
+(5, 'product-5-1.webp', 'product-5-2.webp', 'product-5-3.webp', 'product-5-4.webp'),
+(6, 'product-6-1.webp', 'product-6-2.webp', 'product-6-3.webp', 'product-6-4.webp'),
+(7, 'product-7-1.webp', 'product-7-2.webp', 'product-7-3.webp', 'product-7-4.webp'),
+(8, 'product-8-1.webp', 'product-8-2.webp', 'product-8-3.webp', 'product-8-4.webp'),
+(9, 'product-9-1.webp', 'product-9-2.webp', 'product-9-3.webp', 'product-9-4.webp'),
+(10, 'product-10-1.webp', 'product-10-2.webp', 'product-10-3.webp', 'product-10-4.webp'),
+(11, 'product-11-1.webp', 'product-11-2.webp', 'product-11-3.webp', 'product-11-4.webp'),
+(12, 'product-12-1.webp', 'product-12-2.webp', 'product-12-3.webp', 'product-12-4.webp'),
+(13, 'product-13-1.webp', 'product-13-2.webp', 'product-13-3.webp', 'product-13-4.webp'),
+(14, 'product-14-1.webp', 'product-14-2.webp', 'product-14-3.webp', 'product-14-4.webp'),
+(15, 'product-15-1.webp', 'product-15-2.webp', 'product-15-3.webp', 'product-15-4.webp'),
+(16, 'product-16-1.webp', 'product-16-2.webp', 'product-16-3.webp', 'product-16-4.webp'),
+(17, 'product-17-1.webp', 'product-17-2.webp', 'product-17-3.webp', 'product-17-4.webp'),
+(18, 'product-18-1.webp', 'product-18-2.webp', 'product-18-3.webp', 'product-18-4.webp'),
+(19, 'product-19-1.webp', 'product-19-2.webp', 'product-19-3.webp', 'product-19-4.webp'),
+(20, 'product-20-1.webp', 'product-20-2.webp', 'product-20-3.webp', 'product-20-4.webp'),
+(21, 'product-21-1.webp', 'product-21-2.webp', 'product-21-3.webp', 'product-21-4.webp'),
+(22, 'product-22-1.webp', 'product-22-2.webp', 'product-22-3.webp', 'product-22-4.webp'),
+(23, 'product-23-1.webp', 'product-23-2.webp', 'product-23-3.webp', 'product-23-4.webp'),
+(24, 'product-24-1.webp', 'product-24-2.webp', 'product-24-3.webp', 'product-24-4.webp'),
+(25, 'product-25-1.webp', 'product-25-2.webp', 'product-25-3.webp', 'product-25-4.webp'),
+(26, 'product-26-1.webp', 'product-26-2.webp', 'product-26-3.webp', 'product-26-4.webp'),
+(27, 'product-27-1.webp', 'product-27-2.webp', 'product-27-3.webp', 'product-27-4.webp'),
+(28, 'product-28-1.webp', 'product-28-2.webp', 'product-28-3.webp', 'product-28-4.webp'),
+(29, 'product-29-1.webp', 'product-29-2.webp', 'product-29-3.webp', 'product-29-4.webp'),
+(30, 'product-30-1.webp', 'product-30-2.webp', 'product-30-3.webp', 'product-30-4.webp'),
+(31, 'product-31-1.webp', 'product-31-2.webp', 'product-31-3.webp', 'product-31-4.webp'),
+(32, 'product-32-1.webp', 'product-32-2.webp', 'product-32-3.webp', 'product-32-4.webp'),
+(1, 'product-1-1.webp', 'product-1-2.webp', 'product-1-3.webp', 'product-1-4.webp'),
+(2, 'product-2-1.webp', 'product-2-2.webp', 'product-2-3.webp', 'product-2-4.webp'),
+(3, 'product-3-1.webp', 'product-3-2.webp', 'product-3-3.webp', 'product-3-4.webp'),
+(4, 'product-4-1.webp', 'product-4-2.webp', 'product-4-3.webp', 'product-4-4.webp'),
+(5, 'product-5-1.webp', 'product-5-2.webp', 'product-5-3.webp', 'product-5-4.webp'),
+(6, 'product-6-1.webp', 'product-6-2.webp', 'product-6-3.webp', 'product-6-4.webp'),
+(7, 'product-7-1.webp', 'product-7-2.webp', 'product-7-3.webp', 'product-7-4.webp'),
+(8, 'product-8-1.webp', 'product-8-2.webp', 'product-8-3.webp', 'product-8-4.webp'),
+(9, 'product-9-1.webp', 'product-9-2.webp', 'product-9-3.webp', 'product-9-4.webp'),
+(10, 'product-10-1.webp', 'product-10-2.webp', 'product-10-3.webp', 'product-10-4.webp'),
+(11, 'product-11-1.webp', 'product-11-2.webp', 'product-11-3.webp', 'product-11-4.webp'),
+(12, 'product-12-1.webp', 'product-12-2.webp', 'product-12-3.webp', 'product-12-4.webp'),
+(13, 'product-13-1.webp', 'product-13-2.webp', 'product-13-3.webp', 'product-13-4.webp'),
+(14, 'product-14-1.webp', 'product-14-2.webp', 'product-14-3.webp', 'product-14-4.webp'),
+(15, 'product-15-1.webp', 'product-15-2.webp', 'product-15-3.webp', 'product-15-4.webp'),
+(16, 'product-16-1.webp', 'product-16-2.webp', 'product-16-3.webp', 'product-16-4.webp'),
+(17, 'product-17-1.webp', 'product-17-2.webp', 'product-17-3.webp', 'product-17-4.webp'),
+(18, 'product-18-1.webp', 'product-18-2.webp', 'product-18-3.webp', 'product-18-4.webp'),
+(19, 'product-19-1.webp', 'product-19-2.webp', 'product-19-3.webp', 'product-19-4.webp'),
+(20, 'product-20-1.webp', 'product-20-2.webp', 'product-20-3.webp', 'product-20-4.webp'),
+(21, 'product-21-1.webp', 'product-21-2.webp', 'product-21-3.webp', 'product-21-4.webp'),
+(22, 'product-22-1.webp', 'product-22-2.webp', 'product-22-3.webp', 'product-22-4.webp'),
+(23, 'product-23-1.webp', 'product-23-2.webp', 'product-23-3.webp', 'product-23-4.webp'),
+(24, 'product-24-1.webp', 'product-24-2.webp', 'product-24-3.webp', 'product-24-4.webp'),
+(25, 'product-25-1.webp', 'product-25-2.webp', 'product-25-3.webp', 'product-25-4.webp'),
+(26, 'product-26-1.webp', 'product-26-2.webp', 'product-26-3.webp', 'product-26-4.webp'),
+(27, 'product-27-1.webp', 'product-27-2.webp', 'product-27-3.webp', 'product-27-4.webp'),
+(28, 'product-28-1.webp', 'product-28-2.webp', 'product-28-3.webp', 'product-28-4.webp'),
+(29, 'product-29-1.webp', 'product-29-2.webp', 'product-29-3.webp', 'product-29-4.webp'),
+(30, 'product-30-1.webp', 'product-30-2.webp', 'product-30-3.webp', 'product-30-4.webp'),
+(31, 'product-31-1.webp', 'product-31-2.webp', 'product-31-3.webp', 'product-31-4.webp'),
+(32, 'product-32-1.webp', 'product-32-2.webp', 'product-32-3.webp', 'product-32-4.webp'),
+(1, 'product-1-1.webp', 'product-1-2.webp', 'product-1-3.webp', 'product-1-4.webp'),
+(2, 'product-2-1.webp', 'product-2-2.webp', 'product-2-3.webp', 'product-2-4.webp'),
+(3, 'product-3-1.webp', 'product-3-2.webp', 'product-3-3.webp', 'product-3-4.webp'),
+(4, 'product-4-1.webp', 'product-4-2.webp', 'product-4-3.webp', 'product-4-4.webp'),
+(5, 'product-5-1.webp', 'product-5-2.webp', 'product-5-3.webp', 'product-5-4.webp'),
+(6, 'product-6-1.webp', 'product-6-2.webp', 'product-6-3.webp', 'product-6-4.webp'),
+(7, 'product-7-1.webp', 'product-7-2.webp', 'product-7-3.webp', 'product-7-4.webp'),
+(8, 'product-8-1.webp', 'product-8-2.webp', 'product-8-3.webp', 'product-8-4.webp'),
+(9, 'product-9-1.webp', 'product-9-2.webp', 'product-9-3.webp', 'product-9-4.webp'),
+(10, 'product-10-1.webp', 'product-10-2.webp', 'product-10-3.webp', 'product-10-4.webp'),
+(11, 'product-11-1.webp', 'product-11-2.webp', 'product-11-3.webp', 'product-11-4.webp'),
+(12, 'product-12-1.webp', 'product-12-2.webp', 'product-12-3.webp', 'product-12-4.webp'),
+(13, 'product-13-1.webp', 'product-13-2.webp', 'product-13-3.webp', 'product-13-4.webp'),
+(14, 'product-14-1.webp', 'product-14-2.webp', 'product-14-3.webp', 'product-14-4.webp'),
+(15, 'product-15-1.webp', 'product-15-2.webp', 'product-15-3.webp', 'product-15-4.webp'),
+(16, 'product-16-1.webp', 'product-16-2.webp', 'product-16-3.webp', 'product-16-4.webp'),
+(17, 'product-17-1.webp', 'product-17-2.webp', 'product-17-3.webp', 'product-17-4.webp'),
+(18, 'product-18-1.webp', 'product-18-2.webp', 'product-18-3.webp', 'product-18-4.webp'),
+(19, 'product-19-1.webp', 'product-19-2.webp', 'product-19-3.webp', 'product-19-4.webp'),
+(20, 'product-20-1.webp', 'product-20-2.webp', 'product-20-3.webp', 'product-20-4.webp'),
+(21, 'product-21-1.webp', 'product-21-2.webp', 'product-21-3.webp', 'product-21-4.webp'),
+(22, 'product-22-1.webp', 'product-22-2.webp', 'product-22-3.webp', 'product-22-4.webp'),
+(23, 'product-23-1.webp', 'product-23-2.webp', 'product-23-3.webp', 'product-23-4.webp'),
+(24, 'product-24-1.webp', 'product-24-2.webp', 'product-24-3.webp', 'product-24-4.webp'),
+(25, 'product-25-1.webp', 'product-25-2.webp', 'product-25-3.webp', 'product-25-4.webp'),
+(26, 'product-26-1.webp', 'product-26-2.webp', 'product-26-3.webp', 'product-26-4.webp'),
+(27, 'product-27-1.webp', 'product-27-2.webp', 'product-27-3.webp', 'product-27-4.webp'),
+(28, 'product-28-1.webp', 'product-28-2.webp', 'product-28-3.webp', 'product-28-4.webp'),
+(29, 'product-29-1.webp', 'product-29-2.webp', 'product-29-3.webp', 'product-29-4.webp'),
+(30, 'product-30-1.webp', 'product-30-2.webp', 'product-30-3.webp', 'product-30-4.webp'),
+(31, 'product-31-1.webp', 'product-31-2.webp', 'product-31-3.webp', 'product-31-4.webp'),
 (32, 'product-32-1.webp', 'product-32-2.webp', 'product-32-3.webp', 'product-32-4.webp');
 
 -- --------------------------------------------------------
@@ -259,7 +382,7 @@ INSERT INTO `product_img` (`id_product`, `hinh1`, `hinh2`, `hinh3`, `hinh4`) VAL
 CREATE TABLE `user` (
   `id_user` int NOT NULL,
   `full_name` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `address_user` int DEFAULT NULL,
+  `address_user` text COLLATE utf8mb4_vietnamese_ci,
   `phone_user` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `email_user` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `password` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
@@ -271,8 +394,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `full_name`, `address_user`, `phone_user`, `email_user`, `password`, `role`) VALUES
-(1, '1', 1, '1', 'ichndps41009@gmail.com', '11', b'0'),
-(3, NULL, NULL, NULL, 'ichndps409@gmail.com', '999', b'0');
+(1, '1', '1', '1', 'hanhps41059@gmail.com', '11', b'0'),
+(3, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '                                                        037128374', 'nguyenich067@gmail.com', '999', b'1');
 
 -- --------------------------------------------------------
 
@@ -281,8 +404,7 @@ INSERT INTO `user` (`id_user`, `full_name`, `address_user`, `phone_user`, `email
 --
 
 CREATE TABLE `voucher` (
-  `id_voucher` int NOT NULL,
-  `coupon_code` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `id_voucher` varchar(10) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `discount` float NOT NULL,
   `condition_voucher` varchar(250) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `deadline` datetime NOT NULL
@@ -292,8 +414,8 @@ CREATE TABLE `voucher` (
 -- Đang đổ dữ liệu cho bảng `voucher`
 --
 
-INSERT INTO `voucher` (`id_voucher`, `coupon_code`, `discount`, `condition_voucher`, `deadline`) VALUES
-(1, '', 1, '', '2024-11-12 14:55:31');
+INSERT INTO `voucher` (`id_voucher`, `discount`, `condition_voucher`, `deadline`) VALUES
+('1', 1, '', '2024-11-12 14:55:31');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -307,14 +429,6 @@ ALTER TABLE `blog`
   ADD KEY `blog_user` (`id_user`);
 
 --
--- Chỉ mục cho bảng `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id_cart`),
-  ADD KEY `user_cart` (`id_user`),
-  ADD KEY `cart_product` (`id_product`);
-
---
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -325,8 +439,8 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `checkout`
   ADD PRIMARY KEY (`id_checkout`),
-  ADD KEY `checkout_voucher` (`id_voucher`),
-  ADD KEY `checkout_user` (`id_user`);
+  ADD KEY `checkout_user` (`id_user`),
+  ADD KEY `checkout_voucher` (`id_voucher`);
 
 --
 -- Chỉ mục cho bảng `comment`
@@ -340,7 +454,7 @@ ALTER TABLE `comment`
 -- Chỉ mục cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
-  ADD PRIMARY KEY (`id_cart_detail`),
+  ADD PRIMARY KEY (`id_order`),
   ADD KEY `product_cart` (`id_product`),
   ADD KEY `cart_checkout` (`id_checkout`);
 
@@ -380,12 +494,6 @@ ALTER TABLE `blog`
   MODIFY `blog_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id_cart` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -395,7 +503,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `id_checkout` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_checkout` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `comment`
@@ -407,25 +515,19 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id_cart_detail` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_order` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id_product` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_product` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT cho bảng `voucher`
---
-ALTER TABLE `voucher`
-  MODIFY `id_voucher` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -435,14 +537,7 @@ ALTER TABLE `voucher`
 -- Các ràng buộc cho bảng `blog`
 --
 ALTER TABLE `blog`
-  ADD CONSTRAINT `blog_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Các ràng buộc cho bảng `cart`
---
-ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_product` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `user_cart` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `blog_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Các ràng buộc cho bảng `checkout`

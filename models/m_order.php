@@ -33,4 +33,16 @@ class Order extends Database
         WHERE checkout.id_checkout = $id_checkout";
         return $this->db->getAll($sql);
     }
+    //Hàm lưu đơn hàng
+    public function SaveOrder($data)
+    {
+        extract($data); // Lấy các giá trị từ mảng $data
+
+        // Chuẩn bị câu lệnh SQL
+        $sql = "INSERT INTO order_detail (quantity, price, unit_price, id_product, id_checkout) 
+                VALUES ($quantity, $price, $unit_price, '$id_product', '$id_checkout')";
+
+        // Thực thi lệnh SQL
+        return $this->db->insert($sql);
+    }
 }
