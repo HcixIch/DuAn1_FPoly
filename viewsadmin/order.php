@@ -22,7 +22,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                $order_list = $order->GetHistoryCheckout();
+                                $order_list = $checkout->GetHistoryCheckout();
                                 foreach ($order_list as $od) {
                                     $i = 0; ?>
                                     <tr>

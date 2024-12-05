@@ -293,7 +293,6 @@ if (isset($_GET['view'])) {
 
 
   // Debug giỏ hàng (xóa khi hoàn thiện)
-  var_dump($_SESSION['cart']);
 
   // Tiêu đề trang
   $title = 'Giỏ hàng';

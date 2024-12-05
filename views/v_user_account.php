@@ -53,7 +53,6 @@
                                             <tbody>
                                                 <?php
                                                     $orderDetails = $order->GetOrderById($_GET['id_checkout']);
-                                                    var_dump($orderDetails);
                                                     $i = 1;
                                                     foreach ($orderDetails as $co) {
                                                         extract($co);
