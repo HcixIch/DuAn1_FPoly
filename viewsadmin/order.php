@@ -21,21 +21,21 @@
 
                             </thead>
                             <tbody>
-                                <?php 
-                                        $order_list = $order->GetDetailOrder();
-                                        foreach($order_list as $od){
-                                        $i =0;?>
-                                <tr>
-                                    <td><?= $i + 1?></td>
-                                    <td><?= $od['full_name']?></td>
-                                    <td><?= $od['phone']?></td>
-                                    <td><?= $od['address']?></td>
-                                    <td><?= $od['name_product']?></td>
-                                    <td><?= $od['total_all']?>đ</td>
-                                    <td><?= $od['quantity']?></td>
-                                    <td><?= $od['date_order']?></td>
-                                </tr>
-                                <?php }?>
+                                <?php
+                                $order_list = $order->GetHistoryCheckout();
+                                foreach ($order_list as $od) {
+                                    $i = 0; ?>
+                                    <tr>
+                                        <td><?= $i + 1 ?></td>
+                                        <td><?= $od['full_name'] ?></td>
+                                        <td><?= $od['phone'] ?></td>
+                                        <td><?= $od['address'] ?></td>
+                                        <td><?= $od['name_product'] ?></td>
+                                        <td><?= $od['total_all'] ?>đ</td>
+                                        <td><?= $od['quantity'] ?></td>
+                                        <td><?= $od['date_order'] ?></td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
 
