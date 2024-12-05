@@ -26,4 +26,13 @@ class Checkout extends Database
         $sql = "SELECT * FROM checkout ORDER BY id_checkout DESC LIMIT 1";
         return $this->db->getAll($sql);
     }
+    public function GetHistoryCheckout()
+    {
+        $sql = "SELECT 
+       checkout.*, order_detail.*, product.*
+        FROM checkout 
+        INNER JOIN order_detail ON checkout.id_checkout = order_detail.id_checkout
+        INNER JOIN product ON order_detail.id_product = product.id_product";
+        return $this->db->getAll($sql);
+    }
 }

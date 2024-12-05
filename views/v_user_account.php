@@ -48,56 +48,104 @@
                             </div>
                             <!-- Nội dung thẻ đơn lẻ Bảng điều khiển kết thúc -->
 
-                            <!-- Nội dung thẻ đơn lẻ Đơn hàng bắt đầu -->
-                            <div class="tab-pane fade" id="orders" role="tabpanel">
-                                <div class="myaccount-content">
-                                    <h3>Đơn hàng</h3>
+                            <?php if (!isset($_GET['id_checkout'])) { ?>
+                                <!-- Nội dung thẻ đơn lẻ Đơn hàng bắt đầu -->
+                                <div class="tab-pane fade" id="orders" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Đơn hàng</h3>
 
-                                    <div class="myaccount-table table-responsive text-center">
-                                        <table class="table table-bordered">
-                                            <thead class="thead-light">
-                                                <tr>
-                                                    <th>STT</th>
-                                                    <th>Mã đơn hàng</th>
-                                                    <th>Ngày</th>
-                                                    <th>Trạng thái</th>
-                                                    <th>Tổng cộng</th>
-                                                    <th>Thao tác</th>
-                                                </tr>
-                                            </thead>
+                                        <div class="myaccount-table table-responsive text-center">
+                                            <table class="table table-bordered">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Mã đơn hàng</th>
+                                                        <th>Ngày</th>
+                                                        <th>Số sản phẩm</th>
+                                                        <th>Tổng tiền</th>
+                                                        <th>Trạng thái</th>
 
-                                            <tbody>
-                                                <?php foreach ($checkoutall as $co) {
-                                                    extract($co);
-                                                ?>
-                                                <tr>
-                                                    <td><?= $id_checkout ?></td>
-                                                    <td>DA00<?= $id_checkout ?></td>
-                                                    <td><?= $date_order ?></td>
-                                                    <td>
-                                                        <?php if ($status == 1) {
-                                                                echo "Chờ xử lý";
-                                                            } elseif ($status == 2) {
-                                                                echo "Đã xử lý";
-                                                            } elseif ($status == 3) {
-                                                                echo "Đã giao hàng";
-                                                            } elseif ($status == 4) {
-                                                                echo "Đã nhận hàng";
-                                                            } elseif ($status == 5) {
-                                                                echo "Đã hủy";
-                                                            } ?>
-                                                    </td>
-                                                    <td><?= $provisional_total ?></td>
+                                                        <th>Thao tác</th>
+                                                    </tr>
+                                                </thead>
 
-                                                    <td><a href="cart.html" class="btn">Xem</a></td>
-                                                </tr>
-                                                <?php } ?>
-                                            </tbody>
-                                        </table>
+                                                <tbody>
+                                                    <?php foreach ($checkoutall as $co) {
+                                                        extract($co);
+                                                    ?>
+                                                        <tr>
+                                                            <td><?= $id_checkout ?></td>
+                                                            <td>DA00<?= $id_checkout ?></td>
+                                                            <td><?= $date_order ?></td>
+                                                            <td></td>
+                                                            <td><?= $provisional_total ?></td>
+                                                            <td>
+                                                                <?php if ($status == 1) {
+                                                                    echo "Chờ xử lý";
+                                                                } elseif ($status == 2) {
+                                                                    echo "Đã xử lý";
+                                                                } elseif ($status == 3) {
+                                                                    echo "Đã giao hàng";
+                                                                } elseif ($status == 4) {
+                                                                    echo "Đã nhận hàng";
+                                                                } elseif ($status == 5) {
+                                                                    echo "Đã hủy";
+                                                                } ?>
+                                                            </td>
+
+
+                                                            <td><a href="cart.html" class="btn">Xem</a></td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Nội dung thẻ đơn lẻ Đơn hàng kết thúc -->
+                                <!-- Nội dung thẻ đơn lẻ Đơn hàng kết thúc -->
+                            <?php } else { ?>
+                                <div class="tab-pane fade" id="orders" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Chi tiết đơn hàng</h3>
+
+                                        <div class="myaccount-table table-responsive text-center">
+                                            <table class="table table-bordered">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Sản phẩm</th>
+                                                        <th>Đơn giá</th>
+                                                        <th>Số lượng</th>
+                                                        <th>Tổng tiền</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <?php foreach ($order->GetOrderById($_GET['id_checkout']) as $co) {
+                                                        extract($co);
+                                                        $i = 1;
+                                                    ?>
+                                                        <tr>
+                                                            <td><?= $i++ ?></td>
+                                                            <td><?= $name_product ?></td>
+                                                            <td><?= $price_product ?></td>
+                                                            <td><?= $quantity ?></td>
+                                                            <td><?= $price ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">Tổng tiền</td>
+                                                            <td class="text-right font-weight-bold">
+                                                                <?= number_format($unit_price, 0, '', '.') ?> đ
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+
 
 
                             <!-- Nội dung thẻ đơn lẻ Chi tiết tài khoản bắt đầu -->
