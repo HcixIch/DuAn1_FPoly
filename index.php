@@ -13,6 +13,7 @@ $cates = new Category();
 $user =  new User();
 $order = new Order();
 $checkout = new Checkout();
+$wish = new Wishlist();
 $checkoutall = $checkout->getCheckout();
 $pro_all = $prod->getProductsByCondition('all', "");
 $cate_all = $cates->getAllCategories();

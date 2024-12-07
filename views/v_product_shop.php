@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <?php if ($list_page_product != []) { ?>
+                                    <?php if (!empty($list_page_product)) { ?>
                                         <?php foreach ($list_page_product as $pd) {
                                             extract($pd); ?>
                                             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -119,7 +119,8 @@
                                                 <div class="single-product mb-30">
                                                     <div class="product-img">
                                                         <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
-                                                            <img src="./assets/images/product/<?= $img_product ?>" alt="">
+                                                            <img src="./assets/images/product/<?= $img_product ?>"
+                                                                alt="<?= $name_product ?>">
                                                         </a>
                                                         <?php if ($sale > 0) { ?>
                                                             <span class="descount-sticker">-<?= $sale ?>%</span>
@@ -128,22 +129,26 @@
                                                             <span class="sticker">Mới</span>
                                                         <?php } ?>
                                                         <div class="product-action d-flex justify-content-between">
-                                                            <a class="product-btn" href="#">Đặt hàng</a>
+                                                            <a class="product-btn"
+                                                                href="?ctrl=product&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
                                                             <ul class="d-flex">
-                                                                <li><a href="#quick-view-modal-container" data-toggle="modal"
+                                                                <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
                                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                                <li><a href="#" title="Yêu thích"><i
+                                                                            class="fa fa-heart-o"></i></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3><a href="single-product.html"><?= $name_product ?></a>
+                                                        <h3><a
+                                                                href="?ctrl=product&view=detail&id=<?= $id_product ?>"><?= $name_product ?></a>
                                                         </h3>
-                                                        <h4 class="price"><span
+                                                        <h4 class="price">
+                                                            <span
                                                                 class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
                                                             <?php if ($sale > 0) { ?>
                                                                 <del
-                                                                    class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</del>
+                                                                    class="old"><?= number_format($price_product * (100 + $sale) / 100, 0, ',', '.') ?>₫</del>
                                                             <?php } ?>
                                                         </h4>
                                                     </div>
@@ -151,14 +156,14 @@
                                                 <!-- Single Product End -->
                                             </div>
                                         <?php } ?>
-
                                     <?php } else { ?>
-                                        <div class="prod-null">
-                                            <i class="fa-solid fa-face-frown"></i>
+                                        <div class="prod-null text-center">
+                                            <i class="fa-solid fa-face-frown" style="font-size: 40px; color: #f00;"></i>
                                             <p>Không có sản phẩm phù hợp với tiêu chí bạn tìm</p>
                                         </div>
                                     <?php } ?>
                                 </div>
+
                             </div>
                         </div>
                     </div>

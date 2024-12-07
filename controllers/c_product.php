@@ -16,20 +16,47 @@ if (isset($_GET['view'])) {
             // Lấy hình ảnh sản phẩm
             $img_pro = $prod->getProductImages($_GET['id']);
             $list_img = [$img_pro['hinh1'], $img_pro['hinh2'], $img_pro['hinh3'], $img_pro['hinh4']];
+            if (isset($_GET['id_addcart'])) {
 
-            // Xử lý thêm vào giỏ hàng
-            if (isset($_POST['add_to_cart'])) {
-                $idproduct = $_POST['id'];
-                $quantity = $_POST['quantity'] ?? 1;
-                $cart->addProductToCart($idproduct, $quantity);
+                // Lấy thông tin sản phẩm từ cơ sở dữ liệu
+                $product = $prod->getProductsById($_GET['id_addcart']); // Đảm bảo phương thức này trả về đúng thông tin sản phẩm
+                if ($product) {
+                    // Khởi tạo giỏ hàng nếu chưa tồn tại
+                    if (!isset($_SESSION['cart'])) {
+                        $_SESSION['cart'] = [];
+                    }
 
-                echo "<script>alert('Đã thêm sản phẩm vào giỏ hàng');</script>";
+                    // Kiểm tra sản phẩm có trùng trong giỏ hàng hay không
+                    $isFound = false;
+                    foreach ($_SESSION['cart'] as &$item) {
+                        if ($item['id_product'] == $_GET['id_addcart']) { // So sánh chính xác ID sản phẩm
+                            $item['quantity_product'] += 1; // Tăng số lượng sản phẩm lên 1
+                            $item['subtotal'] = $item['quantity_product'] * $item['price']; // Cập nhật tổng tiền
+                            $isFound = true; // Đánh dấu là đã tìm thấy sản phẩm
+                            break;
+                        }
+                    }
+
+                    // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm mới
+                    if (!$isFound) {
+                        $data = [
+                            'id_product' => $product['id_product'], // ID sản phẩm
+                            'quantity_product' => 1, // Số lượng mặc định
+                            'name_product' => $product['name_product'], // Tên sản phẩm
+                            'price' => $product['price_product'], // Giá sản phẩm
+                            'img_product' => $product['img_product'], // Hình ảnh sản phẩm
+                            'subtotal' => $product['price_product'] // Tổng tiền ban đầu
+                        ];
+                        $_SESSION['cart'][] = $data; // Thêm sản phẩm mới vào giỏ hàng
+                    }
+
+                    // Chuyển hướng về trang giỏ hàng
+                    header('location:index.php?ctrl=cart');
+                }
             }
-            if (isset($_GET['id_dl'])) {
-                $cart->deleteProductInCart($_GET['id_dl'], 1);
-                header('location:index.php?view=detail&id=' . $_GET['id']);
+            if(isset($_GET['add_wishlist'])){
+            $wishlist = $wish ->addProductToWishlist($_GET['add_w'])
             }
-
             $title = 'Sản phẩm chi tiết';
             include_once './views/page_banner.php';
             include_once './views/v_product_detail.php';
@@ -46,7 +73,9 @@ if (isset($_GET['view'])) {
     // Xử lý POST hoặc GET cho các tham số lọc
     $min_price = $_POST['number_min'] ?? $_POST['min_price'] ?? 0;
     $max_price = $_POST['number_max'] ?? $_POST['max_price'] ?? $prod->getMinMaxPriceProduct('MAX')['max_price'];
-
+    if(isset($_GET['add_wishlist'])){
+    $wishlist = $wish ->addProductToWishlist($_GET['add_wishlist'],$_SESSION['user'][0]['id_user']);
+    }
     // Xử lý phân trang
     $ql_page = $_GET['ql_page'] ?? 1;
     $limit = 9;  // Số sản phẩm mỗi trang
@@ -61,6 +90,45 @@ if (isset($_GET['view'])) {
         // Lọc tất cả sản phẩm theo giá
         $list_page_product = $prod->getProductsByPage($ql_page, "all", $limit, $min_price, $max_price);
         $count_product = count($prod->searchProductByPrice($min_price, $max_price));
+    }
+
+    if (isset($_GET['id_addcart'])) {
+
+        // Lấy thông tin sản phẩm từ cơ sở dữ liệu
+        $product = $prod->getProductsById($_GET['id_addcart']); // Đảm bảo phương thức này trả về đúng thông tin sản phẩm
+        if ($product) {
+            // Khởi tạo giỏ hàng nếu chưa tồn tại
+            if (!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = [];
+            }
+
+            // Kiểm tra sản phẩm có trùng trong giỏ hàng hay không
+            $isFound = false;
+            foreach ($_SESSION['cart'] as &$item) {
+                if ($item['id_product'] == $_GET['id_addcart']) { // So sánh chính xác ID sản phẩm
+                    $item['quantity_product'] += 1; // Tăng số lượng sản phẩm lên 1
+                    $item['subtotal'] = $item['quantity_product'] * $item['price']; // Cập nhật tổng tiền
+                    $isFound = true; // Đánh dấu là đã tìm thấy sản phẩm
+                    break;
+                }
+            }
+
+            // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm mới
+            if (!$isFound) {
+                $data = [
+                    'id_product' => $product['id_product'], // ID sản phẩm
+                    'quantity_product' => 1, // Số lượng mặc định
+                    'name_product' => $product['name_product'], // Tên sản phẩm
+                    'price' => $product['price_product'], // Giá sản phẩm
+                    'img_product' => $product['img_product'], // Hình ảnh sản phẩm
+                    'subtotal' => $product['price_product'] // Tổng tiền ban đầu
+                ];
+                $_SESSION['cart'][] = $data; // Thêm sản phẩm mới vào giỏ hàng
+            }
+
+            // Chuyển hướng về trang giỏ hàng
+            header('location:index.php?ctrl=cart');
+        }
     }
 
     // Tính số trang
