@@ -43,46 +43,52 @@
                                 }}
                                 ]'>
                             <?php foreach ($pro_new as $pd) {
-                                extract($pd); ?>
-                                <div class="col-12">
-                                    <!-- Single Product Start -->
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
-                                                <img src="./assets/images/product/<?= $img_product ?>" alt="">
-                                            </a>
-                                            <?php if ($sale > 0) { ?>
-                                                <span class="descount-sticker">-<?= $sale ?>%</span>
-                                            <?php } ?>
-                                            <?php if ($hot == 1) { ?>
-                                                <span class="sticker">Mới</span>
-                                            <?php } ?>
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="?id_addcart=<?= $id_product ?>">Đặt
-                                                    hàng</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a
-                                                    href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
-                                            </h3>
-                                            <h4 class="price"><span
-                                                    class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
-                                                <?php if ($sale == 1) { ?>
-                                                    <del class="text-decoration-line-through"><span
-                                                            class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
-                                                <?php } ?>
-                                            </h4>
+                                extract($pd);
+                                $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);
+                            ?>
+                            <div class="col-12">
+                                <!-- Single Product Start -->
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
+                                            <img src="./assets/images/product/<?= $img_product ?>"
+                                                alt="<?= $name_product ?>">
+                                        </a>
+                                        <?php if ($sale > 0) { ?>
+                                        <span class="descount-sticker">-<?= $sale ?>%</span>
+                                        <?php } ?>
+                                        <?php if ($hot == 1) { ?>
+                                        <span class="sticker">Mới</span>
+                                        <?php } ?>
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn"
+                                                href="?ctrl=product&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
+                                            <ul class="d-flex">
+                                                <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="?id_wishlist=<?= $id_product ?>" title="Yêu thích">
+                                                        <i
+                                                            class="<?= $in_wishlist ? 'fa fa-heart text-danger' : 'fa fa-heart-o' ?>"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <!-- Single Product End -->
+                                    <div class="product-content">
+                                        <h3><a
+                                                href="?ctrl=product&view=detail&id=<?= $id_product ?>"><?= $name_product ?></a>
+                                        </h3>
+                                        <h4 class="price">
+                                            <span class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                            <?php if ($sale > 0) { ?>
+                                            <del
+                                                class="old"><?= number_format($price_product * (100 + $sale) / 100, 0, ',', '.') ?>₫</del>
+                                            <?php } ?>
+                                        </h4>
+                                    </div>
                                 </div>
+                                <!-- Single Product End -->
+                            </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -114,46 +120,53 @@
                                 }}
                                 ]'>
                             <?php foreach ($pro_sale as $pd) {
-                                extract($pd); ?>
-                                <div class="col-12">
-                                    <!-- Single Product Start -->
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
-                                                <img src="./assets/images/product/<?= $img_product ?>" alt="">
-                                            </a>
-                                            <?php if ($sale > 0) { ?>
-                                                <span class="descount-sticker">-<?= $sale ?>%</span>
-                                            <?php } ?>
-                                            <?php if ($hot == 1) { ?>
-                                                <span class="sticker">Mới</span>
-                                            <?php } ?>
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="?id_addcart=<?= $id_product ?>">Đặt
-                                                    hàng</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a
-                                                    href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
-                                            </h3>
-                                            <h4 class="price"><span
-                                                    class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
-                                                <?php if ($sale > 0) { ?>
-                                                    <del class="text-decoration-line-through"><span
-                                                            class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
-                                                <?php } ?>
-                                            </h4>
+                                extract($pd);
+                                $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);
+                            ?>
+                            <div class="col-12">
+                                <!-- Single Product Start -->
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
+                                            <img src="./assets/images/product/<?= $img_product ?>"
+                                                alt="<?= $name_product ?>">
+                                        </a>
+                                        <?php if ($sale > 0) { ?>
+                                        <span class="descount-sticker">-<?= $sale ?>%</span>
+                                        <?php } ?>
+                                        <?php if ($hot == 1) { ?>
+                                        <span class="sticker">Mới</span>
+                                        <?php } ?>
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn"
+                                                href="?ctrl=product&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
+                                            <ul class="d-flex">
+                                                <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="?ctrl=page&id_wishlist=<?= $id_product ?>"
+                                                        title="Yêu thích">
+                                                        <i
+                                                            class="<?= $in_wishlist ? 'fa fa-heart text-danger' : 'fa fa-heart-o' ?>"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <!-- Single Product End -->
+                                    <div class="product-content">
+                                        <h3><a
+                                                href="?ctrl=product&view=detail&id=<?= $id_product ?>"><?= $name_product ?></a>
+                                        </h3>
+                                        <h4 class="price">
+                                            <span class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                            <?php if ($sale > 0) { ?>
+                                            <del
+                                                class="old"><?= number_format($price_product * (100 + $sale) / 100, 0, ',', '.') ?>₫</del>
+                                            <?php } ?>
+                                        </h4>
+                                    </div>
                                 </div>
+                                <!-- Single Product End -->
+                            </div>
                             <?php } ?>
                         </div>
                     </div>
@@ -185,46 +198,53 @@
                                 }}
                                 ]'>
                             <?php foreach ($pro_hot as $pd) {
-                                extract($pd); ?>
-                                <div class="col-12">
-                                    <!-- Single Product Start -->
-                                    <div class="single-product mb-30">
-                                        <div class="product-img">
-                                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
-                                                <img src="./assets/images/product/<?= $img_product ?>" alt="">
-                                            </a>
-                                            <?php if ($sale > 0) { ?>
-                                                <span class="descount-sticker">-10%</span>
-                                            <?php } ?>
-                                            <?php if ($hot == 1) { ?>
-                                                <span class="sticker">Mới</span>
-                                            <?php } ?>
-                                            <div class="product-action d-flex justify-content-between">
-                                                <a class="product-btn" href="?id_addcart=<?= $id_product ?>">Đặt
-                                                    hàng</a>
-                                                <ul class="d-flex">
-                                                    <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
-                                                            title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h3><a
-                                                    href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
-                                            </h3>
-                                            <h4 class="price"><span
-                                                    class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
-                                                <?php if ($sale > 0) { ?>
-                                                    <del class="text-decoration-line-through"><span
-                                                            class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
-                                                <?php } ?>
-                                            </h4>
+                                extract($pd);
+                                $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);
+                            ?>
+                            <div class="col-12">
+                                <!-- Single Product Start -->
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
+                                            <img src="./assets/images/product/<?= $img_product ?>"
+                                                alt="<?= $name_product ?>">
+                                        </a>
+                                        <?php if ($sale > 0) { ?>
+                                        <span class="descount-sticker">-<?= $sale ?>%</span>
+                                        <?php } ?>
+                                        <?php if ($hot == 1) { ?>
+                                        <span class="sticker">Mới</span>
+                                        <?php } ?>
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn"
+                                                href="?ctrl=product&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
+                                            <ul class="d-flex">
+                                                <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
+                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="?ctrl=page&id_wishlist=<?= $id_product ?>"
+                                                        title="Yêu thích">
+                                                        <i
+                                                            class="<?= $in_wishlist ? 'fa fa-heart text-danger' : 'fa fa-heart-o' ?>"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <!-- Single Product End -->
+                                    <div class="product-content">
+                                        <h3><a
+                                                href="?ctrl=product&view=detail&id=<?= $id_product ?>"><?= $name_product ?></a>
+                                        </h3>
+                                        <h4 class="price">
+                                            <span class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                            <?php if ($sale > 0) { ?>
+                                            <del
+                                                class="old"><?= number_format($price_product * (100 + $sale) / 100, 0, ',', '.') ?>₫</del>
+                                            <?php } ?>
+                                        </h4>
+                                    </div>
                                 </div>
+                                <!-- Single Product End -->
+                            </div>
                             <?php } ?>
                         </div>
                     </div>

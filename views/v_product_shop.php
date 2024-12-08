@@ -113,7 +113,9 @@
                                 <div class="row">
                                     <?php if (!empty($list_page_product)) { ?>
                                         <?php foreach ($list_page_product as $pd) {
-                                            extract($pd); ?>
+                                            extract($pd);
+
+                                            $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']); ?>
                                             <div class="col-lg-4 col-md-6 col-sm-6">
                                                 <!-- Single Product Start -->
                                                 <div class="single-product mb-30">
@@ -134,8 +136,12 @@
                                                             <ul class="d-flex">
                                                                 <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
                                                                         title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                                <li><a href="#" title="Yêu thích"><i
-                                                                            class="fa fa-heart-o"></i></a></li>
+                                                                <li><a href="?ctrl=product&id_wishlist=<?= $id_product ?>"
+                                                                        title="Yêu thích">
+                                                                        <i
+                                                                            class="<?= $in_wishlist ? 'fa fa-heart text-danger' : 'fa fa-heart-o' ?>"></i>
+                                                                    </a>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>

@@ -8,6 +8,7 @@ include_once 'models/m_user.php';
 include_once 'models/m_order.php';
 include_once 'models/send_mail.php';
 include_once 'models/m_checkout.php';
+include_once 'models/m_wishlist.php';
 $prod = new Product();
 $cates = new Category();
 $user =  new User();

@@ -6,17 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-
-    <!-- Favicon -->
-    <!-- Uncomment if favicon is needed -->
-    <!-- <link href="assets/images/favicon.ico" type="img/x-icon" rel="shortcut icon"> -->
-
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css"> <!-- Bootstrap CSS (cơ bản) -->
     <link rel="stylesheet" href="assets/css/iconfont.min.css"> <!-- Font icon -->
     <link rel="stylesheet" href="assets/css/plugins.css"> <!-- Các plugin CSS -->
     <link rel="stylesheet" href="assets/css/helper.css"> <!-- CSS hỗ trợ -->
     <link rel="stylesheet" href="assets/css/style.css"> <!-- CSS chính -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -56,18 +52,19 @@
                             <div class="ht-right d-flex justify-content-lg-end justify-content-center">
                                 <ul class="ht-us-menu d-flex">
                                     <?php
-                                    if (isset($_SESSION['user']) && count($_SESSION['user']) > 0) {?>
-                                       <li><a href="#"><i class="fa fa-user-circle-o"></i><?=$_SESSION['user'][0]['email_user']?></a>
-                                                <ul class="ht-dropdown right">
-                                                    <li><a href="?ctrl=user&view=account">Tài khoản của tôi</a></li>
-                                                    <?php if( $_SESSION['user'][0]  ['role'] == 1){?>
-                                                            <li><a href="?ctrl=admin">Quản lí trang</a></li><?php }?>
-                                                    <li><a href="?ctrl=user&view=logout">Đăng xuất</a></li>
-                                                </ul>
-                                            </li>
-                                    <?php } else{ ?>
+                                    if (isset($_SESSION['user']) && count($_SESSION['user']) > 0) { ?>
+                                        <li><a href="#"><i
+                                                    class="fa fa-user-circle-o"></i><?= $_SESSION['user'][0]['email_user'] ?></a>
+                                            <ul class="ht-dropdown right">
+                                                <li><a href="?ctrl=user&view=account">Tài khoản của tôi</a></li>
+                                                <?php if ($_SESSION['user'][0]['role'] == 1) { ?>
+                                                    <li><a href="?ctrl=admin">Quản lí trang</a></li><?php } ?>
+                                                <li><a href="?ctrl=user&view=logout">Đăng xuất</a></li>
+                                            </ul>
+                                        </li>
+                                    <?php } else { ?>
                                         <li><a href="?ctrl=user&view=login"><i class="fa fa-user-circle-o"></i>Login</a>
-                                            </li>;
+                                        </li>;
                                     <?php } ?>
                                 </ul>
                             </div>

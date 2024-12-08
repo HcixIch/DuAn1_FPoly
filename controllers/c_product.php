@@ -54,9 +54,26 @@ if (isset($_GET['view'])) {
                     header('location:index.php?ctrl=cart');
                 }
             }
-            if(isset($_GET['add_wishlist'])){
-            $wishlist = $wish ->addProductToWishlist($_GET['add_w'])
+            if (isset($_GET['id_wishlist'])) {
+                $id_user = $_SESSION['user'][0]['id_user'] ?? 0;
+
+                if ($id_user > 0) {
+                    // Kiểm tra trạng thái sản phẩm trong wishlist
+                    if ($wish->checkProductInWishlist($_GET['id_wishlist'], $id_user)) {
+                        // Nếu đã thích -> Xóa khỏi danh sách yêu thích
+                        $wish->removeProductFromWishlist($_GET['id_wishlist'], $id_user);
+                    } else {
+                        // Nếu chưa thích -> Thêm vào danh sách yêu thích
+                        $wish->addProductToWishlist($_GET['id_wishlist'], $id_user);
+                    }
+
+                    // Redirect lại trang hiện tại sau khi xử lý
+                    header("Location: ?ctrl=product&view=detail&id=" . $_GET['id']);
+                }
+                exit;
             }
+
+
             $title = 'Sản phẩm chi tiết';
             include_once './views/page_banner.php';
             include_once './views/v_product_detail.php';
@@ -73,12 +90,27 @@ if (isset($_GET['view'])) {
     // Xử lý POST hoặc GET cho các tham số lọc
     $min_price = $_POST['number_min'] ?? $_POST['min_price'] ?? 0;
     $max_price = $_POST['number_max'] ?? $_POST['max_price'] ?? $prod->getMinMaxPriceProduct('MAX')['max_price'];
-    if(isset($_GET['add_wishlist'])){
-    $wishlist = $wish ->addProductToWishlist($_GET['add_wishlist'],$_SESSION['user'][0]['id_user']);
+    if (isset($_GET['id_wishlist'])) {
+        $id_user = $_SESSION['user'][0]['id_user'] ?? 0;
+
+        if ($id_user > 0) {
+            // Kiểm tra trạng thái sản phẩm trong wishlist
+            if ($wish->checkProductInWishlist($_GET['id_wishlist'], $id_user)) {
+                // Nếu đã thích -> Xóa khỏi danh sách yêu thích
+                $wish->removeProductFromWishlist($_GET['id_wishlist'], $id_user);
+            } else {
+                // Nếu chưa thích -> Thêm vào danh sách yêu thích
+                $wish->addProductToWishlist($_GET['id_wishlist'], $id_user);
+            }
+
+            // Redirect lại trang hiện tại sau khi   xử lý
+            header("Location: ?ctrl=product");
+        }
+        exit;
     }
     // Xử lý phân trang
     $ql_page = $_GET['ql_page'] ?? 1;
-    $limit = 9;  // Số sản phẩm mỗi trang
+    $limit = 9; // Số sản phẩm mỗi trang
     $offset = ($ql_page - 1) * $limit;
 
     // Lấy sản phẩm theo giá và phân trang

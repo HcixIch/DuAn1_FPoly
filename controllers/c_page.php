@@ -51,11 +51,29 @@ if (isset($_GET['view'])) {
                 ];
                 $_SESSION['cart'][] = $data; // Thêm sản phẩm mới vào giỏ hàng
             }
-
             // Chuyển hướng về trang giỏ hàng
             header('location:index.php?ctrl=cart');
         }
     }
+    if (isset($_GET['id_wishlist'])) {
+        $id_user = $_SESSION['user'][0]['id_user'] ?? 0;
+
+        if ($id_user > 0) {
+            // Kiểm tra trạng thái sản phẩm trong wishlist
+            if ($wish->checkProductInWishlist($_GET['id_wishlist'], $id_user)) {
+                // Nếu đã thích -> Xóa khỏi danh sách yêu thích
+                $wish->removeProductFromWishlist($_GET['id_wishlist'], $id_user);
+            } else {
+                // Nếu chưa thích -> Thêm vào danh sách yêu thích
+                $wish->addProductToWishlist($_GET['id_wishlist'], $id_user);
+            }
+
+            // Redirect lại trang hiện tại sau khi   xử lý
+            header("Location: index.php");
+        }
+        exit;
+    }
+
     include_once './views/slider.php';
     include_once './views/v_page_home.php';
 }
