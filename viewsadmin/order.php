@@ -18,15 +18,17 @@
                                 <th>Tổng tiền</th>
                                 <th>Số lượng</th>
                                 <th>Ngày đặt</th>
-
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
                             </thead>
                             <tbody>
                                 <?php
-                                $order_list = $checkout->GetHistoryCheckout();
+                                $i = 0;
                                 foreach ($order_list as $od) {
-                                    $i = 0; ?>
+                                    $i++ ?>
+                                    <form action="" method="post">
                                     <tr>
-                                        <td><?= $i + 1 ?></td>
+                                        <td><input type="hidden" name="id_checkout" value="<?= $od['id_checkout']?>"><?= $i ?></td>
                                         <td><?= $od['full_name'] ?></td>
                                         <td><?= $od['phone'] ?></td>
                                         <td><?= $od['address'] ?></td>
@@ -34,7 +36,18 @@
                                         <td><?= $od['total_all'] ?>đ</td>
                                         <td><?= $od['quantity'] ?></td>
                                         <td><?= $od['date_order'] ?></td>
+                                        <td>
+                                            <select name="status" id="status">
+                                            <option value="1" <?php if($od['status'] == 1) echo'selected';?> >Đang xử lí</option>
+                                            <option value="2" <?php if($od['status'] == 2) echo'selected';?> >Đã xử lí</option>
+                                            <option value="3" <?php if($od['status'] == 3) echo'selected';?> >Đã giao hàng</option>
+                                            <option value="4" <?php if($od['status'] == 4) echo'selected';?> >Đã nhận hàng</option>
+                                            <option value="5" <?php if($od['status'] == 5) echo'selected';?> >Đã hủy</option>
+                                            </select>
+                                        </td>
+                                        <td><button type="submit">Lưu</button></td>
                                     </tr>
+                                </form>
                                 <?php } ?>
                             </tbody>
                         </table>

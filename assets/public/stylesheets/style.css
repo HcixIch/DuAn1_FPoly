@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+.status-order{
+  width: 20px;
+  background-color: aqua;
+}

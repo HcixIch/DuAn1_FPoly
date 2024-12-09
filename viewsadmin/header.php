@@ -47,8 +47,16 @@
             </div>
 
             <ul class="nav">
+                				
                 <li>
                     <a href="?ctrl=admin">
+                    <i class="fa-solid fa-chart-simple"></i>
+                        <p>Biểu đồ</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="?ctrl=admin&view=home">
                         <i class="pe-7s-graph"></i>
                         <p>Danh mục</p>
                     </a>
@@ -69,13 +77,6 @@
                     <a href="?ctrl=admin&view=order">
                         <i class="pe-7s-news-paper"></i>
                         <p>Đơn hàng</p>
-                    </a>
-                </li>
-				
-                <li>
-                    <a href="?ctrl=admin&view=chart">
-                    <i class="fa-solid fa-chart-simple"></i>
-                        <p>Biểu đồ</p>
                     </a>
                 </li>
             </ul>

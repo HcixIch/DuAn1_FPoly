@@ -9,17 +9,17 @@
                     <option value="<?= $id_category?>"><?= $name_category?></option>
                     <?php } ?>
                 </select>
-            <label for="">Tên sản phẩm:</label><?= $product['name_product']?>
-            <input type="text" class="form-control" id="name" name="name"  required>
+            <label for="">Tên sản phẩm:</label>
+            <input type="text" class="form-control" id="name" name="name" value="<?= $product['name_product']?>" required>
 
-            <label for="">Giá Sản phẩm:</label><?= $product['price_product']?>
-            <input type="number" class="form-control" id="price" name="price"  required>
+            <label for="">Giá Sản phẩm:</label>
+            <input type="number" class="form-control" id="price" name="price" value="<?= $product['price_product']?>" required>
 
-            <label for="">Số Lượng:</label><?= $product['quantity_product']?>
-            <input type="number" class="form-control" id="quantity" name="quantity"  required> 
+            <label for="">Số Lượng:</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" value="<?= $product['quantity_product']?>" required> 
 
-            <label for="">Mô tả:</label><?= $product['description_product']?>
-            <textarea  class="form-control" id="description" rows="8" name="description"  required>  </textarea>
+            <label for="">Mô tả:</label>
+            <textarea  class="form-control" id="description" rows="8" name="description" value="<?= $product['description_product']?>" required>  </textarea>
 
             <label for="">Hình ảnh</label>
             <input type="file" name="image" id="image" class="form-control">                     

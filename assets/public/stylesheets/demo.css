@@ -84,3 +84,7 @@
         position: initial;
     }
 }
+.status-order{
+    width: 20px;
+    background-color: aqua;
+  }
