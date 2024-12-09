@@ -25,4 +25,10 @@ class WishList extends Database
         $sql = "DELETE FROM wishlist WHERE id_product = $id_product AND id_user = $id_user";
         return $this->db->delete($sql);
     }
+    // Lấy danh sách sản phẩm trong wishlist
+    public function getWishlistProducts($id_user)
+    {
+        $sql = "SELECT p.* FROM wishlist w INNER JOIN product p ON w.id_product = p.id_product WHERE w.id_user = $id_user";
+        return $this->db->getAll($sql);
+    }
 }

@@ -252,14 +252,18 @@
                 ]'>
             <?php foreach ($related_products as $related) {
                 extract($related);
-                $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);
+                if (isset($_SESSION['user'])) {
+                    $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);
+                } else {
+                    $in_wishlist = false;
+                }
             ?>
                 <div class="col-lg-3">
                     <!-- Single Product Start -->
                     <div class="single-product mb-30">
                         <div class="product-img">
-                            <a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>">
-                                <img src="./assets/images/product/<?= $img_product ?>" alt="">
+                            <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
+                                <img src="./assets/images/product/<?= $img_product ?>" alt="<?= $name_product ?>">
                             </a>
                             <?php if ($sale > 0) { ?>
                                 <span class="descount-sticker">-<?= $sale ?>%</span>
@@ -268,28 +272,27 @@
                                 <span class="sticker">Mới</span>
                             <?php } ?>
                             <div class="product-action d-flex justify-content-between">
-                                <a class="product-btn"
-                                    href="?ctrl=product&&view=detail&&id=4&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
+                                <a class="product-btn" href="?ctrl=product&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
                                 <ul class="d-flex">
                                     <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>" title="Quick View"><i
                                                 class="fa fa-eye"></i></a></li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="wishlist-btn" data-id="123" title="Yêu thích">
-                                            <i class="fa fa-heart-o"></i>
+                                    <li><a href="?ctrl=product&view=detail&id=<?= $_GET['id'] ?>&id_wishlist=<?= $id_product ?>"
+                                            title="Yêu thích">
+                                            <i
+                                                class="<?= $in_wishlist ? 'fa fa-heart text-danger' : 'fa fa-heart-o' ?>"></i>
                                         </a>
-
                                     </li>
-
                                 </ul>
                             </div>
                         </div>
                         <div class="product-content">
-                            <h3><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"><?= $name_product ?></a>
+                            <h3><a href="?ctrl=product&view=detail&id=<?= $id_product ?>"><?= $name_product ?></a>
                             </h3>
-                            <h4 class=" price"><span class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                            <h4 class="price">
+                                <span class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
                                 <?php if ($sale > 0) { ?>
-                                    <del class="text-decoration-line-through"><span
-                                            class="old"><?= number_format($price_product * ($sale + 100) / 100, 0, ',', '.') ?>₫</span></del>
+                                    <del
+                                        class="old"><?= number_format($price_product * (100 + $sale) / 100, 0, ',', '.') ?>₫</del>
                                 <?php } ?>
                             </h4>
                         </div>

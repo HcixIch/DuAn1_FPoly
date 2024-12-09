@@ -20,13 +20,13 @@
                             // Call the countProductsByCategory function to get the count of products
                             $product_count = $prod->countProductsByCategory($id_category);
                         ?>
-                            <li>
-                                <a href="?ctrl=product&&id_cate=<?= $id_category ?>">
-                                    <i class="fa fa-angle-right"></i>
-                                    <?= $name_category ?>
-                                    <span class="count">(<?= $product_count[0]['total_product'] ?>)</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="?ctrl=product&&id_cate=<?= $id_category ?>">
+                                <i class="fa fa-angle-right"></i>
+                                <?= $name_category ?>
+                                <span class="count">(<?= $product_count[0]['total_product'] ?>)</span>
+                            </a>
+                        </li>
                         <?php $i++;
                         } ?>
                     </ul>
@@ -112,61 +112,65 @@
                                 </div>
                                 <div class="row">
                                     <?php if (!empty($list_page_product)) { ?>
-                                        <?php foreach ($list_page_product as $pd) {
-                                            extract($pd);
-
-                                            $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']); ?>
-                                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                                <!-- Single Product Start -->
-                                                <div class="single-product mb-30">
-                                                    <div class="product-img">
-                                                        <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
-                                                            <img src="./assets/images/product/<?= $img_product ?>"
-                                                                alt="<?= $name_product ?>">
-                                                        </a>
-                                                        <?php if ($sale > 0) { ?>
-                                                            <span class="descount-sticker">-<?= $sale ?>%</span>
-                                                        <?php } ?>
-                                                        <?php if ($hot == 1) { ?>
-                                                            <span class="sticker">Mới</span>
-                                                        <?php } ?>
-                                                        <div class="product-action d-flex justify-content-between">
-                                                            <a class="product-btn"
-                                                                href="?ctrl=product&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
-                                                            <ul class="d-flex">
-                                                                <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
-                                                                        title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                                                <li><a href="?ctrl=product&id_wishlist=<?= $id_product ?>"
-                                                                        title="Yêu thích">
-                                                                        <i
-                                                                            class="<?= $in_wishlist ? 'fa fa-heart text-danger' : 'fa fa-heart-o' ?>"></i>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-content">
-                                                        <h3><a
-                                                                href="?ctrl=product&view=detail&id=<?= $id_product ?>"><?= $name_product ?></a>
-                                                        </h3>
-                                                        <h4 class="price">
-                                                            <span
-                                                                class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
-                                                            <?php if ($sale > 0) { ?>
-                                                                <del
-                                                                    class="old"><?= number_format($price_product * (100 + $sale) / 100, 0, ',', '.') ?>₫</del>
-                                                            <?php } ?>
-                                                        </h4>
-                                                    </div>
+                                    <?php foreach ($list_page_product as $pd) {
+                                            extract($pd);   
+                                            if(isset($_SESSION['user'])){
+                                            $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);}
+                                            else {
+                                                 $in_wishlist = false;
+ 
+                                            }?>
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <!-- Single Product Start -->
+                                        <div class="single-product mb-30">
+                                            <div class="product-img">
+                                                <a href="?ctrl=product&view=detail&id=<?= $id_product ?>">
+                                                    <img src="./assets/images/product/<?= $img_product ?>"
+                                                        alt="<?= $name_product ?>">
+                                                </a>
+                                                <?php if ($sale > 0) { ?>
+                                                <span class="descount-sticker">-<?= $sale ?>%</span>
+                                                <?php } ?>
+                                                <?php if ($hot == 1) { ?>
+                                                <span class="sticker">Mới</span>
+                                                <?php } ?>
+                                                <div class="product-action d-flex justify-content-between">
+                                                    <a class="product-btn"
+                                                        href="?ctrl=product&&id_addcart=<?= $id_product ?>">Đặt hàng</a>
+                                                    <ul class="d-flex">
+                                                        <li><a href="?ctrl=product&&view=detail&&id=<?= $id_product ?>"
+                                                                title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                        <li><a href="?ctrl=product&id_wishlist=<?= $id_product ?>"
+                                                                title="Yêu thích">
+                                                                <i
+                                                                    class="<?= $in_wishlist ? 'fa fa-heart text-danger' : 'fa fa-heart-o' ?>"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                                <!-- Single Product End -->
                                             </div>
-                                        <?php } ?>
-                                    <?php } else { ?>
-                                        <div class="prod-null text-center">
-                                            <i class="fa-solid fa-face-frown" style="font-size: 40px; color: #f00;"></i>
-                                            <p>Không có sản phẩm phù hợp với tiêu chí bạn tìm</p>
+                                            <div class="product-content">
+                                                <h3><a
+                                                        href="?ctrl=product&view=detail&id=<?= $id_product ?>"><?= $name_product ?></a>
+                                                </h3>
+                                                <h4 class="price">
+                                                    <span
+                                                        class="new"><?= number_format($price_product, 0, ',', '.') ?>₫</span>
+                                                    <?php if ($sale > 0) { ?>
+                                                    <del
+                                                        class="old"><?= number_format($price_product * (100 + $sale) / 100, 0, ',', '.') ?>₫</del>
+                                                    <?php } ?>
+                                                </h4>
+                                            </div>
                                         </div>
+                                        <!-- Single Product End -->
+                                    </div>
+                                    <?php } ?>
+                                    <?php } else { ?>
+                                    <div class="prod-null text-center">
+                                        <i class="fa-solid fa-face-frown" style="font-size: 40px; color: #f00;"></i>
+                                        <p>Không có sản phẩm phù hợp với tiêu chí bạn tìm</p>
+                                    </div>
                                     <?php } ?>
                                 </div>
 
@@ -190,12 +194,12 @@
 
                             <!-- Page Numbers -->
                             <?php for ($i = 1; $i <= $quantity_page; $i++) { ?>
-                                <li class="<?= ($i == $ql_page) ? 'active' : '' ?>">
-                                    <a
-                                        href="?ctrl=product&ql_page=<?= $i ?>&min_price=<?= $min_price ?>&max_price=<?= $max_price ?><?= isset($_GET['id_cate']) ? '&id_cate=' . $_GET['id_cate'] : '' ?>">
-                                        <?= $i ?>
-                                    </a>
-                                </li>
+                            <li class="<?= ($i == $ql_page) ? 'active' : '' ?>">
+                                <a
+                                    href="?ctrl=product&ql_page=<?= $i ?>&min_price=<?= $min_price ?>&max_price=<?= $max_price ?><?= isset($_GET['id_cate']) ? '&id_cate=' . $_GET['id_cate'] : '' ?>">
+                                    <?= $i ?>
+                                </a>
+                            </li>
                             <?php } ?>
 
                             <!-- Next Page Button -->
