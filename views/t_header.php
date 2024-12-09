@@ -63,8 +63,8 @@
                                             </ul>
                                         </li>
                                     <?php } else { ?>
-                                        <li><a href="?ctrl=user&view=login"><i class="fa fa-user-circle-o"></i>Login</a>
-                                        </li>;
+                                        <li><a href="?ctrl=user&view=login"><i class="fa fa-user-circle-o"></i>Đăng nhập</a>
+                                        </li>
                                     <?php } ?>
                                 </ul>
                             </div>

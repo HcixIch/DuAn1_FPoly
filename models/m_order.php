@@ -45,4 +45,10 @@ class Order extends Database
         // Thực thi lệnh SQL
         return $this->db->insert($sql);
     }
+    // Cập nhật trạng thái 
+    public function UpdateStatus($id_checkout, $status)
+    {
+        $sql = "UPDATE checkout SET status = '".$status."' WHERE id_checkout = '".$id_checkout."'";
+        return $this->db->update($sql);
+    }
 }
