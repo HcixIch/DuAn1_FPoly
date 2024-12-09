@@ -68,11 +68,33 @@ if (isset($_GET['view'])) {
                 $wish->addProductToWishlist($_GET['id_wishlist'], $id_user);
             }
 
-            // Redirect lại trang hiện tại sau khi   xử lý
+            // Redirect lại trang hiện tại sau khi xử lý
             header("Location: index.php");
+            exit; // Dừng script sau khi redirect
+        } else {
+            echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi',
+                    text: 'Bạn cần đăng nhập để sử dụng tính năng này!',
+                    showCancelButton: true,
+                    confirmButtonText: 'Đăng nhập ngay',
+                    cancelButtonText: 'Hủy bỏ'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '?ctrl=user';
+                    } 
+                    else {
+                     window.location.href = 'index.php';
+                    }
+                });
+            </script>";
+            exit; // Dừng script sau khi hiện alert
         }
-        exit;
     }
+
+
+
 
     include_once './views/slider.php';
     include_once './views/v_page_home.php';

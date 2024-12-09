@@ -44,7 +44,11 @@
                                 ]'>
                             <?php foreach ($pro_new as $pd) {
                                 extract($pd);
-                                $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);
+                                if (isset($_SESSION['user'])) {
+                                    $in_wishlist = $wish->checkProductInWishlist($id_product, $_SESSION['user'][0]['id_user']);
+                                } else {
+                                    $in_wishlist = false;
+                                }
                             ?>
                             <div class="col-12">
                                 <!-- Single Product Start -->

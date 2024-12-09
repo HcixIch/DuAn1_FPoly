@@ -69,9 +69,31 @@ if (isset($_GET['view'])) {
 
                     // Redirect lại trang hiện tại sau khi xử lý
                     header("Location: ?ctrl=product&view=detail&id=" . $_GET['id']);
+                    exit; // Dừng script sau khi redirect
+                } else {
+                    // Hiển thị thông báo SweetAlert
+                    echo "<script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Bạn cần đăng nhập để sử dụng tính năng này!',
+                            showCancelButton: true,
+                            confirmButtonText: 'Đăng nhập ngay',
+                            cancelButtonText: 'Hủy bỏ'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                // Nếu nhấn 'Đăng nhập ngay', chuyển hướng sang trang đăng nhập
+                                window.location.href = '?ctrl=user';
+                            } else {
+                                // Nếu nhấn 'Hủy bỏ', chuyển hướng về trang chi tiết sản phẩm
+                                window.location.href = '?ctrl=product&view=detail&id=" . $_GET['id'] . "';
+                            }
+                        });
+                    </script>";
+                    exit; // Dừng script sau khi hiện alert
                 }
-                exit;
             }
+
 
 
             $title = 'Sản phẩm chi tiết';
@@ -105,8 +127,29 @@ if (isset($_GET['view'])) {
 
             // Redirect lại trang hiện tại sau khi   xử lý
             header("Location: ?ctrl=product");
+            exit(); // Dừng script sau khi redirect
+        } else {
+            // Hiển thị thông báo SweetAlert
+            echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Bạn cần đăng nhập để sử dụng tính năng này!',
+                    showCancelButton: true,
+                    confirmButtonText: 'Đăng nhập ngay',
+                    cancelButtonText: 'Hủy bỏ'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Nếu nhấn 'Đăng nhập ngay', chuyển hướng sang trang đăng nhập
+                        window.location.href = '?ctrl=user';
+                    } else {
+                        // Nếu nhấn 'Hủy bỏ', chuyển hướng về trang chi tiết sản phẩm
+                        window.location.href = '?ctrl=product';
+                    }
+                });
+            </script>";
+            exit; // Dừng script sau khi hiện alert
         }
-        exit;
     }
     // Xử lý phân trang
     $ql_page = $_GET['ql_page'] ?? 1;
