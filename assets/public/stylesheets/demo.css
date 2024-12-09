@@ -88,3 +88,15 @@
     width: 20px;
     background-color: aqua;
   }
+/* General styles */
+#headline-chart {
+    width: 100%; /* Đảm bảo thẻ cha chiếm toàn bộ chiều rộng */
+    height: 500px; /* Đặt chiều cao cố định cho phần tử cha */
+    margin: 0 auto;
+  }
+  
+  /* Thẻ canvas bên trong thẻ cha */
+  #headline-chart canvas {
+    width: 100% !important; /* Đảm bảo canvas chiếm toàn bộ chiều rộng của thẻ cha */
+    height: 100% !important; /* Đảm bảo canvas chiếm toàn bộ chiều cao của thẻ cha */
+  }

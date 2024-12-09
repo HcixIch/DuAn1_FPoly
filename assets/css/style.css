@@ -477,7 +477,14 @@ textarea:-ms-input-placeholder {
     font-size: 36px;
   }
 }
-
+.main-chart {
+  background: #fff; }
+  .breadcrumb {
+    border-radius: 0;
+    padding: 10px 15px 10px 15px;
+    background: #e9ecf2;
+    margin: 0; }
+  
 /*-- List Section Title CSS --*/
 .list-product-section-title h2 {
   font-weight: 400;
