@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 05, 2024 lúc 05:14 AM
+-- Thời gian đã tạo: Th12 09, 2024 lúc 11:43 AM
 -- Phiên bản máy phục vụ: 8.0.30
 -- Phiên bản PHP: 8.2.12
 
@@ -85,17 +85,11 @@ CREATE TABLE `checkout` (
 INSERT INTO `checkout` (`id_checkout`, `full_name`, `address`, `phone`, `total_all`, `shipping_cost`, `provisional_total`, `payment_option`, `id_voucher`, `id_user`, `date_order`, `status`) VALUES
 (3, '1', '1', '1', 1, 30000, 1, '1', '1', 1, NULL, 0),
 (8, 'Huỳnh Anh Quốc', 'Thành phố HCM', '03712837488', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:01:13', 1),
-(9, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '03712837488', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:02:47', 1),
-(10, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0437128374', 303900, 30000, 273900, 'cod', NULL, 3, '2024-12-05 05:04:54', 1),
-(11, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '03738173881', 372100, 30000, 342100, 'cod', NULL, 3, '2024-12-05 05:05:37', 1),
-(12, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '03738173881', 372100, 30000, 342100, 'cod', NULL, 3, '2024-12-05 05:06:06', 1),
-(13, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373187383', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:06:50', 1),
-(14, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373187383', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:08:09', 1),
-(15, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373186382', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:08:42', 1),
-(16, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373186382', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:09:27', 1),
-(17, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0373186382', 2918800, 30000, 2888800, 'bank', NULL, 3, '2024-12-05 05:12:23', 1),
 (18, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0363627361', 2918800, 30000, 2888800, 'cod', NULL, 3, '2024-12-05 05:12:38', 1),
-(19, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0371873193', 5807600, 30000, 5777600, 'cod', NULL, 3, '2024-12-05 05:13:36', 1);
+(19, 'Huỳnh Anh Quốc', '                                                        Thành phố HCM', '0371873193', 5807600, 30000, 5777600, 'cod', NULL, 3, '2024-12-05 05:13:36', 1),
+(20, 'Huỳnh Anh Quốc', 'Thành phố HCM', '0373196508', 8696400, 30000, 8666400, 'bank', NULL, 3, '2024-12-07 04:31:17', 1),
+(21, 'Huỳnh Anh Quốc', 'Thành phố HCM', '0537128374', 3725700, 30000, 3695700, 'momo', NULL, 3, '2024-12-07 04:51:03', 1),
+(22, 'Huỳnh Anh Quốc', 'Thành phố HCM', '0371283745', 17873700, 30000, 17843700, 'bank', NULL, 3, '2024-12-09 04:13:49', 1);
 
 -- --------------------------------------------------------
 
@@ -134,7 +128,11 @@ CREATE TABLE `order_detail` (
 INSERT INTO `order_detail` (`id_order`, `quantity`, `price`, `unit_price`, `id_product`, `id_checkout`) VALUES
 (1, 1, 1, 1, 19, 3),
 (3, 1, 2888800, 2888800, 1, 18),
-(4, 2, 2888800, 5777600, 1, 19);
+(4, 2, 2888800, 5777600, 1, 19),
+(5, 2, 2888800, 5777600, 2, 20),
+(6, 1, 2888800, 2888800, 1, 20),
+(7, 1, 3695700, 3695700, 30, 21),
+(8, 7, 2549100, 17843700, 5, 22);
 
 -- --------------------------------------------------------
 
@@ -415,7 +413,30 @@ CREATE TABLE `voucher` (
 --
 
 INSERT INTO `voucher` (`id_voucher`, `discount`, `condition_voucher`, `deadline`) VALUES
-('1', 1, '', '2024-11-12 14:55:31');
+('1', 1, '500000', '2024-11-12 14:55:31');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `id_wishlist` int NOT NULL,
+  `id_user` int NOT NULL,
+  `id_product` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `wishlist`
+--
+
+INSERT INTO `wishlist` (`id_wishlist`, `id_user`, `id_product`) VALUES
+(20, 3, 11),
+(24, 3, 14),
+(28, 3, 5),
+(32, 3, 32),
+(33, 3, 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -484,6 +505,14 @@ ALTER TABLE `voucher`
   ADD PRIMARY KEY (`id_voucher`);
 
 --
+-- Chỉ mục cho bảng `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`id_wishlist`),
+  ADD KEY `user_wishlist` (`id_user`),
+  ADD KEY `product_wishlist` (`id_product`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -503,7 +532,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `id_checkout` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_checkout` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `comment`
@@ -515,7 +544,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT cho bảng `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id_order` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_order` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
@@ -528,6 +557,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT cho bảng `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `id_wishlist` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -571,6 +606,13 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_img`
   ADD CONSTRAINT `product_img` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Các ràng buộc cho bảng `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD CONSTRAINT `product_wishlist` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `user_wishlist` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
