@@ -10,25 +10,26 @@
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover table-striped">
                             <thead>
-                                <th>STT</th>
-                                <th>Tên người nhận hàng</th>
-                                <th>Số điện thoại người nhận hàng</th>
-                                <th>Địa chỉ nhận hàng</th>
-                                <th>Đơn hàng</th>
-                                <th>Tổng tiền</th>
-                                <th>Số lượng</th>
-                                <th>Ngày đặt</th>
-                                <th>Trạng thái</th>
-                                <th>Thao tác</th>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên người nhận hàng</th>
+                                    <th>Số điện thoại người nhận hàng</th>
+                                    <th>Địa chỉ nhận hàng</th>
+                                    <th>Đơn hàng</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Số lượng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Trạng thái đơn hàng</th>
+                                    <th>Hành động</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $i = 0;
                                 foreach ($order_list as $od) {
-                                    $i++ ?>
-                                    <form action="" method="post">
+                                    $i++; ?>
                                     <tr>
-                                        <td><input type="hidden" name="id_checkout" value="<?= $od['id_checkout']?>"><?= $i ?></td>
+                                        <td><?= $i ?></td>
                                         <td><?= $od['full_name'] ?></td>
                                         <td><?= $od['phone'] ?></td>
                                         <td><?= $od['address'] ?></td>
@@ -37,22 +38,30 @@
                                         <td><?= $od['quantity'] ?></td>
                                         <td><?= $od['date_order'] ?></td>
                                         <td>
-                                            <select name="status" id="status">
-                                            <option value="1" <?php if($od['status'] == 1) echo'selected';?> >Đang xử lí</option>
-                                            <option value="2" <?php if($od['status'] == 2) echo'selected';?> >Đã xử lí</option>
-                                            <option value="3" <?php if($od['status'] == 3) echo'selected';?> >Đã giao hàng</option>
-                                            <option value="4" <?php if($od['status'] == 4) echo'selected';?> >Đã nhận hàng</option>
-                                            <option value="5" <?php if($od['status'] == 5) echo'selected';?> >Đã hủy</option>
-                                            </select>
+                                            <?php if ($od['status'] == 0) { ?>
+                                                <span class="badge badge-danger">Chưa xử lý</span>
+                                            <?php } elseif ($od['status'] == 1) { ?>
+                                                <span class="badge badge-warning">Đang xử lý</span>
+                                            <?php } elseif ($od['status'] == 2) { ?>
+                                                <span class="badge badge-success">Đã giao hàng</span>
+                                            <?php } elseif ($od['status'] == 3) { ?>
+                                                <span class="badge badge-info">Đã hủy</span>
+                                            <?php } ?>
                                         </td>
-                                        <td><button type="submit">Lưu</button></td>
+                                        <td>
+                                            <?php if ($od['status'] < 2) { ?>
+                                                <button type="button" class="update-status btn btn-primary" data-id="<?= $od['id_checkout'] ?>">
+                                                    <?= $od['status'] == 0 ? 'Xử lý' : 'Hoàn tất' ?>
+                                                </button>
+                                            <?php } ?>
+                                        </td>
                                     </tr>
-                                </form>
                                 <?php } ?>
                             </tbody>
                         </table>
-
                     </div>
-
                 </div>
             </div>
+        </div>
+    </div>
+</div>

@@ -23,13 +23,13 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="./assets/public/stylesheets/demo.css" rel="stylesheet" />
 
-
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="./assets/public/stylesheets/pe-icon-7-stroke.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 

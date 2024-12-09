@@ -29,8 +29,38 @@ if (isset($_GET['view'])) {
             break;
         case 'order':
             $order_list = $checkout->GetHistoryCheckout();
-            if(isset($_POST['submit'])) {
-                $checkout->UpdateStatus($_POST['id_checkout'], $_POST['status']);
+            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_checkout'])) {
+                $id_checkout = intval($_POST['id_checkout']);
+                
+                // Lấy trạng thái hiện tại
+                $stmt = $conn->prepare("SELECT status FROM checkout WHERE id_checkout = ?");
+                $stmt->bind_param("i", $id_checkout);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+        
+                if ($row) {
+                    $current_status = $row['status'];
+        
+                    // Tăng trạng thái +1 nếu chưa đạt đến 2
+                    if ($current_status < 2) {
+                        $new_status = $current_status + 1;
+        
+                        // Cập nhật trạng thái trong database
+                        $update_stmt = $conn->prepare("UPDATE checkout SET status = ? WHERE id_checkout = ?");
+                        $update_stmt->bind_param("i", $new_status, $id_checkout);
+        
+                        if ($update_stmt->execute()) {
+                            echo json_encode(["success" => true, "new_status" => $new_status]);
+                        } else {
+                            echo json_encode(["success" => false, "message" => "Không thể cập nhật trạng thái."]);
+                        }
+                    } else {
+                        echo json_encode(["success" => false, "message" => "Trạng thái không thể cập nhật thêm."]);
+                    }
+                } else {
+                    echo json_encode(["success" => false, "message" => "Không tìm thấy đơn hàng."]);
+                }
             }
             include './viewsadmin/order.php';
             break;
