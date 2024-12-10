@@ -145,6 +145,7 @@ if (isset($_GET['view'])) {
             $order->SaveOrder($order_item);
           }
           unset($_SESSION['cart']);
+          $_SESSION['success_message'] = "Đơn hàng của bạn đã được đặt thành công!";
           header('location:index.php');
         }
       }

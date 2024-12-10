@@ -50,77 +50,84 @@ if (isset($_GET['view'])) {
                     exit();
                 }
             }
+            if (isset($_GET['dl_wishlist'])) {
+                $id_user = $_SESSION['user'][0]['id_user'] ?? 0;
+                if ($id_user > 0) {
+                    $wish->removeProductFromWishlist($_GET['dl_wishlist'], $id_user);
+                }
+                header("location:?ctrl=user&view=account");
+            }
             // Render lại view với thông báo
             include_once './views/v_user_account.php';
             break;
         case 'login':
             $errors = [];
 
-        // Xử lý đăng ký
-        if (isset($_POST['register'])) {
-            $email = trim($_POST['email']);
-            $password = trim($_POST['password']);
-            $confirmPassword = trim($_POST['confirm_password']);
+            // Xử lý đăng ký
+            if (isset($_POST['register'])) {
+                $email = trim($_POST['email']);
+                $password = trim($_POST['password']);
+                $confirmPassword = trim($_POST['confirm_password']);
 
-            // Kiểm tra các trường thông tin
-            if (empty($email) || empty($password) || empty($confirmPassword)) {
-                $errors[] = "Vui lòng điền đầy đủ thông tin.";
-            }
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $errors[] = "Địa chỉ email không hợp lệ.";
-            }
-            if ($password !== $confirmPassword) {
-                $errors[] = "Mật khẩu và xác nhận mật khẩu không khớp.";
-            }
-            if (strlen($password) < 6) {
-                $errors[] = "Mật khẩu phải có ít nhất 6 ký tự.";
-            }
-
-            // Kiểm tra email đã tồn tại
-            if (empty($errors)) {
-                $existingUser = $user->getAllByEmail($email);
-                if ($existingUser) {
-                    $errors[] = "Email này đã được đăng ký.";
-                } else {
-                    // Lưu người dùng mới
-                    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                    $user->CreateUser($email, $hashedPassword);
-                    $_SESSION['message'] = "Đăng ký thành công! Vui lòng đăng nhập.";
-                    header("Location: ?ctrl=user&view=login");
-                    exit();
+                // Kiểm tra các trường thông tin
+                if (empty($email) || empty($password) || empty($confirmPassword)) {
+                    $errors[] = "Vui lòng điền đầy đủ thông tin.";
                 }
-            }
-        }
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $errors[] = "Địa chỉ email không hợp lệ.";
+                }
+                if ($password !== $confirmPassword) {
+                    $errors[] = "Mật khẩu và xác nhận mật khẩu không khớp.";
+                }
+                if (strlen($password) < 6) {
+                    $errors[] = "Mật khẩu phải có ít nhất 6 ký tự.";
+                }
 
-        // Xử lý đăng nhập
-        if (isset($_POST['Login'])) {
-            $email = trim($_POST['email']);
-            $password = trim($_POST['password']);
-    
-            if (empty($email) || empty($password)) {
-                $errors[] = "Vui lòng điền đầy đủ thông tin.";
-            } else {
-                $acc = $user->login($email, $password);
-                if (count($acc) > 0) {
-                    if (isset($_SESSION['user'])) {
-                        unset($_SESSION['user']);
-                    }
-                    $_SESSION['user'] = $acc;
-                    if ($acc[0]['role'] == 0) {
-                        header("location:index.php");
+                // Kiểm tra email đã tồn tại
+                if (empty($errors)) {
+                    $existingUser = $user->getAllByEmail($email);
+                    if ($existingUser) {
+                        $errors[] = "Email này đã được đăng ký.";
                     } else {
-                        header("location:admin.php");
+                        // Lưu người dùng mới
+                        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                        $user->CreateUser($email, $hashedPassword);
+                        $_SESSION['message'] = "Đăng ký thành công! Vui lòng đăng nhập.";
+                        header("Location: ?ctrl=user&view=login");
+                        exit();
                     }
-                } else {
-                    $errors[] = "Email hoặc mật khẩu không chính xác.";
                 }
             }
-        }
-        if (!empty($errors)) {
-            $_SESSION['errors'] = $errors;
-        }
-        $title = "Đăng nhập và đăng ký";
-        include_once './views/v_user_login&register.php';
+
+            // Xử lý đăng nhập
+            if (isset($_POST['Login'])) {
+                $email = trim($_POST['email']);
+                $password = trim($_POST['password']);
+
+                if (empty($email) || empty($password)) {
+                    $errors[] = "Vui lòng điền đầy đủ thông tin.";
+                } else {
+                    $acc = $user->login($email, $password);
+                    if (count($acc) > 0) {
+                        if (isset($_SESSION['user'])) {
+                            unset($_SESSION['user']);
+                        }
+                        $_SESSION['user'] = $acc;
+                        if ($acc[0]['role'] == 0) {
+                            header("location:index.php");
+                        } else {
+                            header("location:admin.php");
+                        }
+                    } else {
+                        $errors[] = "Email hoặc mật khẩu không chính xác.";
+                    }
+                }
+            }
+            if (!empty($errors)) {
+                $_SESSION['errors'] = $errors;
+            }
+            $title = "Đăng nhập và đăng ký";
+            include_once './views/v_user_login&register.php';
             break;
         case 'logout':
             unset($_SESSION['user']);

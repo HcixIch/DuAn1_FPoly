@@ -16,6 +16,7 @@ class WishList extends Database
     public function checkProductInWishlist($id_product, $id_user)
     {
         $sql = "SELECT COUNT(*) as count FROM wishlist WHERE id_product = $id_product AND id_user = $id_user";
+
         $result = $this->db->getOne($sql);
         return $result['count'] > 0;
     }

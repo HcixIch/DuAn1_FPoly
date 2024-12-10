@@ -134,23 +134,34 @@
                                             <thead class="thead-light">
                                                 <tr>
                                                     <th>STT</th>
+                                                    <th>Hình ảnh</th>
                                                     <th>Sản phẩm</th>
                                                     <th>Giá</th>
                                                     <th>Thao tác</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>22</td>
-                                                    <td>111</td>
-                                                    <td>111111111</td>
-                                                    <td>
-                                                        <a href="?ctrl=product&view=detail&id=<?= $id_product ?>"
-                                                            class="btn btn-sm btn-info">Xem</a>
-                                                        <a href="?ctrl=user&action=removeFromWishlist&id_product=<?= $id_product ?>"
-                                                            class="btn btn-sm btn-danger">Xóa</a>
-                                                    </td>
-                                                </tr>
+                                                <?php
+                                                $i = 1;
+                                                foreach ($wish->getWishlistProducts($_SESSION['user'][0]['id_user']) as $yt) {
+                                                    extract($yt); ?>
+                                                    <tr>
+                                                        <td><?= $i ?></td>
+                                                        <td><img style="width:100px"
+                                                                src="./assets/images/product/<?= $img_product ?>" alt="">
+                                                        </td>
+                                                        <td><?= $name_product ?></td>
+                                                        <td><?= number_format($price_product, 0, ',', '.') ?> đ
+                                                        </td>
+                                                        <td>
+                                                            <a href="?ctrl=product&view=detail&id=<?= $id_product ?>"
+                                                                class="btn btn-sm btn-info">Xem</a>
+                                                            <a href="?ctrl=user&view=account&dl_wishlist=<?= $id_product ?>"
+                                                                class="btn btn-sm btn-danger">Xóa</a>
+                                                        </td>
+                                                    </tr>
+                                                <?php $i++;
+                                                } ?>
                                             </tbody>
                                         </table>
                                     </div>

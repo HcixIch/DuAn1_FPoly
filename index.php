@@ -18,6 +18,20 @@ $wish = new Wishlist();
 $checkoutall = $checkout->getCheckout();
 $pro_all = $prod->getProductsByCondition('all', "");
 $cate_all = $cates->getAllCategories();
+if (isset($_SESSION['success_message'])) {
+    echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "' . $_SESSION['success_message'] . '",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    </script>';
+    unset($_SESSION['success_message']); // Xóa thông báo sau khi hiển thị
+}
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
         case 'page':
