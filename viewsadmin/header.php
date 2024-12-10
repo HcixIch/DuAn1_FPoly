@@ -34,6 +34,7 @@
     <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 
 <body>
@@ -55,14 +56,14 @@
 
                     <li>
                         <a href="?ctrl=admin">
-                            <i class="fa-solid fa-chart-simple"></i>
+                            <i class="pe-7s-graph"></i>
                             <p>Biểu đồ</p>
                         </a>
                     </li>
 
                     <li>
                         <a href="?ctrl=admin&view=home">
-                            <i class="pe-7s-graph"></i>
+                            <i class="fa-solid fa-list"></i>
                             <p>Danh mục</p>
                         </a>
                     </li>

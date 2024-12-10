@@ -3,7 +3,7 @@ include_once './viewsadmin/header.php';
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'home':
-            $Allcates = $cates->getAllCategories();;
+            $Allcates = $cates->getAllCategories();
             include './viewsadmin/home.php';
             break;
         case 'editprod':
@@ -29,37 +29,18 @@ if (isset($_GET['view'])) {
             break;
         case 'order':
             $order_list = $checkout->GetHistoryCheckout();
-            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_checkout'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_checkout']) && isset($_POST['new_status'])) {
                 $id_checkout = intval($_POST['id_checkout']);
+                $new_status = intval($_POST['new_status']);
                 
-                // Lấy trạng thái hiện tại
-                $stmt = $conn->prepare("SELECT status FROM checkout WHERE id_checkout = ?");
-                $stmt->bind_param("i", $id_checkout);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                $row = $result->fetch_assoc();
+                // Cập nhật trạng thái mới vào cơ sở dữ liệu
+                $update_stmt = $conn->prepare("UPDATE checkout SET status = ? WHERE id_checkout = ?");
+                $update_stmt->bind_param("ii", $new_status, $id_checkout);
         
-                if ($row) {
-                    $current_status = $row['status'];
-        
-                    // Tăng trạng thái +1 nếu chưa đạt đến 2
-                    if ($current_status < 2) {
-                        $new_status = $current_status + 1;
-        
-                        // Cập nhật trạng thái trong database
-                        $update_stmt = $conn->prepare("UPDATE checkout SET status = ? WHERE id_checkout = ?");
-                        $update_stmt->bind_param("i", $new_status, $id_checkout);
-        
-                        if ($update_stmt->execute()) {
-                            echo json_encode(["success" => true, "new_status" => $new_status]);
-                        } else {
-                            echo json_encode(["success" => false, "message" => "Không thể cập nhật trạng thái."]);
-                        }
-                    } else {
-                        echo json_encode(["success" => false, "message" => "Trạng thái không thể cập nhật thêm."]);
-                    }
+                if ($update_stmt->execute()) {
+                    echo json_encode(["success" => true, "new_status" => $new_status]);
                 } else {
-                    echo json_encode(["success" => false, "message" => "Không tìm thấy đơn hàng."]);
+                    echo json_encode(["success" => false, "message" => "Không thể cập nhật trạng thái."]);
                 }
             }
             include './viewsadmin/order.php';
@@ -100,6 +81,7 @@ if (isset($_GET['view'])) {
     $productwomen = $prod->getProductsByCategory(2,0);
     $productaccessory = $prod->getProductsByCategory(3,0);
     $productsouvenirs = $prod->getProductsByCategory(4,0);
+    $order_list = $checkout->GetHistoryCheckout();
     include_once './viewsadmin/chart.php';
 }
 include_once './viewsadmin/footer.php';

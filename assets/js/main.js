@@ -612,22 +612,27 @@ $(document).ready(function () {
     });
 });
     // Lắng nghe sự kiện click trên nút yêu thích
-    $(document).ready(function () {
-        $(".update-status").on("click", function () {
+    $(document).ready(function() {
+        $(".update-status").on("click", function() {
             let id = $(this).data("id"); // Lấy id_checkout từ data-id
+            let newStatus = $(this).data("new-status"); // Lấy trạng thái mới từ data-new-status
             let button = $(this); // Lưu lại nút hiện tại
     
             $.ajax({
                 url: "?ctrl=admin&view=order",
                 type: "POST",
-                data: { id_checkout: id },
-                success: function (response) {
+                data: {
+                    id_checkout: id,
+                    new_status: newStatus // Gửi trạng thái mới
+                },
+                success: function(response) {
                     let result = JSON.parse(response); // Parse kết quả trả về
                     if (result.success) {
                         // Cập nhật giao diện
                         if (result.new_status == 1) {
                             button.prev("span").removeClass("badge-danger").addClass("badge-warning").text("Đang xử lý");
                             button.text("Hoàn tất");
+                            button.data("new-status", 2); // Cập nhật trạng thái mới là 'Hoàn tất'
                         } else if (result.new_status == 2) {
                             button.prev("span").removeClass("badge-warning").addClass("badge-success").text("Đã giao hàng");
                             button.remove(); // Xóa nút khi hoàn tất
@@ -636,7 +641,7 @@ $(document).ready(function () {
                         alert("Cập nhật trạng thái thất bại!");
                     }
                 },
-                error: function () {
+                error: function() {
                     alert("Có lỗi xảy ra khi gửi yêu cầu!");
                 }
             });

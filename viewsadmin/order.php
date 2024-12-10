@@ -49,11 +49,11 @@
                                             <?php } ?>
                                         </td>
                                         <td>
-                                            <?php if ($od['status'] < 2) { ?>
-                                                <button type="button" class="update-status btn btn-primary" data-id="<?= $od['id_checkout'] ?>">
-                                                    <?= $od['status'] == 0 ? 'Xử lý' : 'Hoàn tất' ?>
-                                                </button>
-                                            <?php } ?>
+                                        <?php if ($od['status'] < 2) { ?>
+                                            <button type="button" class="update-status btn btn-primary" data-id="<?= $od['id_checkout'] ?>" data-new-status="<?= $od['status'] == 0 ? 1 : 2 ?>">
+                                                <?= $od['status'] == 0 ? 'Xử lý' : 'Hoàn tất' ?>
+                                            </button>
+                                        <?php } ?>
                                         </td>
                                     </tr>
                                 <?php } ?>

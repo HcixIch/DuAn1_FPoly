@@ -51,4 +51,5 @@ class Order extends Database
         $sql = "UPDATE checkout SET status = '".$status."' WHERE id_checkout = '".$id_checkout."'";
         return $this->db->update($sql);
     }
+
 }
