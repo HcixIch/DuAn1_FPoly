@@ -48,4 +48,9 @@ class User extends Database
         $sql = "SELECT * FROM user WHERE email_user ='".$email."' AND password = '".$password."' ";
         return $this->db->getAll($sql);
     }
+    // Hàm Cấp quyền
+    public function updateRole($id, $role){
+        $sql = "UPDATE user SET role = '".$role." 'WHERE id_user = '".$id."';";
+        return $sql = $this->db->update($sql);
+    }
 }

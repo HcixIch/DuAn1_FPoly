@@ -11,59 +11,37 @@
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover table-striped">
                             <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Tên đầy đủ</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Email</th>
-                                    <th>Xóa</th>
-
-                                </tr>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tên đầy đủ</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <?php if($_SESSION['user'][0]['role'] ==2 ){ ?>
+                                        <th>Thao Tác</th>
+                                        <?php }?>
+                                    </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($user_list as $user) { ?>
-                                    <tr>
-                                        <td><?= $user['id_user'] ?></td>
-                                        <td><?= $user['full_name'] ?></td>
-                                        <td><?= $user['phone_user'] ?></td>
-                                        <td><?= $user['email_user'] ?></td>
-                                        <td>
-                                            <!-- <a href="?ctrl=admin&view=edituser&id=<?= $user['id_user'] ?>">Sửa</a> | -->
-                                            <a href="?ctrl=user&action=deleteuser&id=<?= $user['id_user'] ?>" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</a>
-                                        </td>
+                                    <form action="" method="post">
+                                        <tr>
+                                            <td><?= $user['id_user'] ?></td>
+                                            <td><?= $user['full_name'] ?></td>
+                                            <td><?= $user['phone_user'] ?></td>
+                                            <td><?= $user['email_user'] ?></td>
+                                            <?php if($_SESSION['user'][0]['role'] == 2 ){?>
+                                                <td>
+                                                    <input type="hidden" name="id" value="<?= $user['id_user'] ?>">
+                                                    <button name="submit" class="btn btn-primary">Cấp Quyền</button>
+                                                </td>
 
-                                    </tr>
+                                            <?php }?>
+                                        </tr>
+                                    </form>
                                 <?php } ?>
                             </tbody>
                         </table>
                     </div>
-                    <ul class="pagination-list">
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">1</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">2</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">3</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">...</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">10</a>
-                                </li>
-                                <li class="pagination-item">
-                                    <a href="" class="pagination-link">
-                                        <i class="fa-solid fa-chevron-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
                 </div>
             </div>
         </div>

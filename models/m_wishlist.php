@@ -32,4 +32,16 @@ class WishList extends Database
         $sql = "SELECT p.* FROM wishlist w INNER JOIN product p ON w.id_product = p.id_product WHERE w.id_user = $id_user";
         return $this->db->getAll($sql);
     }
+    // Lấy 5 Sản phẩm được yêu thích nhất
+    public function getTop5WishlistProducts()
+    {
+        $sql = "SELECT p.* FROM wishlist w INNER JOIN product p ON w.id_product = p.id_product GROUP BY w.id_product ORDER BY COUNT(*) DESC LIMIT 5";
+        return $this->db->getAll($sql);
+    }
+    // Đếm trong wishlist
+    public function countWishlist($id_product)
+    {
+        $sql = "SELECT COUNT(*) as count FROM wishlist WHERE id_product = $id_product";
+        return $this->db->getAll($sql);
+    }
 }

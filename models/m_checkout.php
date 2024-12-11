@@ -45,4 +45,13 @@ class Checkout extends Database
         WHERE checkout.id_user = $id_user";
         return $this->db->getAll($sql);
     }
+    // lấy tháng checkout
+    public function getMonthlySales()
+    {
+        $sql = "SELECT MONTH(date_order) AS month, SUM(total_all) AS total
+                  FROM checkout
+                  GROUP BY MONTH(date_order)
+                  ORDER BY month";
+        return $this->db->getAll($sql);
+    }
 }

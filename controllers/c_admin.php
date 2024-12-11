@@ -47,6 +47,9 @@ if (isset($_GET['view'])) {
             break;
         case 'user':
             $user_list = $user->getAllUser();
+            if(isset($_POST['submit'])){              
+                $UpUser = $user->updateRole($_POST['id'], 1);
+            }
             include './viewsadmin/user.php';
             break;
         case 'editcate':
@@ -81,7 +84,17 @@ if (isset($_GET['view'])) {
     $productwomen = $prod->getProductsByCategory(2,0);
     $productaccessory = $prod->getProductsByCategory(3,0);
     $productsouvenirs = $prod->getProductsByCategory(4,0);
+    
     $order_list = $checkout->GetHistoryCheckout();
+
+    $monthlySales = $checkout->getMonthlySales();
+    $labels = [];
+    $data = [];
+    foreach ($monthlySales as $sale) {
+        $labels[] = $sale['month'];
+        $data[] = $sale['total'];
+    };
+    $topwishlist = $wish->getTop5WishlistProducts();
     include_once './viewsadmin/chart.php';
 }
 include_once './viewsadmin/footer.php';
