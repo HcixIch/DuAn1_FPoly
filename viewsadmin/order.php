@@ -38,22 +38,47 @@
                                         <td><?= $od['quantity'] ?></td>
                                         <td><?= $od['date_order'] ?></td>
                                         <td>
-                                            <?php if ($od['status'] == 0) { ?>
-                                                <span class="badge badge-danger">Chưa xử lý</span>
-                                            <?php } elseif ($od['status'] == 1) { ?>
-                                                <span class="badge badge-warning">Đang xử lý</span>
-                                            <?php } elseif ($od['status'] == 2) { ?>
-                                                <span class="badge badge-success">Đã giao hàng</span>
-                                            <?php } elseif ($od['status'] == 3) { ?>
-                                                <span class="badge badge-info">Đã hủy</span>
-                                            <?php } ?>
+                                            <span class="badge" id="order_status_<?= $od['id_checkout'] ?>">
+                                                <?php 
+                                                    switch ($od['status']) {
+                                                        case 1:
+                                                            echo 'Chưa xử lý';
+                                                            break;
+                                                        case 2:
+                                                            echo 'Đã xử lý';
+                                                            break;
+                                                        case 3:
+                                                            echo 'Đang giao hàng';
+                                                            break;
+                                                        case 4:
+                                                            echo 'Đã giao hàng';
+                                                            break;
+                                                        case 5:
+                                                            echo 'Đã hủy';
+                                                            break;
+                                                    }
+                                                ?>
+                                            </span>
                                         </td>
                                         <td>
-                                        <?php if ($od['status'] < 2) { ?>
-                                            <button type="button" class="update-status btn btn-primary" data-id="<?= $od['id_checkout'] ?>" data-new-status="<?= $od['status'] == 0 ? 1 : 2 ?>">
-                                                <?= $od['status'] == 0 ? 'Xử lý' : 'Hoàn tất' ?>
+                                            <button type="button" class="update-status btn btn-primary" data-id_checkout="<?= $od['id_checkout'] ?>" data-status="<?= $od['status'] ?>"> 
+                                                <?php 
+                                                    switch ($od['status']) {
+                                                        case 1:
+                                                            echo 'Xử lý';
+                                                            break;
+                                                        case 2:
+                                                            echo 'Giao Hàng';
+                                                            break;
+                                                        case 3:
+                                                            echo 'Xác nhận đã giao';
+                                                            break;
+                                                        case 4:
+                                                            echo 'Hủy';
+                                                            break;
+                                                    }
+                                                ?>
                                             </button>
-                                        <?php } ?>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -65,3 +90,50 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.update-status').on('click', function() {
+        var id_checkout = $(this).data('id_checkout');
+        var newStatus = parseInt($(this).data('status'), 10);
+
+        $.ajax({
+            url: '?ctrl=admin&view=order', // Replace with the actual PHP file
+            type: 'POST',
+            data: {
+                checkout_id: id_checkout,
+                new_status: newStatus
+            },
+            success: function(response) {
+                if (response= 'success') {
+                    // Cập nhật trạng thái mới
+                    var nextStatusText = '';
+                    switch (newStatus) {
+                        case 1:
+                            nextStatusText = 'Xử lý';
+                            break;
+                        case 2:
+                            nextStatusText = 'Giao Hàng';
+                            break;
+                        case 3:
+                            nextStatusText = 'Xác nhận đã giao';
+                            break;
+                        case 4:
+                            nextStatusText = 'Hủy';
+                            break;
+                    }
+
+                    // Cập nhật trạng thái trong nút
+                    $('#order_status_' + id_checkout).html(nextStatusText);
+                    $(this).data('status', newStatus);
+                    $(this).text(nextStatusText);
+
+                    alert('Cập nhật trạng thái đơn hàng thành công!');
+                } else {
+                    alert('Có lỗi xảy ra. Vui lòng thử lại.');
+                }
+            }
+        });
+    });
+});
+</script>

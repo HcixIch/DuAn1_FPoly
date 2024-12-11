@@ -6,10 +6,14 @@
                     <div class="header">
                         <h4 class="title">Danh sách sản phẩm</h4>
                         <p class="category">Quản lý tất cả sản phẩm</p>
+                        <a href="?ctrl=admin&view=addprods"><button type="button" class="btn btn-primary">
+                                    Thêm sản phẩm
+                                </button></a>
                         <div class="content table-responsive table-full-width">
                             <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>
+                                        <th>hình ảnh</th>
                                         <th>Tên sản phẩm</th>
                                         <th>Giá</th>
                                         <th>Số lượng</th>
@@ -21,6 +25,7 @@
                                     <?php foreach ($addpro_list as $ad) {
                                         extract($ad); ?>
                                         <tr>
+                                            <td><img src="assets/images/product/<?= $img_product?>" alt="Sản phẩm" style="width:120px;"></td>
                                             <td><?= $name_product ?>"</td>
                                             <td> <?= $price_product ?></td>
                                             <td><?= $quantity_product ?></td>
@@ -38,42 +43,6 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="header">
-                            <h4 class="title">Thêm sản phẩm</h4>
-                            <p class="category"></p>
-                        </div>
-                        <div class="content table-responsive table-full-width">
-                            <form action="?ctrl=admin&view=addpro" method="post">
-                                <label for="">Danh mục sản phẩm</label>
-
-
-                                <select name="cate" id="cate" class="form-control">
-                                    <?php foreach ($getcate as $cate) {
-                                        extract($cate); ?>
-                                        <option value="<?= $id_category ?>"><?= $name_category ?></option>
-                                    <?php } ?>
-                                </select>
-
-                                <label for="">Tên sản phẩm</label>
-                                <input type="text" name="name" id="name" class="form-control">
-
-                                <label for="">Giá sản phẩm</label>
-                                <input type="number" name="price" id="price" required min="1" class="form-control">
-
-                                <label for="">So luong sản phẩm</label>
-                                <input type="number" name="quantity" id="quantity" class="form-control">
-
-                                <label for="">Mo ta sản phẩm</label>
-                                <textarea name="description" id="description" rows="8" class="form-control"> </textarea>
-
-                                <label for="">Hình ảnh</label>
-                                <input type="file" name="image" id="image" class="form-control">
-
-
-                                <input type="submit" name="addprod" value="Thêm sản phẩm">
-
-                            </form>
                         </div>
                     </div>
                 </div>

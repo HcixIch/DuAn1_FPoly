@@ -54,4 +54,15 @@ class Checkout extends Database
                   ORDER BY month";
         return $this->db->getAll($sql);
     }
+    // Hàm thay đổi status
+    public function updateStatus($id, $newStatus) {
+        $sql = $this->db->update("UPDATE checkout SET status = '".$newStatus."' WHERE id_checkout = '".$id."'");
+        $sql->bind_param("ii", $newStatus, $id);
+        if ($sql->execute()) {
+            return true; 
+        } else {
+            return false; 
+        }
+        $sql->close();
+    }
 }

@@ -68,7 +68,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="?ctrl=admin&view=addpro">
+                        <a href="?ctrl=admin&view=prods">
                             <i class="pe-7s-note2"></i>
                             <p>Sản phẩm</p>
                         </a>
