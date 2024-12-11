@@ -45,6 +45,9 @@ if (isset($_GET['ctrl'])) {
         case 'user':
             include_once "./controllers/c_user.php";
             break;
+        case 'blog':
+            include_once "./controllers/c_blog.php";
+            break;
         case 'admin':
             include_once "./controllers/c_admin.php";
             break;

@@ -35,4 +35,14 @@ class Checkout extends Database
         INNER JOIN product ON order_detail.id_product = product.id_product";
         return $this->db->getAll($sql);
     }
+    public function getCheckoutByUser($id_user)
+    {
+        $sql = "SELECT 
+       checkout.*, order_detail.*, product.*
+        FROM checkout 
+        INNER JOIN order_detail ON checkout.id_checkout = order_detail.id_checkout
+        INNER JOIN product ON order_detail.id_product = product.id_product
+        WHERE checkout.id_user = $id_user";
+        return $this->db->getAll($sql);
+    }
 }

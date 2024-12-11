@@ -95,7 +95,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php foreach ($checkoutall as $co) {
+                                                    <?php
+                                                    $checkoutuser = $checkout->getCheckoutByUser($_SESSION['user'][0]['id_user']);
+                                                    foreach ($checkoutuser as $co) {
                                                         extract($co);
                                                     ?>
                                                         <tr>
@@ -103,7 +105,7 @@
                                                             <td>DA00<?= $id_checkout ?></td>
                                                             <td><?= $date_order ?></td>
                                                             <td>
-                                                                <!-- Số lượng sản phẩm -->
+                                                                <?= array_sum(array_column($order->GetOrderById($id_checkout), 'quantity')) ?>
                                                             </td>
                                                             <td><?= number_format($provisional_total, 0, '', '.') ?> đ</td>
                                                             <td>

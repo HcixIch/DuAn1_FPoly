@@ -95,7 +95,7 @@
                                     </li>
                                     <li><a href="?ctrl=product">Cửa hàng</a>
                                     </li>
-                                    <li><a href="blog.html">Bài viết</a>
+                                    <li><a href="?ctrl=blog">Bài viết</a>
                                     </li>
                                     <li><a href="?ctrl=page&&view=contact">Câu lạc bộ</a></li>
                                     <li><a href="?ctrl=page&&view=contact">Liên hệ chúng tôi</a></li>
