@@ -9,7 +9,9 @@ include_once 'models/m_order.php';
 include_once 'models/send_mail.php';
 include_once 'models/m_checkout.php';
 include_once 'models/m_wishlist.php';
+include_once  'models/m_voucher.php';
 $prod = new Product();
+$vouchers = new Voucher();
 $cates = new Category();
 $user =  new User();
 $order = new Order();
@@ -30,7 +32,7 @@ if (isset($_SESSION['success_message'])) {
             });
         });
     </script>';
-    unset($_SESSION['success_message']); // Xóa thông báo sau khi hiển thị
+    unset($_SESSION['success_message']);
 }
 if (isset($_GET['ctrl'])) {
     switch ($_GET['ctrl']) {
