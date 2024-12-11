@@ -10,21 +10,23 @@
                     <div class="content table-responsive table-full-width">
                         <table class="table table-hover table-striped">
                             <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Tên đầy đủ</th>
-                                        <th>Số điện thoại</th>
-                                        <th>Email</th>
-                                        <?php if($_SESSION['user'][0]['role'] ==2 ){ ?>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên đầy đủ</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Email</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Vai trò</th>
+                                    <?php if ($_SESSION['user'][0]['role'] == 2) { ?>
                                         <th>Thao Tác</th>
-                                        <?php }?>
-                                    </tr>
+                                    <?php } ?>
+                                </tr>
                             </thead>
                             <tbody>
                                 <?php foreach($user_list as $user){ ?>
                                     <?php if($user['id_user'] != $_SESSION['user'][0]['id_user']){ ?>
                                     <form action="" method="post">
-                                        <tr>
+                                        <tr style="<?php if ($user['role'] == 2) echo "display:none" ?>">
                                             <td><?= $user['id_user'] ?></td>
                                             <td><?= $user['full_name'] ?></td>
                                             <td><?= $user['phone_user'] ?></td>
@@ -41,7 +43,6 @@
                                                         <button name="submit" class="btn btn-primary">Cấp Quyền</button>
                                                     </td>
                                                 <?php } ?>
-                                            <?php } ?>
                                         </tr>
                                     </form>
                                     <?php } ?>
@@ -53,4 +54,7 @@
             </div>
         </div>
     </div>
+
+</div>
+
 </div>

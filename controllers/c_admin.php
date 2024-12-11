@@ -29,21 +29,28 @@ if (isset($_GET['view'])) {
             break;
         case 'addprods':
             $getcate = $cates->getAllCategories();
-            if(isset($_POST['addprod'])) {
+            if (isset($_POST['addprod'])) {
                 $addnew = $prod->addProduct($_POST['image'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['cate'], $_POST['quantity']);
-                header("Location:?ctrl=admin&view=prods");
-                exit();
+                header("Location: ?ctrl=admin&view=addpro");
             }
-            include_once './viewsadmin/addprods.php';
+            if (isset($_POST['Del'])) {
+                $delprod = $prod->deleteProduct($_POST['idprod']);
+                header("Location: ?ctrl=admin&view=addpro");
+            }
+            include_once './viewsadmin/addpro.php';
             break;
         case 'order':
             $order_list = $checkout->GetHistoryCheckout();
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $id = $_POST['checkout_id'];
-                $newStatus = $_POST['new_status'];
-                $Upstatus = $checkout->updateStatus1($id, $newStatus);
-                if($Upstatus) {
-                    echo json_encode(["success" => true, "message" => "Cập nhật trạng thái thành công"]);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_checkout']) && isset($_POST['new_status'])) {
+                $id_checkout = intval($_POST['id_checkout']);
+                $new_status = intval($_POST['new_status']);
+
+                // Cập nhật trạng thái mới vào cơ sở dữ liệu
+                $update_stmt = $conn->prepare("UPDATE checkout SET status = ? WHERE id_checkout = ?");
+                $update_stmt->bind_param("ii", $new_status, $id_checkout);
+
+                if ($update_stmt->execute()) {
+                    echo json_encode(["success" => true, "new_status" => $new_status]);
                 } else {
                     echo json_encode(["success" => false, "message" => "Không thể cập nhật trạng thái."]);
                 }
@@ -94,11 +101,11 @@ if (isset($_GET['view'])) {
             break;
     }
 } else {
-    $productmen = $prod->getProductsByCategory(1,0);
-    $productwomen = $prod->getProductsByCategory(2,0);
-    $productaccessory = $prod->getProductsByCategory(3,0);
-    $productsouvenirs = $prod->getProductsByCategory(4,0);
-    
+    $productmen = $prod->getProductsByCategory(1, 0);
+    $productwomen = $prod->getProductsByCategory(2, 0);
+    $productaccessory = $prod->getProductsByCategory(3, 0);
+    $productsouvenirs = $prod->getProductsByCategory(4, 0);
+
     $order_list = $checkout->GetHistoryCheckout();
 
     $monthlySales = $checkout->getMonthlySales();
