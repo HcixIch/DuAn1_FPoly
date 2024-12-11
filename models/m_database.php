@@ -81,4 +81,8 @@ class Database
     {
         $this->conn = null;
     }
+
+    public function getConnection() {
+        return $this->conn;
+    }
 }

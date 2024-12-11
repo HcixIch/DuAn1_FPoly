@@ -35,4 +35,12 @@ class Checkout extends Database
         INNER JOIN product ON order_detail.id_product = product.id_product";
         return $this->db->getAll($sql);
     }
+    // lấy tháng checkout
+    public function getMonthlySales() {
+        $sql = "SELECT MONTH(date_order) AS month, SUM(total_all) AS total
+                  FROM checkout
+                  GROUP BY MONTH(date_order)
+                  ORDER BY month";
+        return $this->db->getAll($sql);
+    }
 }

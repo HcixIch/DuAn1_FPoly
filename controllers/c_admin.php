@@ -81,7 +81,16 @@ if (isset($_GET['view'])) {
     $productwomen = $prod->getProductsByCategory(2,0);
     $productaccessory = $prod->getProductsByCategory(3,0);
     $productsouvenirs = $prod->getProductsByCategory(4,0);
+    
     $order_list = $checkout->GetHistoryCheckout();
+
+    $monthlySales = $checkout->getMonthlySales();
+    $labels = [];
+    $data = [];
+    foreach ($monthlySales as $sale) {
+        $labels[] = $sale['month'];
+        $data[] = $sale['total'];
+    };
     include_once './viewsadmin/chart.php';
 }
 include_once './viewsadmin/footer.php';

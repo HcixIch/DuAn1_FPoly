@@ -122,16 +122,6 @@
                     <!-- KẾT THÚC MUA HÀNG GẦN ĐÂY -->
                 </div>
                 <div class="col-md-6">
-    <!-- BIỂU ĐỒ NHIỀU CHI TIẾT -->
-    <div class="panel">
-        <div class="panel-heading">
-            <h3 class="panel-title">Dự Báo vs. Thực Tế</h3>
-        </div>
-        <div class="panel-body">
-            <div id="visits-trends-chart" class="ct-chart"></div>
-        </div>
-    </div>
-    <!-- KẾT THÚC BIỂU ĐỒ NHIỀU CHI TIẾT -->
 </div>
 </div>
 <div class="row">
@@ -190,44 +180,7 @@
         </div>
         <!-- KẾT THÚC DANH SÁCH CÔNG VIỆC CẦN LÀM -->
     </div>
-    <div class="col-md-5">
-        <!-- DÒNG THỜI GIAN HOẠT ĐỘNG -->
-        <div class="panel panel-scrolling">
-            <div class="panel-heading">
-                <h3 class="panel-title">Hoạt Động Gần Đây Của Người Dùng</h3>
-            </div>
-            <div class="panel-body">
-                <ul class="list-unstyled activity-list">
-                    <li>
-                        <img src="assets/img/user1.png" alt="Avatar" class="img-circle pull-left avatar">
-                        <p><a href="#">Michael</a> đã hoàn thành 80% nhiệm vụ của mình <span class="timestamp">20 phút trước</span></p>
-                    </li>
-                    <li>
-                        <img src="assets/img/user2.png" alt="Avatar" class="img-circle pull-left avatar">
-                        <p><a href="#">Daniel</a> đã được thêm vào nhóm của dự án <a href="#">Cập Nhật Hệ Thống</a> <span class="timestamp">Hôm qua</span></p>
-                    </li>
-                    <li>
-                        <img src="assets/img/user3.png" alt="Avatar" class="img-circle pull-left avatar">
-                        <p><a href="#">Martha</a> đã tạo một chế độ xem heatmap mới cho <a href="#">Landing Page</a>
-                            <span class="timestamp">2 ngày trước</span>
-                        </p>
-                    </li>
-                    <li>
-                        <img src="assets/img/user4.png" alt="Avatar" class="img-circle pull-left avatar">
-                        <p><a href="#">Jane</a> đã hoàn thành tất cả các nhiệm vụ <span class="timestamp">2 ngày trước</span></p>
-                    </li>
-                    <li>
-                        <img src="assets/img/user5.png" alt="Avatar" class="img-circle pull-left avatar">
-                        <p><a href="#">Jason</a> đã bắt đầu thảo luận về <a href="#">Cuộc Họp Hàng Tuần</a>
-                            <span class="timestamp">3 ngày trước</span>
-                        </p>
-                    </li>
-                </ul>
-                <button type="button" class="btn btn-primary btn-bottom center-block">Tải Thêm</button>
-            </div>
-        </div>
-        <!-- KẾT THÚC DÒNG THỜI GIAN HOẠT ĐỘNG -->
-    </div>
+    
 </div>
 <div class="row">
     <div class="col-md-4">
@@ -327,19 +280,16 @@
     </div>
 </div>
 <script>
-// Lấy ngữ cảnh từ canvas để vẽ biểu đồ
-var ctx = document.getElementById('myChart').getContext('2d');
-
 // Tạo dữ liệu cho biểu đồ
 var chart = new Chart(ctx, {
     type: 'bar', // Loại biểu đồ (line, bar, etc.)
     data: {
-        labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'], // Các ngày trong tuần
+        labels: <?php echo json_encode($labels); ?>, // Các ngày trong tuần
         datasets: [{
             label: 'Total Sales', // Tên dữ liệu
             backgroundColor: 'rgba(54, 162, 235, 0.2)', // Màu nền cho đồ thị
             borderColor: 'rgba(54, 162, 235, 1)', // Màu viền cho đồ thị
-            data: [15, 30, 45, 25, 35, 40, 20, 23, 38, 12, 29, 52], // Dữ liệu các giá trị
+            data: <?php echo json_encode($data); ?>, // Dữ liệu các giá trị
             fill: true, // Làm đồ thị có nền
         }]
     },
