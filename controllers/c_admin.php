@@ -47,6 +47,9 @@ if (isset($_GET['view'])) {
             break;
         case 'user':
             $user_list = $user->getAllUser();
+            if(isset($_POST['submit'])){              
+                $UpUser = $user->updateRole($_POST['id'], 1);
+            }
             include './viewsadmin/user.php';
             break;
         case 'editcate':
@@ -91,6 +94,7 @@ if (isset($_GET['view'])) {
         $labels[] = $sale['month'];
         $data[] = $sale['total'];
     };
+    $topwishlist = $wish->getTop5WishlistProducts();
     include_once './viewsadmin/chart.php';
 }
 include_once './viewsadmin/footer.php';

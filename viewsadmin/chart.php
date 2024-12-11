@@ -78,7 +78,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Mua Hàng Gần Đây</h3>
                         </div>
-                        <div class="panel-body no-padding">
+                        <div class="panel-body no-padding" style="max-height: 400px; overflow-y: auto;">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -122,7 +122,30 @@
                     <!-- KẾT THÚC MUA HÀNG GẦN ĐÂY -->
                 </div>
                 <div class="col-md-6">
+                <!-- BIỂU ĐỒ NHIỀU CHI TIẾT -->
+                    <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">5 Sản Phẩm Được Yêu Thích Nhất</h3>
+                    </div>
+                    <?php foreach($topwishlist as $wishlist) {
+                        $count = $wish->countWishlist($wishlist['id_product']);?>
+                    <div class="panel-body">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img class="media-object" src="assets/images/product/<?= $wishlist['img_product']?>" alt="Product Image" style="width: 100px">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading" style="font-size:15px"><?= $wishlist['name_product']?></h4>
+                                    <p>Số lượt yêu thích: <?= $count[0]['count']?></p>
+                                </div>
+                            </div>
+                    </div>
+                    <?php } ?>
+                <!-- KẾT THÚC BIỂU ĐỒ NHIỀU CHI TIẾT -->
+                </div>
+    </div>
 </div>
+
 </div>
 <div class="row">
     <div class="col-md-7">
@@ -280,6 +303,8 @@
     </div>
 </div>
 <script>
+// Lấy ngữ cảnh từ canvas để vẽ biểu đồ
+var ctx = document.getElementById('myChart').getContext('2d');
 // Tạo dữ liệu cho biểu đồ
 var chart = new Chart(ctx, {
     type: 'bar', // Loại biểu đồ (line, bar, etc.)
