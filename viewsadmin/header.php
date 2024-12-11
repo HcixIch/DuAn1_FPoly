@@ -34,7 +34,7 @@
     <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -57,7 +57,7 @@
                     <li>
                         <a href="?ctrl=admin">
                             <i class="pe-7s-graph"></i>
-                            <p>Biểu đồ</p>
+                            <p>Bảng điều khiển</p>
                         </a>
                     </li>
 

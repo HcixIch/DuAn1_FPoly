@@ -19,11 +19,13 @@ if (isset($_GET['view'])) {
         case 'addpro':
             $addpro_list = $prod->getAllProducts();
             $getcate = $cates->getAllCategories();
-            if(isset($_POST['addprod'])) {
+            if (isset($_POST['addprod'])) {
                 $addnew = $prod->addProduct($_POST['image'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['cate'], $_POST['quantity']);
+                header("Location: ?ctrl=admin&view=addpro");
             }
-            if(isset($_POST['Del'])) {
+            if (isset($_POST['Del'])) {
                 $delprod = $prod->deleteProduct($_POST['idprod']);
+                header("Location: ?ctrl=admin&view=addpro");
             }
             include_once './viewsadmin/addpro.php';
             break;
@@ -32,11 +34,11 @@ if (isset($_GET['view'])) {
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_checkout']) && isset($_POST['new_status'])) {
                 $id_checkout = intval($_POST['id_checkout']);
                 $new_status = intval($_POST['new_status']);
-                
+
                 // Cập nhật trạng thái mới vào cơ sở dữ liệu
                 $update_stmt = $conn->prepare("UPDATE checkout SET status = ? WHERE id_checkout = ?");
                 $update_stmt->bind_param("ii", $new_status, $id_checkout);
-        
+
                 if ($update_stmt->execute()) {
                     echo json_encode(["success" => true, "new_status" => $new_status]);
                 } else {
@@ -47,8 +49,9 @@ if (isset($_GET['view'])) {
             break;
         case 'user':
             $user_list = $user->getAllUser();
-            if(isset($_POST['submit'])){              
-                $UpUser = $user->updateRole($_POST['id'], 1);
+            if (isset($_POST['submit'])) {
+                $UpUser = $user->updateRole($_POST['id'], $_POST['role']);
+                header("location:?ctrl=admin&view=user");
             }
             include './viewsadmin/user.php';
             break;
@@ -70,7 +73,7 @@ if (isset($_GET['view'])) {
                 $name_category = $_POST['name_category'];
                 if (!empty($name_category)) {
                     $cates->addCategory($name_category);
-                    header("Location: ?ctrl=admin"); 
+                    header("Location: ?ctrl=admin");
                     exit();
                 } else {
                     echo "<script>alert('Tên danh mục không được để trống');</script>";
@@ -80,11 +83,11 @@ if (isset($_GET['view'])) {
             break;
     }
 } else {
-    $productmen = $prod->getProductsByCategory(1,0);
-    $productwomen = $prod->getProductsByCategory(2,0);
-    $productaccessory = $prod->getProductsByCategory(3,0);
-    $productsouvenirs = $prod->getProductsByCategory(4,0);
-    
+    $productmen = $prod->getProductsByCategory(1, 0);
+    $productwomen = $prod->getProductsByCategory(2, 0);
+    $productaccessory = $prod->getProductsByCategory(3, 0);
+    $productsouvenirs = $prod->getProductsByCategory(4, 0);
+
     $order_list = $checkout->GetHistoryCheckout();
 
     $monthlySales = $checkout->getMonthlySales();
