@@ -409,52 +409,85 @@ if($('.contact-map').length){
 })(jQuery);	
     
 document.addEventListener('DOMContentLoaded', function () {
-    const formElement = document.getElementById('checkout-form');
+    const checkoutForm = document.getElementById('checkout-form');
+    const voucherForm = document.getElementById('voucher-form');
 
-    if (formElement) {
-        // Hàm kiểm tra form
-        function validateForm(event) {
-            const fullname = formElement.querySelector('[name="fullname"]').value.trim();
-            const phone = formElement.querySelector('[name="phone"]').value.trim();
-            const address = formElement.querySelector('[name="address"]').value.trim();
-            const voucher = formElement.querySelector('[name="voucher"]').value.trim();
-            const paymentMethod = formElement.querySelector('[name="payment_method"]:checked');
+    // Ngăn chặn sự kiện từ form con
+    if (voucherForm) {
+        voucherForm.addEventListener('submit', function (event) {
+            event.stopPropagation(); // Ngăn sự kiện form con ảnh hưởng form cha
+            console.log('Voucher form submitted');
+        });
+    }
 
-            // Kiểm tra các trường
-            if (fullname === '') {
-                alert('Họ và tên không được để trống!');
+    // Xử lý kiểm tra form cha
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function (event) {
+            const fullname = checkoutForm.querySelector('[name="fullname"]').value.trim();
+            const phone = checkoutForm.querySelector('[name="phone"]').value.trim();
+            const address = checkoutForm.querySelector('[name="address"]').value.trim();
+            const paymentMethod = checkoutForm.querySelector('[name="payment_method"]:checked');
+
+            if (!fullname) {
+                alert('Vui lòng nhập họ và tên.');
                 event.preventDefault();
-                return;
+            } else if (!phone || !/^\d{10,11}$/.test(phone)) {
+                alert('Số điện thoại không hợp lệ.');
+                event.preventDefault();
+            } else if (!address) {
+                alert('Vui lòng nhập địa chỉ.');
+                event.preventDefault();
+            } else if (!paymentMethod) {
+                alert('Vui lòng chọn phương thức thanh toán.');
+                event.preventDefault();
             }
+        });
+    }
+});
 
-            if (phone === '' || !/^\d{10,11}$/.test(phone)) {
-                alert('Số điện thoại không hợp lệ! (Cần có 10-11 chữ số)');
-                event.preventDefault();
-                return;
-            }
 
-            if (address === '') {
-                alert('Địa chỉ không được để trống!');
-                event.preventDefault();
-                return;
-            }
+document.getElementById('apply-voucher').addEventListener('click', function () {
+    const voucher = document.getElementById('voucher').value;
 
-            if (voucher !== '' && voucher.length < 5) {
-                alert('Mã giảm giá phải có ít nhất 5 ký tự!');
-                event.preventDefault();
-                return;
-            }
+    if (voucher.trim() === '') {
+        alert('Vui lòng nhập mã giảm giá.');
+        return;
+    }
 
-            if (!paymentMethod) {
-                alert('Vui lòng chọn phương thức thanh toán!');
-                event.preventDefault();
-                return;
+    // Tìm form cha để gửi dữ liệu
+    const form = document.getElementById('checkout-form'); // ID của form chứa input
+
+    // Tạo input hidden để gửi voucher
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'addvoucher';
+    input.value = 'true';
+    form.appendChild(input);
+
+    // Gửi form
+    form.submit();
+});
+
+
+
+$('#apply-voucher').on('click', function() {
+    var voucherCode = $('#voucher').val();
+    $.ajax({
+        type: 'POST',
+        url: '?ctrl=cart&view=checkout', // Replace with the actual PHP script handling the voucher
+        data: { voucher: voucherCode },
+        success: function(response) {
+            var data = JSON.parse(response);
+            if (data.code === 1) {
+                // Voucher applied successfully
+                alert(data.message); // Show success message
+                $('#total-price').text(data.total_price); // Update the total price on the page
+            } else {
+                // Show error message if voucher is invalid
+                alert(data.message); // Show error message
             }
         }
-
-        // Thêm sự kiện 'submit' cho form
-        formElement.addEventListener('submit', validateForm);
-    }
+    });
 });
 
 // Tài khoản của tôi 
@@ -612,38 +645,3 @@ $(document).ready(function () {
     });
 });
     // Lắng nghe sự kiện click trên nút yêu thích
-    $(document).ready(function() {
-        $(".update-status").on("click", function() {
-            let id = $(this).data("id"); // Lấy id_checkout từ data-id
-            let newStatus = $(this).data("new-status"); // Lấy trạng thái mới từ data-new-status
-            let button = $(this); // Lưu lại nút hiện tại
-    
-            $.ajax({
-                url: "?ctrl=admin&view=order",
-                type: "POST",
-                data: {
-                    id_checkout: id,
-                    new_status: newStatus // Gửi trạng thái mới
-                },
-                success: function(response) {
-                    let result = JSON.parse(response); // Parse kết quả trả về
-                    if (result.success) {
-                        // Cập nhật giao diện
-                        if (result.new_status == 1) {
-                            button.prev("span").removeClass("badge-danger").addClass("badge-warning").text("Đang xử lý");
-                            button.text("Hoàn tất");
-                            button.data("new-status", 2); // Cập nhật trạng thái mới là 'Hoàn tất'
-                        } else if (result.new_status == 2) {
-                            button.prev("span").removeClass("badge-warning").addClass("badge-success").text("Đã giao hàng");
-                            button.remove(); // Xóa nút khi hoàn tất
-                        }
-                    } else {
-                        alert("Cập nhật trạng thái thất bại!");
-                    }
-                },
-                error: function() {
-                    alert("Có lỗi xảy ra khi gửi yêu cầu!");
-                }
-            });
-        });
-    });

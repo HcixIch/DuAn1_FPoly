@@ -4,19 +4,49 @@ if (isset($_GET['view'])) {
   switch ($_GET['view']) {
     case 'checkout':
 
-      // Kiểm tra nếu đã đăng nhập
+      if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['voucher'])) {
+        // Unset any existing voucher in the session before processing the new one
+        unset($_SESSION['voucher']);
+
+        $voucher_code = trim($_POST['voucher']);
+        $provisional_price = array_sum(array_column($_SESSION['cart'], 'subtotal'));
+
+        // Kiểm tra mã giảm giá
+        $voucher_info = $vouchers->getVoucherById($voucher_code);
+
+        if (!$voucher_info) {
+          $_SESSION['voucher'] = ['code' => 0, 'message' => 'Mã giảm giá không hợp lệ.', 'discount' => 0];
+        } elseif ($voucher_info['condition_voucher'] > $provisional_price) {
+          $_SESSION['voucher'] = ['code' => 0, 'message' => 'Đơn hàng không đủ điều kiện để sử dụng mã.', 'discount' => 0];
+        } elseif (strtotime($voucher_info['deadline']) < time()) {
+          $_SESSION['voucher'] = ['code' => 0, 'message' => 'Mã giảm giá đã hết hạn.', 'discount' => 0];
+        } else {
+          // If the voucher is valid, apply the new discount and update the session
+          $discount = $voucher_info['discount'];
+          $total_price = $provisional_price - $discount + 30000; // Assuming 30k shipping cost
+          $_SESSION['voucher'] = [
+            'code' => $voucher_code,
+            'discount' => $discount,
+            'message' => 'Mã giảm giá áp dụng thành công!'
+          ];
+        }
+      }
+
+
+      // Kiểm tra nếu đã đăng nhập và xử lý đặt hàng
       if (isset($_POST['buynow'])) {
         $user = $_POST['id_user'];
         $fullname = $_POST['fullname'];
         $phone = $_POST['phone'];
         $address = $_POST['address'];
-        $voucher = isset($_POST['voucher']) && $_POST['voucher'] !== '' ? (int)$_POST['voucher'] : NULL;
+        $voucher = isset($_POST['voucher']) && $_POST['voucher'] !== '' ? $_POST['voucher'] : NULL;
         $payment_method = $_POST['payment_method'];
         $shipping_cost = 30000;
         $date = date('Y-m-d H:i:s');
         $provisional_price = $_POST['provisional'];
         $total_price = $provisional_price + $shipping_cost;
         $errors = [];
+
         // Kiểm tra dữ liệu
         if (!$fullname) $errors[] = 'Họ và tên không được để trống.';
         if (!$phone || !preg_match('/^\d{10,11}$/', $phone)) $errors[] = 'Số điện thoại không hợp lệ.';
@@ -30,6 +60,28 @@ if (isset($_GET['view'])) {
             echo "<p style='color: red;'>$error</p>";
           }
         } else {
+          // Kiểm tra mã giảm giá nếu có
+          if ($voucher) {
+            $voucher_info = $vouchers->getVoucherById($voucher);
+            if (!$voucher_info) {
+              echo "<p style='color: red;'>Mã giảm giá không hợp lệ.</p>";
+            } elseif ($voucher_info['condition_voucher'] > $provisional_price) {
+              echo "<p style='color: red;'>Đơn hàng không đủ điều kiện để sử dụng mã.</p>";
+            } elseif (strtotime($voucher_info['deadline']) < time()) {
+              echo "<p style='color: red;'>Mã giảm giá đã hết hạn.</p>";
+            } else {
+              // Áp dụng giảm giá
+              $discount = $voucher_info['discount'];
+              $total_price = $provisional_price - $discount + $shipping_cost;
+              $_SESSION['voucher'] = [
+                'discount' => $discount,
+                'message' => 'Mã giảm giá áp dụng thành công!'
+              ];
+              echo "<p style='color: green;'>Mã giảm giá áp dụng thành công! Giảm giá: " . number_format($discount, 0, ',', '.') . "đ</p>";
+            }
+          }
+
+          // Lưu đơn hàng vào CSDL
           $data = [
             'id_user' => $user,
             'provisional_price' => $provisional_price,
@@ -42,15 +94,17 @@ if (isset($_GET['view'])) {
             'payment_method' => $payment_method
           ];
           $checkout->insertCheckout($data);
+
+          // Xử lý phương thức thanh toán và gửi email
           if ($data['payment_method'] == 'momo') {
             $pay = 'Thanh toán qua Momo';
-            $img = '<img style="display: block;width:50%; margin: 0 auto;"  src="https://i.imgur.com/saqO23m.png" alt="Momo" />';
           } else if ($data['payment_method'] == 'bank') {
             $pay = 'Thanh toán qua Ngân hàng';
-            $img = '<img style="display: block;width:50%; margin: 0 auto;" src="https://i.imgur.com/saqO23m.png" alt="Bank" />';
           } else {
             $pay = 'Thanh toán khi nhận hàng';
           }
+
+          // Send email with order details
           $checkout_new = $checkout->getCheckoutNewMost();
           $content = '<table style="max-width: 600px; margin: 20px auto; background-color: #fff; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
                     <thead style="background-color: #673ab7; color: #fff; text-align: center;">
@@ -92,8 +146,7 @@ if (isset($_GET['view'])) {
                                 <td style="border: 1px solid #ddd; padding: 10px; text-align: right;"> ' . number_format(array_sum(array_column($_SESSION['cart'], 'subtotal')), 0, ',', '.') . 'đ</td>
                               </tr>
                               <tr>
-                                <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Giảm giá:</strong></td>
-                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">-50.000đ</td>
+                                <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Giảm giá:</strong></td><td style="border: 1px solid #ddd; padding: 10px; text-align: right;">-' . number_format($_SESSION['voucher']['discount'], 0, ',', '.') . 'đ</td>
                               </tr>
                               <tr>
                                 <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Phương thức thanh toán:</strong></td>
@@ -109,7 +162,7 @@ if (isset($_GET['view'])) {
                               </tr>
                               <tr>
                                 <td colspan="2" style="border: 1px solid #ddd; padding: 10px; text-align: right;"><strong>Tổng cộng:</strong></td>
-                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">' . number_format(array_sum(array_column($_SESSION['cart'], 'subtotal')), 0, ',', '.') . 'đ</td>
+                                <td style="border: 1px solid #ddd; padding: 10px; text-align: right;">' . number_format(array_sum(array_column($_SESSION['cart'], 'subtotal')) + 30000 - $_SESSION['voucher']['discount'], 0, ',', '.') . 'đ</td>
                               </tr>
                             </tbody>
                           </table>
@@ -128,8 +181,10 @@ if (isset($_GET['view'])) {
                       </tr>
                     </tfoot>
                   </table>';
-          $subject = 'Chúng Tôi Đã Nhận Được Đơn Hàng Của Bạn – Cập Nhật Thông Tin Đơn Hàng DA00' . $checkout_new[0]['id_checkout'] . '';
-          sendMail($_POST['emailsend'], $subject, $content);
+
+          sendMail($_POST['emailsend'], 'Chúng Tôi Đã Nhận Được Đơn Hàng Của Bạn', $content);
+
+          // Lưu đơn hàng vào CSDL
           $data_orders = [];
           foreach ($_SESSION['cart'] as $item) {
             $unit_price = $item['quantity_product'] * $item['price'];
@@ -144,11 +199,15 @@ if (isset($_GET['view'])) {
           foreach ($data_orders as $order_item) {
             $order->SaveOrder($order_item);
           }
+
+          // Xóa giỏ hàng và chuyển hướng
           unset($_SESSION['cart']);
+          unset($_SESSION['voucher']);
           $_SESSION['success_message'] = "Đơn hàng của bạn đã được đặt thành công!";
           header('location:index.php');
         }
       }
+
 
       $title = 'Thanh toán';
 
