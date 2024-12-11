@@ -12,36 +12,43 @@ if (isset($_GET['view'])) {
                 $getcate = $cates->getAllCategories();
                 if (isset($_POST['updateprod'])) {
                     $updateprod = $prod->updateProduct($_GET['id'], $_POST['image'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['cate'], $_POST['quantity']);
+                    header("Location:?ctrl=admin&view=addprod");
+                    exit();
                 }
             }
             include_once './viewsadmin/editprod.php';
             break;
-        case 'addpro':
+        case 'prods':
             $addpro_list = $prod->getAllProducts();
+            if(isset($_POST['Del'])) {
+                $delprod = $prod->deleteProduct($_POST['idprod']);
+                header("Location:?ctrl=admin&view=prods");
+                exit();
+            }
+            include_once './viewsadmin/prods.php';
+            break;
+        case 'addprods':
             $getcate = $cates->getAllCategories();
             if(isset($_POST['addprod'])) {
                 $addnew = $prod->addProduct($_POST['image'], $_POST['name'], $_POST['price'], $_POST['description'], $_POST['cate'], $_POST['quantity']);
+                header("Location:?ctrl=admin&view=prods");
+                exit();
             }
-            if(isset($_POST['Del'])) {
-                $delprod = $prod->deleteProduct($_POST['idprod']);
-            }
-            include_once './viewsadmin/addpro.php';
+            include_once './viewsadmin/addprods.php';
             break;
         case 'order':
             $order_list = $checkout->GetHistoryCheckout();
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_checkout']) && isset($_POST['new_status'])) {
-                $id_checkout = intval($_POST['id_checkout']);
-                $new_status = intval($_POST['new_status']);
-                
-                // Cập nhật trạng thái mới vào cơ sở dữ liệu
-                $update_stmt = $conn->prepare("UPDATE checkout SET status = ? WHERE id_checkout = ?");
-                $update_stmt->bind_param("ii", $new_status, $id_checkout);
-        
-                if ($update_stmt->execute()) {
-                    echo json_encode(["success" => true, "new_status" => $new_status]);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $id = $_POST['checkout_id'];
+                $newStatus = $_POST['new_status'];
+                $Upstatus = $checkout->updateStatus1($id, $newStatus);
+                if($Upstatus) {
+                    echo json_encode(["success" => true, "message" => "Cập nhật trạng thái thành công"]);
                 } else {
                     echo json_encode(["success" => false, "message" => "Không thể cập nhật trạng thái."]);
                 }
+                header("Location:?ctrl=admin&view=order");
+                exit;
             }
             include './viewsadmin/order.php';
             break;
@@ -49,6 +56,13 @@ if (isset($_GET['view'])) {
             $user_list = $user->getAllUser();
             if(isset($_POST['submit'])){              
                 $UpUser = $user->updateRole($_POST['id'], 1);
+                header("Location:?ctrl=admin&view=user");
+                exit();
+            }
+            if(isset($_POST['Del'])){              
+                $UpUser = $user->resetRole($_POST['id'], 0);
+                header("Location:?ctrl=admin&view=user");
+                exit();
             }
             include './viewsadmin/user.php';
             break;
@@ -59,7 +73,7 @@ if (isset($_GET['view'])) {
                 if (isset($_POST['update_category'])) {
                     $name_category = $_POST['name_category'];
                     $cates->updateCategory($id, $name_category);
-                    header("Location: ?ctrl=admin");
+                    header("Location:?ctrl=admin&view=home");
                     exit();
                 }
             }
@@ -70,7 +84,7 @@ if (isset($_GET['view'])) {
                 $name_category = $_POST['name_category'];
                 if (!empty($name_category)) {
                     $cates->addCategory($name_category);
-                    header("Location: ?ctrl=admin"); 
+                    header("Location:?ctrl=admin&view=home"); 
                     exit();
                 } else {
                     echo "<script>alert('Tên danh mục không được để trống');</script>";

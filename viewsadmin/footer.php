@@ -41,5 +41,4 @@
 <script src="js/bootstrap-datepicker.js"></script>
 <script src="js/custom.js"></script>
 <script src="assets/js/main.js"></script>
-
 </html>

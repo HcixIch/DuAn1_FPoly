@@ -50,7 +50,12 @@ class User extends Database
     }
     // Hàm Cấp quyền
     public function updateRole($id, $role){
-        $sql = "UPDATE user SET role = '".$role." 'WHERE id_user = '".$id."';";
+        $sql = "UPDATE user SET role = '".$role."' WHERE id_user = '".$id."';";
+        return $sql = $this->db->update($sql);
+    }
+    // Hàm Thu Hồi quyền
+    public function resetRole($id, $role){
+        $sql = "UPDATE user SET role = '".$role."' WHERE id_user = '".$id."';";
         return $sql = $this->db->update($sql);
     }
 }
