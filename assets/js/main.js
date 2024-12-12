@@ -490,6 +490,14 @@ $('#apply-voucher').on('click', function() {
     });
 });
 
+document.querySelectorAll('.btn-comment').forEach(button => {
+    button.addEventListener('click', function () {
+        const idProduct = this.getAttribute('data-id');
+        document.getElementById('product-id').value = idProduct;
+    });
+});
+
+
 // Tài khoản của tôi 
 $(document).ready(function () {
     // Chuyển đổi tab

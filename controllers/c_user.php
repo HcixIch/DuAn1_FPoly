@@ -57,6 +57,22 @@ if (isset($_GET['view'])) {
                 }
                 header("location:?ctrl=user&view=account");
             }
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['comment'])) {
+                $id_product = $_POST['id_product'];
+                $comment = $_POST['comment'];
+                $date = date('Y-m-d H:i:s'); // Lấy thời gian hiện tại
+
+                // Lưu bình luận vào cơ sở dữ liệu
+                $cm->addComment($id_product, $comment, $_SESSION['user'][0]['id_user'], $date);
+
+                // Chuyển hướng người dùng sau khi bình luận xong
+                // header("Location: ?ctrl=user&view=account&id_checkout=" . $_GET['id_checkout']);
+
+                exit(); // Kết thúc script sau khi chuyển hướng
+            }
+
+
+
             // Render lại view với thông báo
             include_once './views/v_user_account.php';
             break;
