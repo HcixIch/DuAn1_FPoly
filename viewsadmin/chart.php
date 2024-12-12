@@ -144,7 +144,7 @@
             var chart = new Chart(ctx, {
                 type: 'bar', // Loại biểu đồ (line, bar, etc.)
                 data: {
-                    labels: <?php echo json_encode($labels); ?>, // Các ngày trong tuần
+                    labels: <?php echo json_encode($labels); ?>, // Các ngày tron   g tuần
                     datasets: [{
                         label: 'Tổng tiền(VND)', // Tên dữ liệu
                         backgroundColor: 'rgba(54, 162, 235, 0.2)', // Màu nền cho đồ thị

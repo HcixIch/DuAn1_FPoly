@@ -15,7 +15,6 @@
                                     <th>Tên người nhận hàng</th>
                                     <th>Số điện thoại người nhận hàng</th>
                                     <th>Địa chỉ nhận hàng</th>
-                                    <th>Đơn hàng</th>
                                     <th>Tổng tiền</th>
                                     <th>Số lượng</th>
                                     <th>Ngày đặt</th>
@@ -26,16 +25,15 @@
                             <tbody>
                                 <?php
                                 $i = 0;
-                                foreach ($order_list as $od) {
+                                foreach ($checkoutall as $od) {
                                     $i++; ?>
                                     <tr>
                                         <td><?= $i ?></td>
                                         <td><?= $od['full_name'] ?></td>
                                         <td><?= $od['phone'] ?></td>
                                         <td><?= $od['address'] ?></td>
-                                        <td><?= $od['name_product'] ?></td>
                                         <td><?= $od['total_all'] ?>đ</td>
-                                        <td><?= $od['quantity'] ?></td>
+                                        <td><?= array_sum(array_column($order->GetOrderById($od['id_checkout']),'quantity')) ?></td>
                                         <td><?= $od['date_order'] ?></td>
                                         <td>
                                             <span class="badge" id="order_status_<?= $od['id_checkout'] ?>">

@@ -31,6 +31,8 @@
                                             <td><?= $user['full_name'] ?></td>
                                             <td><?= $user['phone_user'] ?></td>
                                             <td><?= $user['email_user'] ?></td>
+                                            <td><?= $user['address_user'] ?></td>
+                                            <td><?= ($user['role']==0) ? 'Người dùng' : 'Nhân viên' ?></td>
                                             <?php if($_SESSION['user'][0]['role'] == 2 ){ ?>
                                                 <?php if($user['role'] == 1){ ?>
                                                     <td>
@@ -43,6 +45,7 @@
                                                         <button name="submit" class="btn btn-primary">Cấp Quyền</button>
                                                     </td>
                                                 <?php } ?>
+                                            <?php } ?>
                                         </tr>
                                     </form>
                                     <?php } ?>
