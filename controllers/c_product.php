@@ -181,9 +181,9 @@ if (isset($_GET['view'])) {
             $isFound = false;
             foreach ($_SESSION['cart'] as &$item) {
                 if ($item['id_product'] == $_GET['id_addcart']) { // So sánh chính xác ID sản phẩm
-                    $item['quantity_product'] += 1; // Tăng số lượng sản phẩm lên 1
-                    $item['subtotal'] = $item['quantity_product'] * $item['price']; // Cập nhật tổng tiền
-                    $isFound = true; // Đánh dấu là đã tìm thấy sản phẩm
+                    $item['quantity_product'] += 1;
+                    $item['subtotal'] = $item['quantity_product'] * $item['price'];
+                    $isFound = true;
                     break;
                 }
             }
@@ -191,12 +191,12 @@ if (isset($_GET['view'])) {
             // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm mới
             if (!$isFound) {
                 $data = [
-                    'id_product' => $product['id_product'], // ID sản phẩm
-                    'quantity_product' => 1, // Số lượng mặc định
-                    'name_product' => $product['name_product'], // Tên sản phẩm
-                    'price' => $product['price_product'], // Giá sản phẩm
-                    'img_product' => $product['img_product'], // Hình ảnh sản phẩm
-                    'subtotal' => $product['price_product'] // Tổng tiền ban đầu
+                    'id_product' => $product['id_product'],
+                    'quantity_product' => 1,
+                    'name_product' => $product['name_product'],
+                    'price' => $product['price_product'],
+                    'img_product' => $product['img_product'],
+                    'subtotal' => $product['price_product']
                 ];
                 $_SESSION['cart'][] = $data; // Thêm sản phẩm mới vào giỏ hàng
             }

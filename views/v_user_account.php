@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <form id="commentForm" action="" method="post">
-                                                <input type="hidden" name="id_product" id="product-id">
+                                                <input type="hidden" name="id_product" value="" id="product-id">
                                                 <div class="mb-3">
                                                     <label for="comment" class="form-label">Nội dung bình luận:</label>
                                                     <textarea name="comment" id="comment" class="form-control" rows="4"
@@ -107,6 +107,7 @@
                                             </form>
                                         </div>
                                         <div class="modal-footer">
+                                            <input type="hidden" name="id_product" value="<?= $id_product ?>">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Đóng</button>
                                             <button type="submit" class="btn btn-primary" form="commentForm">Gửi bình
