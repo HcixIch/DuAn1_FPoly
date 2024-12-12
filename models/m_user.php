@@ -69,7 +69,4 @@ class User extends Database
         $sql = "UPDATE user SET role = '" . $role . "' WHERE id_user = '" . $id . "'";
         return $sql = $this->db->update($sql);
     }
-    public function resetRole($id, $role){
-        $sql = "UPDATE user SET role = '".$role."' WHERE id_user = '".$id."'";
-        return $this->db->update($sql);
 }
