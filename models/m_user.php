@@ -65,5 +65,5 @@ class User extends Database
     // Hàm Thu Hồi quyền
     public function resetRole($id, $role){
         $sql = "UPDATE user SET role = '".$role."' WHERE id_user = '".$id."';";
-
+    }
 }

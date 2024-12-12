@@ -38,8 +38,8 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa-solid fa-comments"></i></span>
                                 <p>
-                                    <span class="number">35%</span>
-                                    <span class="title">Chuyển đổi</span>
+                                    <span class="number"><?= count($comment_all)?></span>
+                                    <span class="title">Bình luận</span>
                                 </p>
                             </div>
                         </div>
