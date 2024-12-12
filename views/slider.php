@@ -17,12 +17,12 @@
                 }}
             ]'>
         <!--Hero Item start-->
-        <div class="hero-item bg-image" data-bg="./assets/images/hero/hero-2.webp">
+        <div class="hero-item bg-image" data-bg="./assets/images/banner/banner-1.webp">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <!--Hero Content start-->
-                        <div class="hero-content-2 color-2">
+                        <div class="hero-content-2 color-2" style="">
                             <h2>Xem bộ sưu tập của chúng tôi</h2>
                             <h1>DÒNG SẢN PHẨM CHÂU ÂU</h1>
                             <h3>Sản phẩm hiện có</h3>

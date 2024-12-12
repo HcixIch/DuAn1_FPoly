@@ -38,8 +38,8 @@
                             <div class="metric">
                                 <span class="icon"><i class="fa-solid fa-comments"></i></span>
                                 <p>
-                                    <span class="number">35%</span>
-                                    <span class="title">Chuyển đổi</span>
+                                    <span class="number"><?= count($comment_all)?></span>
+                                    <span class="title">Bình luận</span>
                                 </p>
                             </div>
                         </div>
@@ -48,23 +48,6 @@
                         <div class="col-md-9">
                             <div id="headline-chart" class="ct-chart">
                                 <canvas id="myChart"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="weekly-summary text-right">
-                                <span class="number">2,315</span> <span class="percentage"><i
-                                        class="fa fa-caret-up text-success"></i> 12%</span>
-                                <span class="info-label">Tổng doanh số</span>
-                            </div>
-                            <div class="weekly-summary text-right">
-                                <span class="number">$5,758</span> <span class="percentage"><i
-                                        class="fa fa-caret-up text-success"></i> 23%</span>
-                                <span class="info-label">Thu nhập tháng</span>
-                            </div>
-                            <div class="weekly-summary text-right">
-                                <span class="number">$65,938</span> <span class="percentage"><i
-                                        class="fa fa-caret-down text-danger"></i> 8%</span>
-                                <span class="info-label">Tổng thu nhập</span>
                             </div>
                         </div>
                     </div>
