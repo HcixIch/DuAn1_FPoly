@@ -146,7 +146,7 @@
                 data: {
                     labels: <?php echo json_encode($labels); ?>, // Các ngày trong tuần
                     datasets: [{
-                        label: 'Total Sales', // Tên dữ liệu
+                        label: 'Tổng tiền(VND)', // Tên dữ liệu
                         backgroundColor: 'rgba(54, 162, 235, 0.2)', // Màu nền cho đồ thị
                         borderColor: 'rgba(54, 162, 235, 1)', // Màu viền cho đồ thị
                         data: <?php echo json_encode($data); ?>, // Dữ liệu các giá trị

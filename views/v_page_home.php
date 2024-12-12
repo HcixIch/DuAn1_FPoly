@@ -1,3 +1,45 @@
+<div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30">
+                    <div class="icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="content">
+                        <h2>Được khách hàng đánh giá 4.9/5<br>(6,200+ người xem)</h2>
+                    </div>
+                </div>
+                <!-- Single Faeture End -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30">
+                    <div class="icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+                    <div class="content">
+                        <h2>Mua trực tiếp và hỗ trợ CLB của bạn<br>(Arsenal team)</h2>
+                    </div>
+                </div>
+                <!-- Single Faeture End -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <!-- Single Faeture Start -->
+                <div class="single-feature feature-style-2 mb-30 br-0">
+                    <div class="icon">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div class="content">
+                        <h2>Thành viên được giảm 10%<br>tiết kiệm cho bạn</h2>
+                    </div>
+                </div>
+                <!-- Single Faeture End -->
+            </div>
+        </div>
+    </div>
+</div>
 <!--Product section start-->
 <div class="product-section section pt-70 pt-lg-45 pt-md-40 pt-sm-30 pt-xs-15">
     <div class="container">
@@ -347,48 +389,7 @@
 
 
 <!-- Feature Section Start -->
-<div class="feature-section section pt-100 pt-md-75 pt-sm-60 pt-xs-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <!-- Single Faeture Start -->
-                <div class="single-feature feature-style-2 mb-30">
-                    <div class="icon">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="content">
-                        <h2>Được khách hàng đánh giá 4.9/5<br>(6,200+ người xem)</h2>
-                    </div>
-                </div>
-                <!-- Single Faeture End -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <!-- Single Faeture Start -->
-                <div class="single-feature feature-style-2 mb-30">
-                    <div class="icon">
-                        <i class="fa-solid fa-box"></i>
-                    </div>
-                    <div class="content">
-                        <h2>Mua trực tiếp và hỗ trợ CLB của bạn<br>(Arsenal team)</h2>
-                    </div>
-                </div>
-                <!-- Single Faeture End -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <!-- Single Faeture Start -->
-                <div class="single-feature feature-style-2 mb-30 br-0">
-                    <div class="icon">
-                        <i class="fa-solid fa-percent"></i>
-                    </div>
-                    <div class="content">
-                        <h2>Thành viên được giảm 10%<br>tiết kiệm cho bạn</h2>
-                    </div>
-                </div>
-                <!-- Single Faeture End -->
-            </div>
-        </div>
-    </div>
-</div>
+
 </div>
 <!-- Feature Section End -->
 <!-- Feature Section End -->
