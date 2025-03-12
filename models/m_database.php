@@ -1,5 +1,5 @@
 <?php
-class Databa
+class Database
 {
     private $servername = "localhost";
     private $username = "root";
@@ -82,7 +82,8 @@ class Databa
         $this->conn = null;
     }
 
-    public function getConnection() {
+    public function getConnection()
+    {
         return $this->conn;
     }
 }
